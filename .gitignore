@@ -1,0 +1,14 @@
+*.lnk
+*.zip
+*.exc.tex
+*.fls
+*.sol.tex
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+*-dot2tex-*
+*.pdf
+*.aux
+*~
+*.~*#

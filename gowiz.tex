@@ -1,0 +1,277 @@
+\textwidth 17cm \textheight 25cm \evensidemargin 0cm
+\oddsidemargin 0cm \topmargin -2.5cm
+\parindent 0pt
+%\parskip \bigskipamount
+
+\usepackage{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{nopageno}
+\usepackage{pdfpages}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz}
+\usepackage{color}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[version=3]{mhchem}
+\usepackage{multicol}
+\usepackage{fix-cm}
+\usepackage{setspace}
+\usepackage{mhchem}
+\usepackage{xhfill}
+\usepackage{parskip}
+\usepackage{cancel}
+\usepackage{mdframed}
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand\rad{\qopname\relax o{\mathrm{rad}}}
+
+\newcommand\ggd{\qopname\relax o{\mathrm{ggd}}}
+
+\def\LRA{\Leftrightarrow}%\mkern40mu}
+
+\newcommand{\zrmbox}{\framebox{\phantom{EXE}}\phantom{X}}
+\newcommand{\zrm}[1]{\framebox{#1}}
+
+% environment oefening:
+% houdt een teller bij die de oefeningen nummert, probeert ook de oefening op één pagina te houden
+\newcounter{noefening}
+\setcounter{noefening}{0}
+\newenvironment{oefening}
+{
+  \stepcounter{noefening}
+  \begin{minipage}{\textwidth}
+  \vspace*{0.7cm}{\large\bf Oefening \arabic{noefening}}
+}{%
+  \end{minipage}
+}
+
+\usepackage{calc}
+
+% vraag
+\reversemarginpar
+\newcounter{punten}
+\setcounter{punten}{0}
+\newcounter{nvraag}
+\setcounter{nvraag}{1}
+\newlength{\puntwidth}
+\newlength{\boxwidth}
+\newcommand{\vraag}[1]{
+\settowidth{\puntwidth}{\Large{#1}}
+\setlength{\boxwidth}{1.5cm}
+\addtolength{\boxwidth}{-\puntwidth}
+{\large\bf Vraag \arabic{nvraag} \addtocounter{nvraag}{1}}\vspace*{-0.5cm}
+{\marginpar{\color{lightgray}\fbox{\parbox{1.5cm}{\vspace*{1cm}\hspace*{\boxwidth}{\Large{#1}}}}}
+\vspace*{0.5cm}}
+\addtocounter{punten}{#1}}
+
+% arulefill
+\def\arulefill{\leavevmode{\xrfill[-5pt]{0.3pt}[lightgray]\endgraf}}
+
+% \arules{n}
+\newcommand{\arules}[1]{
+\color{lightgray}
+%\vspace*{0.05cm}
+\foreach \n in {1,...,#1}{
+  \vspace*{0.75cm}
+  \hrule height 0.3pt\hfill
+}\color{black}}
+
+% \arule{x}
+\newcommand{\arule}[1]{
+\color{lightgray}{\raisebox{-0.1cm}{\rule[-0.05cm]{#1}{0.3pt}}}\color{black}
+}
+
+% \abox{y}
+\newcommand{\abox}[1]{
+\fbox{
+\begin{minipage}{\textwidth- 4\fboxsep}
+\hspace*{\textwidth}\vspace{#1}
+\end{minipage}
+}
+}
+
+\newcommand{\ruitjes}[1]{
+\definecolor{cqcqcq}{rgb}{0.85,0.85,0.85}
+\hspace*{-2.5cm}
+\begin{tikzpicture}[scale=1.04,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq, xstep=0.5cm, ystep=0.5cm] (0,-#1) grid (20.5,0);
+\end{tikzpicture}
+}
+
+
+\newcommand{\assenstelsel}[5][1]{
+\definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
+\begin{tikzpicture}[scale=#1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (#2,#4) grid (#3,#5);
+\draw[->,color=black] (#2,0) -- (#3,0);
+\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
+\draw[color=black] (#3.25,0.07) node [anchor=south west] { x};
+\draw[->,color=black] (0,#4) -- (0,#5);
+\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
+\draw[color=black] (0.09,#5.25) node [anchor=west] { y};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\end{tikzpicture}
+}
+
+\newcommand{\visgraad}[1]{\begin{tabular}{p{0.5cm}|p{#1}}&\\\hline\\\end{tabular}}
+
+\newcommand{\tekenschema}[2]{\begin{tabular}{p{0.5cm}|p{#1}}&\\\hline\\[#2]\end{tabular}}
+
+% schema van Horner
+\newcommand{\schemahorner}{
+\begin{tabular}{p{0.5cm}|p{7cm}}
+&\\[1.5cm]
+\hline\\
+\end{tabular}}
+
+% geef tabular iets meer ruimte
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\toets}[3]{
+\thispagestyle{plain}
+\vspace*{-2.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+    \node [shift={(15.25 cm,-1.6cm)}] {%
+        \includegraphics[width=1.8cm]{/home/ppareit/kaa1415/logokaavelgem.png}%
+    };%
+\end{tikzpicture}
+
+\begin{tabular}{|llc|c|}
+\hline
+\vspace*{-0.5cm}
+&&&\\
+Naam & \arule{4cm} & {\Large\bf KA AVELGEM} & \\
+\vspace*{-0.75cm}
+&&&\\
+Klas & \arule{4cm} & {\Large\bf 20...-...-...} & \\
+\hline
+\vspace*{-0.75cm}
+&&&\\
+Toets & {\bf #2} & {\large\bf #1} & Beoordeling\\
+\vspace*{-0.75cm}
+&&&\\
+Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
+\hline
+\end{tabular}
+}
+
+\newcommand{\oefeningen}[1]{
+
+\fancyhead[LE, RO]{\vspace{0.5cm} #1}
+%\thispagestyle{plain}
+
+{\bf \Large \centering Oefeningen: #1}
+
+}
+
+\raggedbottom
+
+\newcommand\dom{\qopname\relax o{\mathrm{dom}}}
+\newcommand\ber{\qopname\relax o{\mathrm{ber}}}
+
+\newcommand\mC{\qopname\relax o{\mathrm{mC}}}
+\newcommand\C{\qopname\relax o{\mathrm{C}}}
+
+\newcommand\W{\qopname\relax o{\mathrm{W}}}
+\newcommand\V{\qopname\relax o{\mathrm{V}}}
+\newcommand\ohm{\qopname\relax o{\mathrm{\Omega}}}
+\newcommand\kohm{\qopname\relax o{\mathrm{k\Omega}}}
+
+
+\newcommand\N{\qopname\relax o{\mathrm{N}}}
+
+\newcommand\Nperkg{\qopname\relax o{\mathrm{N/kg}}}
+
+\newcommand\Nperm{\qopname\relax o{\mathrm{N/m}}}
+
+\newcommand\gpermol{\qopname\relax o{\mathrm{g/mol}}}
+
+
+\newcommand\kgperm{\qopname\relax o{\mathrm{kg/m}}}
+\newcommand\kgperdm{\qopname\relax o{\mathrm{kg/dm}}}
+\newcommand\gpercm{\qopname\relax o{\mathrm{g/cm}}}
+\newcommand\gperml{\qopname\relax o{\mathrm{g/ml}}}
+
+
+\newcommand{\mA}{\;\mbox{mA}}
+\newcommand{\A}{\;\mbox{A}}
+\newcommand{\MA}{\;\mbox{MA}}
+
+\newcommand{\us}{\;\mu\mbox{s}}
+\newcommand\s{\qopname\relax o{\mathrm{s}}}
+
+\newcommand{\kmperh}{\;\mbox{km/h}}
+\newcommand{\mpers}{\;\mbox{m/s}}
+
+\newcommand{\mph}{\;\mbox{mph}}
+
+\newcommand\Gm{\qopname\relax o{\mathrm{Gm}}}
+\newcommand\Mm{\qopname\relax o{\mathrm{Mm}}}
+\newcommand\km{\qopname\relax o{\mathrm{km}}}
+\newcommand\hm{\qopname\relax o{\mathrm{hm}}}
+\newcommand\dam{\qopname\relax o{\mathrm{dam}}}
+\newcommand\m{\qopname\relax o{\mathrm{m}}}
+\newcommand\dm{\qopname\relax o{\mathrm{dm}}}
+\newcommand\cm{\qopname\relax o{\mathrm{cm}}}
+\newcommand\mm{\qopname\relax o{\mathrm{mm}}}
+\newcommand\um{\qopname\relax o{\mathrm{{\mu}m}}}
+\newcommand\nm{\qopname\relax o{\mathrm{nm}}}
+
+
+\newcommand\Gg{\qopname\relax o{\mathrm{Gg}}}
+\newcommand\Mg{\qopname\relax o{\mathrm{Mg}}}
+\newcommand\kg{\qopname\relax o{\mathrm{kg}}}
+\newcommand\hg{\qopname\relax o{\mathrm{hg}}}
+\renewcommand\dag{\qopname\relax o{\mathrm{dag}}}
+\newcommand\g{\qopname\relax o{\mathrm{g}}}
+\newcommand\dg{\qopname\relax o{\mathrm{dg}}}
+\newcommand\cg{\qopname\relax o{\mathrm{cg}}}
+\newcommand\mg{\qopname\relax o{\mathrm{mg}}}
+\newcommand\ug{\qopname\relax o{\mathrm{{\mu}g}}}
+\renewcommand\ng{\qopname\relax o{\mathrm{ng}}}
+
+\newcommand\ton{\qopname\relax o{\mathrm{ton}}}
+
+\newcommand\Gl{\qopname\relax o{\mathrm{Gl}}}
+\newcommand\Ml{\qopname\relax o{\mathrm{Ml}}}
+\newcommand\kl{\qopname\relax o{\mathrm{kl}}}
+\newcommand\hl{\qopname\relax o{\mathrm{hl}}}
+\newcommand\dal{\qopname\relax o{\mathrm{dal}}}
+\renewcommand\l{\qopname\relax o{\mathrm{l}}}
+\newcommand\dl{\qopname\relax o{\mathrm{dl}}}
+\newcommand\cl{\qopname\relax o{\mathrm{cl}}}
+\newcommand\ml{\qopname\relax o{\mathrm{ml}}}
+\newcommand\ul{\qopname\relax o{\mathrm{{\mu}l}}}
+\newcommand\nl{\qopname\relax o{\mathrm{nl}}}
+
+\newcommand\MJ{\qopname\relax o{\mathrm{MJ}}}
+\newcommand\kJ{\qopname\relax o{\mathrm{kJ}}}
+\newcommand\J{\qopname\relax o{\mathrm{J}}}
+
+\newcommand\T{\qopname\relax o{\mathrm{T}}}
+\newcommand\uT{\qopname\relax o{\mathrm{{\mu}T}}}
+
+
+\newcommand{\EE}[1]{\cdot 10^{#1}}
+
+\newcommand\Var{\qopname\relax o{\mathrm{Var}}}
+
+\onehalfspacing
+
+%\setlength{\headsep}{0cm}
+
+\newenvironment{exlist}[1] %
+{ \begin{multicols}{#1}
+  \begin{enumerate}[(a)]
+    \setlength{\itemsep}{0.8em} }
+{ \end{enumerate}
+  \end{multicols} }
+
+
