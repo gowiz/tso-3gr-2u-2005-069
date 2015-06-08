@@ -27,6 +27,9 @@
 \usepackage{parskip}
 \usepackage{cancel}
 \usepackage{mdframed}
+\usepackage{url}
+
+\newcommand{\todo}[1]{{\color{red} TODO: #1}}
 
 \newcommand{\degree}{\ensuremath{^\circ}}
 \newcommand\rad{\qopname\relax o{\mathrm{rad}}}
@@ -45,6 +48,7 @@
 \newenvironment{oefening}
 {
   \stepcounter{noefening}
+  \pagebreak[0]
   \begin{minipage}{\textwidth}
   \vspace*{0.7cm}{\large\bf Oefening \arabic{noefening}}
 }{%
@@ -71,7 +75,7 @@
 \addtocounter{punten}{#1}}
 
 % arulefill
-\def\arulefill{\leavevmode{\xrfill[-5pt]{0.3pt}[lightgray]\endgraf}}
+\def\arulefill{\leavevmode{\xrfill[-5pt]{0.3pt}[lightgray]\endgraf}\vspace*{0.2cm}}
 
 % \arules{n}
 \newcommand{\arules}[1]{
@@ -80,7 +84,7 @@
 \foreach \n in {1,...,#1}{
   \vspace*{0.75cm}
   \hrule height 0.3pt\hfill
-}\color{black}}
+}\color{black}\vspace*{0.2cm}}
 
 % \arule{x}
 \newcommand{\arule}[1]{
@@ -116,6 +120,17 @@
 \draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
 \draw[color=black] (0.09,#5.25) node [anchor=west] { y};
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\end{tikzpicture}
+}
+
+\newcommand{\getallenas}[3][1]{
+\definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
+\begin{tikzpicture}[scale=#1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (#2,-0.2) grid (#3,0.2);
+\draw[->,color=black] (#2.25,0) -- (#3.5,0);
+\draw[shift={(0,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $0$};
+\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
+\draw[color=black] (#3.25,0.07) node [anchor=south west] {$\mathbb{R}$};
 \end{tikzpicture}
 }
 
@@ -177,9 +192,14 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \newcommand\ber{\qopname\relax o{\mathrm{ber}}}
 
 \newcommand\mC{\qopname\relax o{\mathrm{mC}}}
+\newcommand\uC{\qopname\relax o{\mathrm{{\mu}C}}}
 \newcommand\C{\qopname\relax o{\mathrm{C}}}
 
 \newcommand\W{\qopname\relax o{\mathrm{W}}}
+\newcommand\kW{\qopname\relax o{\mathrm{kW}}}
+\newcommand\kWh{\qopname\relax o{\mathrm{kWh}}}
+
+
 \newcommand\V{\qopname\relax o{\mathrm{V}}}
 \newcommand\ohm{\qopname\relax o{\mathrm{\Omega}}}
 \newcommand\kohm{\qopname\relax o{\mathrm{k\Omega}}}
@@ -207,10 +227,15 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \newcommand{\us}{\;\mu\mbox{s}}
 \newcommand\s{\qopname\relax o{\mathrm{s}}}
 
+\newcommand\h{\qopname\relax o{\mathrm{h}}}
+
 \newcommand{\kmperh}{\;\mbox{km/h}}
 \newcommand{\mpers}{\;\mbox{m/s}}
+\newcommand{\kmpers}{\;\mbox{km/s}}
 
 \newcommand{\mph}{\;\mbox{mph}}
+
+\newcommand{\Hz}{\;\mbox{Hz}}
 
 \newcommand\Gm{\qopname\relax o{\mathrm{Gm}}}
 \newcommand\Mm{\qopname\relax o{\mathrm{Mm}}}
@@ -258,10 +283,17 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \newcommand\T{\qopname\relax o{\mathrm{T}}}
 \newcommand\uT{\qopname\relax o{\mathrm{{\mu}T}}}
 
+\newcommand\grC{\qopname\relax o{\mathrm{{\degree}C}}}
+
+\newcommand\K{\qopname\relax o{\mathrm{K}}}
+\newcommand\calperK{\qopname\relax o{\mathrm{cal/K}}}
+
+\newcommand\hPa{\qopname\relax o{\mathrm{hPa}}}
+\newcommand\Pa{\qopname\relax o{\mathrm{Pa}}}
+
+\newcommand\dB{\qopname\relax o{\mathrm{dB}}}
 
 \newcommand{\EE}[1]{\cdot 10^{#1}}
-
-\newcommand\Var{\qopname\relax o{\mathrm{Var}}}
 
 \onehalfspacing
 
