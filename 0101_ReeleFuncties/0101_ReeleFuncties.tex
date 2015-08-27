@@ -36,7 +36,7 @@
 \begin{center}
   \begin{mdframed}
   \centering
-  \fontsize{35}{70}\selectfont Herhaling Reële Functies
+  \fontsize{35}{70}\selectfont Reële Functies
   \end{mdframed}
   \vfill
   \includegraphics[width=0.8\textwidth]{FunctieMachine}
@@ -47,23 +47,21 @@
 \subsection*{Doelstellingen}
 {\singlespacing
 
-Je herhaalt een aantal belangrijke begrippen over functies die je vorig jaar reeds geleerd hebt.
-
-In het bijzonder kan je \hfill  {\scriptsize(LP 2005/069, LI 1.1, ET10)}
+Je kan bijzonderheden van grafieken,
+eventueel aangevuld met tabellen,\\ aflezen zoals: \hfill  {\scriptsize(LP 2005/069, LI 1.1, ET10)}
 \begin{itemize}
   \item het domein,
-  \item het bereik, \teacher{het beeld moet niet gekend zijn volgens leerplan}
+  \item het bereik, \teacher{het bereik moet niet gekend zijn volgens leerplan}
   \item de nulwaarden,
   \item het stijgen en dalen,
   \item het tekenverloop,
-  %\item de periodiciteit,
-  %\item de symmetrieën,
+  \item de periodiciteit,
+  \item de symmetrieën,
   \item de extreme waarden
 \end{itemize}
-bepalen op grafieken.
 }
 
-\fancyhead[RO,LE]{Herhaling Reële Functies}
+\fancyhead[RO,LE]{Reële Functies}
 \fancyhead[RE,LO]{}
 
 \onehalfspacing
@@ -150,6 +148,30 @@ We hebben de volgende opmerkingen
 Schrijf de functie met functievoorschrift
 $$f:\mathbb{R}\to\mathbb{R}:x\mapsto x^2+x+1$$
 nog korter.
+\end{oefening}
+
+\begin{oefening}
+Schrijf de volgende functies zo kort mogelijk
+\begin{enumerate}[(a)]
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \dfrac{1}{x^2+1}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 0$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt[3]{x^2+1}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \left(x^2+1\right)^2$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto x$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de volgende functies en herschrijf ze als een vergelijking van twee onbekenden
+\begin{enumerate}[(a)]
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt{5+x^3}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 3$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto x$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Teken met een rode kleur de grafiek van een functie $f$ die door de koppels $(-2, 4)$ en $(2,1)$ gaat. Teken nu met een groene kleur een de grafiek van een andere functie $g$ die door de zelfde koppels gaat.
 \end{oefening}
 
 \begin{oefening}
@@ -240,6 +262,11 @@ $$(5,-8)\qquad(-1,4)\qquad(2,3)\qquad(\sqrt{2},\frac{2}{3})\qquad(-6,-1)$$
 \begin{oefening}
 Geef van een functie met functievoorschrift $f(x)=x^2-4$ een functiewaardentabel die begint bij -5 en eindigt bij 5. Teken daarna de grafiek.
 \end{oefening}
+
+\begin{oefening}
+Geef van een functie met functievoorschrift $f(x)=\sqrt{x+4}$ een functiewaardentabel die begint bij -5 en eindigt bij 5. Teken daarna de grafiek.
+\end{oefening}
+
 
 \newpage
 \section{Domein en bereik van een functie}
@@ -643,7 +670,7 @@ Bepaal alle nulwaarden van de functie $f$ waarvan de volgende grafiek gegeven is
 \end{oefening}
 
 \begin{oefening}
-Bepaal alle nulwaarden van de functie op de volgende grafiek
+Bepaal alle nulwaarden van de functie op de volgende grafiek\\
 \begin{center}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw[->,color=black] (-3.18,0) -- (9.12,0);
@@ -658,6 +685,45 @@ Bepaal alle nulwaarden van de functie op de volgende grafiek
 \end{tikzpicture}
 \end{center}
 \end{oefening}
+
+\begin{oefening}
+Bepaal alle nulwaarden van de functie op de volgende grafiek\\
+\begin{center}
+\begin{tikzpicture}[scale=1.4, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.9,0) -- (6.28,0);
+\foreach \x in {-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[color=black] (5.96,0.08) node [anchor=south west] { x};
+\draw[->,color=black] (0,-1.56) -- (0,3.38);
+\foreach \y in {-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0.1,2.98) node [anchor=west] { y};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.9,-1.56) rectangle (6.28,3.38);
+\draw[line width=1.8pt, smooth,samples=200,domain=1.5:6.8] plot(\x,{sqrt((\x)-1.5)});
+\end{tikzpicture}
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+Bepaal alle nulwaarden van de functie op de volgende grafiek\\
+\begin{center}
+\begin{tikzpicture}[scale=1.4, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.9,0) -- (6.28,0);
+\foreach \x in {-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[color=black] (5.96,0.08) node [anchor=south west] { x};
+\draw[->,color=black] (0,-1.56) -- (0,3.38);
+\foreach \y in {-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0.1,2.98) node [anchor=west] { y};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.9,-1.56) rectangle (6.28,3.38);
+\draw[line width=1.8pt, smooth,samples=100,domain=-1:4] plot(\x,{(\x-1.3)^4-1});
+\end{tikzpicture}
+\end{center}
+\end{oefening}
+
 
 
 \newpage
