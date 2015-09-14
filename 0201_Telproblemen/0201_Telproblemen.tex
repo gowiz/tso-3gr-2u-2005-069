@@ -386,9 +386,183 @@ Ik ben de pincode van mijn GSM vergeten. Ik weet enkel nog dat er geen 5 in komt
 % Je moet een menu opstellen. Hierbij moet er keuze zijn tussen 2 voorgerechten en 3 hoofdgerechten voor de {\em vegetariërs} en 3 voorgerechten en 4 hoofdgerechten voor de {\em alleseters}. Voor {\em iedereen} is er keuze uit 2 desserts. Hoeveel mogelijke menu's kan je samenstellen?
 % \end{oefening}
 
+
+\section{Variaties}
+
+\subsection{Voorbeeld}
+
+Op hoeveel manieren kunnen vier verschillende bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
+
+We definiëren:
+\begin{itemize}
+  \item De verzameling bollen = $\{b_1, b_2, b_3, b_4\}$
+  \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
+\end{itemize}
+
+\begin{oefening}
+De manier van bollen plaatsen is een samengestelde beslissing. Uit hoeveel deelbeslissingen bestaat deze?
+\arules{2}
+\end{oefening}
+
+\begin{oefening}
+Neem de verschillende deelbeslissingen:
+\arules{12}
+\end{oefening}
+
+\begin{oefening}
+Geef een paar verschillende mogelijke plaatsingen.
+\vspace*{2cm}
+\end{oefening}
+
+Daar er in elk vakje hoogstens één bol mag liggen wordt geen vakje herhaald.
+Elk viertal is een samengestelde beslissing zonder herhaling. Wel, zulk viertal
+noemt men een variatie zonder herhaling, kortweg variatie van vier verschillende elementen gekozen uit zes verschillende elementen $a, b, c, d, e en f$.
+Het aantal variaties kunnen we nu gemakkelijk vinden als we de
+productregel gebruiken. Het aantal variaties van 4 elementen uit 6 elementen schrijven we kort met het nieuwe symbool $V^4_6$.
+
+\begin{oefening}
+Geef in ons voorbeeld het aantal mogelijke plaatsingen:
+\arules{3}
+\end{oefening}
+
+\subsection{Formule}
+
+\begin{oefening}
+Leid de formule voor het aantal variaties van $k$ elementen gekozen uit $n$ elementen af:
+\arules{11}
+\end{oefening}
+
+\paragraph*{Variaties}
+\begin{mdframed}
+Het aantal {\bf variaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $V^k_n$ en er geldt:
+$$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-p+1)$$
+\end{mdframed}
+
+\paragraph*{Opmerking} Er zal steeds gelden dat $k\leq n$.
+
+\paragraph*{Belangrijk}
+\begin{itemize}
+  \item De positie waarin de elementen worden geplaatst is belangrijk, {\bf volgorde is van belang}.
+  \item De elementen kunnen maar éénmaal worden gebruikt, {\bf herhaling is niet mogelijk}.
+\end{itemize}
+
+\subsection{Bijzonder geval}
+
+Voor $k=n$ wordt de formule
+$$V^n_n=n(n-1)(n-2)\cdots 3\cdot 2 \cdot 1$$
+
+Het product van de opeenvolgende natuurlijke getallen van $1$ t.e.m. $n$ noteren we met $n!$ en we zeggen $n$-faculteit. We komen hier later nog op terug.
+
+Omdat dit vaak voorkomt zullen we hier een naam aan geven, we spreken van {\bf de permutaties van $n$ elementen}. Dus een permutatie is een variatie van alle $n$ elementen uit $n$.
+
+\paragraph*{Notatie:} $P_n=n!=n\cdot(n-1)\cdot(n-2)\cdots 3\cdot 2\cdot 1$
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Wat is het aantal variaties van 5 elementen gekozen uit 5 elementen?
+  \arules{1}
+  \item Hoeveel permutaties van 7 elementen zijn er?
+  \arules{1}
+\end{enumerate}
+\end{oefening}
+
+\subsection{Oefeningen}
+
+\begin{minipage}{0.7\textwidth}
+\begin{oefening}
+Hiernaast zie je een vlag die ontworpen is voor een sportclub. Aan de jongste leden wordt gevraagd elk van de drie gebieden met een andere kleur te vullen.
+\begin{enumerate}[(a)]
+  \item Bert neemt een doos met 12 kleurpotloden. Hoeveel verschillende vlaggen kan hij produceren?
+  \item Sara kiest voor de kleuren geel, oranje en blauw. Hoeveel verschillende vlaggen kan zij maken?
+\end{enumerate}
+\end{oefening}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}[scale=0.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3,-3) rectangle (13,7);
+\draw [line width=1.2pt] (-2,6)-- (-2,-2);
+\draw [line width=1.2pt] (-2,-2)-- (12,-2);
+\draw [line width=1.2pt] (12,-2)-- (12,6);
+\draw [line width=1.2pt] (12,6)-- (-2,6);
+\draw [line width=1.2pt] (8,2) circle (2cm);
+\draw [line width=1.2pt] (10,2)-- (12,2);
+\draw [line width=1.2pt] (6,2)-- (-2,2);
+\end{tikzpicture}
+\end{minipage}
+
+\begin{oefening}
+Op het {\em todo}-lijstje van Jef staan zeven dringende taken en vier niet dringende.
+\begin{enumerate}[(a)]
+  \item Hij neemt zijn agenda en noteert op elke dag van van volgende week één van de dringende taken. Op hoeveel manieren kan hij zijn agenda voor die week invullen?
+  \item Als hij geen rekening houdt met de dringendheid van de taken, op hoeveel manieren kan hij dan zijn werk verdelen over de volgende week? Hij wil nog steeds maar één taak per dag uitvoeren.
+  \item Eén van de dringende zaken wil hij per se op zaterdag uitvoeren en één van de niet dringende op zondag. Op hoeveel manieren kan hij nu zijn agenda invullen als hij weer uit de volledige lijst kiest?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Aan een paardenkoers nemen 8 paarden deel. Er wordt gevraagd de eerste 4 paarden in de juiste volgorde te geven. Hoeveel van dergelijke voorspellingen zijn er mogelijk?
+\end{oefening}
+
+\begin{oefening}
+Een jeugdgroep telt 10 leden en wil een bestuur kiezen bestaande uit een voorzitter, een ondervoorzitter, een secretaris en een penningmeester. Hoeveel verschillende bestuurslichamen kunnen er verkozen worden?
+\end{oefening}
+
+\begin{oefening}
+Op een boekenrek moeten 3 werken over wiskunde en 4 romans gerangschikt worden. We beschikken daartoe over 5 wiskundeboeken en over 6 romans. Op hoeveel manieren kunnen we de boeken rangschikken als ons opgelegd wordt de wiskundeboeken vooraan te plaatsen?
+\end{oefening}
+
+\begin{oefening}
+Met de cijfers $1, 2, 3, \ldots, 9$ vormen we getallen van $6$ verschillende cijfers.
+\begin{enumerate}[(a)]
+  \item Hoeveel dergelijke getallen zijn er?
+  \item Hoeveel ervan beginnen met 1?
+  \item Hoeveel ervan beginnen niet met 2?
+  \item Hoeveel ervan beginnen met 83?
+  \item Hoeveel ervan beginnen niet met 123?
+  \item Hoeveel ervan bevatten het cijfer 7?
+  \item Hoeveel ervan bevatten wel 4, maar niet 5?
+  \item Hoeveel ervan bevatten noch 8, noch 9?
+  \item Hoeveel ervan bevatten de cijfers 4 en 5?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Op hoeveel manieren kan ik 10 boeken op een plank rangschikken als een bepaald boek op de eerste plaats moet staan?
+\end{oefening}
+
+\begin{oefening}
+Op hoeveel manieren kunnen we 4 jongens en 3 meisjes op een rij zetten als in geen geval 2 jongens naast elkaar mogen staan?
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Schrijf alle permutaties van de elementen $a,b,c,d$ op.
+  \item Schrijf alle permutaties van de elementen $a,b,c,c$ op.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+We moeten vijf verschillende prijzen verloten onder de nummers 1 tot en met 100.
+Het eerste getrokken nummer krijgt de mooiste prijs, enz. Na het trekken wordt het
+nummer verwijderd (We spreken van trekken zonder terugleggen.)
+Geef het aantal mogelijke trekkingen.
+\end{oefening}
+
+\begin{oefening}
+Een vlag moet bestaan uit 2 verticale banen van verschillend gekleurde stof.
+Men beschikt over 8 kleuren. Hoeveel vlaggen zijn hiermee samen te stellen?
+\end{oefening}
+
+\begin{oefening}
+Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevormd.
+\begin{enumerate}[(a)]
+  \item Hoeveel dergelijke getallen bestaan er?
+  \item Hoeveel van deze getallen eindigen op 5?
+\end{enumerate}
+\end{oefening}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
