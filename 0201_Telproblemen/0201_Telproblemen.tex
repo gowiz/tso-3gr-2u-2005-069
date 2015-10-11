@@ -618,6 +618,7 @@ De $\bar{V}$ is het symbool voor het aantal herhalingsvariaties.
 Het aantal elementen (vakjes) wordt onderaan als index geschreven. Het aantal
 deelbeslissingen (bollen leggen) wordt bovenaan genoteerd.
 
+\pagebreak
 \subsection{Formule}
 
 \begin{oefening}
@@ -722,11 +723,126 @@ Hoeveel getallen bestaande uit 3 cijfers kunnen gemaakt worden met 3 vieren, 4 t
 Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een leger van 5000 trollen die een draak aanviel. Na het gevecht merkten de overlevende trollen dat geen twee van hun nog de zelfde verzameling tanden had (geen één trol had nog tanden op dezelfde plaats als een andere trol). Hoeveel trollen zijn er tijdens het gevecht tegen de draak op zijn minst gestorven?
 \end{oefening}
 
+\pagebreak
+\section{n-faculteit}
 
+\subsection{Definitie}
+
+\paragraph*{n-faculteit}
+\begin{mdframed}
+\begin{align*}
+\forall n \in \mathbb{N}\backslash\{0,1\}: n!&=n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot2\cdot1\\
+                                           1!&=1\\
+                                           0!&=1\\
+\end{align*}
+\end{mdframed}
+
+\subsection{Berekenen met behulp van het rekentoetstel}
+
+De toets voor $n$-faculteit bevindt zich boven het rechter haakje. Om bijvoorbeeld $24!$ uit te rekenen toetsen we
+$$24 \zrm{SHIFT} \zrm{x!} \zrm{EXE}\;.$$
+
+We krijgen een heel groot getal $6.204484017\EE{23}$ of voluit $620448401733239439360000$.
+
+\subsection{Eigenschap}
+
+\begin{oefening}
+Bereken zonder \zrm{ZRM}
+\begin{enumerate}[(a)]
+  \item $2!=$\arulefill
+  \item $3!=$\arulefill\arules{1}
+  \item $4!=$\arulefill\arules{1}
+  \item $5!=$\arulefill\arules{1}
+\end{enumerate}
+\end{oefening}
+
+
+\begin{oefening}
+Als je weet dat
+$$9!=362880\;.$$
+Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
+\end{oefening}
+
+\subsection{Eigenschap van de n-faculteit}
+
+\paragraph*{Eigenschap}
+\begin{mdframed}
+\begin{align*}
+  (n+1)!&=(n+1)n!\\
+  n!&=n(n-1)!\\
+\end{align*}
+\end{mdframed}
+
+\begin{oefening}
+Bereken zonder \zrm{ZRM}:
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep0.7em
+  \item $\dfrac{17!}{14!}$
+  \item $\dfrac{10!}{7!}$
+  \item $\dfrac{11!}{8!}$
+  \item $\dfrac{8!}{10!}$
+  \item $\dfrac{3!\cdot 7!}{10!}$
+  \item $\dfrac{12!-10!}{9!}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Vereenvoudig:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.7em
+  \item $\dfrac{(n+1)!}{n!}$
+  \item $\dfrac{(n-1)!}{n!}$
+  \item $\dfrac{n!}{(n+1)!}$
+  \item $\dfrac{(n+1)!}{(n-2)!}$
+  \item $\dfrac{(n+2)!}{n!}$
+  \item $\dfrac{(2n+2)!}{2n!}$
+  \item $\dfrac{(n+1)!}{n!}-\dfrac{n!}{(n-1)!}$
+  \item $\dfrac{(n+1)!}{(n-1)!}-\dfrac{n!}{(n-2)!}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bestaat dan het getal $100!$
+\end{oefening}
+
+\subsection{Formule voor $V^k_n$ met behulp van faculteiten}
+
+\begin{oefening}
+Bereken $V^3_7$ door gebruik te maken van faculteiten.
+\arules{5}
+\end{oefening}
+
+\begin{oefening}
+Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
+\arules{6}
+\end{oefening}
+
+\paragraph*{Het aantal variaties van $k$ elementen uit $n$ elementen}
+\begin{mdframed}
+$$V^k_n=\dfrac{n!}{(n-k)!}$$
+\end{mdframed}
+
+\begin{oefening}
+Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we twee formules:\\
+\begin{itemize}
+  \itemsep1em
+  \item $\displaystyle V^{20}_{24}=21\cdot20\cdot19\cdot18\cdots$ of
+  \item $\displaystyle V^{20}_{24}=\dfrac{24!}{(24-20)!}$
+\end{itemize}
+\begin{enumerate}[(a)]
+  \item Bereken op beide manieren het aantal variaties. Welke methode verkies je in dit geval?
+  \item Doe hetzelfde voor het aantal variaties van 3 elementen uit 10 elementen. Welke methode verkies je in dit geval?
+  \item Welke methode zou je kiezen als je het aantal variaties van 100 elementen uit 1000 elementen zou moeten berekenen? Het is niet nodig om dit te proberen, hiervoor is speciale software nodig want onze rekenmachines kunnen niet met zulke grote getallen overweg.
+\end{enumerate}
+
+\end{oefening}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
