@@ -411,7 +411,7 @@ Neem de verschillende deelbeslissingen:
 
 \begin{oefening}
 Geef een paar verschillende mogelijke plaatsingen.
-\vspace*{2cm}
+\arules{2}
 \end{oefening}
 
 Daar er in elk vakje hoogstens één bol mag liggen wordt geen vakje herhaald.
@@ -561,6 +561,7 @@ Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevo
 \end{enumerate}
 \end{oefening}
 
+<<<<<<< Updated upstream
 \pagebreak
 
 \section{Herhalingsvariaties}
@@ -840,6 +841,42 @@ Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we
 \end{enumerate}
 
 \end{oefening}
+
+\section{Combinaties}
+
+\subsection{Voorbeeld}
+
+Op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
+
+We definiëren:
+\begin{itemize}
+  \item De bollen zijn identiek, we duiden één bol aan met de letter $B$
+  \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
+\end{itemize}
+
+We moeten vier gelijke bollen in zes vakjes leggen. Dit is hetzelfde als : we moeten de vier bollen tegelijkertijd in de bakjes leggen. Vermits de 4 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
+
+\begin{oefening}
+Teken een mogelijke plaatsing van de bollen:
+\arules{2}
+\end{oefening}
+
+Elke plaatsing zouden we als een viertal $(a, c, d, f)$ kunnen noteren. Maar elk viertal, waarin dezelfde vakjes voorkomen zoals $(a, c, d, f)$, $(c, a, f, d)$, $(d, a, f, c)$, \ldots, $(f, d, c, a)$ stelt eenzelfde plaatsing voor.
+
+De volgorde waarin de vakjes opgesomd worden heeft geen belang . We spreken nu
+af om de plaatsing te noteren als een verzameling waarin de elementen in
+alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing
+wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e, f\}$.
+
+Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje
+herhaald. In een verzameling wordt óók geen element herhaald. Wel, de
+deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling,kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
+Het aantal van zulke combinaties stellen we nu voor door het symbool C 4 6 . De
+waarde van dit getal kunnen we niet meteen geven en zullen we in 4.5. berekenen.
+Let op de notatie : De “C” is het symbool voor het aantal combinaties zonder
+herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index
+genoteerd. Het aantal te vullen vakjes wordt bovenaan genoteerd.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
