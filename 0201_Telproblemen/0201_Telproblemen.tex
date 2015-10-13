@@ -627,7 +627,7 @@ Leid de formule voor het aantal herhalingsvariaties van $k$ elementen gekozen ui
 \arules{9}
 \end{oefening}
 
-\paragraph*{Variaties}
+\paragraph*{Herhalingsvariaties}
 \begin{mdframed}
 Het aantal {\bf herhalingsvariaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $\bar{V}^k_n$ en er geldt:
 $$\bar{V}^k_n=n^k$$
@@ -842,6 +842,7 @@ Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we
 
 \end{oefening}
 
+\pagebreak
 \section{Combinaties}
 
 \subsection{Voorbeeld}
@@ -854,7 +855,7 @@ We definiëren:
   \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
 \end{itemize}
 
-We moeten vier gelijke bollen in zes vakjes leggen. Dit is hetzelfde als : we moeten de vier bollen tegelijkertijd in de bakjes leggen. Vermits de 4 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
+We moeten vier gelijke bollen in zes vakjes leggen. Dit is hetzelfde als: we moeten de vier bollen tegelijkertijd in de bakjes leggen. Vermits de 4 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
 
 \begin{oefening}
 Teken een mogelijke plaatsing van de bollen:
@@ -863,7 +864,7 @@ Teken een mogelijke plaatsing van de bollen:
 
 Elke plaatsing zouden we als een viertal $(a, c, d, f)$ kunnen noteren. Maar elk viertal, waarin dezelfde vakjes voorkomen zoals $(a, c, d, f)$, $(c, a, f, d)$, $(d, a, f, c)$, \ldots, $(f, d, c, a)$ stelt eenzelfde plaatsing voor.
 
-De volgorde waarin de vakjes opgesomd worden heeft geen belang . We spreken nu
+De volgorde waarin de vakjes opgesomd worden heeft geen belang. We spreken nu
 af om de plaatsing te noteren als een verzameling waarin de elementen in
 alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing
 wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e, f\}$.
@@ -871,16 +872,117 @@ wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzamelin
 Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje
 herhaald. In een verzameling wordt óók geen element herhaald. Wel, de
 deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling,kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
-Het aantal van zulke combinaties stellen we nu voor door het symbool C 4 6 . De
-waarde van dit getal kunnen we niet meteen geven en zullen we in 4.5. berekenen.
-Let op de notatie : De “C” is het symbool voor het aantal combinaties zonder
+Het aantal van zulke combinaties stellen we nu voor door het symbool $C^4_6$ en kunnen we berekenen met behulp van faculteiten:
+
+$$C^4_6=\dfrac{6!}{4!\cdot (6-4)!}$$
+
+\begin{oefening}
+Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
+\arules{2}
+\end{oefening}
+
+Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder
 herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index
 genoteerd. Het aantal te vullen vakjes wordt bovenaan genoteerd.
+
+\subsection{Formule}
+
+\paragraph*{Combinaties}
+\begin{mdframed}
+Het aantal {\bf combinaties van $k$ elementen gekozen uit $n$ elementen} noteren we $C^k_n$ en er geldt:
+$$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
+\end{mdframed}
+
+\paragraph*{Belangrijk}
+\begin{itemize}
+  \item Het maakt niet uit in welke volgorde dat de elementen worden gekozen, {\bf volgorde onbelangrijk}.
+  \item Elk element kunnen we maar éénmaal kiezen, {\bf herhaling niet toegestaan}.
+\end{itemize}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Voor het voetbalteam van de school stellen zich 19 jongens kandidaat.
+\begin{enumerate}[(a)]
+  \item Hoeveel elftallen kan de coach hiermee vormen?
+  \item Bij het samenstellen van de ploeg voor een belangrijke wedstrijd wil de coach zijn vijf beste spelers zeker opstellen en zijn drie zwakste niet. Hoeveel ploegen kan hij nu vormen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een Belgische delegatie bestaat uit 7 Vlamingen en 5 Walen.
+\begin{enumerate}[(a)]
+  \item Hoeveel groepjes van 6 personen kan je hiermee vormen?
+  \item Hoeveel groepjes bestaan uit 3 Vlamingen en 3 Walen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een firma heeft twee bedienden nodig (die hetzelfde werk moeten verrichten). Er zijn acht sollicitanten. Op hoeveel manieren kan de directie haar keuze bepalen?
+\end{oefening}
+
+\begin{oefening}
+In een firma werken 15 arbeiders en 10 bedienden. Op hoeveel verschillende manieren kunnen we een comité samenstellen dat uit 3 arbeiders en 2 bedienden bestaat?
+\end{oefening}
+
+\begin{oefening}
+De bibliotheek bezit 15 verschillende werken van een schrijver die net de Nobelprijs voor literatuur heeft gekregen. Naar aanleiding daarvan worden 10 werken op een speciale tafel tentoongesteld. Hoeveel keuzemogelijkheden heeft de bibliothecaris?
+\end{oefening}
+
+\begin{oefening}
+Bij vele spelletjes met een stel van 52 kaarten krijg je 13 kaarten.
+\begin{enumerate}[(a)]
+  \item Hoeveel mogelijkheden zijn er om uit 52 kaarten er 13 te trekken (zonder kaarten terug te leggen)?
+  \item In hoeveel van die gevallen heb je geen enkele aas?
+  \item Hoeveel mogelijkheden zijn er met schoppen aas?
+  \item Hoeveel mogelijkheden zijn er met 4 azen?
+  \item Hoeveel mogelijkheden zijn er met precies 3 azen?
+  \item In hoeveel van die mogelijkheden heb je alle harten?
+  \item Hoeveel mogelijkheden zijn er met 9 harten en 4 klaveren?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal voor de volgende problemen of het een combinatie of een variatie is.
+\begin{enumerate}[(a)]
+  \item Uit een klas worden zes leerlingen gekozen om een volleybalteam te vormen.
+  \item Bij een verloting zijn drie prijzen te verdienen: een fiets, een fles wijn en een taart.
+  \item Van 100 leraren van een school komen er vijf naar het schoolfeest.
+  \item In een klas worden vijf kaartjes verloot voor een concert.
+  \item Uit de muziek top 10 van vorige week stel je een persoonlijke top drie samen.
+  \item Een vereniging kiest een voorzitter, een secretaris en een penningmeester.
+  \item Een bondscoach kiest 24 spelers voor de selectie die hij meeneemt naar het WK.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Uit een selectie van 19 personen wordt een spelersraad van 6 spelers samengesteld. Hoeveel spelersraden zijn er mogelijk?
+\end{oefening}
+
+\begin{oefening}
+Uit de spelersraad van 6 personen wordt een bestuur gekozen dat bestaat uit een voorzitter, een secretaris en een penningmeester. Hoeveel besturen zijn er mogelijk?
+\end{oefening}
+
+\begin{oefening}
+Uit de selectie van 19 personen wordt een feestcommissie gekozen die uit 5 personen bestaat. Hoeveel feestcommissies zijn er mogelijk?
+\end{oefening}
+
+\begin{oefening}
+In de mediatheek staat 14 CD's met klassieke muziek en 12 CD's met popmuziek. Margo kiest 5 CD's met klassieke muziek. Hoeveel mogelijkheden zijn er?
+\end{oefening}
+
+\begin{oefening}
+Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ontstaat een serie met 13 letters K en M.
+\begin{enumerate}[(a)]
+  \item Hoeveel series zijn er met 11 keer K?
+  \item Hoeveel series zijn er met 9 keer een M?
+  \item Hoeveel series zijn er die met K beginnen en met M eindigen?
+\end{enumerate}
+\end{oefening}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
