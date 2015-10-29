@@ -21,8 +21,8 @@
 
 Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
 \begin{itemize}
-  \item vergelijkingen van de eerste en tweede graad in één onbekende oplossen.
-  \item veeltermvergelijkingen van graad hoger dan 2 oplossen met behulp van ICT.
+  \item vergelijkingen van de eerste en tweede graad in één onbekende oplossen;
+  \item veeltermvergelijkingen van graad hoger dan 2 oplossen met behulp van ICT;
   \item aan de hand van het functievoorschrift
         \begin{itemize}
           \item een tabel,
@@ -33,8 +33,8 @@ Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
         \end{itemize}
         bepalen van veeltermfuncties van de eerste en tweede graad;
   \item aan de hand van de grafiek het stijgen/dalen en de extrema van veeltermfuncties van de eerste en tweede graad bepalen;
-  \item met behulp van ICT de tabel en de grafiek lezen(domein, nulwaarden, tekenverloop, stijgen/dalen, extrema) van veeltermfuncties van graad hoger dan twee.
-  \item veranderingen beschrijven en vergelijken met behulp van differentiequotiënten.
+  \item met behulp van ICT de tabel en de grafiek lezen(domein, nulwaarden, tekenverloop, stijgen/dalen, extrema) van veeltermfuncties van graad hoger dan twee;
+  \item veranderingen beschrijven en vergelijken met behulp van differentiequotiënten;
   \item een vraagstuk of probleem, dat aanleiding geeft tot een veeltermfunctie, wiskundig formuleren;
   \item de door het functioneel verband bekomen vergelijking oplossen;
   \item de gevonden oplossing terug vertalen naar de oplossing van het oorspronkelijke vraagstuk of probleem;
@@ -53,14 +53,12 @@ Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
 \pagenumbering{arabic} 
 
 
-\fancyhead[RO,LE]{Reële Functies}
+\fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
 
 \onehalfspacing
 
-\section{Veeltermfuncties}
-
-\subsection{Veeltermvergelijkingen}
+\section{Veeltermvergelijkingen}
 
 \begin{oefening}
 Beschouw de vergelijking
@@ -70,7 +68,7 @@ $$x^3-6x^2+5x+12=0\;.$$
   \item Zijn er nog andere getallen die aan deze vergelijking voldoen?
 \end{enumerate}
 
-\subsection{Vergelijkingen van de eerste graad}
+\subsection{Veeltermvergelijkingen van de eerste graad}
 
 \end{oefening}
 \begin{oefening}
@@ -92,6 +90,8 @@ Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
   \item $\dfrac{3-x}{4}-\dfrac{x-2}{3}=\dfrac{x}{2}-\dfrac{4x+1}{12}$
 \end{enumerate}
 \end{oefening}
+
+\subsection{Veeltermvergelijkingen van de tweede graad}
 
 \begin{oefening}
 Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
@@ -123,6 +123,76 @@ Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
 \end{enumerate}
 \end{oefening}
 
+\subsection{Veeltermvergelijkingen van graad $\geq 2$}
+
+\begin{oefening} % www3.ul.ie/~mlc/support/.../chap3/3_3.pdf
+Los volgende vergelijkingen van graad hoger dan twee op in $\mathbb{R}$:
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $x^3-17x^2+54x-8=0$
+  \item $x^3-6x^2+11x-6=0$
+  \item $x^3-7x=6$
+  \item $2x^3+9x^2+7x+2=2x^2$
+  \item $22x+8=3x^3+7x^2$
+\end{enumerate}
+\end{oefening}
+
+\subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
+
+\subsection*{Eerste methode}
+
+\paragraph*{Voorbeeld:} Los op in $\mathbb{R}$
+$$x^3-2x^2-1=x^2+x-4$$
+
+Beschouw het linkerlid en het rechterlid als functies:
+$$f(x)=x^3-2x^3-1$$
+$$g(x)=x^2+x-4$$
+
+Voor alle $x$ die een oplossing zijn van de originele vergelijk geldt dus dat
+$$f(x)=g(x)$$
+
+Construeer nu de grafieken van $f(x)$ en van $g(x)$ met Geogebra. Download het programma op \url{https://www.geogebra.org/} als dit nog niet geïnstalleerd is. Hiervoor moet je onderaan in het commandovenster het commando \verb#f(x)=x^3-2*x^3-1# en \verb#g(x)=x^2+x-4# invoeren.
+
+Voor de snijpunten van de grafieken geldt nu dus dat $f(x)=g(x)$. En we zoeken de $x$-waarden om de originele vergelijking waar te maken. In het menu van Geogebra moeten we dus op zoek naar het icoon om het snijpunt van de twee grafieken te bepalen. Eenmaal dat we alle snijpunten hebben moeten we maar enkel de verschillende $x$-waarden van deze punten aflezen om de oplossingenverzameling te bepalen:
+
+$$V=\{-1, 1, 3\}$$
+
+\subsection*{Tweede methode}
+
+\paragraph*{Voorbeeld:} Los op in $\mathbb{R}$
+$$x^3-2x^2-1=x^2+x-4$$
+
+We herschrijven deze vergelijking eerst in zijn standaardvorm:
+$$\LRA x^3-3x^2-x + 3=0$$
+
+We hoeven nu enkel het linkerlid als de functie
+$$f(x)=x^3-3x^2-x + 3$$
+te plotten. Want als we naar de vergelijking in standaardvorm kijken zoeken we eigenlijk de nulwaarden van deze functie.
+
+Construeer de grafiek van deze functie $f$ in Geogebra en lees de nulwaarde af via het menu snijpunten van 2 objecten. Je zou dezelfde oplossingenverzameling
+
+$$V=\{-1, 1, 3\}$$
+
+moeten vinden.
+
+\begin{oefening}
+Los op in $\mathbb{R}$\\
+\begin{enumerate}[(a)]
+  \itemsep2em
+  \item $\displaystyle\frac{{x}^{6}}{2}+\frac{21\,{x}^{5}}{4}+\frac{81\,{x}^{4}}{4}+\frac{67\,{x}^{3}}{2}+18\,{x}^{2}=\frac{27\,x}{4}+\frac{27}{4}$
+  \item $\displaystyle{x}^{3}+\frac{7\,{x}^{2}}{2}+x=\frac{3}{2}$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Los volgende vergelijkingen op in $\mathbb{R}$ door gebruik te maken van Horner, controleer daarna je antwoord m.b.v. ICT.\\
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle{x}^{3}+{x}^{2}=2\,x$
+  \item $\displaystyle{x}^{6}-{x}^{5}-13\,{x}^{4}=-13\,{x}^{3}-36\,{x}^{2}+36\,x$
+\end{enumerate}
+\end{oefening}
+
 \begin{oefening}
 Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb{R}$
 \begin{enumerate}[(a)]
@@ -143,7 +213,7 @@ Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb
 
 \newpage
 
-\subsection{Veeltermfuncties}
+\section{Veeltermfuncties}
 
 
 \begin{oefening}
@@ -189,7 +259,10 @@ Teken de grafiek van de tweedegraadsfunctie die de nulwaarden $x=-1$ en $x=3$ he
 \end{oefening}
 
 \newpage
-\subsection{Toepassingen}
+\section{Differentiequotiënt}
+
+\newpage
+\section{Toepassingen}
 
 \begin{oefening}
 \begin{wrapfigure}[6]{r}{4cm}
