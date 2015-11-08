@@ -91,6 +91,7 @@ Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
 \end{enumerate}
 \end{oefening}
 
+\pagebreak
 \subsection{Veeltermvergelijkingen van de tweede graad}
 
 \begin{oefening}
@@ -215,26 +216,205 @@ Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb
 
 \section{Veeltermfuncties}
 
+\subsection{Definities}
+
+\paragraph*{Veeltermfunctie}
+\begin{mdframed}
+Een {\bf veeltermfunctie} is een reële functie waarvan het functievoorschrift gegeven wordt door een veelterm:
+$$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$$
+\end{mdframed}
+
+De {\bf graad van de veeltermfunctie} is gelijk aan de graad van de veelterm. In de definitie is de veeltermfunctie dus van de $n$-de graad.
 
 \begin{oefening}
-Maak voor de volgende functies een tabel en een grafiek. Noteer aan de hand van de grafiek het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen en dalen, de extreme waarde (minima en maxima) en de symmetrieën.
-\end{oefening}
+Welke van de volgende functies zijn veeltermfuncties. Als het veeltermfuncties zijn, wat is dan hun graad?
 \begin{enumerate}[(a)]
-  \item $f(x)=\frac{2}{3}x+2$
+  \itemsep1em
+  \item $f(x)=\dfrac{2}{3}x+2$
+  \item $f(x)=42$
   \item $f(x)=0.5x^2-x-1.5$
-  \item $f(x)=-\frac{3}{4}x^2+3x$
+  \item $f(x)=\dfrac{3}{x^2}+\dfrac{2}{x}+1$
+  \item $f(x)=-\dfrac{3}{4}x^2+3x$
   \item $f(x)=3x^2-0.5x^3$
 \end{enumerate}
+\end{oefening}
 
-\newpage
+\subsection{Veeltermfuncties van graad 0}
+
+\begin{itemize}
+  \item Synoniemen voor deze functies zijn nulveeltermfuncties of {\bf constante functies}. Wij zullen vanaf nu de benaming constante functie gebruiken.
+  \item Deze functies hebben de vorm
+  $$f(x) = a$$
+  met $a$ een reëel getal.
+  \item De grafiek van deze functie is een horizontale rechte evenwijdig met de $x$-as.
+  \item Het domein is dus $\mathbb{R}$
+  \item De grafiek van deze functie snijdt de $y$-as in het punt $(0, a)$.
+  \item Als $a\neq 0$ dan heeft deze functie geen nulwaarden.
+  \item Als $a=0$ dan heeft deze functie alle reële getallen als nulwaarden.
+\end{itemize}
+
+\begin{oefening}
+Beschouw de functie 
+$$f(x)=-2\;.$$
+\begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+\end{enumerate}
+\end{oefening}
+
+\paragraph*{Constante functie beschrijven}
+\begin{mdframed}
+\begin{itemize}
+  \item Functievoorschrift: $f(x)=a$
+  \item $\dom f = \mathbb{R}$
+  \item Nulwaarden:
+  \begin{itemize}
+    \item Als $a\neq 0$ dan geen nulwaarden.
+    \item Als $a=0$ dan zijn de nulwaarden $\mathbb{R}$.
+  \end{itemize}
+  \item Tekenverloop:
+  \begin{center}
+    \begin{tabular}{c|lcr}
+    $x$ & $-\infty$ & & $+\infty$\\
+    \hline
+    $f(x)$ & & teken van $a$ &       
+    \end{tabular}
+  \end{center}
+  \item Functiewaardentabel en grafiek: /
+\end{itemize}
+\end{mdframed}
+
+\begin{oefening}
+Beschrijf volgende constante functies:
+\begin{enumerate}[(a)]
+  \item $f(x)=42$
+  \item $f(x)=0$
+\end{enumerate}
+\end{oefening}
+
+\subsection{Veeltermfuncties van graad 1}
+
+\begin{itemize}
+  \item Synoniemen voor deze functies zijn {\bf eerstegraadsfuncties} of lineaire functies. Wij zullen vanaf nu de benaming eerstegraadsfunctie gebruiken.
+  \item Deze functies hebben de vorm
+  $$f(x) = ax+b $$
+  met $a$ en $b$ een reëel getallen en $a$ verschillend van $0$.
+  \item De grafiek van deze functie is een schuine rechte die stijgt indien $a > 0$ en daalt indien $a<0$.
+  \item Het domein is dus $\mathbb{R}$.
+  \item De grafiek van deze functie snijdt de $x$-as in het punt $(-\dfrac{b}{a}, 0)$ en $x_0=-\dfrac{b}{a}$ is de enige nulwaarde van de functie.
+  \item De grafiek van deze functie snijdt de $y$-as in het punt $(0, b)$.
+  \item De grafiek van deze functie heeft geen extrema.
+\end{itemize}
+
+\begin{oefening}
+Beschouw de functie 
+$$f(x)=-\dfrac{1}{2}x+2\;.$$
+\begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Waar snijdt deze functie de assen?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+\end{enumerate}
+\end{oefening}
+
+\paragraph*{Eerstegraadsfunctie beschrijven}
+\begin{mdframed}
+\begin{itemize}
+  \item Functievoorschrift: $f(x)=ax + b$
+  \item $\dom f = \mathbb{R}$
+  \item Nulwaarde: $x_0=-\dfrac{b}{a}$
+  \item Tekenverloop:
+  \begin{center}
+    \begin{tabular}{c|lp{2.5cm}cp{1.5cm}r}
+    $x$ & $-\infty$ & & $x_0$ & & $+\infty$\\
+    \hline
+    $f(x)$ & & tegengesteld teken van $a$ & & teken van $a$ &       
+    \end{tabular}
+  \end{center}
+  \item Functiewaardentabel: twee, hoogstens drie koppels is voldoende
+  \item Grafiek maken
+  \item Stijgen\&dalen:\\
+  \begin{minipage}{0.45\textwidth}
+    \centering $a>0$\\
+    \begin{tabular}{c|lcr}
+    $x$ & $-\infty$ & & $+\infty$\\
+    \hline
+    $f(x)$ & & $\nearrow$ &       
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \centering $a<0$\\
+    \begin{tabular}{c|lcr}
+    $x$ & $-\infty$ & & $+\infty$\\
+    \hline
+    $f(x)$ & & $\searrow$ &       
+    \end{tabular}
+  \end{minipage}
+\end{itemize}
+\end{mdframed}
+
+\begin{oefening}
+Beschrijf volgende eerstegraadsfuncties:
+\begin{enumerate}[(a)]
+  \item $f(x)=2x-3$
+  \item $f(x)=-x+4$
+\end{enumerate}
+\end{oefening}
+
+\subsection{Veeltermfuncties van graad 2}
+
+\begin{itemize}
+  \item Synoniemen voor deze functies zijn {\bf tweedegraadsfuncties} of kwadratische functies. Wij zullen vanaf nu de benaming tweedegraadsfunctie gebruiken.
+  \item Deze functies hebben de vorm
+  $$f(x) = ax^2+bx+c $$
+  met $a$, $b$ en $c$ een reëel getallen en $a$ verschillend van $0$.
+  \item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
+  \item De grafiek van deze functie is een parabool met symmetrieas evenwijdig met de $y$-as.
+  \item Als $a>0$ dan opent de parabool zich naar boven en dat noemen we een {\bf dalparabool}.
+  \item Als $a<0$ dan opent de parabool zich naar beneden en dat noemen we een {\bf bergparabool}.
+  \item De top van de parabool bevindt zich in het punt $(-\dfrac{b}{2a}, -\dfrac{D}{4a})$, waarbij we $D=b^2-4ac$ de discriminant noemen.
+  \item De top is het extrema van de functie, een maximum als $a<0$ en een minimum als $a>0$.
+  \item Een tweedegraadsfunctie kan $0, 1$ of $2$ nulwaarden hebben, afhankelijk van de discriminant.
+\end{itemize}
+
+\begin{oefening}
+Beschouw de functie 
+$$f(x)=x^2-x-6\;.$$
+\begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Waar snijdt deze functie de assen?
+  \item Heeft deze functie een extremum, waar ligt dit extremum en hoe noemen we dit extremum in deze context?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\subsection{Veeltermfuncties van graad 3 of hoger}
+
+\begin{itemize}
+  \item We noemen zulk een functie wel nog eens een {\bf hogeregraadsveeltermfunctie}.
+  \item Deze functies hebben de algemene vorm van een veeltermfunctie
+  $$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$$
+  \item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
+  \item Een veeltermfunctie van graad $n$ heeft hoogstens $n$ nulwaarden. 
+  \item Veelal vinden we de nulwaarden m.b.v. Horner.
+  \item We onderzoeken best zulk een functie m.b.v. ICT, bijvoorbeeld met Geogebra.
+\end{itemize}
 
 \begin{oefening}
 Met Geogebra werd de grafiek van de functie met functievoorschrift
 $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de nulwaarden en de extrema af. Bepaal het tekenverloop, het stijgen en dalen en de symmetrieën van de functie.
-\end{oefening}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[scale=0.7, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-7.22,-6.82) grid (8.13,6.66);
 \draw[->,color=black] (-7.22,0) -- (8.13,0);
 \foreach \x in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
@@ -249,9 +429,20 @@ $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de
 \draw[line width=1.6pt, smooth,samples=100,domain=-2.2:2.2] plot(\x,{(\x)^5-5*(\x)^3+4*(\x)});
 \end{tikzpicture}
 \end{center}
+\end{oefening}
 
 \begin{oefening}
 Teken de grafiek van de eerstegraadsfunctie die als nulwaarde $x=3$ heeft en die de $y$-as snijdt in het punt $(0,-6)$. Kan je het functievoorschrift vinden voor deze functie?
+\end{oefening}
+
+\begin{oefening}
+Maak voor de volgende functies een tabel en een grafiek. Noteer aan de hand van de grafiek het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen en dalen, de extreme waarde (minima en maxima) en de symmetrieën.
+\begin{enumerate}[(a)]
+  \item $f(x)=\frac{2}{3}x+2$
+  \item $f(x)=0.5x^2-x-1.5$
+  \item $f(x)=-\frac{3}{4}x^2+3x$
+  \item $f(x)=3x^2-0.5x^3$
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
