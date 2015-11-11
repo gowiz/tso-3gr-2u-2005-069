@@ -60,6 +60,40 @@ Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
 
 \section{Veeltermvergelijkingen}
 
+\subsection{Definitie}
+
+\paragraph{Veelterm}
+\begin{mdframed}
+Een {\bf reële veelterm} in de veranderlijke $x$ is een som van ééntermen:
+$$ a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 \;.$$
+De reële getallen $a_n, a_{n-1}, \cdots, a_1, a_0$ noemen we de {\bf coëfficiënten} van de veelterm.
+\end{mdframed}
+
+\paragraph{Veeltermvergelijking}
+\begin{mdframed}
+Een {\bf veeltermvergelijking} in één onbekende $x$ is een vergelijking die in de vorm
+$$a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 = 0$$
+gebracht kan worden.\\
+De hoogste exponent bij de onbekende $x$ is de {\bf graad} van de veelterm.
+\end{mdframed}
+
+\begin{oefening}
+Zijn volgende vergelijkingen veeltermvergelijkingen en zo ja, van welke graad?
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $2x + 2 = 0$
+  \item $\sqrt{3x+1} = 0$
+  \item $x^2-3x+8=0$
+  \item $x^4=-16$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\paragraph{Oplossen van een veeltermvergelijking}
+\begin{mdframed}
+Een veeltermvergelijking {\bf oplossen} is het zoeken naar alle onbekenden $x$ zodat de vergelijking waar wordt.
+\end{mdframed}
+
 \begin{oefening}
 Beschouw de vergelijking
 $$x^3-6x^2+5x+12=0\;.$$
@@ -67,12 +101,34 @@ $$x^3-6x^2+5x+12=0\;.$$
   \item Onderzoek of de gehele getallen van -3 tot 3 aan deze vergelijking voldoen.
   \item Zijn er nog andere getallen die aan deze vergelijking voldoen?
 \end{enumerate}
+\end{oefening}
 
+\pagebreak
 \subsection{Veeltermvergelijkingen van de eerste graad}
 
-\end{oefening}
+\begin{itemize}
+  \item Synoniem: eerstegraadsvergelijking, lineaire vergelijking
+  \item Standaardvorm:
+  $$ax + b = 0$$
+  met $a, b \in \mathbb{R}$ en $a\neq 0$
+  \item Oplossing:
+  $$V=\{-\dfrac{b}{a}\}$$
+\end{itemize}
+
+\paragraph{Werkwijze om een eerstegraadsvergelijking op te lossen}
+\begin{enumerate}
+  \item Haakjes wegwerken
+  \item Noemers wegwerken
+  \item Onbekenden links, bekenden rechts
+  \item Vereenvoudigen
+  \item Onbekende afzonderen
+  \item Oplossingenverzameling opschrijven en proef maken
+\end{enumerate}
+
+
 \begin{oefening}
 Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep0.7em
   \item $4x-8=0$
@@ -89,10 +145,32 @@ Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
   \item $\dfrac{x}{5}+\dfrac{x}{2}=-7$
   \item $\dfrac{3-x}{4}-\dfrac{x-2}{3}=\dfrac{x}{2}-\dfrac{4x+1}{12}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van de tweede graad}
+
+\begin{itemize}
+  \item Synoniem: tweedegraadsvergelijking, vierkantsvergelijking, kwadratische vergelijking
+  \item Standaardvorm:
+  $$ax^2 + bx + c = 0$$
+  met $a, b, c \in \mathbb{R}$ en $a\neq 0$
+  \item Oplossen m.b.v. de discriminantmethode:
+  \begin{itemize}
+    \item Bereken de discriminant $D=b^2-4ac$
+    \item Drie gevallen:
+    \begin{itemize}
+      \item als $D<0$, dan zijn er geen oplossingen
+      $$V=\emptyset$$
+      \item als $D>0$, dan zijn er twee verschillende oplossingen: $x_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}$
+      $$V=\{x_1, x_2\}$$
+      \item als $D=0$, dan heeft de vergelijking één oplossing (eigenlijk twee samenvallende oplossingen)
+      $$V=\{\dfrac{-b}{2a}\}$$
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
 
 \begin{oefening}
 Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
@@ -124,7 +202,66 @@ Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
 \end{enumerate}
 \end{oefening}
 
-\subsection{Veeltermvergelijkingen van graad $\geq 2$}
+\pagebreak
+\subsection{Veeltermvergelijkingen van graad $\geq 3$}
+
+Veeltermvergelijkingen van hogere graad kunnen we oplossen door handmatig (m.b.v. een ZRM) één oplossing $x=a$ te zoeken waardoor we van de veelterm een deler $x-a$ kunnen afsplitsen. De restveelterm kan gevonden worden m.b.v. het {\bf algoritme van Horner}.
+
+\paragraph{Voorbeeld}
+
+We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
+
+\begin{itemize}
+  \item Zoek een $x$ zodat de vergelijking waar wordt:
+  \begin{description}
+    \item[$x=1$] $\rightarrow 1^3-4\cdot 1^2+1+6 = 4 \neq 0$
+    \item[$x=0$] $\rightarrow 0^3-4\cdot 0^2+0+6 = 6 \neq 0$
+    \item[$x=-1$] $\rightarrow (-1)^3-4\cdot (-1)^2+(-1)+6 = 0$
+  \end{description}
+  \item Dus $x=-1$ is een oplossing. Dit wil zeggen dat $x-(-1)$ of korter $x+1$ een deler is van de de veelterm. We herschrijven de vergelijking:
+  \begin{eqnarray*}
+    x^3-4x^2+x+6&=&0\\
+    \LRA (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{restveelterm}}&=&0\\
+  \end{eqnarray*}
+  \item De restveelterm vinden we m.b.v. het algoritme van Horner:
+  \begin{center}
+    \begin{tabular}{c|cccc}
+      & 1 & -4 & 1 & 6\\
+    -1 & $\downarrow$ & -1 & 5 & -6\\
+    \hline
+     & 1 & -5 & 6 & 0
+    \end{tabular}
+  \end{center}
+  \item We krijgen dus:
+    \begin{eqnarray*}
+    x^3-4x^2+x+6&=&0\\
+    \LRA (x+1)(x^2-5x+6)&=&0\\
+  \end{eqnarray*}
+  \item Voor de factor $(x+1)$ hebben we reeds de oplossing $x_0=-1$ gevonden. Ook de factor $(x^2-5x+6)$ heeft oplossingen. Deze vinden we m.b.v. de discriminantmethode:
+  $$x^2-5x+6=0$$
+  $$D=25-4\cdot 1\cdot 6=1$$
+  $$x_{1,2}=\dfrac{5\pm 1}{2}=3\mbox{ en }2$$
+  \item Dus $x^3-4x^2+x+6=0$ heeft als oplossingenverzameling
+  $$V=\{-1, 2, 3\}$$
+\end{itemize}
+
+\begin{oefening}
+Los op in $\mathbb{R}$
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.7em
+  \item $x^3+2x-3=0$
+  \item $7x^3+8x^2+3x+2=0$
+  \item $x^3-x+6=0$
+  \item $3x^2(x-1)=\dfrac{7}{2}x^2-2$
+  \item $8x^3+12x^2+6x+2=0$
+  \item $20x^3+60x^2+45x=0$
+  \item $x^4-4x^3-x^2+16x-12=0$
+  \item $x+\dfrac{7x}{2}=\dfrac{3x^3}{2}+\dfrac{3x^2}{2}+\dfrac{3}{2}$
+  \item $x^3+(2x+1)^2=x+1$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
 
 \begin{oefening} % www3.ul.ie/~mlc/support/.../chap3/3_3.pdf
 Los volgende vergelijkingen van graad hoger dan twee op in $\mathbb{R}$:
@@ -137,6 +274,8 @@ Los volgende vergelijkingen van graad hoger dan twee op in $\mathbb{R}$:
   \item $22x+8=3x^3+7x^2$
 \end{enumerate}
 \end{oefening}
+
+\pagebreak
 
 \subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
 
@@ -196,6 +335,7 @@ Los volgende vergelijkingen op in $\mathbb{R}$ door gebruik te maken van Horner,
 
 \begin{oefening}
 Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb{R}$
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep0.7em
   \item $-5x+4=0$
@@ -209,6 +349,7 @@ Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb
   \item $(x+\sqrt{5})(x^2+2x-8)=0$
   \item $5x^2+3x-4=0$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 
@@ -242,6 +383,7 @@ Welke van de volgende functies zijn veeltermfuncties. Als het veeltermfuncties z
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
 
 \subsection{Veeltermfuncties van graad 0}
 
