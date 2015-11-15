@@ -831,13 +831,13 @@ Het is aan de grafiek duidelijk dat de loper niet langer hard liep in het laatst
   De gemiddelde snelheid in dat interval is dus $0.1666\ldots \kmpermin = 10 \kmperh$
 \end{itemize}
 
-Dus door de afgelegde afstand te delen door de lengte van het tijdsinterval vinden we de gemiddelde snelheid. Eigenlijk berekenen we zo de gemiddelde verandering over dat interval. Dit wordt de differentiequotiënt in dat interval genoemd.
+Dus door de afgelegde afstand te delen door de lengte van het tijdsinterval vinden we de gemiddelde snelheid. Eigenlijk berekenen we zo de gemiddelde verandering over dat interval. Dit wordt het differentiequotiënt in dat interval genoemd.
 
 \subsection{Definitie}
 
 \paragraph{Differentiequotiënt}
 \begin{mdframed}
-De differentiequotiënt $\dfrac{\Delta y}{\Delta x}$ van een functie $f$ voor een interval $[a, b]$ is de gemiddelde verandering van deze functie in interval. We bereken
+het differentiequotiënt $\dfrac{\Delta y}{\Delta x}$ van een functie $f$ voor een interval $[a, b]$ is de gemiddelde verandering van deze functie in interval. We bereken
 $$\dfrac{\Delta y}{\Delta x}=\dfrac{f(b)-f(a)}{b-a}$$
 \end{mdframed}
 
@@ -856,7 +856,8 @@ $$\dfrac{\Delta y}{\Delta x}=\dfrac{f(b)-f(a)}{b-a}$$
 \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (0,2.38)-- (2.5,2.38);
 \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (2,0)-- (2,2);
 \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (2.5,0)-- (2.5,2.38);
-\draw [line width=1.6pt,dash pattern=on 5pt off 3pt,domain=1:3] plot(\x,{(--0.25--0.38*\x)/0.5});
+\draw [color=gray, line width=1.2pt,dash pattern=on 5pt off 3pt,domain=1:3] plot(\x,{(--0.25--0.38*\x)/0.5});
+\draw [line width=1.6pt,domain=2:2.5] plot(\x,{(--0.25--0.38*\x)/0.5});
 \draw (1.9,-0.1) node[anchor=north west] {$a$};
 \draw (2.4,-0.1) node[anchor=north west] {$b$};
 \draw (-0.5,2.1) node[anchor=north west] {$f(a)$};
@@ -873,15 +874,23 @@ $$\dfrac{\Delta y}{\Delta x}=\dfrac{f(b)-f(a)}{b-a}$$
 \end{tikzpicture}
 \end{center}
 
-De differentiequotiënt geeft de richtingscoëfficiënt van het lijnstuk dat door de punten $(a,f(a))$ en $(b,f(b))$ loopt, zie op bovenstaande figuur.
+het differentiequotiënt geeft de richtingscoëfficiënt van het verbindingslijnstuk dat door de punten $(a,f(a))$ en $(b,f(b))$ loopt, zie op bovenstaande figuur. Dit lijnstuk noemen we de {\bf koorde} van $f$ in $[a,b]$.
 
 Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worden als $\dfrac{\Delta y}{\Delta x}_{[a,b]}$.
 
 \pagebreak
 \subsection{Differentiequotiënt van een eerstegraadsfunctie}
 
-Beschouw de eerstegraadsfunctie $f(x)=2x+1$
+\subsubsection{Voorbeeld}
 
+\begin{minipage}{0.6\textwidth}
+Beschouw de eerstegraadsfunctie $f(x)=2x+1$, hier rechts getekend. We bepalen het differentiequotiënt in de intervallen $[0,1]$ en $[-2,1]$:\\
+$$\dfrac{\Delta y}{\Delta x}=\dfrac{f(1)-f(0)}{1-0}=2$$
+$$\dfrac{\Delta y}{\Delta x}=\dfrac{f(1)-f(-2)}{1-(-2)}=2$$
+
+\vspace*{3cm}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
 \begin{center}
 \definecolor{yqyqyq}{rgb}{0.5,0.5,0.5}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
@@ -898,13 +907,156 @@ Beschouw de eerstegraadsfunctie $f(x)=2x+1$
 \draw[line width=1.6pt, smooth,samples=100,domain=-3.12:2.7800000000000002] plot(\x,{2*(\x)+1});
 \draw [line width=1.2pt,color=yqyqyq] (0,1)-- (1,1);
 \draw [line width=1.2pt,color=yqyqyq] (1,1)-- (1,3);
-\draw [line width=1.2pt,color=yqyqyq] (-2,-3)-- (-1,-3);
-\draw [line width=1.2pt,color=yqyqyq] (-1,-3)-- (-1,-1);
-\draw (0.26,0.9) node[anchor=north west] {$\Delta x$};
-\draw (1.24,2.18) node[anchor=north west] {$\Delta y$};
+%\draw [line width=1.2pt,color=yqyqyq] (-2,-3)-- (-1,-3);
+%\draw [line width=1.2pt,color=yqyqyq] (-1,-3)-- (-1,-1);
+\draw (0.1,0.9) node[anchor=north west] {$\Delta x$};
+\draw (1.1,2.2) node[anchor=north west] {$\Delta y$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsubsection{Besluit}
+
+Het differentiequotiënt van een eerstegraadsfunctie is constant en gelijk aan de richtingscoëfficiënt (rico).
+
+\subsubsection{Richtingscoëfficient}
+\begin{itemize}
+  \item Een strikt positieve rico stemt overeen met een stijgende rechte.
+  \item Een strikt negatieve rico stemt overeen met een dalende rechte.
+  \item Hoe groter de absolute waarde van de rico, hoe steiler de rechte.
+  \item Vergelijking van de rechte:
+  $$y-y_1=m(x-x_1)$$
+  hierin is $m=\dfrac{\Delta y}{\Delta x}=\dfrac{y_2-y_1}{x_2-x_1}$.
+\end{itemize}
+
+\begin{oefening}
+Bepaal het differentiequotiënt in het interval $[-3,-1]$ van de rechte
+\begin{enumerate}[(a)]
+  \item die door de punten $(-3, 4)$ en $(-1, -2)$ gaat.
+  \item die beschreven wordt door de functie $f(x)=-3x+8$.
+  \item die door de punten $(-2, 2)$ en $(3, 8)$ gaat.
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\subsection{Differentiequotiënt van een tweedegraadsfunctie}
+
+\subsubsection{Voorbeeld}
+
+Beschouw de tweedegraadsfunctie $f(x)=0.5x^2$.
+
+\begin{center}
+\definecolor{aqaqaq}{rgb}{0.6274509803921569,0.6274509803921569,0.6274509803921569}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,, xstep=1.0cm,ystep=1.0cm] (-4.418181818181817,-1.5090909090909044) grid (4.618181818181812,6.236363636363638);
+\draw[->,color=black] (-4.418181818181817,0.) -- (4.618181818181812,0.);
+\foreach \x in {-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.5090909090909044) -- (0.,6.236363636363638);
+\foreach \y in {-1.,1.,2.,3.,4.,5.,6.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.418181818181817,-1.5090909090909044) rectangle (4.618181818181812,6.236363636363638);
+\draw[line width=1.6pt,smooth,samples=100,domain=-4.418181818181817:4.618181818181812] plot(\x,{0.5*(\x)^(2.0)});
+\draw [line width=1.2pt,color=aqaqaq] (-3.,4.5)-- (-3.,0.5);
+\draw [line width=1.2pt,color=aqaqaq] (-3.,0.5)-- (-1.,0.5);
+\draw [line width=1.2pt,color=aqaqaq] (1.,0.5)-- (2.,0.5);
+\draw [line width=1.2pt,color=aqaqaq] (2.,0.5)-- (2.,2.);
+\draw (2.0,1.5) node[anchor=north west] {$\Delta y$};
+\draw (1.2,0.6) node[anchor=north west] {$\Delta x$};
+\draw (-3.8,2.6) node[anchor=north west] {$\Delta y$};
+\draw (-2.5,0.6) node[anchor=north west] {$\Delta x$};
+\begin{scriptsize}
+\draw[color=black] (-3.6727272727272715,7.50909090909091) node {$f$};
+\end{scriptsize}
 \end{tikzpicture}
 \end{center}
 
+We bepalen het differentiequotiënt in de intervallen $[1,2]$ en $[-3,-1]$:\\
+$$\dfrac{\Delta y}{\Delta x}=\dfrac{f(2)-f(1)}{2-1}=1.5$$
+$$\dfrac{\Delta y}{\Delta x}=\dfrac{f(-1)-f(-3)}{-1-(-3)}=-2$$
+
+\subsubsection{Besluit}
+Het differentiequotiënt van deze functie is niet constant.
+
+\subsubsection{Meetkundige betekenis van het differentiequotiënt}
+
+We bekijken terug het differentiequotiënt in het interval $[1,2]$, deze is $\frac{\Delta y}{\Delta x}=1.5$. We bepalen nu de vergelijking van de rechte door de punten $A(1, 0.5)$ en $B(2,2)$:
+$$y-y_0=\dfrac{y_1-y_0}{x_1-x_0}(x-x_0)$$
+$$\LRA y=1.5x-1$$
+
+Het differentiequotient is de richtingscoëfficiënt van de rechte die bepaald wordt door de koorde die bij de grafiek en het beschouwde interval hoort.
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Maak de grafiek van de functie
+$$f(x)=x^2-4x$$
+en duid er de punten $P(1,-3)$ en $Q(4,0)$ op aan.
+\begin{enumerate}[(a)]
+  \item Bereken de gemiddelde toename op het interval $[1,4]$.
+  \item Wat is de vergelijking van de rechte die door de punten $P$ en $Q$ gaat.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Als een zeilwagen start en de windkracht is constant, dan neemt zijn snelheid $v$ evenredig met de tijd $t$ toe. Voor de afgelegde afstand $s$ (in $\m$) geldt
+$$s=1.2t^2$$
+met de tijd $t$ in seconden. Bereken het differentiequotiënt in het gesloten interval $[1,4]$.
+\begin{center}
+  \includegraphics{zeilwagen}
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de baan van een kogel die loodrecht de lucht in wordt geschoten met een beginsnelheid van $25\mpers$. De baan van de kogel wordt beschreven door de vergelijking
+$$y=25t-\frac{1}{2}gt^2\;.$$
+Hierbij is $t$ de tijd (in seconden), $y$ is de hoogte (in meter) en $g=9.81\mpers^2$ is de valversnelling. De hoofdvraag is: {\em Wat is de snelheid van die kogel na 1 seconde?}
+
+Om dit op te lossen los je volgende deelvragen op:
+\begin{enumerate}[(a)]
+  \item Bereken $\Delta t$ en $\Delta y$ in het interval $[1,3]$.
+  \item Wat is nu de gemiddelde snelheid (in $\mpers$) van de kogel in dit tijdsinterval?
+  \item Bereken de gemiddelde snelheid van de kogel in het tijdsinterval $[1,t]$, waarbij we $t$ steeds dichter laten naderen tot $1$. Hiervoor maak je best een tabel met twee kolommen. In de linker kolom schrijf je de intervallen die steeds kleiner worden, begin met $[1,3]$, dan $[1,2]$, dan $[1,1.5]$, \ldots In de rechter kolom noteer je dan de berekening van de gemiddelde snelheid in dat interval.
+  \item Naar welk getal nadert de gemiddelde snelheid?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bij een wielrenner in een tijdrit worden op bepaalde plaatsen tussentijden genoteerd. Die vind je in de volgende tabel:
+
+\begin{center}
+  \begin{tabular}{r|cccccccc}
+  tijd $t$ (min) & 0 & 10 & 18 & 34 & 44 & 60 & 78 & 94\\
+  \hline
+  afstand $s$ (km) & 0 & 8 & 12 & 18 & 23 & 29 & 37 & 45\\
+  \end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+  \item Bereken het differentiequotiënt op het tijdsinterval $[0,10]$.
+  \item Welke betekenis heeft dit getal voor de wielrenner? (Omcirkelen wat juist is.)
+  \begin{enumerate}[(A)]
+    \item Het is de afgelegde afstand in die periode.
+    \item Het is de snelheid gedurende die periode.
+    \item Het is de gemiddelde snelheid gedurende die periode.
+    \item Het is de verlopen tijd in die periode.
+  \end{enumerate}
+  \item Je maakt bij deze tabel een grafiek door de punten met lijnstukken te verbinden. Op de horizontal as komt de tijd $t$ in minuten, op de verticale as de afgelegde afstand $s$ in kilometer. Bereken de rico van het lijnstuk dat hoort bij het interval $[44,60]$.
+  \item Bereken voor het tijdsinterval $[18,44]$ de waarde $\dfrac{\Delta s}{\Delta t}$ in twee decimalen nauwkeurig.
+  \item Welke betekenis hebben de bij (c) en (d) gevonden getallen voor de grafiek? (Omcirkelen wat juist is.)
+  \begin{enumerate}[(A)]
+    \item Ze geven de helling weer van het lijnstuk door de punten op de grafiek bij het begin en het einde van het tijdsinterval.
+    \item Ze geven de totale toename van de afstand weer op het tijdsinterval.
+    \item Ze geven de gemiddelde toename van de afstand per minuut weer op het tijdsinterval.
+  \end{enumerate}
+  \begin{center}
+  \includegraphics{tijdrit}
+  \end{center}
+\end{enumerate}
+
+\end{oefening}
 
 \newpage
 \section{Toepassingen}
@@ -960,19 +1112,19 @@ waarbij:
 
 \begin{oefening}
 
-\begin{wrapfigure}[3]{l}{3cm}
-\vspace*{-0.6cm}
-\begin{center}
-  \includegraphics[width=3cm]{davidscott}
-\end{center}
-\end{wrapfigure}
-
-In 1971 demonstreerde astronaut Davit Scott dat op de maan een veer en een hamer even snel vallen, omdat er op de maan geen atmosfeer en dus geen luchtweerstand is. Om de maan is de valversnelling $g=1.65 \;m/s^2$.\\
+\begin{minipage}{0.7\textwidth}
+In 1971 demonstreerde astronaut David Scott dat op de maan een veer en een hamer even snel vallen, omdat er op de maan geen atmosfeer en dus geen luchtweerstand is. Op de maan is de valversnelling $g=1.65 \mpers^2$.\\
 
 \begin{enumerate}[(a)]
   \item Je laat op de maan een hamer en een veer vallen vanaf $5$ meter. Na hoeveel seconden bereiken ze de maanbodem (rond opnieuw af tot op een honderdste van een seconde)?
   \item Wanneer bereikt de hamer de aardbodem bij dezelfde proef?
 \end{enumerate}
+\end{minipage}
+\begin{minipage}{0.29\textwidth}
+\vspace*{-0.4cm}
+\includegraphics[width=1\textwidth]{hammerfeather}  
+\end{minipage}
+
 \end{oefening}
 
 \begin{oefening}
@@ -1023,6 +1175,20 @@ Bepaal hoe oud Diophantus werd aan de hand van het volgende raadsel:
 
 {\em God vergunde hem een zesde deel van zijn leven een jongen te zijn. Na een twaalfde deel kreeg hij een bebaard gelaat. Na nog eens een zevende deel ontstak hij het huwelijksvuur. Vijf jaar na zijn huwelijk kreeg hij een zoon, een geliefd maar ongelukkig kind. Na het bereiken van de helft van zijn vaders volle levensjaren sloeg het wrede noodlot toe. De vader had de laatste vier jaar van zijn leven om over het verdriet heen te komen. }
 
+\section*{Peilingen naar vroeger}
 
+\begin{oefening}
+$(2c-5)^5=$
+\begin{enumerate}[(A)]
+  \item $4c^2+25$
+  \item $4c^2-25$
+  \item $4c^2-10c+25$
+  \item $4c^2-20c+25$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Hoe breed mag een rechthoekig glazen blad met een lengte van $3.35$ meter maximaal zijn om door een deuropening van $2.15$ meter hoog en $0.85$ meter breed te kunnen? Rond af op 0.01 meter. Je hoeft geen rekening te houden met de dikte van het glas.
+\end{oefening}
 
 \end{document}
