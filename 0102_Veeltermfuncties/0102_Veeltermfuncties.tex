@@ -1131,6 +1131,7 @@ In 1971 demonstreerde astronaut David Scott dat op de maan een veer en een hamer
 Is het mogelijk dat een rechthoek een omtrek heeft van $52 \cm$ en een oppervlakte van $148.75\cm^2$? Verklaar.
 \end{oefening}
 
+
 \begin{oefening}
 Twee schepen verlaten tegelijkertijd de haven van Zeebrugge. Het schip 'De Regenboog' vaart naar het westen en het schip 'De Viking' vaart naar het noorden. Na verloop van tijd bevinden ze zich op $270$ km afstand van elkaar. 'De Viking' heeft $50 \km$ meer gevaren dan 'De Regenboog'.
 \begin{enumerate}[(a)]
@@ -1179,16 +1180,51 @@ Bepaal hoe oud Diophantus werd aan de hand van het volgende raadsel:
 
 \begin{oefening}
 $(2c-5)^5=$
+\begin{center}
 \begin{enumerate}[(A)]
   \item $4c^2+25$
   \item $4c^2-25$
   \item $4c^2-10c+25$
   \item $4c^2-20c+25$
 \end{enumerate}
+\end{center}
 \end{oefening}
 
 \begin{oefening}
 Hoe breed mag een rechthoekig glazen blad met een lengte van $3.35$ meter maximaal zijn om door een deuropening van $2.15$ meter hoog en $0.85$ meter breed te kunnen? Rond af op 0.01 meter. Je hoeft geen rekening te houden met de dikte van het glas.
+\end{oefening}
+
+\begin{oefening}
+Bereken en vereenvoudig: $$3\sqrt{32}-\sqrt{8}$$
+\end{oefening}
+
+\begin{oefening}
+Bereken en vereenvoudig:
+$$-2a-\left(\left(3b+2a\right)-3\left(a+b\right)\right)$$
+\end{oefening}
+
+\begin{oefening}
+Bepaal van de functie $f$, waarvan hieronder de grafiek werd getekend, alle nulwaarden en alle extrema.
+
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3.0cm,y=3.0cm]
+\draw [color=cqcqcq,, xstep=0.5cm,ystep=0.5cm] (-1.2260478713808156,-1.191325606264551) grid (2.1500561653109176,1.1333223003558153);
+\draw[->,color=black] (-1.2260478713808156,0.) -- (2.1500561653109176,0.);
+\foreach \x in {-1.,-0.5,0.5,1.,1.5,2.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.191325606264551) -- (0.,1.1333223003558153);
+\foreach \y in {-1.,-0.5,0.5,1.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.2260478713808156,-1.191325606264551) rectangle (2.1500561653109176,1.1333223003558153);
+\draw[line width=2.pt,smooth,samples=100,domain=-1.2260478713808156:2.1500561653109176] plot(\x,{1.0/2.0*sin((2.0*3.1415926535*(\x))*180/pi)});
+\draw (1.2,0.7) node[anchor=north west] {$f$};
+\begin{scriptsize}
+\draw[color=black] (-1.7195885038632934,0.4538098353437082) node {$f$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
 \end{oefening}
 
 \end{document}
