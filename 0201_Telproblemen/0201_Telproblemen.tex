@@ -335,10 +335,10 @@ Voor de samenstelling van je lessenrooster moet je twee keuzevakken kiezen, elk 
 \end{oefening}
 
 \begin{oefening}
-Het letterslot van een kluis bestaat uit een ring met 10 letters, een ring met 8 letters en een ring met 6 letters. Om een kluis te openen moet elke ring zo geplaatst worden dat een bepaalde stand inneemt.
+Het letterslot van een kluis bestaat uit een eerste ring met 10 letters, een tweede ring met 8 letters en een derde ring met 6 letters. Om een kluis te openen moet elke ring zo geplaatst worden dat een bepaalde stand inneemt.
 \begin{enumerate}[(a)]
   \item Hoeveel lettergroepen moet een inbreker ten hoogste proberen?
-  \item Hoeveel zijn er mogelijk als hij weet dat de eerste letter een E is?
+  \item Hoeveel zijn er mogelijk als hij weet dat de letter van de eerste ring een E is?
 \end{enumerate}
 \end{oefening}
 
@@ -355,7 +355,7 @@ Je hebt gewonnen op de foor. Je mag twee prijzen kiezen. Je mag kiezen uit drie 
 \end{oefening}
 
 \begin{oefening}
-Konijnenrassen bestaan in drie soorten: dwergkonijnen, gewone konijnen of reuze konijnen. Alle rassen komen voor als zwart, bruin of wit. Het gewone konijn komt ook nog voor in een gevlekte variant. Naast de rechtopstaande oren die we gewoon zijn van de konijnen komen dwerg en reuze konijnen ook voor met hangoren. Hoeveel mogelijke soorten konijnen bestaan er dan?
+Konijnenrassen bestaan in drie soorten: dwergkonijnen, gewone konijnen of reuze konijnen. Alle rassen komen voor als zwart, bruin of wit. Het gewone konijn komt ook nog voor in een zwart-bruin-wit gevlekte variant. Naast de rechtopstaande oren die we gewoon zijn van de konijnen komen dwerg en reuze konijnen ook voor met hangoren. Hoeveel mogelijke soorten konijnen bestaan er dan?
 \end{oefening}
 
 \begin{oefening}
@@ -436,7 +436,7 @@ Leid de formule voor het aantal variaties van $k$ elementen gekozen uit $n$ elem
 \paragraph*{Variaties}
 \begin{mdframed}
 Het aantal {\bf variaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $V^k_n$ en er geldt:
-$$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-p+1)$$
+$$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
 \end{mdframed}
 
 \paragraph*{Opmerking} Er zal steeds gelden dat $k\leq n$.
@@ -446,6 +446,17 @@ $$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-p+1)$$
   \item De positie waarin de elementen worden geplaatst is belangrijk, {\bf volgorde is van belang}.
   \item De elementen kunnen maar éénmaal worden gebruikt, {\bf herhaling is niet mogelijk}.
 \end{itemize}
+
+\begin{oefening}
+Bereken:
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \item $V^3_5$
+  \item $V^2_7$
+  \item $V^4_4$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
 
 \subsection{Bijzonder geval}
 
@@ -765,9 +776,7 @@ $$9!=362880\;.$$
 Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
 \end{oefening}
 
-\subsection{Eigenschap van de n-faculteit}
-
-\paragraph*{Eigenschap}
+\paragraph*{Eigenschap van de n-faculteit}
 \begin{mdframed}
 \begin{align*}
   (n+1)!&=(n+1)n!\\
@@ -832,7 +841,7 @@ $$V^k_n=\dfrac{n!}{(n-k)!}$$
 Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we twee formules:\\
 \begin{itemize}
   \itemsep1em
-  \item $\displaystyle V^{20}_{24}=21\cdot20\cdot19\cdot18\cdots$ of
+  \item $\displaystyle V^{20}_{24}=21\cdot20\cdot19\cdot18\cdot\;\cdots\;\cdot(24-20+1)$
   \item $\displaystyle V^{20}_{24}=\dfrac{24!}{(24-20)!}$
 \end{itemize}
 \begin{enumerate}[(a)]
@@ -872,7 +881,7 @@ wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzamelin
 
 Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje
 herhaald. In een verzameling wordt óók geen element herhaald. Wel, de
-deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling,kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
+deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
 Het aantal van zulke combinaties stellen we nu voor door het symbool $C^4_6$ en kunnen we berekenen met behulp van faculteiten:
 
 $$C^4_6=\dfrac{6!}{4!\cdot (6-4)!}$$
@@ -994,24 +1003,6 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
