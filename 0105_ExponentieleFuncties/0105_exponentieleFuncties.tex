@@ -70,7 +70,8 @@ Je \hfill {\scriptsize(LP2005-069, ET2-3-6)}
 \newpage
 \clearpage
 \thispagestyle{empty}
-\mbox{}
+%\mbox{}
+\tableofcontents
 \newpage
 \clearpage
 \pagenumbering{arabic} 
@@ -92,6 +93,8 @@ a^1 &= a\\
 \forall a \in \mathbb{R}_0 : a^0 &= 1
 \end{align*}
 \end{mdframed}
+
+We lezen de $n$-de macht van $a$ of $a$ tot de macht $n$, $a$ noemen we het {\bf grondtal} en $n$ de {\bf exponent}. Als de exponent even is, spreken we van een {\bf even macht} en anders van een {\bf oneven macht}.
 
 \begin{oefening}
 In de bovenstaande definitie moet $n\in \mathbb{N}\setminus\{0,1\}$, geef de mogelijke waarden voor $n$.
@@ -119,13 +122,14 @@ Geef de tekenregels voor machten:
 \arules{4}
 \end{oefening}
 
+\pagebreak
 \section{Machten met negatieve gehele exponenten}
 
 Vroeger definieerden we reeds machten met negatieve gehele exponenten:
 \paragraph*{Definitie}
 \begin{mdframed}
 \begin{align*}
-\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} = \left(a^{-1}\right)^n=\left(a^n\right)=\dfrac{1}{a^n}
+\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} = \left(a^{-1}\right)^n=\left(a^n\right)^{-1}=\dfrac{1}{a^n}
 \end{align*}
 \end{mdframed}
 
@@ -353,10 +357,11 @@ Noteer korter, indien mogelijk.
     \item $\left(-x^3\right)^2\left(-x^2\right)^3$
     \item $\left(abc\right)^2\left(2bc\right)^3$
     \item $a^{-3}\cdot a$
-%    \item $\left(5a\right)^{-2}$
-%    \item $\left(\dfrac{-3}{y}\right)^{-3}$
-%    \item $\dfrac{\left(6a^3\right)^2}{\left(-3a\right)^3}$
-%    \item $ab^-2:bz^-2$
+    \item $\left(5a\right)^{-2}$
+    \item $\left(\dfrac{-3}{y}\right)^{-3}$
+    \item $\dfrac{\left(6a^3\right)^2}{\left(-3a\right)^3}$
+    \item $ab^-2:bz^-2$
+    \item $(ab^-2):(bz^-2)$
   \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -378,20 +383,20 @@ Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponen
     \item $\left(\dfrac{3a}{2b}\right)^{-1}$
     \item $\left(a^{-2}\right)^{-3}$
     \item $\left(-3x^2\right)^3$
-%    \item $\left(2x\right)^3:\left(2x\right)^2$
-%    \item $-3a\cdot4a^2\cdot a^{-1}$
-%    \item $\left(-a\right)^3:\left(+a\right)^3$
-%    \item $\left(2a\right)^{-2}$
-%    \item $\dfrac{x^2\cdot x^3}{x^4}$
-%    \item $\left(a^2\right)^{-3}$
-%    \item $\left[\left(-2\right)^{-2}\right]^{2}$
-%    \item $\left(-4a\right)^{-2}$
-%    \item $\left(\dfrac{1}{3x}\right)^{-4}$
-%    \item $\left[\left(-\dfrac{1}{3}\right)^{-2}\right]^{-1}$
-%    \item $\left(a^0\right)^{-2}$
-%    \item $\dfrac{a^2\cdot a^2\cdot a^2}{a\cdot a\cdot a}$
-%    \item $\left(a^3\right)^4:a^4$
-%    \item $\left(-3b\right)^{-1}$
+    \item $\left(2x\right)^3:\left(2x\right)^2$
+    \item $-3a\cdot4a^2\cdot a^{-1}$
+    \item $\left(-a\right)^3:\left(+a\right)^3$
+    \item $\left(2a\right)^{-2}$
+    \item $\dfrac{x^2\cdot x^3}{x^4}$
+    \item $\left(a^2\right)^{-3}$
+    \item $\left[\left(-2\right)^{-2}\right]^{2}$
+    \item $\left(-4a\right)^{-2}$
+    \item $\left(\dfrac{1}{3x}\right)^{-4}$
+    \item $\left[\left(-\dfrac{1}{3}\right)^{-2}\right]^{-1}$
+    \item $\left(a^0\right)^{-2}$
+    \item $\dfrac{a^2\cdot a^2\cdot a^2}{a\cdot a\cdot a}$
+    \item $\left(a^3\right)^4:a^4$
+    \item $\left(-3b\right)^{-1}$
 %    \item $\left(-3b^2\right)^{-2}$
 %    \item $\left(\dfrac{1}{2a^2b}\right)^{-3}$
   \end{enumerate}
@@ -524,14 +529,15 @@ $$\sqrt{1+101\cdot99}$$
 {\em hint: merkwaardig product}
 \end{oefening}
 
-
 \newpage
 \section{Machten met rationale exponenten}
 
 Voor $n\in\mathbb{N}$ hebben we $a^n$ reeds gedefinieerd als $a^n=a\cdot a\cdot \ldots \cdot a$. Wat als de exponent nu rationaal is? Dus $n\in\mathbb{Q}^+_0$, met andere woorden, we kunnen $n$ herschrijven als $n=\dfrac{p}{q}$ met $p,q\in\mathbb{N}_0$.
 
 We definiëren:
+\begin{mdframed}
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{\frac{p}{q}}=\sqrt[q]{a^p}$$
+\end{mdframed}
 
 \begin{oefening}
 Gebruik bovenstaande definitie om onderstaande machten uit te rekenen:\\
@@ -748,13 +754,13 @@ Verklaar waarom je \zrm{ZRM} de macht $(-5)^{\sqrt{2}}$ niet kan uitrekenen.
 
 Voor een strikt positief reëel getal $x$ is de {\bf logaritme met grondtal 10} van $x$ de reële exponent die men aan 10 moet geven om als macht $x$ te bekomen.
 
-\paragraph*{Voorbeeld:} Voor het getal duizend is de logaritme het getal $4$ want $10^4$ is gelijk aan $1000$.
+\paragraph*{Voorbeeld:} Voor het getal duizend is de logaritme het getal $3$ want $10^3$ is gelijk aan $1000$.
 
 \paragraph*{Notatie:} We noteren kort
 $$\log x$$
 
 Voor ons voorbeeld hebben we dus
-$$\log 1000 = 4 \mbox{ want } 10^4 = 1000$$
+$$\log 1000 = 3 \mbox{ want } 10^3 = 1000$$
 
 We kunnen de definitie kort schrijven als
 
@@ -788,7 +794,7 @@ Zoek de logaritme met grondtal $a$ van de volgende getallen:\\
   \itemsep1em
   \item $\log_2 16 = $\arule{2cm} want \arule{4cm}
   \item $\log_3 27 = $\arule{2cm} want \arule{4cm}
-  \item $\log_{\frac{1}{2}} 6 = $\arule{2cm} want \arule{4cm}
+  \item $\log_{\frac{1}{2}} 8 = $\arule{2cm} want \arule{4cm}
   \item $\log_2 0.125 = $\arule{2cm} want \arule{4cm}
 \end{enumerate}
 \end{oefening}
@@ -823,8 +829,8 @@ Ook zijn volgende rekenregels aantoonbaar:
 $\forall x,y \in \mathbb{R}_0^+, \forall n\in \mathbb{R}:$
 \begin{align*}
 \log(x\cdot y) &= \log x + \log y && \mbox{logaritme van een product}\\
-\log \dfrac{x}{y} &= \log x + \log y && \mbox{logaritme van een quotiënt}\\
-\log \dfrac{1}{y} &= - \log y && \mbox{logaritme van een invers}\\
+\log \dfrac{x}{y} &= \log x - \log y && \mbox{logaritme van een quotiënt}\\
+\log \dfrac{1}{y} &= - \log y && \mbox{logaritme van een omgekeerde}\\
 \log(x^n) &= n\cdot\log x && \mbox{logaritme van een macht}
 \end{align*}
 \end{mdframed}
@@ -870,6 +876,8 @@ De PageRank is opnieuw een logaritme, er wordt niet gemeten hoe groot de score i
 \begin{minipage}{0.55\textwidth}
 \includegraphics[width=\textwidth]{pagerank}
 \end{minipage}
+
+
 
 \pagebreak
 \section{Exponentiële functies}
@@ -946,7 +954,7 @@ $$f:\mathbb{R}\to\mathbb{R}: x\mapsto a^x$$
 met $a\in\mathbb{R}^+\backslash\{0,1\}$.
 \end{mdframed}
 
-Het getal $a$ wordt het {\bf grondtal} van de exponentiële functie genoemd, de onbepaalde $x$ treed op als de {\bf exponent}.
+Het getal $a$ wordt het {\bf grondtal} van de exponentiële functie genoemd, de onbepaalde $x$ treedt op als de {\bf exponent}.
 
 \begin{oefening}
 In de definitie worden drie eisen opgelegd aan het grondtal $a$, welke en waarom?
@@ -967,12 +975,13 @@ Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze all
 \end{itemize}
 \end{oefening}
 
+\vspace*{-0.75cm}
 \begin{oefening}
 Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze alle drie:
 \begin{itemize}
   \itemsep1em
   \item \arulefill
-  \item $f(x)=(0.5)^x$
+  \item $f(x)=0.5^x$
   \item \arulefill
 \end{itemize}
 \end{oefening}
@@ -983,7 +992,7 @@ Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze all
 
 \begin{oefening}
 Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$
-\paragraph*{Functievoorschrift:}
+\paragraph*{Functiewaardentabel:}
 \begin{center}
 \visgraad{12cm}
 \end{center}
@@ -1009,7 +1018,7 @@ Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$
 
 \begin{oefening}
 Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto \left(\dfrac{1}{2}\right)^x$
-\paragraph*{Functievoorschrift:}
+\paragraph*{Functiewaardentabel:}
 \begin{center}
 \visgraad{12cm}
 \end{center}
@@ -1066,7 +1075,7 @@ $$0<a<1$$
           enlargelimits]
 \addplot[line width=1.2pt]  {pow(0.5,x)} node[pos=0, above]{$0.5^x$};
 \addplot[line width=1.2pt]  {pow(0.25,x)} node[pos=0, above]{$0.25^x$};
-\addplot[line width=1.2pt]  {pow(0.75,x)} node[pos=0, above]{$(0.75)^x$};
+\addplot[line width=1.2pt]  {pow(0.75,x)} node[pos=0, above]{$0.75^x$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -1283,7 +1292,7 @@ We gaan het probleem opsplitsen. We zullen eerst onderzoeken hoeveel bacteriën 
   \begin{itemize}
     \item Bij aanvang: \arule{4cm}
     \item Aangroei: \arule{4cm}
-    \item Na één uur: \arule{4cm}
+    \item Na twee uur: \arule{4cm}
   \end{itemize}
   Herschrijven geeft ons: \arules{2}\\
   Dus $420$ met $5\%$ vermeerderen = \arulefill
@@ -1293,7 +1302,7 @@ We gaan het probleem opsplitsen. We zullen eerst onderzoeken hoeveel bacteriën 
   \begin{itemize}
     \item Bij aanvang: \arule{4cm}
     \item Aangroei: \arule{4cm}
-    \item Na één uur: \arule{4cm}
+    \item Na drie uur: \arule{4cm}
   \end{itemize}
   Herschrijven geeft ons: \arules{2}\\
   Dus $441$ met $5\%$ vermeerderen = \arulefill
@@ -1304,10 +1313,6 @@ We gaan het probleem opsplitsen. We zullen eerst onderzoeken hoeveel bacteriën 
   \item Toepassen van de formule voor na $24$ uur: \arulefill
 \end{itemize}
 
-\begin{oefening}
-Veronderstel dat de populatie van een bepaald land jaarlijks aangroeit met $2\%$. Als het land momenteel 3 miljoen inwoners telt, wat zal dan de populatie zijn over 10 jaar?
-\end{oefening}
-
 \paragraph*{Exponentiële groei}
 
 \begin{mdframed}
@@ -1317,6 +1322,10 @@ en hierin wordt $1+\dfrac{p}{100}$ de {\bf groeifactor} genoemd.
 \end{mdframed}
 
 De groeifactor zullen we meestal kort kunnen schrijven, als het groeipercentage bijvoorbeeld $15\%$ is, dan wordt de groeifactor, door invullen van $p$ en te vereenvoudigen, $1.15$.
+
+\begin{oefening}
+Veronderstel dat de populatie van een bepaald land jaarlijks aangroeit met $2\%$. Als het land momenteel 3 miljoen inwoners telt, wat zal dan de populatie zijn over 10 jaar?
+\end{oefening}
 
 \begin{oefening}
 Geef een vijftal voorbeelden uit de natuur of het dagelijks leven waar je denkt van exponentiële groei tegen te komen.
@@ -1348,6 +1357,7 @@ Elk jaar sponsort de lokale tennisclub van Avelgem een tornooi. Er wordt begonne
 \end{itemize}
 \end{oefening}
 
+\pagebreak
 \subsection{Halveringstijd}
 
 In de vorige oefening werden het aantal deelnemers elke ronde gehalveerd. In veel problemen met de natuur is de tijd nodig om 'iets' te halveren belangrijk, daarom volgende definitie:\\
@@ -1363,7 +1373,7 @@ De pesticide {\em DDT} werd vroeger vaak gebruikt in de landbouw. Snel werd echt
 Plot de functie die het verloop van 100 gram DDT  weergeeft over een periode van 100 jaar.
 \begin{center}
 \visgraad{12cm}
-\assenstelsel{-1}{12}{-1}{12}
+\assenstelsel[0.9]{-1}{12}{-1}{12}
 \end{center}
 \end{oefening}
 
@@ -1420,11 +1430,11 @@ In een bepaald land neemt de bevolking jaarlijks met $2\%$ toe. Momenteel wonen 
 \end{oefening}
 
 \begin{oefening} % source: Jennenkens p246
-In een bacteriëncultuur, met initieel 100 bacteriën, verdubbelt het aantal bacteriën elke maand. We nomen 2 de {\em groeifactor} per maand en één maand de {\em verdubbelingstijd}.
+In een bacteriëncultuur, met initieel 100 bacteriën, verdubbelt het aantal bacteriën elke maand. We noemen 2 de {\em groeifactor} per maand en één maand de {\em verdubbelingstijd}.
 \begin{enumerate}[(a)]
   \item Hoeveel bacteriën zijn er na 3 maanden?
   \item Hoeveel bacteriën zijn er na 1 jaar?
-  \item Bereken de groeifactor per week.
+  \item Bereken de aangroei na één week.
 \end{enumerate}
 \end{oefening}
 
@@ -1450,9 +1460,9 @@ Bereken met de formule $N=N_0\cdot 2^{-t/T}$ hoeveel percent van de deeltjes nog
 Licht radioactief afval met een halveringstijd van 30 jaar wordt gedurende 300 jaar in tonnen bewaard. Hoeveel percent van het oorspronkelijke aantal radioactieve elementen blijft er dan nog over?
 \end{oefening}
 
-\begin{center}
-\includegraphics[width=0.5\textwidth]{atoom_boor}
-\end{center}
+%\begin{center}
+%\includegraphics[width=0.5\textwidth]{atoom_boor}
+%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
