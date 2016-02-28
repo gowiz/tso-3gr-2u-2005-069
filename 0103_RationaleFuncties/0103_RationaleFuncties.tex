@@ -33,16 +33,14 @@ Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.3, ET10,11,12,13)}
 
 }
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
 \thispagestyle{empty}
-\mbox{}
+\tableofcontents
 \newpage
 \clearpage
-\pagenumbering{arabic} 
-
-
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\lhead{}
 \fancyhead[RO,LE]{Rationale functies}
 \fancyhead[RE,LO]{}
 
@@ -512,12 +510,32 @@ $$\dfrac{\Delta y}{\Delta x}=\dfrac{f(b)-f(a)}{b-a}$$
 
 We spreken af dat we geen differentiequotiënt kunnen berekenen in een interval $[a,b]$ dat een verticale asymptoot bevat. Wij zullen ons beperken tot homografische functies. Bij homografische functies mag de pool dus niet in het interval liggen.
 
+\begin{oefening}
+Bepaal voor de volgende functies (zie ook Oefening 9) het differentiequotiënt in het interval $[1,3]$ en duid de koorde aan op de functies uit Oefening 9:\\
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $f(x)=\dfrac{2x+3}{x+3}$
+  \item $f(x)=\dfrac{-x}{5-x}$
+  \item $f(x)=\dfrac{2}{-2x+3}$
+  \item $f(x)=\dfrac{-2x-2}{-x+2}$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de functie $f(x)=\dfrac{3x}{2x-1}$
+\begin{enumerate}[(a)]
+  \item Bepaal de verticale asymptoten.
+  \item Bepaal de differentiequotiënt in de intervallen $[-3,-2]$; $[-1,0]$; $[0,1]$ en $[1,2]$.
+  \item Bepaal de differentiequotiënt in het interval $[10000, 100000]$, wat merk je?
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
 \section{Toepassingen}
 
 
 \begin{oefening}
 Hoeveel kost een koelkast echt?
-\end{oefening}
 
 Als we eens kijken hoeveel huishoudtoestellen jaarlijks gemiddeld kosten aan elektriciteit, dan krijgen we volgend lijstje:
 \begin{center}
@@ -535,57 +553,42 @@ Als we eens kijken hoeveel huishoudtoestellen jaarlijks gemiddeld kosten aan ele
 \end{center}
 
 \begin{enumerate}[(a)]
-  \item Als we veronderstellen dat een nieuwe koelkast 550 euro kost. Bepaal dan de totale jaarlijkse kostprijs voor een koelkast die 15 jaar meegaat. Veronderstel dat de aankoopprijs en de elektriciteit zijn de enige kosten zijn die je aan de koelkast hebt.\\
-  \ruitjes{4cm}
-  \item Zoek de functie, die de jaarlijkse kost van de koelkast geeft als een functie van het aantal jaar dat je de koelkast reeds bezit.\\
-  \ruitjes{4cm}
-  \item Maak een grafiek van deze functie. Van waar tot waar zullen de assen zeker moeten gaan?\\
-  \ruitjes{8cm}
-  \item Aangezien de functie een rationale functie is, zou deze asymptoten moeten bevatten. Zoek de asymptoten.\\
-  \ruitjes{4cm}
-  \item Verklaar de horizontale asymptoot? Welke betekenis heeft deze asymptoot?\\
-  \ruitjes{4cm}
-  \item Stel dat een ander bedrijf een koelkast aanbied van 1200 euro, maar garandeert dat de koelkast 20 jaar zal meegaan. Is de koelkast het dan waard?\\
-  \ruitjes{4cm}
-  \item Stel dat nog een ander bedrijf een koelkast aanbied van 1200 euro, maar garandeert dat deze maar half zoveel verbruikt dan onze koelkast van 550 euro. Is deze het waard?\\
-  \ruitjes{4cm}
+  \item Als we veronderstellen dat een nieuwe koelkast 550 euro kost. Bepaal dan de totale jaarlijkse kostprijs voor een koelkast die 15 jaar meegaat. Veronderstel dat de aankoopprijs en de elektriciteit zijn de enige kosten zijn die je aan de koelkast hebt.
+  \item Zoek de functie, die de jaarlijkse kost van de koelkast geeft als een functie van het aantal jaar dat je de koelkast reeds bezit.
+  \item Maak een grafiek van deze functie. Van waar tot waar zullen de assen zeker moeten gaan?
+  \item Aangezien de functie een rationale functie is, zou deze asymptoten moeten bevatten. Zoek de asymptoten.
+  \item Verklaar de horizontale asymptoot? Welke betekenis heeft deze asymptoot?
+  \item Stel dat een ander bedrijf een koelkast aanbied van 1200 euro, maar garandeert dat de koelkast 20 jaar zal meegaan. Is de koelkast het dan waard?
+  \item Stel dat nog een ander bedrijf een koelkast aanbied van 1200 euro, maar garandeert dat deze maar half zoveel verbruikt dan onze koelkast van 550 euro. Is deze het waard?
 \end{enumerate}
-
+\end{oefening}
 
 \begin{oefening}
 Voor deze oefening moet je met twee zijn, laten we jullie persoon $\mathcal{A}$ en persoon $\mathcal{B}$ noemen. Persoon $\mathcal{A}$ moet de functie $$f(x)=\frac{5x-3}{x}$$ schetsen. Persoon $\mathcal{B}$ moet de functie $$g(x)=5-\frac{3}{x}$$ schetsen.
-\end{oefening}
 
 \begin{enumerate}[(a)]
   \item Welk is het domein van de functies? Wat is het antwoord van $\mathcal{A}$, en wat is het antwoord van $\mathcal{B}$.
-  \ruitjes{2cm}
   \item Het zijn beide rationale functies (waarom?). Dus het is mogelijk om de asymptoten te bepalen. Welke asymptoten vindt elke persoon?
-  \ruitjes{2cm}
   \item Schets de grafiek van elke functie.
-  \ruitjes{5cm}
   \item Verbaasd?
-  \ruitjes{3cm}
 \end{enumerate}
+\end{oefening}
 
 
 \begin{oefening} {\bf Geneesmiddelen}\\
 De functie
 $$C(t)=\frac{5t}{0.01t^2+3.3}$$
 geeft de concentratie van een geneesmiddel in het bloed weer in functie van de tijd. In dit geval van een geneesmiddel die oraal werd ingenomen. $C$ wordt gemeten in microgram per milliliter en $t$ is de tijd gemeten in minuten.
-\end{oefening}
+
 \begin{enumerate}[(a)]
   \item Teken de grafiek van de functie over de twee eerste uren nadat het geneesmiddel werd ingenomen. Wat zal je als $x$-as moeten nemen, en wat als $y$-as?
-  \ruitjes{8cm}
   \item Bepaal wanneer er maximaal veel van het geneesmiddel aanwezig is in het lichaam en wat is de concentratie dan?
-  \ruitjes{3cm}
   \item Leg uit waarom de grafiek er zo uitziet. Denk aan wat er gebeurt wanneer je het geneesmiddel inneemt (op $t=0$) en nadien.
-  \ruitjes{3cm}
   \item Wat zijn de asymptoten van de rationale functie $C(t)=\frac{5t}{0.01t^2+3.3}$? Wat is de betekenis van de asymptoten in de context van dit geneesmiddel in het bloed?
-  \ruitjes{4cm}
   \item Maak nu opnieuw de grafiek van de functie, maar hou nu ook rekening met negatieve waarden. Bespreek het gedrag op oneindig, zowel in positieve als in negatieve $x$-richting.
-  \ruitjes{8cm}
   \item We hebben net een wiskundig model besproken van de concentratie geneesmiddel in het bloed nadat we dit innemen. Gebruik het internet eens om de grafiek van de concentratie van een geneesmiddel in het bloed te zoeken waarbij gemeten waarden werden gebruikt. Gebruik hiervoor de afbeeldingszoeker in Google, en typ als sleutelwoorden 'grafiek geneesmiddel concentratie' of 'graph drug concentration' in.
 \end{enumerate}
+\end{oefening}
 
 \subsection*{Extra oefeningen}
 
@@ -600,7 +603,7 @@ Je gaat op reis en je rijdt $200$ kilometer.
 \end{oefening}
 
 \begin{oefening}
-Voor welk positief getal is de som van het nummer en zijn inverse\footnote{als het getal $3$ is, dan is zijn inverse $\frac{1}{3}$} het kleinst?
+Voor welk positief getal is de som van het nummer en zijn omgekeerde het kleinst?
 \end{oefening}
 
 \begin{oefening}
@@ -620,6 +623,12 @@ Een reclamebureau gaat ervan uit dat het, om met een reclamecampagne het breukde
 $$P=\frac{1500-8p}{1-p} \qquad\qquad (0<p<1)\;.$$
 Hoeveel percent van het publiek kan het hoogstens bereiken als het maandelijks niet meer dan 10000 euro wil uitgeven?
 \end{oefening}
+
+\end{document}
+
+
+
+
 
 \section{Transformaties van rationale functies}
 
