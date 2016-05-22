@@ -532,9 +532,419 @@ $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
 \end{multicols}
 \end{oefening}
 
+\pagebreak
+\section{Standaardnormale kansverdeling}
+
+In de vorige paragraaf werden grafieken van de normale verdeling verschoven (met behulp van $\mu$) en herschaald (met behulp van $\sigma$). Het is dus mogelijk om de normale verdeling te
+\begin{itemize}
+  \item verschuiven zodat het gemiddelde $\mu=0$ wordt,
+  \item herschalen zodat de standaardafwijking $\sigma=1$ wordt.
+\end{itemize}
+
+Een normale verdelingen met gemiddelde 0 en standaardafwijking 1 of kort $N(0,1)$ noemen we {\bf standaardnormaal verdeeld}. Om aan te duiden dat we met de standaardnormale verdeling werken, gebruiken we de letter $Z$ i.p.v. $X$ om de kansvariabele aan te duiden.
+
+Een normale verdeling herken je aan de grafiek van de kansfunctie. De grafiek is namelijk steeds een symmetrische, ééntoppige, klokvormige kromme. Op de volgende figuur zie je de grafiek horend bij N(0, 1).
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left, xlabel=$x$, ylabel=$f(x)$,
+  every axis y label/.style={at={(0,1)},anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=8cm, width=16cm,
+  xtick={-3,-2,-1,0,1,2,3}, ytick={0.1, 0.2, 0.3, 0.4},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=-1:1] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  \draw [yshift=-0.6cm] (axis cs:0,0) node[anchor=north] {$\mu$};
+  \draw [yshift=-0.6cm] (axis cs:-1,0) node[anchor=north] {$-\sigma$};
+  \draw [yshift=-0.6cm] (axis cs:1,0) node[anchor=north] {$\sigma$};
+  \draw (axis cs:0,0.2) node[anchor=north] {$\pm 68.27\%$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Voor de standaardnormale verdeling $N(0,1)$ worden de verdelingsfunctie $F(x)$, verwachtingswaarde $E(X)$ en standaardafwijking $\sigma$ gegeven door
+\begin{itemize}
+  \item $F(z)=P(Z\leq z)=\Phi(z)$ (zie verder)
+  \item $E(Z)=\mu=0$
+  \item $\sigma=1$
+\end{itemize}
+
+\subsection{Kansen berekenen bij standaardnormaal verdeelde populaties}
+
+Om de kans te berekenen dat iemand minder heeft dan een bepaalde waarde, volstaat het om de oppervlakte onder de kromme te berekenen, zoals in onderstaande figuur:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left, xlabel=$x$, ylabel=$f(x)$,
+  every axis y label/.style={at={(0,1)},anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=8cm, width=16cm,
+  xtick={0,1}, ytick={0.1, 0.2, 0.3, 0.4},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=-4:1.5] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  \draw [yshift=-0.1cm] (axis cs:1.5,0) node[anchor=north] {$z$};
+  \draw (axis cs:0,0.2) node[anchor=north] {$\Phi(z)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+De leerlingen die ook integraalrekenen krijgen zien onmiddellijk dat dit niets anders is dan de integraal
+$$\Phi(z)=P(Z\leq z)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{z}e^{-\frac{1}{2}t^2}dt\;.$$
+
+Het berekenen van deze oppervlakteintegraal is vrij ingewikkeld. Voor de standaardnormale verdeling bestaat er echter een tabel waaruit je deze kansen rechtstreeks kan aflezen, zie bijlage.
+
+\subsubsection*{Voorbeeld 1}
+
+Gegeven: Een populatie die kan beschreven worden door een standaardnormale verdeling. Bereken het percentage waarnemingen kleiner dan $1.36$.
+
+In symbolen: $\Phi(1.36)=P(Z\leq 1.36)$
+
+Methode:
+\begin{itemize}
+  \item Zoek de waarde $1.36$ in de tabel.
+  \begin{itemize}
+    \item Voor de eerste 2 cijfers kijk je in de linkerkolom van de tabel: ga op zoek naar de rij die overeenstemt met de waarde 1.3.
+    \item Vervolgens schuif je op naar rechts tot de kolom die overeenkomt met 0.06.
+  \end{itemize}
+  \item Het percentage waarnemingen kleiner dan 1.36 bedraagt dus 91.308\%
+\end{itemize}
+
+\begin{minipage}{0.5\textwidth}
+$$\Phi(1.36)=P(Z\leq 1.36)=0.91308$$
+$$\Rightarrow\Phi(1.36)=91.308\%$$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\vspace*{0.8cm}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left,
+  height=4cm, width=8cm,
+  xtick={1.36}, ytick={0}, yticklabels={},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=-4:1.36] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  \draw (axis cs:0,0.2) node[anchor=north] {$91\%$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsubsection*{Voorbeeld 2}
+
+Gegeven: Een populatie die kan beschreven worden door een standaardnormale verdeling. Bereken het percentage waarnemingen gelegen tussen $1.03$ en $2.95$.
+
+In symbolen: $P(1.03\leq Z\leq 2.95)$
+
+Dit is niet rechtstreeks in de tabel af te lezen. We herschrijven het gevraagde als volgt (zie figuur ter verduidelijking):
+
+\begin{align*}
+  P(1.03\leq Z\leq 2.95) &= P(Z\leq 2.95) - P(Z\leq 1.03)\\
+                         &= \Phi(2.95) - \Phi(1.03)
+\end{align*}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left,
+  height=6cm, width=14cm,
+  xtick={1.03, 2.95}, ytick={0}, yticklabels={},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=1.03:2.95] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  %\draw (axis cs:0,0.2) node[anchor=north] {$91\%$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsubsection*{Voorbeeld 3}
+
+Gegeven: Een populatie die kan beschreven worden door een standaardnormale verdeling. Bereken het percentage waarnemingen kleiner dan $-2.07$.
+
+In symbolen: $P(Z\leq -2.07)$
+
+Ook dit is niet rechtstreeks uit de tabel af te lezen, maar we kunnen het gevraagde opnieuw herschrijven tot iets dat wel uit de tabel af te lezen is:
+
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  P(Z\leq -2.07) &= P(Z \geq 2.07)\\
+                 &= 1 - P(Z \leq 2.07)\\
+                 &= 1 - \Phi(2.07)
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\vspace*{1cm}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left,
+  height=4cm, width=10cm,
+  xtick={-2.07}, ytick={0}, yticklabels={},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=-4:-2.07] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  %\draw (axis cs:0,0.2) node[anchor=north] {$91\%$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\pagebreak
+\subsection{Overzicht formules}
+\begin{multicols}{2}
+  $$P(Z\leq a)=\Phi(a)$$
+  $$P(Z\geq a)=1-\Phi(a)$$
+  $$P(Z\leq -a)=1-\Phi(a)$$
+  $$P(Z\geq -a)=\Phi(a)$$
+  \vfill
+  $$P(a\leq Z \leq b)=\Phi(b)-\Phi(a)$$
+  $$P(-a\leq Z \leq b)=\Phi(b)+\Phi(a)-1$$
+  $$P(-a\leq Z \leq -b)=\Phi(a)-\Phi(b)$$
+\end{multicols}
+
+Het is niet nodig om deze formules uit het hoofd te leren. Maak een schets van de standaardnormale en duid er het gevraagde gebied op aan. Beredeneer dan zelf hoe je aan het gebied komt door enkel $\Phi(z)$ te gebruiken.
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Bepaal met de tabel van de standaardnormale verdeling volgende kansen, maak telkens een verduidelijkende schets:
+\begin{enumerate}[(a)]
+  \item $P(Z\leq 0.97)$
+  \item $P(Z\leq 0.71)$
+  \item $P(2\leq Z \leq 2.5)$
+  \item $P(Z \leq -0.44)$
+  \item $P(1.42 \leq Z \leq 2.42)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal volgende kansen, {\bf zonder} gebruik te maken van de tabel van de standaardnormale:
+\begin{enumerate}[(a)]
+  \item $P(-\infty\leq Z \leq +\infty)$
+  \item $P(Z\leq 0)$
+  \item $P(Z\geq 0)$
+\end{enumerate}
+\end{oefening}
+
+
+\pagebreak
+\section{Kansen berekenen bij de normale verdeling}
+
+\subsection{Standaardisering}
+
+We hebben gezien dat alle normale verdelingen dezelfde vorm hebben, op een horizontale verschuiving of verticale uitrekking na. De kansdichtheidsfunctie van een normale verdeling kan dus steeds
+\begin{itemize}
+  \item verschoven worden zodat het gemiddelde $\mu=0$ wordt,
+  \item herschaald worden zodat de standaardafwijking $\sigma=1$ wordt.
+\end{itemize}
+
+Dit wil zeggen dat een kansvariabele die een normale verdeling volgt steeds {\em gestandaardiseerd} kan worden tot een andere kansvariabele die eveneens normaal verdeeld is, maar met gemiddelde 0 en standaardafwijking 1
+
+\subsection{Z-Score}
+
+Om een waarneming $x$ te standaardiseren wordt het gemiddelde ervan afgetrokken en vervolgens gedeeld door de standaardafwijking $\sigma$. We noteren deze {\em gestandaardiseerde waarde} van $x$ de $z$-score en noteren ze met de letter $z$. Dus
+$z=\dfrac{x-\mu}{\sigma}\;.$
+
+\paragraph*{Gestandaardiseerde normale verdeling}
+\begin{mdframed}
+Als $X$ een kansvariabele is met $X\sim N(\mu,\sigma)$, dan volgt de kansvariabele $Z$ gegeven door
+$$Z=\dfrac{X-\mu}{\sigma}$$
+de standaardnormale verdeling. Er geldt dus $Z\sim N(0,1)$.
+\end{mdframed}
+
+Een $z$-score geeft aan hoeveel standaardafwijkingen de oorspronkelijke waarneming van het gemiddelde verwijderd is en in welke richting. Waarnemingen groter dan het gemiddelde geven een positieve $z$-score, waarnemingen die kleiner zijn dan het gemiddelde een negatieve.
+
+$z$-scores worden o.a. gebruikt om waarnemingen uit verschillende populaties en/of steekproeven met elkaar te vergelijken.
+
+\begin{oefening}
+Robbe zit in klas A en behaalde op zijn laatste toets wiskunde 14 op 20. Het klasgemiddelde was 11 met een standaardafwijking van 3.\\
+Zijn zus Kathy zit in klas B en behaalde op haar laatste toets wiskunde 23 op 30. Het klasgemiddelde was 19 met een standaardafwijking van 5.\\
+Wie heeft nu relatief gezien het beste gewerkt?
+\end{oefening}
+
+\subsection{Kansen berekenen}
+
+Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populaties, herleiden we de normaal verdeelde waarnemingen tot standaardnormaal verdeelde waarnemingen met behulp van de $z$-score.
+
+\subsubsection*{Voorbeeld}
+
+\underline{Gegeven:} Een normaal verdeelde populatie met gemiddelde $\mu=20$ en standaardafwijking $\sigma=4$. Bereken het percentage waarnemingen kleiner dan 22.\\
+\underline{Methode:}
+\begin{enumerate}[(a)]
+  \item We berekenen eerst de $z$-score van $x=22$:
+  $$z=\dfrac{x-\mu}{\sigma}=\dfrac{22-20}{4}=0.5$$
+  \item Vervolgens zoeken we in de tabel van de standaardnormale verdeling het percentage waarnemingen met een $z$-score kleiner dan $0.5$:
+  $$P(X\leq 22)=P(Z\leq 0.5)=\Phi(0.5)=0.69146=69.15\%$$
+  \item Antwoord: $30.85\%$ van de waarnemingen is kleiner dan $22$.
+\end{enumerate}
+
+\paragraph*{Opmerking: } De $z$-score mag afgerond worden op $2$ cijfers na de komma want de tabel achteraan is maar correct op 2 cijfers na de komma.
+
+\begin{oefening}
+Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g. 
+Welke percentage peren weegt minder dan 125g?
+\begin{enumerate}[(a)]
+  \item Bereken eerst de $z$-score van $x=125$.
+  \arules{2}
+  \item Bepaal nu met behulp van de tabel de kans dat een peer minder weegt dan $125\g$.
+  \arules{4}
+  \item Formuleer nu je antwoord.
+  \arules{1}
+\end{enumerate}
+\end{oefening}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+De voetlengten van volwassen vrouwen zijn bij benadering normaal verdeeld met een gemiddelde van $26.3 \cm$ en een standaardafwijking van $2.7 \cm$.
+\begin{enumerate}[(a)]
+  \item Welk percentage heeft een voetlengte die kleiner is dan $25 \cm$?
+  \item Welk percentage heeft een voetlengte die groter is dan $28 \cm$?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De tijd die huisarts A tijdens zijn spreekuur aan een patiënt besteedt, is bij benadering normaal verdeeld met een gemiddelde van 15 minuten en een standaardafwijking van 3.4 minuten.
+\begin{enumerate}[(a)]
+  \item Welk percentage van de patiënten valt in de categorie van consultaties die beneden de 10 minuten valt?
+  \item Welk percentage van de consultatie duurt tussen 14 en 18 minuten?
+  \item Welk percentage van de consultaties duurt langer dan 18 minuten?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Vaak worden in de statistiek gerekend met ‘mooie’ betrouwbaarheidsintervallen, zoals 90\%, 95\% en 99\%. Bepaal bij elk percentage de bijhorende $z$-score.
+\end{oefening}
+
+\begin{oefening}
+Welk van de volgende resultaten op een examen statistiek is het meest uitzonderlijke?
+\begin{enumerate}[(A)]
+  \item 16 in een groep met gemiddelde 15 en standaardafwijking 1.27
+  \item 17 in een groep met gemiddelde 16 en standaardafwijking 2.45
+  \item 16 in een groep met gemiddelde 13 en standaardafwijking 0.50
+  \item 17 in een groep met gemiddelde 17 en standaardafwijking 0.12
+  \item 16 in een groep met gemiddelde 15 en standaardafwijking 3
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Punten van verschillende leerlingen in eenzelfde klas zouden normaal verdeeld moeten zijn. We kunnen dit gebruiken om {\em relatief gezien} je beste resultaat over de verschillende dagelijkse werken te vinden. Maak hiervoor een tabel met 5 kolommen als volgt:
+\begin{center}
+  \begin{tabular}{l|c|c|c|c}
+  Leerling & DW2 & Z-score DW2 & DW3 & Z-score DW3\\
+  \hline
+  \vdots&&&&\\
+%  \vdots&&&&\\
+%  \vdots&&&&\\
+  \hline
+  gemiddelde&&&&\\
+  standaardafwijking&&&&\\
+  \end{tabular}
+\end{center}
+Je kan dit bijvoorbeeld gebruiken wanneer je absoluut gezien een lager cijfer hebt bij DW3, maar relatief gezien een hoger cijfer bij DW3 om je ouders gerust te stellen.
+\end{oefening}
+
+\newpage
+\appendix
+%\section*{Bijlagen}
+
+\section*{Tabel standaardnormale verdeling}
+
+\begin{center}
+
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, domain=0:10, samples=100,
+  axis lines*=left,
+  height=3cm, width=12cm,
+  xtick={0}, ytick={0},
+  yticklabels={}, xticklabels={},
+  enlargelimits=false, clip=false, axis on top,
+  grid = none
+  ]
+  \addplot [fill=gray!40, draw=none, domain=-4:1.5] {gauss(0,1)} \closedcycle;
+  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+  \draw [yshift=-0.1cm] (axis cs:1.5,0) node[anchor=north] {$z$};
+  \draw (axis cs:0,0.2) node[anchor=north] {$\Phi(z)=P(Z\leq z)$};
+\end{axis}
+\end{tikzpicture}
+
+\renewcommand{\arraystretch}{0.8}
+\small
+\begin{tabular}{rr@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r}
+$z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
+\ \\
+0.0&0.5000&0.5040&0.5080&0.5120&0.5160&0.5199&0.5239&0.5279&0.5319&0.5359\\
+0.1&0.5398&0.5438&0.5478&0.5517&0.5557&0.5596&0.5636&0.5675&0.5714&0.5753\\
+0.2&0.5793&0.5832&0.5871&0.5910&0.5948&0.5987&0.6026&0.6064&0.6103&0.6141\\
+0.3&0.6179&0.6217&0.6255&0.6293&0.6331&0.6368&0.6406&0.6443&0.6480&0.6517\\
+0.4&0.6554&0.6591&0.6628&0.6664&0.6700&0.6736&0.6772&0.6808&0.6844&0.6879\\
+0.5&0.6915&0.6950&0.6985&0.7019&0.7054&0.7088&0.7123&0.7157&0.7190&0.7224\\
+0.6&0.7257&0.7291&0.7324&0.7357&0.7389&0.7422&0.7454&0.7486&0.7517&0.7549\\
+0.7&0.7580&0.7611&0.7642&0.7673&0.7703&0.7734&0.7764&0.7794&0.7823&0.7852\\
+0.8&0.7881&0.7910&0.7939&0.7967&0.7995&0.8023&0.8051&0.8078&0.8106&0.8133\\
+0.9&0.8159&0.8186&0.8212&0.8238&0.8264&0.8289&0.8315&0.8340&0.8365&0.8389\\
+\\
+1.0&0.8413&0.8438&0.8461&0.8485&0.8508&0.8531&0.8554&0.8577&0.8599&0.8621\\
+1.1&0.8643&0.8665&0.8686&0.8708&0.8729&0.8749&0.8770&0.8790&0.8810&0.8830\\
+1.2&0.8849&0.8869&0.8888&0.8907&0.8925&0.8944&0.8962&0.8980&0.8997&0.9015\\
+1.3&0.9032&0.9049&0.9066&0.9082&0.9099&0.9115&0.9131&0.9147&0.9162&0.9177\\
+1.4&0.9192&0.9207&0.9222&0.9236&0.9251&0.9265&0.9279&0.9292&0.9306&0.9319\\
+1.5&0.9332&0.9345&0.9357&0.9370&0.9382&0.9394&0.9406&0.9418&0.9429&0.9441\\
+1.6&0.9452&0.9463&0.9474&0.9484&0.9495&0.9505&0.9515&0.9525&0.9535&0.9545\\
+1.7&0.9554&0.9564&0.9573&0.9582&0.9591&0.9599&0.9608&0.9616&0.9625&0.9633\\
+1.8&0.9641&0.9649&0.9656&0.9664&0.9671&0.9678&0.9686&0.9693&0.9699&0.9706\\
+1.9&0.9713&0.9719&0.9726&0.9732&0.9738&0.9744&0.9750&0.9756&0.9761&0.9767\\
+\\
+2.0&0.9772&0.9778&0.9783&0.9788&0.9793&0.9798&0.9803&0.9808&0.9812&0.9817\\
+2.1&0.9821&0.9826&0.9830&0.9834&0.9838&0.9842&0.9846&0.9850&0.9854&0.9857\\
+2.2&0.9861&0.9864&0.9868&0.9871&0.9875&0.9878&0.9881&0.9884&0.9887&0.9890\\
+2.3&0.9893&0.9896&0.9898&0.9901&0.9904&0.9906&0.9909&0.9911&0.9913&0.9916\\
+2.4&0.9918&0.9920&0.9922&0.9925&0.9927&0.9929&0.9931&0.9932&0.9934&0.9936\\
+2.5&0.9938&0.9940&0.9941&0.9943&0.9945&0.9946&0.9948&0.9949&0.9951&0.9952\\
+2.6&0.9953&0.9955&0.9956&0.9957&0.9959&0.9960&0.9961&0.9962&0.9963&0.9964\\
+2.7&0.9965&0.9966&0.9967&0.9968&0.9969&0.9970&0.9971&0.9972&0.9973&0.9974\\
+2.8&0.9974&0.9975&0.9976&0.9977&0.9977&0.9978&0.9979&0.9979&0.9980&0.9981\\
+2.9&0.9981&0.9982&0.9982&0.9983&0.9984&0.9984&0.9985&0.9985&0.9986&0.9986\\
+\\
+3.0&0.9987&0.9987&0.9987&0.9988&0.9988&0.9989&0.9989&0.9989&0.9990&0.9990\\
+3.1&0.9990&0.9991&0.9991&0.9991&0.9992&0.9992&0.9992&0.9992&0.9993&0.9993\\
+3.2&0.9993&0.9993&0.9994&0.9994&0.9994&0.9994&0.9994&0.9995&0.9995&0.9995\\
+3.3&0.9995&0.9995&0.9995&0.9996&0.9996&0.9996&0.9996&0.9996&0.9996&0.9997\\
+3.4&0.9997&0.9997&0.9997&0.9997&0.9997&0.9997&0.9997&0.9997&0.9997&0.9998\\
+3.5&0.9998&0.9998&0.9998&0.9998&0.9998&0.9998&0.9998&0.9998&0.9998&0.9998\\
+3.6&0.9998&0.9998&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
+3.7&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
+3.8&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
+3.9&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000\\
+\end{tabular}
+\end{center}
+
+
 \end{document}
-
-
 
 
 
