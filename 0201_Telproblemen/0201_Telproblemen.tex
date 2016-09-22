@@ -2,6 +2,18 @@
 
 \input{../gowiz.tex}
 
+\usepackage{exsheets}
+%\DeclareTranslation{Dutch}{exsheets-question-name}{Oefening}
+% questions, used when type=exam is active:
+\DeclareTranslation{dutch}{exsheets-question-name}{Oefening}
+% questions, used when type=exercise is active (default):
+\DeclareTranslation{dutch}{exsheets-exercise-name}{Oefening}
+% solutions:
+\DeclareTranslation{dutch}{exsheets-solution-name}{Oplossing}
+
+\usepackage{versions}
+\excludeversion{cursus}
+
 \usepackage{pgfplots}
 
 %\renewcommand{\rmdefault}{phv} % Arial
@@ -29,6 +41,12 @@
 }
 
 \begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Telproblemen}
+
+\begin{cursus}
 
 \thispagestyle{empty}
 \begin{center}
@@ -61,23 +79,27 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.1)}
 %}
 
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
 \thispagestyle{empty}
-\mbox{}
+\tableofcontents
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\lhead{}
+\rhead{Telproblemen}
 
-\fancyhead[RO,LE]{Telproblemen}
-\fancyhead[RE,LO]{}
+\onehalfspacing
 
 \section{Inleiding}
 
 We beginnen aan een hoofdstuk die vaak combinatoriek of combinatieleer wordt genoemd. Wij zullen voornamelijk problemen bespreken waarbij we het aantal mogelijkheden of het aantal objecten van een verzameling moeten tellen. We spreken dan ook van {\bf telproblemen}.
 
+\end{cursus}
+
 \section{Productregel}
+
+\begin{cursus}
 
 \subsubsection*{Voorbeeld}
 
@@ -183,11 +205,13 @@ mogelijkheden.
 \pagebreak
 \subsection{Oefeningen}\vspace*{-1cm}
 
-\begin{oefening}
+\end{cursus}
+
+\begin{question}
 In een sportclub stelt men T-shirts, shorts en kousen ter beschikking voor de spelers. Er zijn oranje, witte, blauwe, rode en groene T-shirts. De shorts zijn zwart, blauw of wit. De kousen zijn wit met een blauwe boord ofwel effen wit. Er zijn dus heel wat outfits voor de spelers mogelijk.
 
 Teken het boomdiagram en het wegendiagram dat met de gegevens correspondeert. Hoeveel mogelijke outfits zijn er voor de spelers?
-\end{oefening}
+\end{question}
 
 \begin{oefening}
 In de kantine van een fabriek staat een machine voor warme dranken. De leverancier wil gewone koffie, espresso en thee aanbieden, met of zonder melk, zonder, met weinig of met veel suiker. Hij heeft voor elke mogelijkheid een knop voorzien.
@@ -222,7 +246,10 @@ Los volgende problemen op met behulp van een boomdiagram.
 \end{enumerate}
 \end{oefening}
 
+\pagebreak
 \section{Somregel}
+
+\begin{cursus}
 
 \subsection{Somregel met dubbele telling}
 
@@ -320,6 +347,8 @@ Bij het oplossen van telproblemen tel je als volgt:
 \end{itemize}
 \end{mdframed}
 
+\end{cursus}
+
 \begin{minipage}{0.7\textwidth}
 \begin{oefening}
 We moeten de afloop van 10 voetbalwedstrijden voorspellen. Voor elke match zijn er 3 mogelijkheden: winnen, verliezen en gelijkspel. Hoeveel lijstjes met voorspellingen zijn er mogelijk? Hoe groot is het aantal als we zeker weten dat in de eerste wedstrijd de thuisploeg niet verliest?
@@ -388,8 +417,10 @@ Ik ben de pincode van mijn GSM vergeten. Ik weet enkel nog dat er geen 5 in komt
 % \end{oefening}
 
 
+\pagebreak
 \section{Variaties}
 
+\begin{cursus}
 \subsection{Voorbeeld}
 
 Op hoeveel manieren kunnen vier verschillende bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
@@ -479,6 +510,8 @@ Omdat dit vaak voorkomt zullen we hier een naam aan geven, we spreken van {\bf d
 \end{oefening}
 
 \subsection{Oefeningen}
+
+\end{cursus}
 
 \begin{minipage}{0.7\textwidth}
 \begin{oefening}
@@ -573,10 +606,10 @@ Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevo
 \end{enumerate}
 \end{oefening}
 
-<<<<<<< Updated upstream
 \pagebreak
-
 \section{Herhalingsvariaties}
+
+\begin{cursus}
 
 \subsection{Voorbeeld}
 
@@ -652,6 +685,8 @@ $$\bar{V}^k_n=n^k$$
 \end{itemize}
 
 \subsection{Oefeningen}
+
+\end{cursus}
 
 \begin{oefening}
 Aline, Birgit, Celine en Delphine zijn leerlingen uit eenzelfde klas die alle vier in de maand april verjaren.
@@ -739,6 +774,8 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 \pagebreak
 \section{n-faculteit}
 
+\begin{cursus}
+
 \subsection{Definitie}
 
 \paragraph*{n-faculteit}
@@ -784,6 +821,8 @@ Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
 \end{align*}
 \end{mdframed}
 
+\end{cursus}
+
 \begin{oefening}
 Bereken zonder \zrm{ZRM}:
 \begin{multicols}{3}
@@ -820,6 +859,8 @@ Vereenvoudig:
 Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bestaat dan het getal $100!$
 \end{oefening}
 
+\begin{cursus}
+
 \subsection{Formule voor $V^k_n$ met behulp van faculteiten}
 
 \begin{oefening}
@@ -836,6 +877,8 @@ Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
+
+\end{cursus}
 
 \begin{oefening}
 Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we twee formules:\\
@@ -855,6 +898,7 @@ Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we
 \pagebreak
 \section{Combinaties}
 
+\begin{cursus}
 \subsection{Voorbeeld}
 
 Op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
@@ -910,6 +954,8 @@ $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
 \end{itemize}
 
 \subsection{Oefeningen}
+
+\end{cursus}
 
 \begin{oefening}
 Voor het voetbalteam van de school stellen zich 19 jongens kandidaat.
@@ -1003,7 +1049,6 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
