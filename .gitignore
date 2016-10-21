@@ -13,3 +13,7 @@
 *~
 *.~*#
 *.func0.gnuplot
+.hidden
+auto
+*.toc
+\#*\#
