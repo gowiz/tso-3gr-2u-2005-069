@@ -218,8 +218,31 @@
     \item $19-x+x^2=18-2x-x^2$ \tabto{6cm} {\color{gray}$V=\{\}$}
     \item $25x^2+20x=-9$ \tabto{6cm} {\color{gray}$V=\{-\dfrac{3}{5}\}$}
     \item $6x^2=x+1$ \tabto{6cm} {\color{gray}$V=\{-\dfrac{1}{3},\dfrac{1}{2}\}$}
-    \end{enumerate}
-  \end{oefening}
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
+\begin{center}
+\begin{tikzpicture}[scale=0.7, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.05,-0.62) rectangle (18.68,10.69);
+\draw [line width=1.2pt,fill=gray!60] (4,5) circle (5cm);
+\draw [line width=1.2pt,fill=white] (4,5) circle (3cm);
+\draw [line width=1.2pt,fill=gray!60] (14,5) circle (4cm);
+\draw [line width=1.2pt] (14,5)-- (16.51,8.12);
+\draw [line width=1.2pt] (4,5)-- (5.94,7.29);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (5.94,7.29)-- (7.23,8.82);
+\draw (5.8,8.5) node[anchor=north west] {$x$};
+\draw (4.3,6.7) node[anchor=north west] {3};
+\draw (14.4,6.9) node[anchor=north west] {4};
+\fill [color=black] (4,5) circle (1.5pt);
+\fill [color=black] (14,5) circle (1.5pt);
+\fill [color=black] (7.23,8.82) circle (1.5pt);
+\fill [color=black] (16.51,8.12) circle (1.5pt);
+\fill [color=black] (5.94,7.29) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+\end{oefening}
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van graad $\geq 3$}
