@@ -75,8 +75,28 @@
 \addtocounter{punten}{#1}}
 
 % arulefill
-\def\arulefill{\leavevmode{\xrfill[-5pt]{0.3pt}[lightgray]\endgraf}\vspace*{0.2cm}}
-
+\newcommand\arulefill[1][]{
+  \ifstrempty{#1}{
+    \leavevmode{
+      \xrfill[-5pt]{0.3pt}[lightgray]
+      \endgraf
+    }
+    \vspace*{0.2cm}
+  }{
+    \leavevmode{
+      \xrfill[-5pt]{0.3pt}[lightgray]
+      \endgraf
+      \vspace*{0.2cm}
+    }
+    \foreach \n in {1,...,#1}{
+      \leavevmode{
+        \xrfill[-5pt]{0.3pt}[lightgray]
+        \endgraf
+        \vspace*{0.2cm}
+      }
+    }
+  }
+}
 % \arules{n}
 \newcommand{\arules}[1]{
 \mbox{}
