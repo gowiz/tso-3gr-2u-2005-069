@@ -187,6 +187,9 @@ Heel vaak krijgen we in een onderzoek een aantal verschillende waarden van een v
 fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus 
 \end{center}
 
+In een {\bf dataset} is het de gewoonte om de $n$ waarneming te labelen met $x_1$, $x_2$, \ldots, $x_n$. Een aantal waarnemingen kunnen meerdere keren voorkomen, zo is $x_1=x_5=\ldots=x_{60}=$'fiets'. We maken die waarnemingen uniek door deze te labelen met $\omega_1=$'fiets' en deze krijgt dan de frequentie $n_1=17$
+
+
 \subsection{Frequentietabel bij een kwalitatieve variabele}
 
 Om vlot met deze data te kunnen werken maken we hier een {\bf frequentietabel} van, dit wil zeggen dat we de data in een tabel met op elke rij een unieke {\bf waarneming} en met de kolommen:
@@ -601,10 +604,10 @@ $i$ & klasse     & $n_i$\\
 \end{oefening}
 
 \begin{oefening}
-In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:\\
-
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8\\
-
+In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:
+\begin{center}
+7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\end{center}
 Maak frequentietabel en een staafdiagram.
 \end{oefening}
 
@@ -612,6 +615,159 @@ Maak frequentietabel en een staafdiagram.
 
 \pagebreak
 \subsection{Numerieke kenmerken: de kengetallen}
+
+Jij en je buur kunnen elkaars punten van het rapport vergelijken. Elke reeks punten van een rapport kan je zien als een reeks waarnemingsgetallen. Hiervan zou je bijvoorbeeld elkaars gemiddelde kunnen vergelijken of hoe de punten verspreid liggen.
+
+Je zou ook een onderzoek kunnen doen naar lichaamsgrootte binnen een aantal verschillende sporten. Je kan bijvoorbeeld 100 basketters interviewen en 150 volleybalspelers. Van de bekomen reeksen van klassen kunnen we ook weer bepaalde {\bf kengetallen} berekenen. We zullen onderscheid maken tussen centrummaten en spreidingsmaten.
+
+\subsubsection{Centrummaten}
+
+{\bf Centrummaten} geven de waarde waarrond de waarnemingsgetallen gecentreerd zijn. Ze tonen ons het midden van de data.
+
+De ons best gekende is het {\bf gemiddelde} $\bar{x}$. Bij een reeks van $n$ waarnemingsgetallen $x_1$, $x_2$, $\ldots$, $x_n$ berekenen we het gemiddelde met
+$$\bar{x}=\dfrac{x_1 + x_2 + \cdots + x_n}{n}$$
+We kunnen dit korter schrijven als
+$$\bar{x}=\dfrac{1}{n}\sum^n_{i=1}x_i$$
+Als we een indeling in klassen hebben kunnen we niet langer het gemiddelde exact bepalen. We berekenen dan een schatting als volgt:
+\begin{enumerate}
+  \item Bereken van alle klassen het klassenmidden.
+  \item Bereken het product van het klassenmidden met de frequentie.
+  \item Bepaal de som van de voorgaande producten.
+  \item Deel deze som door de steekproefgrootte $n$.  
+\end{enumerate}
+
+\begin{oefening}
+Bepaal het gemiddelde van de volgende toetsresultaten:
+\begin{center}
+7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+Bepaal het gemiddelde van de volgende frequentietabel
+\begin{center}
+\begin{tabular}{c|c|c}
+$i$ & klasse     & $n_i$\\
+\hline
+  1 & $[ 1.60,  1.70[$ &   2\\
+  2 & $[ 1.70,  1.80[$ &   3\\
+  3 & $[ 1.80,  1.90[$ &   9\\
+  4 & $[ 1.90,  2.00[$ &   22\\
+  5 & $[ 2.00,  2.10[$ &   16\\
+  6 & $[ 2.10,  2.20[$ &   17\\
+  7 & $[ 2.20,  2.30[$ &   10\\
+  8 & $[ 2.30,  2.40[$ &   1\\
+\end{tabular}
+\end{center}
+\end{oefening}
+
+De volgende centrummaat is de {\bf mediaan} Med, dit is het getal zodat er evenveel getallen kleiner dan of gelijk zijn aan de mediaan als dat er getallen groter dan of gelijk zijn aan de mediaan. Bij een reeks waarnemingsgetallen berekenen we de mediaan als volgt $x_1$, $x_2$, $\ldots$, $x_n$:
+\begin{itemize}
+  \item $n$ is oneven: We nemen het middelste getal na het ordenen van de getallen.
+  \item $n$ is even: We nemen het gemiddelde van de twee middelste getallen na het ordenen van de getallen.
+\end{itemize}
+Als we een indeling in klassen hebben nemen we het klassenmidden (of het gemiddelde van de klassenmiddens bij een even steekproefgrootte) van de klasse waar de middelste waarneming zich bevind. Merk op dat het interessant is om hiervoor de kolom met cumulatieve frequenties te gebruiken.
+
+\begin{oefening}
+Bepaal de mediaan van de volgende toetsresultaten:
+\begin{enumerate}[(a)]
+  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8, 3
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de mediaan van de volgende frequentietabelen
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item 
+  \begin{center}
+\begin{tabular}{c|c|c}
+$i$ & klasse     & $n_i$\\
+\hline
+  1 & $[ 1.60,  1.70[$ &   2\\
+  2 & $[ 1.70,  1.80[$ &   3\\
+  3 & $[ 1.80,  1.90[$ &   9\\
+  4 & $[ 1.90,  2.00[$ &   22\\
+  5 & $[ 2.00,  2.10[$ &   16\\
+  6 & $[ 2.10,  2.20[$ &   17\\
+  7 & $[ 2.20,  2.30[$ &   10\\
+  8 & $[ 2.30,  2.40[$ &   1\\
+\end{tabular}
+\end{center}
+  \item 
+  \begin{center}
+\begin{tabular}{c|c|c}
+$i$ & klasse     & $n_i$\\
+\hline
+  1 & $[ 1.60,  1.70[$ &   2\\
+  2 & $[ 1.70,  1.80[$ &   3\\
+  3 & $[ 1.80,  1.90[$ &   9\\
+  4 & $[ 1.90,  2.00[$ &   22\\
+  5 & $[ 2.00,  2.10[$ &   17\\
+  6 & $[ 2.10,  2.20[$ &   17\\
+  7 & $[ 2.20,  2.30[$ &   10\\
+  8 & $[ 2.30,  2.40[$ &   1\\
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+Tot slot is er nog de {\bf modus} Mod. Bij een reeks waarnemingsgetallen $x_1$, $x_2$, $\ldots$, $x_n$ is dat de waarneming die het meeste voorkomt. Als er meerdere waarneming de hoogste frequentie hebben is de modus een verzameling van deze waarnemingsgetallen. Bij een indeling in klassen nemen we de klassen met de hoogste frequentie als als modus, we noemen deze dan de {\bf modale klasse}.
+
+We merken verder op dat het gemiddelde veel gevoeliger is dan de mediaan. Wat we hiermee bedoelen is dat, indien er in een reeks waarnemen extreme waarden voorkomen die eigenlijk onmogelijk zouden zijn, dat het gemiddelde hierdoor beïnvloed wordt. De mediaan kan dus soms een betere centrummaat zijn.
+
+\begin{oefening}
+In een fabriek worden 1 liter flessen gevuld met ketjup. Om te controleren dat er geen fout zit op de machine wordt er elk uur steekproefgewijs 8 flessen gewogen. We krijgen volgende data de maandagmorgen:
+\begin{center}
+  230 gr; 1202 gr; 1212 gr; 1183 gr; 1191 gr; 1236 gr; 1232 gr; 1193 gr 
+\end{center}
+\begin{enumerate}[(a)]
+  \item Bepaal het gemiddelde.
+  \item Bepaal de mediaan.
+  \item Welke centrumwaarde past hier het best bij de data en waarom?
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\subsubsection{Spreidingsmaten}
+
+Met {\bf spreidingsmaten} kunnen we met getallen weergeven hoe de waarnemingsgetallen verspreid liggen rond een centrummaat. Beschouw bijvoorbeeld volgende twee datasets
+\begin{center}
+  4\; 6\; 8\; 10 \qquad\qquad en \qquad\qquad 1\; 4\; 5\; 9\; 11\; 12
+\end{center}
+Beide reeksen hebben hetzelfde gemiddelde en dezelfde mediaan. Toch is er een verschil, namelijk de linker dataset ligt dichter ronde het gemiddelde en de mediaan dan de rechter dataset. We zeggen dat de spreiding links kleiner is.
+
+De eenvoudigste spreidingsmaat is de {\bf variatiebreedte} $R$. Deze geeft ons de afstand tussen het kleinste en grootste getal van een reeks waarnemingen $x_1$, $x_2$, $\ldots$, $x_n$:
+$$R=\max_{i=1}^n x_i - \min_{i=1}^n x_i $$
+Bij een indeling in klassen wordt de afstand tussen de kleinste en grootste klassenmidden berekend.
+
+\begin{oefening}
+Bepaal de variatiebreedte van volgende waarnemingsgetallen:
+\begin{center}
+7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de variatiebreedte van de volgende frequentietabel
+\begin{center}
+\begin{tabular}{c|c|c}
+$i$ & klasse     & $n_i$\\
+\hline
+  1 & $[ 1.60,  1.70[$ &   2\\
+  2 & $[ 1.70,  1.80[$ &   3\\
+  3 & $[ 1.80,  1.90[$ &   9\\
+  4 & $[ 1.90,  2.00[$ &   22\\
+  5 & $[ 2.00,  2.10[$ &   16\\
+  6 & $[ 2.10,  2.20[$ &   17\\
+  7 & $[ 2.20,  2.30[$ &   10\\
+  8 & $[ 2.30,  2.40[$ &   1\\
+\end{tabular}
+\end{center}
+\end{oefening}
+\pagebreak
 
 \section{TBD}
 
