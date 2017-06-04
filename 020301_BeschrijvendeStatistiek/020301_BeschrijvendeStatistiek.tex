@@ -767,9 +767,242 @@ $i$ & klasse     & $n_i$\\
 \end{tabular}
 \end{center}
 \end{oefening}
-\pagebreak
 
-\section{TBD}
+\pagebreak
+Een weinig gebruikte spreidingsmaat is de {\bf gemiddelde absolute afwijking} $Mad$ die de gemiddelde afstand van een reeks waarnemingsgetallen $x_1$, $x_2$, $\ldots$, $x_n$ bepaalt:
+$$Mad=\dfrac{1}{n}\sum_{i=1}^n|x_i-\bar{x}|$$
+
+Wij laten deze buiten beschouwing daar deze in de praktijk toch niet gebruikt wordt. Wel vaak gebruikt zijn de {\bf variatie} $s^2$ die het gemiddelde van het kwadraat van de afstanden van een reeks waarnemingen $x_1$, $x_2$, $\ldots$, $x_n$ bepaalt:
+$$s^2=\dfrac{1}{n}\sum_{i=1}^n(x_i-\bar{x})^2$$
+Door het kwadraat krijgen we echter een vertekeningen, daarom werd de {\bf standaardafwijking} $s$ ingevoerd:
+$$s=\sqrt{\dfrac{1}{n}\sum_{i=1}^n(x_i-\bar{x})^2}$$
+
+Om bij een indeling in klassen de variatie en standaardafwijking te berekenen gebruiken we opnieuw de producten die bekomen worden door het klassenmidden te vermenigvuldigen met de frequentie. We verkiezen echter om deze kengetallen te berekenen met het \zrm{ZRM}.
+
+Een andere maat voor spreiding is de lengte van het gebied waarin de middelste 50\% van de
+geordende opmetingen liggen. Dit gebied loopt van het {\bf eerste kwartiel} $Q_1$ tot het {\bf derde kwartiel} $Q_3$.
+De lengte van dit interval is de {\bf interkwartielafstand}, genoteerd als $IQR$ (= InterQuartile Range).
+Als we de reeds berekende mediaan $Q_2$ noemen, dan is $Q_1$ te bepalen door de mediaan te nemen van de
+gegevens links van $Q_2$ en $Q_3$ is te bepalen door de mediaan te nemen van de gegevens rechts van $Q_2$. Ook
+dit kengetal zullen we berekenen met software.
+
+\subsubsection{Berekenen van de 1-variabele statistieken}
+
+Alle voorgaande kengetallen vatten we samen met de {\bf 1-variabele statistieken}. Deze kunnen allemaal
+in één keer berekend worden met het \zrm{ZRM}. Kies \zrm{MENU} en daarna \zrm{2:Statistics} en \zrm{EXE}. Nu kan de juiste soort statistische variabele, \zrm{1:1-Variable} gekozen worden waarna alle waarnemingen ingevoerd kunnen worden. Kies daarna het \zrm{OPTN} en \zrm{3:1-Variable Calc}.
+
+De volgende zijn belangrijk:
+\begin{center}
+  \begin{tabular}{r|l}
+    $\bar{x}$ & Het gemiddelde.\\
+    $s^2x$ & De variatie.\\
+    $sx$ & De standaard afwijking.\\
+    $n$ & De steekproefgrootte.\\
+    $min(x)$ & De laagste waarde.\\
+    $Q_1$ & Het eerste kwartiel.\\
+    $Med$ & De mediaan.\\
+    $Q_3$ & Het derde kwartiel.\\
+    $max(x)$ & De hoogste waarde.\\
+  \end{tabular}
+\end{center}
+
+\begin{oefening}
+Bepaal de 1-variabele statistieken van volgende waarnemingsgetallen m.b.v. het \zrm{ZRM}:
+\begin{center}
+7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\end{center}
+\end{oefening}
+
+\pagebreak
+\subsection{De boxplot}
+
+\begin{wrapfigure}[10]{l}{0.4\textwidth}
+  \vspace{-1cm}
+  \includegraphics[width=0.4\textwidth]{boxplot}
+\end{wrapfigure}
+
+Een goed zicht op zowel het centrum als de spreiding van je opmetingen, krijg je uit een boxplot. Dit
+is een grafiek die gebruik maakt van de begrippen minimum, maximum, mediaan, eerste kwartiel
+Q1, derde kwartiel Q3, IQR en uitschieters.
+
+De rechterstaart begint vanaf Q3. Dit lijnstuk gaat tot aan de grootste opmeting die kleiner of
+gelijk is aan $\mbox{Q3} + (1.5\cdot\mbox{IQR})$. Elke observatie die nog groter is, wordt als een uitschieter
+beschouwd en apart aangeduid. In deze studie loopt de rechterstaart van $66$ tot $81$ en heeft
+dus een lengte van $15$. Op een analoge manier teken je de linkerstaart, links van Q1. Die
+loopt hier van $42$ tot $51.5$, wat een lengte van $9.5$ oplevert.
+De rechthoekjes duiden aan waar de middelste getallen van de dataset liggen. De
+linkerrechthoek gaat van Q1 tot Med. In dat gebied ligt het tweede kwart van de geordende
+getallen. De rechterrechthoek gaat van Med tot Q3, en daar ligt het derde kwart van deze
+getallen.
+
+\begin{oefening}
+Teken de boxplot voor volgende waarnemingsgetallen:
+\begin{enumerate}[(a)]
+  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 22, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Extra oefeningen}
+
+\begin{oefening}
+Wanneer is een kwantitatieve veranderlijke continu? Zeg dat in je eigen woorden, en geef
+enkele voorbeelden.
+\end{oefening}
+
+\begin{oefening}
+Schrijf je een continu kwantitatieve veranderlijke altijd op met kommagetallen? Motiveer je
+antwoord.
+\end{oefening}
+
+\begin{oefening}
+Welke eigenschap probeert de standaardafwijking te beschrijven? Zeg in woorden hoe je de
+standaardafwijking berekent. Kan je daaruit afleiden of de standaardafwijking gevoelig is
+voor uitschieters? Kan je daarvan een eenvoudig voorbeeld geven?
+\end{oefening}
+
+\begin{oefening}
+Welke eigenschap probeert de interkwartielafstand te beschrijven? Zeg in woorden wat
+kwartielen zijn en hoe je de interkwartielafstand berekent. Kan je daaruit afleiden of de
+interkwartielafstand gevoelig is voor uitschieters? Kan je daarvan een eenvoudig voorbeeld
+geven?
+\end{oefening}
+
+\pagebreak
+\section{Voorbeeld examenvragen}
+
+\paragraph{Vraag 1}
+Van de {\em sweet \& fair shop} krijg je de volgende dataset\footnote{Met dank aan de studenten van 6SETA.}:
+
+druivensuiker aardbei; druivensuiker mango; kinderrozijnen; amandel chocolades; zure frieten; zure frieten; coco-mango reep; koban mix; kinderrozijnen; druivensuiker mango; zure frieten; kinderrozijnen;  druivensuiker mango; druivensuiker aardbei;  druivensuiker mango; druivensuiker mango; druivensuiker mango; druivensuiker aardbei; druivensuiker aardbei; druivensuiker aardbei; druivensuiker aardbei; kinderrozijnen;
+
+Stel een frequentietabel op:
+\begin{center}
+  \begin{tabular}{p{4cm}|p{4cm}|p{4cm}}
+    &absolute frequentie&relatieve frequentie\\
+    \hline
+    &&\\[6cm]
+  \end{tabular}
+\end{center}
+
+Wat heb je genomen als veranderlijke? \arulefill
+Dit is een kwalitatieve/kwantitatieve veranderlijke. {\tiny (schrappen wat niet past)}
+Wat is de steekproefgrootte? \arulefill
+Er zijn twee manieren om de data grafisch voor te stellen, welke:
+\begin{itemize}
+  \item \arule{6cm}
+  \item \arule{6cm}
+\end{itemize}
+
+\newpage
+Stel je data grafisch voor (op twee manieren)
+
+\ruitjes{20cm}
+
+\newpage
+\paragraph{Vraag 2}
+Aan een aantal studenten uit het eerste jaar hoger onderwijs werd gevraagd hoeveel auto's er bij hen in het gezin waren. De data die we terugkregen was als volgt:
+2; 0; 3; 1; 1; 1; 3; 1; 1; 1; 2; 1; 0; 0; 2; 0; 0; 0; 7; 1; 2; 2; 2; 2; 1; 1; 1; 2; 2; 3
+
+Wat zijn de elementen in dit onderzoek?
+\arules{1}
+
+Welke veranderlijke wordt hier onderzocht?
+\arules{1}
+
+Waarom mag je zeggen dat de veranderlijke in dit onderzoek kwantitatief is?
+\arules{2}
+
+Is de kwantitatieve veranderlijke discreet of continue?
+\arules{1}
+
+Vervolledig de frequentietabel (het is niet nodig om de data in klassen op te delen):
+\begin{center}
+  \setlength{\tabcolsep}{7pt}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{p{4cm}|p{4cm}|p{4cm}}
+    &&\\
+    \hline
+    0&&\\
+    1&&\\
+    2&&\\
+    3&&\\
+    4&&\\
+    5&&\\
+    6&&\\
+    7&&\\
+    &n=&\\
+  \end{tabular}
+\end{center}
+
+Maak een histogram waarin je absolute frequenties gebruikt.
+
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
+\begin{tikzpicture}[xscale=1,yscale=0.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-1,-1) grid (12,12);
+\draw[->,color=black] (-1,0) -- (12,0);
+\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
+\draw[color=black] (0.25,12.07) node [anchor=south west] { x};
+\draw[->,color=black] (0,-1) -- (0,12);
+\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
+\draw[color=black] (12.09,-1.25) node [anchor=west] { y};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\end{tikzpicture}
+\end{center}
+
+Is het belangrijk de grootste absolute frequentie vooraan wordt geplaatst?
+\arules{1}
+
+In hoeveel gezinnen zijn er $4$ auto's? \arulefill
+Waarom staat de waarde $4$ dan toch in de frequentietabel?
+\arules{2}
+
+Is het nuttig om ook in het histogram een plaatsje op de $x$-as te voorzien voor $4$ auto's, hoewel er daar geen staaf getekend is?
+\arules{2}
+
+Bereken het gemiddeld aantal auto's per gezin:
+%\vspace*{1cm}
+$$\bar{x}=\arule{5cm}$$
+
+Voor wat is het gemiddelde gevoelig?
+\arules{1}
+
+Wat is de oplossing hierop?
+\arules{1}
+
+Geef deze voor ons voorbeeld:
+\arules{1}
+
+\newpage
+\paragraph{Vraag 3}
+Tijdens de opendeurdag laat de afdeling hout de leerlingen uit het zesde leerjaar planken zagen op 180 cm. Na tien planken meten we de reeds gezaagde planken en we vinden de volgende lengtes:\\
+177; 178; 178; 179; 179; 180; 181; 181; 183; 184 cm\\
+
+{\em Bereken of bepaal m.b.v. \zrm{ZRM} en geef ook steeds het correcte symbool!}
+
+Steekproefgrootte:\arulefill
+
+Gemiddelde:\arulefill
+
+Standaard afwijking\footnote{$s = \sqrt{\frac{\mbox{som van alle gekwadrateerde afwijkingen t.o.v. het gemiddelde}}{n-1}} = \sqrt{\frac{\sum_{i=0}^n(\bar{x}-x_i)^2}{n-1}}$}:\arulefill
+
+Maximum:\arulefill
+
+Minimum:\arulefill
+
+Eerste kwartiel:\arulefill
+
+Mediaan:\arulefill
+
+Derde kwartiel:\arulefill
+
+Interkwartielafstand:\arulefill
+
+Teken de boxplot:
+
+\ruitjes{3cm}
 
 \end{document}
 
