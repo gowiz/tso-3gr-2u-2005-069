@@ -12,7 +12,8 @@
 \DeclareTranslation{dutch}{exsheets-solution-name}{Oplossing}
 
 \usepackage{versions}
-\includeversion{cursus}
+%\includeversion{cursus}
+\excludeversion{cursus}
 
 \usepackage{pgfplots}
 
@@ -91,7 +92,7 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.1)}
 
 \onehalfspacing
 
-\section{Inleiding}
+%\section{Inleiding}
 
 We beginnen aan een hoofdstuk die vaak combinatoriek of combinatieleer wordt genoemd. Wij zullen voornamelijk problemen bespreken waarbij we het aantal mogelijkheden of het aantal objecten van een verzameling moeten tellen. We spreken dan ook van {\bf telproblemen}.
 
@@ -199,11 +200,11 @@ mogelijkheden.
 
 \end{cursus}
 
-\begin{question}
+\begin{oefening}
 In een sportclub stelt men T-shirts, shorts en kousen ter beschikking voor de spelers. Er zijn oranje, witte, blauwe, rode en groene T-shirts. De shorts zijn zwart, blauw of wit. De kousen zijn wit met een blauwe boord ofwel effen wit. Er zijn dus heel wat outfits voor de spelers mogelijk.
 
 Teken het boomdiagram en het wegendiagram dat met de gegevens correspondeert. Hoeveel mogelijke outfits zijn er voor de spelers?
-\end{question}
+\end{oefening}
 
 \begin{oefening}
 In de kantine van een fabriek staat een machine voor warme dranken. De leverancier wil gewone koffie, espresso en thee aanbieden, met of zonder melk, zonder, met weinig of met veel suiker. Hij heeft voor elke mogelijkheid een knop voorzien.
@@ -893,10 +894,8 @@ Het aantal van zulke combinaties stellen we nu voor door het symbool $C^4_6$ en 
 
 $$C^4_6=\dfrac{6!}{4!\cdot (6-4)!}$$
 
-\begin{oefening}
 Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
 \arules{2}
-\end{oefening}
 
 Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder
 herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index
@@ -1012,7 +1011,6 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 

@@ -10,7 +10,8 @@
 \usepackage{pgfplots}
 
 \usepackage{versions}
-\includeversion{theorie}
+\excludeversion{theorie}
+%\includeversion{theorie}
 
 % \renewcommand{\rmdefault}{phv} % Arial
 % \renewcommand{\sfdefault}{phv} % Arial
@@ -64,7 +65,7 @@
     \item de nulwaarden,
     \item het stijgen en dalen,
     \item het tekenverloop,
-    \item de periodiciteit,
+    %\item de periodiciteit,
     \item de symmetrieën,
     \item de extreme waarden
     \end{itemize}
@@ -90,7 +91,7 @@
 \pagebreak
 \end{theorie}
 
-\section{Definitie}
+\section{Reële functie}
 
 \begin{theorie}
 \begin{definition}
@@ -103,11 +104,13 @@ Vaak wordt in de notatie expliciet aangegeven dat de functie vertrekt uit de re�
 $$f:\mathbb{R}\to\mathbb{R}$$
 
 \paragraph{Terminologie:}
-$$(x,y) = \mathbb{R}^2$$
-\begin{description}
-\item[x] argument, onafhankelijke veranderlijke, abscis, $x$-waarde
-\item[y] beeld, afhankelijke veranderlijke, ordinaat, $y$-waarde
-\end{description}
+$$(x,y) \in \mathbb{R}^2$$
+\begin{itemize}
+  \item $x$ argument, onafhankelijke veranderlijke, abscis, $x$-waarde
+  \item $y$ beeld, afhankelijke veranderlijke, ordinaat, $y$-waarde
+  \item $\in$ element van
+  \item $\mathbb{R}^2$ verzameling van alle koppels reële getallen
+\end{itemize}
 
 \end{theorie}
 
@@ -116,6 +119,15 @@ $$(x,y) = \mathbb{R}^2$$
 \end{oefening}
 
 \begin{oefening}
+\begin{enumerate}[(a)]
+  \item Kunnen de koppels $(1,3)$ en $(2,4)$ tot dezelfde functie behoren?
+  \item Kunnen de koppels $(1,3)$ en $(1,4)$ tot dezelfde functie behoren?
+  \item Kunnen de koppels $(1,3)$ en $(2,3)$ tot dezelfde functie behoren?
+  \item Kunnen de koppels $(1,3)$ en $(1,3)$ tot dezelfde functie behoren?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}*
   Beschouw een functie met de naam $f$. De argumenten zijn steeds negatieve reële getallen zonder nul en de beelden zijn steeds positieve reële getallen. Noteer $f$ zo expliciet mogelijk.
 \end{oefening}
 
@@ -167,8 +179,8 @@ We hebben de volgende opmerkingen
   $$f(x)=\sqrt{x}$$
   Het voorschrift van een functie kan ook nog geschreven worden als een vergelijking met twee onbekenden, $x$ en $y$. In ons voorbeeld
   $$f: y=\sqrt{x}$$
-\item[Functiewaardentabel:] Dit gebruiken we om te helpen bij het tekenen van de grafiek. Hier plaatsen we de koppels $(x,y)$ in een tabel. Weten welke koppels in de tabel moeten komen vraagt een beetje ervaring. Hier hebben we ervoor gekozen om te beginnen bij $-2$ en te eindigen met $4$ en telkens met stapjes van $1$ te verspringen. Een betere keuze was geweest om te beginnen bij $0$ en te eindigen bij $9$. Merk ook op dat we de beelden bij $2$ en $3$ afgerond hebben naar respectievelijk $1.4$ en $1.7$, dit is verantwoord daar we bij het tekenen van de grafiek toch geen grote nauwkeurigheid kunnen verwachten.
-\item[Grafiek:] We beginnen met een orthonormaal assenstelsel te tekenen, dit wil zeggen dat de assen loodrecht op elkaar moeten staaan en dat de ijking (de afstand tussen 0 en 1) op elke as gelijk moet zijn. We vergeten niet van de $x$-as en de $y$-as te labelen. Daarna kijken we in de functiewaardentabel. Elk koppel $(x,y)$ die op het assenstelsel past duiden we aan met een punt. De grafiek is dan de vloeiende lijn die de punten verbindt. Merk op dat we de grafiek na het koppen $(4,2)$ blijven verder tekenen. Dit moet ook, want het koppel $(9,3)$ is ook nog een element van de verzameling koppels $(x,\sqrt{x})$.
+\item[Functiewaardentabel:] Dit gebruiken we om te helpen bij het tekenen van de grafiek. Hier plaatsen we de koppels $(x,y)$ in een tabel. Weten welke koppels in de tabel moeten komen vraagt een beetje ervaring. Hier hebben we ervoor gekozen om te beginnen bij $-2$ en te eindigen met $4$ en telkens met stapjes van $1$ te verspringen. Een betere keuze was geweest om te beginnen bij $0$ en te eindigen bij $9$. Merk ook op dat we de beelden bij $2$ en $3$ afgerond hebben naar respectievelijk $1.4$ en $1.7$, dit is verantwoord daar we bij het tekenen van de grafiek toch geen grotere nauwkeurigheid kunnen verwachten.
+\item[Grafiek:] We beginnen met een orthonormaal assenstelsel te tekenen, dit wil zeggen dat de assen loodrecht op elkaar moeten staan en dat de ijking (de afstand tussen 0 en 1) op elke as gelijk moet zijn. We vergeten niet van de $x$-as en de $y$-as te labelen. Daarna kijken we in de functiewaardentabel. Elk koppel $(x,y)$ die op het assenstelsel past duiden we aan met een punt. De grafiek is dan de vloeiende lijn die de punten verbindt. Merk op dat we de grafiek na het koppel $(4,2)$ blijven verder tekenen. Dit moet ook, want het koppel $(9,3)$ is ook nog een element van de verzameling koppels $(x,\sqrt{x})$.
 \end{description}
 
 \end{theorie}
@@ -182,6 +194,7 @@ We hebben de volgende opmerkingen
 \begin{oefening}
   Schrijf de volgende functies zo kort mogelijk
   \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \dfrac{1}{x^2+1}$
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 0$
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt[3]{x^2+1}$
@@ -193,6 +206,7 @@ We hebben de volgende opmerkingen
 \begin{oefening}
   Beschouw de volgende functies en herschrijf ze als een vergelijking van twee onbekenden
   \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt{5+x^3}$
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 3$
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto x$
@@ -296,6 +310,30 @@ $$(5,-8)\qquad(-1,4)\qquad(2,3)\qquad(\sqrt{2},\frac{2}{3})\qquad(-6,-1)$$
   Geef van een functie met functievoorschrift $f(x)=\sqrt{x+4}$ een functiewaardentabel die begint bij -5 en eindigt bij 5. Teken daarna de grafiek.
 \end{oefening}
 
+\begin{oefening}*
+  Zijn de functies
+  $$f(x)=x^2+2x+1$$
+  en
+  $$g(x)=(x+1)^2$$
+  dezelfde of verschillende functies?
+\end{oefening}
+
+\begin{oefening}*
+  Zijn de functies
+  $$f(x)=x^2+4$$
+  en
+  $$g(x)=(x+2)^2$$
+  dezelfde of verschillende functies?
+\end{oefening}
+
+\begin{oefening}*
+  Zijn de functies
+  $$f(x)=x^2-9$$
+  en
+  $$g(x)=(x+3)(x-3)$$
+  dezelfde of verschillende functies?
+\end{oefening}
+
 
 \newpage
 \section{Domein en bereik van een functie}
@@ -339,8 +377,9 @@ omdat we niet kunnen delen door $0$! Eender wel ander getal kunnen we wel kiezen
 \end{theorie}
 
 \begin{oefening}
-  Beschouw de functie $\displaystyle f(x)=\dfrac{1}{-3-x}$
+  Beschouw de functie $\displaystyle f(x)=\dfrac{1}{-3-x}$\\
   \begin{enumerate}[(a)]
+  \itemsep.5em
   \item Controleer of $x=-3$ tot het domein van $f$ behoort.
   \item Controleer of $x=3$ tot het domein van $f$ behoort.
   \item Wat is het domein van $f$?
@@ -410,7 +449,7 @@ $$\dom\sqrt{x+1.5}=[1.5,+\infty[\;.$$
 \begin{oefening}
   Bepaal grafisch het domein van\\
   \begin{enumerate}[(a)]
-    \itemsep0.8em
+    \itemsep.5em
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 2x+2$
   \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 4-x^2$
   \item $g:\mathbb{R}\to\mathbb{R}:x\mapsto x^3-1$
@@ -475,10 +514,15 @@ $$\dom\sqrt{x+1.5}=[1.5,+\infty[\;.$$
 
 \paragraph{Opmerking:} Men spreekt ook soms van het {\bf beeld} van een functie. Dit staat dus synoniem met het bereik van een functie. Het beeld van een functie is dan dus de verzameling van alle beelden van een functie. De notatie in dit geval is $\mbox{bld }f$.
 
+
+\subsubsection{Het domein bepalen aan de hand van het functievoorschrift}
+
 \paragraph{Voorbeeld} Bepaal het bereik van $$f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt{x+1.5}\;.$$
 
 We herinneren ons dat $\dom f = [-1.5,+\infty[$. De kleinste waarde in het domein is dus $-1.5$. Als we $x=-1.5$ invullen in de functie, krijgen we $f(1.5)=\sqrt{1.5-1.5}=\sqrt{0}=0$. Dus als beeld krijgen we $0$. We vinden alvast dat $0\in\ber f$. Waarden kleiner dan $-1.5$ kunnen we in de functie niet invullen. Laten we een waarde nemen die een klein beetje groter is dan de kleinste waarde uit het domein, bijvoorbeeld $x=-1$. We gebruiken dit nu als argument voor de functie en rekenen uit: $f(-1)=\sqrt{-1+1.5}=\sqrt{0.5}\approx0.71$. We besluiten dus dat $0.71\in\ber f$. We kunnen dus steeds grotere waarden nemen als argument, we merken dat we steeds een positief beeld krijgen. Uiteindelijk kan beredeneerd worden dat
 $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
+
+\subsubsection{Het domein bepalen aan de hand van de grafiek}
 
 Eenvoudig is dit allemaal niet, gelukkig kunnen we het bereik ook snel aflezen met behulp van de grafiek. Aangezien we de beelden zoeken, dus de $y$-waarden, moet er nu geprojecteerd worden op de $y$-as:
 
@@ -603,7 +647,7 @@ $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
 
 
 \begin{oefening}
-  Bepaal het domein en bereik van de reële functies met onderstaande voorschriften:
+  Teken de grafiek van de functies met onderstaande voorschriften. Bepaal dan het domein en bereik van deze functies:
   \begin{enumerate}[(a)]
     \itemsep0.8em
   \item $\displaystyle f_a : y=2x+15$
@@ -612,6 +656,8 @@ $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
   \item $\displaystyle f_d : y=\frac{4}{x^2-25}$
   \item $\displaystyle f_e : y=-5x^2$
   \item $\displaystyle f_f : y=-x^2+2x$
+  \item $\displaystyle f_g : y=\sqrt(9-x^2)$
+  \item $\displaystyle f_h : y=\sqrt(x^2-4)$
   \end{enumerate}
 \end{oefening}
 
@@ -685,6 +731,7 @@ De {\bf nulwaarden} van een functie $f$ zijn alle $x$-waarden van de snijpunten 
 \begin{oefening}
   Bepaal zowel algebraïsch als grafisch alle nulwaarden van de volgende functies:
   \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f(x)=3x-6$
   \item $f(x)=x-2$
   \item $f(x)=4-x^2$
@@ -811,12 +858,14 @@ Het tekenverloop plaatsen we in de volgende tabel:
 In de tabel staan bovenaan de $x$-waarden en onderaan de $y$-waarden. Als we van de functie het domein doorlopen van $-\infty$ naar $+\infty$ dan zien we op de grafiek dat in het interval $]-\infty,3[$ op de $x$-as alle beelden onder de $x$-as liggen. Met andere woorden de beelden zijn in dit interval negatief. Dit wordt onderaan in de tabel aangeduid met een $-$. We hebben dat $x_0=3$ een nulwaarde van de functie is, daar is het teken dus nul wat we aanduiden onderaan in de tabel met een $0$. Doorlopen we verder het domein, dan liggen in $]3,+\infty[$ alle beelden boven de $x$-as en zijn ze dus positief, we duiden dit aan met een $+$.
 
 \pagebreak
+\subsection{Voorbeelden}
+
 \paragraph{Voorbeeld:} We bepalen nu het tekenverloop van $f:\mathbb{R}\to\mathbb{R}:x\mapsto \dfrac{1}{x-4}+1\;.$
 
 De grafiek van deze functie is de volgende hyperbool
 \begin{center}
   \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  \begin{tikzpicture}[line cap=round,scale=0.75,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
     \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.25,-3.2) grid (8.1,4.2);
     \draw[->,color=black] (-2.26,0) -- (8.11,0);
     \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}
@@ -940,6 +989,8 @@ Het bijhorende tekenverloop is
 \pagebreak
 \section{Stijgen en dalen}
 
+\subsection{Definities}
+
 \begin{theorie}
 
 \begin{definition}
@@ -956,6 +1007,7 @@ Het bijhorende tekenverloop is
   Een functie $f$ die zowel stijgend als dalend is in een interval $I$ noemen we {\bf constant} op dat interval $I$.
 \end{definition}
 
+\subsection{Voorbeelden}
 
 \paragraph{Voorbeeld:}\mbox{}
 
@@ -1008,7 +1060,6 @@ In de tabel staan bovenaan de $x$-waarden. In het interval van $]-\infty, 1]$ is
 
 Deze tabel wordt het stijgend\&dalend genoemd. Deze tabel zal in het volgende hoofdstuk aangevuld worden met informatie over de maximale en minimale waarden.
 
-\pagebreak
 \paragraph{Voorbeeld:}
 
 \begin{center}
@@ -1059,8 +1110,7 @@ Samengevat in het stijgen\&dalen:
 \end{theorie}
 
 \begin{oefening}
-  Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
-  \begin{multicols}{2}
+Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
     \vspace*{1cm}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
@@ -1079,7 +1129,7 @@ Samengevat in het stijgen\&dalen:
         \draw[line width=1.6pt, smooth,samples=100,domain=-3.2800000000000002:6.379999999999999] plot(\x,{0.5*(\x)-1.5});
       \end{tikzpicture}
     \end{center}
-    \vspace*{0.8cm}
+    \vspace*{1cm}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1102,6 +1152,7 @@ Samengevat in het stijgen\&dalen:
         \draw [color=black] (5,1) circle (2.5pt);
       \end{tikzpicture}
     \end{center}
+    \vspace*{1cm}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1124,18 +1175,17 @@ Samengevat in het stijgen\&dalen:
         \draw[->,color=black] (-5.42,0) -- (5.31,0);
         \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
         \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-        \draw[color=black] (5,0.08) node [anchor=south west] { x};
+        \draw[color=black] (5,0.08) node [anchor=south west] {$x$};
         \draw[->,color=black] (0,-2.34) -- (0,2.45);
         \foreach \y in {-2,-1,1,2}
         \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-        \draw[color=black] (0.1,2.26) node [anchor=west] { y};
+        \draw[color=black] (0.1,2.26) node [anchor=west] {$y$};
         \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
         \clip(-5.42,-2.34) rectangle (5.31,2.45);
         \draw[line width=1.8pt, smooth,samples=100,domain=-5.4:5.3] plot(\x,{0.2*((\x)+3)*((\x)+1)*((\x)-2)});
         \draw (2.3,1.25) node[anchor=north west] {$f$};
       \end{tikzpicture}
     \end{center}
-  \end{multicols}
 \end{oefening}
 
 \newpage
@@ -1143,6 +1193,9 @@ Samengevat in het stijgen\&dalen:
 \section{Extrema}
 
 \begin{theorie}
+
+\subsection{Definities}
+
 De {\bf extrema} van een functie zijn de, eventueel op een klein deel van de functie, grootste of kleinste beelden.
 
 \begin{definition}
@@ -1159,24 +1212,26 @@ Als in de vorige definitie het interval $I$ het volledige domein van de functie 
 
 Indien een functiewaarde maar op een klein deel van het domein het kleinste of grootste beeld is, dan spreken we van een {\bf relatief minimum} of {\bf relatief maximum}.
 
-\paragraph*{Voorbeeld:} Beschouw de functie waarvan de volgende grafiek wordt gegeven
+\subsection{Voorbeeld}
+
+Beschouw de functie waarvan de volgende grafiek wordt gegeven
 
 \begin{center}
   \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-  \begin{tikzpicture}[scale=1.0, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  \begin{tikzpicture}[scale=2.0, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
     \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-1.27,-1.54) grid (3.48,3.17);
     \draw[->,color=black] (-1.27,0) -- (3.48,0);
     \foreach \x in {-1,1,2,3}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \draw[color=black] (3.26,0.06) node [anchor=south west] { x};
+    \draw[color=black] (3.26,0.06) node [anchor=south west] {$x$};
     \draw[->,color=black] (0,-1.54) -- (0,3.17);
     \foreach \y in {-1,1,2,3}
     \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \draw[color=black] (0.07,2.9) node [anchor=west] { y};
+    \draw[color=black] (0.07,2.9) node [anchor=west] {$y$};
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-1.27,-1.54) rectangle (3.48,3.17);
     \draw[line width=1.6pt, smooth,samples=100,domain=-1.2712156348070227:3.4799703926684455] plot(\x,{2*(\x)^3-9*(\x)^2+12*(\x)-3});
-    \draw (2.68,1.79) node[anchor=north west] {f};
+    \draw (2.68,1.79) node[anchor=north west] {$f$};
   \end{tikzpicture}
 \end{center}
 
@@ -1192,9 +1247,217 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
 
 \paragraph{Onthoud!} Zoek de $y$-waarden om te bepalen waar de functie een minimum/maximum bereikt.
 
-\newpage
+\end{theorie}
+
+\begin{oefening}
+Bepaal alle extrema van de volgende grafieken.
+    \vspace*{1cm}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.35,-2.49) grid (6.49,3.26);
+        \draw[->,color=black] (-3.35,0) -- (6.49,0);
+        \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[color=black] (6.2,0.07) node [anchor=south west] {$x$};
+        \draw[->,color=black] (0,-2.49) -- (0,3.26);
+        \foreach \y in {-2,-1,1,2,3}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0.09,2.89) node [anchor=west] {$y$};
+        \clip(-3.35,-2.49) rectangle (6.49,3.26);
+        \draw [line width=1.8pt] (-2,-1)-- (5,1);
+        \fill [color=black] (-2,-1) circle (2.5pt);
+        \draw [color=black] (5,1) circle (2.5pt);
+      \end{tikzpicture}
+    \end{center}
+    \vspace*{1cm}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.25,-3.2) grid (8.1,4.2);
+        \draw[->,color=black] (-2.26,0) -- (8.11,0);
+        \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-3.3) -- (0,4.12);
+        \foreach \y in {-3,-2,-1,1,2,3,4}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-2.26,-3.3) rectangle (8.11,4.12);
+        \draw[line width=1.8pt, smooth,samples=500,domain=-2.26:3.99] plot(\x,{1/((\x)-4)+1});
+        \draw[line width=1.8pt, smooth,samples=500,domain=4.01:8.1] plot(\x,{1/((\x)-4)+1});
+      \end{tikzpicture}
+    \end{center}
+    \vspace*{1cm}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-2.1) grid (5.1,2.1);
+        \draw[->,color=black] (-5.42,0) -- (5.31,0);
+        \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[color=black] (5,0.08) node [anchor=south west] {$x$};
+        \draw[->,color=black] (0,-2.34) -- (0,2.45);
+        \foreach \y in {-2,-1,1,2}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0.1,2.26) node [anchor=west] {$y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-5.42,-2.34) rectangle (5.31,2.45);
+        \draw[line width=1.8pt, smooth,samples=100,domain=-5.4:5.3] plot(\x,{0.2*((\x)+3)*((\x)+1)*((\x)-2)});
+        \draw (2.3,1.25) node[anchor=north west] {$f$};
+      \end{tikzpicture}
+    \end{center}
+\end{oefening}
+
+\pagebreak
+
+\section{Symmetrie}
+
+\begin{theorie}
+
+Een functie $f$ kan een {\bf lijnsymmetrie} of een {\bf puntsymmetrie} hebben. In het eerste geval is er een rechte, de {\bf as van symmetrie} genoemd waarrond we de grafiek van de functie kunnen spiegelen zonder dat grafiek zal veranderen. In het tweede geval is er een punt waarrond we de grafiek kunnen spiegelen, namelijk {\bf punt van symmetrie} waarrond we de grafiek kunnen spiegelen. Een functie kan meer dan één lijn- en/of puntsymmetrie hebben.
+
+\subsection{Lijnsymmetrie}
+
+Als een functie een as van symmetrie heeft, dan zal het meestal een verticale zijn. Stel dat het een horizontale as zou zijn en we spiegelen daar een punt van de de grafiek rond, dan zouden we twee $y$-waarden moeten hebben zodat de grafiek symmetrisch zou zijn. Maar een functie kan hoogstens één $y$-waarde per $x$-waarde hebben.
+
+We zoeken dus een rechte $x=p$. En we weten dat als we een afstand $a$ naar rechts gaan, dat we het beeld daar moeten kunnen spiegelen op een afstand $a$ naar links. Dit betekend dus voor de functie $f$ die symmetrisch is rond $x=p$ dat er geldt
+$$f(p-a)=f(p+a)\qquad\forall a\in \dom f$$
+
+\subsubsection*{Voorbeeld}
+
+We nemen bijvoorbeeld de functie $f(x)=x^2-4x+3$
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-2.24,0) -- (6.4,0);
+\foreach \x in {-2,-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.44) -- (0,5.1);
+\foreach \y in {-1,1,2,3,4,5}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-2.24,-1.44) rectangle (6.4,5.1);
+\draw[line width=1.8pt, smooth,samples=100,domain=-2.24:6.4] plot(\x,{(\x)^2-4*(\x)+3});
+\draw [dotted, line width=1.2pt] (2,-1.44) -- (2,5.1);
+\draw (2.26,3.58) node[anchor=north west] {$x=2$};
+\draw (2.28,-0.6) node[anchor=north west] {$f(x)=x^2-4x+3$};
+\end{tikzpicture}
+\end{center}
+
+Grafisch kunnen we de as van symmetrie bepalen met onze geodriehoek, deze is
+$$x=2$$.
+
+Algebraïsch kunnen we bovenstaande identiteit gebruiken, hier is $p=2$ en we tonen aan dat $f(2-a)=f(2+a)$ voor een willekeurige $a$:
+\begin{eqnarray*}
+  f(2-a) &=& (2-a)^2-4(2-a)+3\\
+         &=& 4-4a+a^2-8+4a+3\\
+         &=& a^2-1
+\end{eqnarray*}
+en
+\begin{eqnarray*}
+  f(2+a) &=& (2+a)^2-4(2+a)+3\\
+         &=& 4+4a+a^2-8-4a+3\\
+         &=& a^2-1
+\end{eqnarray*}
+
+\subsection{Puntsymmetrie}
+
+Als een functie symmetrisch is ten opzichte van het punt $(p,q)$, dan wil dat zeggen dat als we een afstand $a$ naar rechts gaan dat dan de gespiegelde $y$-waarde even ver (omhoog of omlaag) van $q$ moet liggen. Dus het gemiddelde van de $y$-waarden moet gelijk zijn aan $q$, dus er geldt
+$$\dfrac{f(p-a)+f(p+a)}{2}=q \qquad \forall a\in\dom f$$
+
+\subsubsection*{Voorbeeld}
+
+We nemen bijvoorbeeld de functie $f(x)=0.5x+1$.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.14,0) -- (6.5,0);
+\foreach \x in {-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.24) -- (0,4.4);
+\foreach \y in {-1,1,2,3,4}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.14,-1.24) rectangle (6.5,4.4);
+\draw[line width=1.2pt, smooth,samples=100,domain=-1.1400000000000001:6.5] plot(\x,{0.5*(\x)+1});
+\draw (1.2,1.6) node[anchor=north west] {$f(x)=0.5x+1$};
+\draw (4.06,2.94) node[anchor=north west] {$(4,3)$};
+\begin{scriptsize}
+\fill (4,3) circle (1.8pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Aan de grafiek zien we dat elk punt op die rechte een punt van symmetrie heeft. We merken ook op dat elke rechte loodrecht op die grafiek een as van symmetrie heeft. Deze rechte heeft dus een oneindig aantal symmetrieën.
+
+We tonen eens algebraïsch aan dat het punt $(4,3)$ op de rechte inderdaad een punt van symmetrie is. We gebruiken dus $p=4$ en $q=3$ in bovenstaande identiteit en moeten dus aantonen dat $\dfrac{f(4-a)+f(4+a)}{2}=3$ voor een willekeurig $a$:
+\begin{eqnarray*}
+  \dfrac{f(4-a)+f(4+a)}{2} &=& \dfrac{0.5(4-a)+1 + 0.5(4+a)+1}{2}\\
+                           &=& \dfrac{2-0.5a + 1 + 2+0.5a + 1}{2}\\
+                           &=& \dfrac{6}{2}\\
+                           &=& 3
+\end{eqnarray*}
 
 \end{theorie}
+
+\begin{oefening}
+Bepaal alle symmetrieën die bij volgende grafieken horen.
+    \vspace*{1cm}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        % \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.28,-3.34) grid (6.38,2.18);
+        \draw[->,color=black] (-3.28,0) -- (6.38,0);
+        \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[color=black] (6.06,0.08) node [anchor=south west] { x};
+        \draw[->,color=black] (0,-3.34) -- (0,2.18);
+        \foreach \y in {-3,-2,-1,1,2}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0.1,1.78) node [anchor=west] { y};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-3.28,-3.34) rectangle (6.38,2.18);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-3.2800000000000002:6.379999999999999] plot(\x,{0.5*(\x)-1.5});
+      \end{tikzpicture}
+    \end{center}
+    \vspace*{1cm}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        % \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.25,-3.2) grid (8.1,4.2);
+        \draw[->,color=black] (-2.26,0) -- (8.11,0);
+        \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-3.3) -- (0,4.12);
+        \foreach \y in {-3,-2,-1,1,2,3,4}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-2.26,-3.3) rectangle (8.11,4.12);
+        \draw[line width=1.8pt, smooth,samples=500,domain=-2.26:3.99] plot(\x,{1/((\x)-4)+1});
+        \draw[line width=1.8pt, smooth,samples=500,domain=4.01:8.1] plot(\x,{1/((\x)-4)+1});
+      \end{tikzpicture}
+    \end{center}
+    \vspace*{1cm}
+    \begin{center}
+      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-5.42,0) -- (5.31,0);
+        \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[color=black] (5,0.08) node [anchor=south west] {$x$};
+        \draw[->,color=black] (0,-2.34) -- (0,2.45);
+        \foreach \y in {-2,-1,1,2}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0.1,2.26) node [anchor=west] {$y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-5.42,-2.34) rectangle (5.31,2.45);
+        \draw[line width=1.8pt, smooth,samples=100,domain=-5.4:5.3] plot(\x,{0.2*((\x)+3)*((\x)+1)*((\x)-2)});
+        \draw (2.3,1.25) node[anchor=north west] {$f$};
+      \end{tikzpicture}
+    \end{center}
+\end{oefening}
+
+\pagebreak
+
+\section{Extra oefeningen}
 
 \begin{oefening}
   Bepaal voor onderstaande functie
@@ -1235,7 +1498,7 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
 
 
 \begin{oefening}
-  Lees van volgende grafiek het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen en dalen en de extrema.
+  Gebruik de grafiek om het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën te bepalen.
 
   $$f(x):\;x\mapsto y=\frac{15}{x^2+3}$$
 
@@ -1249,7 +1512,7 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
       \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-5,-1) rectangle (5,6.5);
-      \draw[line width=1.2pt, smooth,samples=100,domain=-5.0:5.0] plot(\x,{15/((\x)^2+3)});
+      \draw[line width=1.6pt, smooth,samples=100,domain=-5.0:5.0] plot(\x,{15/((\x)^2+3)});
       \draw (1.26,4.62) node[anchor=north west] {$ f(x)=\frac{15}{x^2+3} $};
     \end{tikzpicture}
   \end{center}
@@ -1258,7 +1521,7 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
 
 
 \begin{oefening}
-  Lees van volgende grafiek het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen en dalen en de extrema.
+  Gebruik de grafiek om het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën te bepalen.
 
   $$f(x):\;x\mapsto y=x^3+3x^2+2$$
 
@@ -1272,10 +1535,45 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
       \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-5,-1) rectangle (5,7);
-      \draw[line width=1.2pt, smooth,samples=100,domain=-5.0:5.0] plot(\x,{(\x)^3+3*(\x)^2+2});
+      \draw[line width=1.6pt, smooth,samples=100,domain=-5.0:5.0] plot(\x,{(\x)^3+3*(\x)^2+2});
       \draw (-3,6) node[anchor=north west] {$ f $};
     \end{tikzpicture}
   \end{center}
+
+\end{oefening}
+
+\begin{oefening}
+  Gebruik de grafiek om het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën te bepalen.
+
+  $$f(x)=\sqrt{9-x^2}$$
+
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw[->,color=black] (-5,0) -- (5,0);
+      \foreach \x in {-4,-2,2,4}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-1) -- (0,5);
+      \foreach \y in {,2,4}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-5,-1) rectangle (5,5);
+      \draw[line width=1.6pt, smooth,samples=100,domain=-3:3] plot(\x,{(9-(\x)^2)^(1/2)});
+      \draw (-3,6) node[anchor=north west] {$ f $};
+    \end{tikzpicture}
+  \end{center}
+
+\end{oefening}
+
+\begin{oefening}
+  Teken de grafiek van de volgende functies en bepaal het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën.
+  \begin{enumerate}[(a)]
+    \itemsep.5em
+    \item $f(x)=2x$
+    \item $f(x)=-2$
+    \item $f(x)=(x-2)^2-4$
+    \item $f(x)=(x-2)^3-4$
+    \item $f(x)=\sqrt{x-2}-4$
+  \end{enumerate}
 
 \end{oefening}
 
