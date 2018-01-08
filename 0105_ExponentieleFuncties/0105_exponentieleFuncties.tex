@@ -3,10 +3,19 @@
 \input{../gowiz.tex}
 
 \usepackage{pgfplots}
-
 \usepackage{relsize}
 
+\usepackage{versions}
+%\excludeversion{theorie}
+\includeversion{theorie}
+
 \begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Exponentiële Functies}
+
+\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -79,8 +88,11 @@ Je \hfill {\scriptsize(LP2005-069, ET2-3-6)}
 \fancyhead[RO,LE]{Exponentiële functies}
 \fancyhead[RE,LO]{}
 
+\end{theorie}
 
 \section{Machten met natuurlijke exponenten}
+
+\begin{theorie}
 
 Herinner je nog de definitie voor een macht met een reëel grondtal en een natuurlijke exponent:
 
@@ -96,34 +108,55 @@ a^1 &= a\\
 
 We lezen de $n$-de macht van $a$ of $a$ tot de macht $n$, $a$ noemen we het {\bf grondtal} en $n$ de {\bf exponent}. Als de exponent even is, spreken we van een {\bf even macht} en anders van een {\bf oneven macht}.
 
+\end{theorie}
+
 \begin{oefening}
-In de bovenstaande definitie moet $n\in \mathbb{N}\setminus\{0,1\}$, geef de mogelijke waarden voor $n$.
-\arules{1}
+In de definitie voor een macht met natuurlijke exponent moet de exponent $n\in \mathbb{N}\setminus\{0,1\}$ zijn, geef de mogelijke waarden voor $n$.
 \end{oefening}
 
 \begin{oefening}
 Bereken m.b.v. de definitie:
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $3^4=$\arulefill
-  \item $(-2)^4=$\arulefill
-  \item $-3^2=$\arulefill
-  \item $91^1=$\arulefill
-  \item $\left(321^4\right)^0=$\arulefill
+  \item $3^4$
+  \item $(-2)^4$
+  \item $-3^2$
+  \item $91^1$
+  \item $\left(321^4\right)^0$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \begin{oefening}
-Waarom mag in de laatste regel van de definitie $a$ geen $0$ zijn?
+Waarom mag in de definitie van een macht met een natuurlijke exponent het grondtal $a$ geen nul zijn als de exponent ook nul is?
 \end{oefening}
 
 \begin{oefening}
-Geef de tekenregels voor machten:
-\arules{3}
+Bereken
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $3^2$
+  \item $(-3)^2$
+  \item $-3^2$
+  \item $-(-3)^2$
+  \item $3^3$
+  \item $(-3)^3$
+  \item $-3^3$
+  \item $-(-3)^3$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Geef de tekenregels voor machten.
 \end{oefening}
 
 \pagebreak
 \section{Machten met negatieve gehele exponenten}
+
+\begin{theorie}
 
 Vroeger definieerden we reeds machten met negatieve gehele exponenten:
 \paragraph*{Definitie}
@@ -133,19 +166,25 @@ Vroeger definieerden we reeds machten met negatieve gehele exponenten:
 \end{align*}
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
 Bereken:
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $3^{-4}=$\arulefill
-  \item $(-2)^{-4}=$\arulefill
-  \item $-3^{-2}=$\arulefill
-  \item $91^{-1}=$\arulefill
-  \item $\left(\dfrac{1}{3}\right)^{-3}=$\arulefill
-  \item $\dfrac{1^{-5}}{2}=$\arulefill
-  \item $\dfrac{1}{5^{-2}}=$\arulefill
+  \item $3^{-4}$
+  \item $(-2)^{-4}$
+  \item $-3^{-2}$
+  \item $91^{-1}$
+  \item $\left(\dfrac{1}{3}\right)^{-3}$
+  \item $\dfrac{1^{-5}}{2}$
+  \item $\dfrac{1}{5^{-2}}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 De rekenregels die gelden voor natuurlijke exponenten blijven gelden voor machten met gehele exponenten.
 
@@ -161,27 +200,29 @@ a^m\cdot a^n &= a^{m+n} && \mbox{machten met zelfde grondtal vermenigvuldigen}\\
 \end{align*}
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
-Begrijp je in bovenstaande definitie de gekozen benamingen?
+Begrijp je bij de rekenregels voor machten de gekozen benamingen (zelfde grondtal, macht van een macht, product van een ...)?
 \end{oefening}
 
 \begin{oefening}
-Bereken, maak steeds gebruik van één of meer van bovenstaande rekenregels:
+Bereken, maak steeds gebruik van één of meer rekenregels voor machten:
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $2^{-3}\cdot2^5=$\arulefill
-  \item $2\cdot 2^2=$\arulefill
-  \item $\dfrac{(-2)^3}{(-2)^2}=$\arulefill
-  \item $\dfrac{103^{-2}\cdot 103}{103^{-1}}=$\arulefill
-  \item $\dfrac{8^2}{2^5}=$\arulefill\mbox{hint: schrijf eerst 8 als een macht met grondtal 2}
-  \item $\dfrac{\left(3\cdot4\right)^8}{3^6\cdot 2^{16}}=$\arulefill
-  \item $\dfrac{49^2}{7^2}=$\arulefill
+  \item $2^{-3}\cdot2^5$
+  \item $2\cdot 2^2$
+  \item $\dfrac{(-2)^3}{(-2)^2}$
+  \item $\dfrac{103^{-2}\cdot 103}{103^{-1}}$
+  \item $\dfrac{8^2}{2^5}$ {\em\small hint: schrijf eerst 8 als een macht met grondtal 2}
+  \item $\dfrac{\left(3\cdot4\right)^8}{3^6\cdot 2^{16}}$
+  \item $\dfrac{49^2}{7^2}$
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
 Kan je zelf een rekenregel afleiden voor de macht van een quotiënt met negatieve exponent?
-\arules{3}
+$$\left(\dfrac{a}{b}\right)^{-n}$$
 \end{oefening}
 
 % Extra oefeningen:
@@ -407,26 +448,31 @@ Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponen
 \pagebreak
 \section{Machtswortels}
 
+\begin{theorie}
+
 \paragraph*{Definitie}
 \begin{mdframed}
 Indien $a$ een reëel getal is en $n$ een natuurlijk getal is verschillend van nul, dan is $x$ een {\bf n-de machtswortel} uit $a$ als
 $$x^n=a$$
 \end{mdframed}
 
+Uit bovenstaande definitie blijkt dat we $x$ de $n$-de machtswortel of kort de {\bf wortel} noemen. We zullen dan $a$ het {\bf (wortel)grondtal} noemen en $n$ de {\bf (wortel)exponent}.
+
+\end{theorie}
+
 \begin{oefening}
 $-8$ en $8$ zijn de 2-de machtswortels uit $64$, waarom?
-\arules{2}
 \end{oefening}
 
 \begin{oefening}
 Geef alle $3$-de machtswortels uit $-64$ en zeg waarom het $3$-de machtswortels zijn.
-\arules{2}
 \end{oefening}
 
 \begin{oefening}
 Hoeveel $2$-de machtswortels heeft $-64$?
-\arules{2}
 \end{oefening}
+
+\begin{theorie}
 
 \paragraph*{Aantal $n$-de machtswortels}
 \begin{mdframed}
@@ -437,26 +483,28 @@ Hoeveel $2$-de machtswortels heeft $-64$?
 \end{itemize}
 \end{mdframed}
 
+
+
+\end{theorie}
+
 \begin{oefening}
 Neem $n$ oneven, wat weet je dan over het teken van de $n$-de machtswortel?
-\arules{4}
 \end{oefening}
+
+\begin{theorie}
 
 De positieve $2$-de machtswortel uit $a\in\mathbb{R}^+$ wordt de {\bf vierkantswortel} uit $a$ genoemd. De $n=2$ kan weg gelaten worden in de notatie van de wortel:
 $$\sqrt{a}:=\sqrt[2]{a}$$
 
+\end{theorie}
+
 \begin{oefening}
 \begin{enumerate}[(a)]
   \item Schrijf alle 4-de machtswortels op van $7$, zonder deze uit te rekenen.
-        \arules{1}
   \item Schrijf alle 4-de machtswortels op van $-7$, zonder deze uit te rekenen.
-        \arules{1}
   \item Schrijf alle 3-de machtswortels op van $5$, zonder deze uit te rekenen.
-        \arules{1}
   \item Schrijf alle 3-de machtswortels op van $-5$, zonder deze uit te rekenen.
-        \arules{1}
   \item Schrijf alle 2-de machtswortels op van $3$, zonder deze uit te rekenen.
-        \arules{1}
 \end{enumerate}
 \end{oefening}
 
@@ -465,29 +513,32 @@ Een eenvoudig trucje van een getal $a\in\mathbb{R}$ de absolute waarde te vinden
 $$|a| = \sqrt{a^2}$$
 \end{oefening}
 
+\begin{theorie}
 
 \paragraph*{Eigenschappen van machtswortels}
 \begin{mdframed}
 $\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, \forall m,n,p\in\mathbb{N}_0$
 \begin{align*}
-  \sqrt[n]{ab} &= \sqrt[n]{a}\sqrt[n]{b}\\
-  \sqrt[n]{\dfrac{a}{b}} &= \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}\\
-  \sqrt[n]{a^m} &= \left(\sqrt[n]{a}\right)^m\\
-  \sqrt[n]{\sqrt[m]{a}} &= \sqrt[m\cdot n]{a}\\
-  \sqrt[n\cdot p]{a^{m\cdot p}} &= \sqrt[n]{a^m}\\
-  \sqrt[n]{a^n} &= a
+  \sqrt[n]{ab} &= \sqrt[n]{a}\sqrt[n]{b} && \mbox{machtswortel van een product}\\
+  \sqrt[n]{\dfrac{a}{b}} &= \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}} &&  \mbox{machtswortel van een quotiënt}\\
+  \sqrt[n]{a^m} &= \left(\sqrt[n]{a}\right)^m && \mbox{exponent binnen of buiten de wortel plaatsen}\\
+  \sqrt[n]{\sqrt[m]{a}} &= \sqrt[m\cdot n]{a} && \mbox{machtswortel van een machtswortel}\\
+  \sqrt[n\cdot p]{a^{m\cdot p}} &= \sqrt[n]{a^m} && \mbox{vereenvoudigen van wortel en exponent}\\
+  \sqrt[n]{a^n} &= a && \mbox{wegwerken van wortel}
 \end{align*}
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
-Werk uit, gebruik steeds één van bovenstaande eigenschappen:
+Werk uit, gebruik steeds één van de eigenschappen van machtswortels
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $\sqrt[3]{27\cdot 8}=$\arulefill
-  \item $\sqrt[4]{\dfrac{64}{16}}=$\arulefill
-  \item $\sqrt{4^3}=$\arulefill
-  \item $\sqrt[3]{\sqrt{\pi}}=$\arulefill
-  \item $\sqrt[5]{81^4\cdot 3^4}=$\arulefill
+  \item $\sqrt[3]{27\cdot 8}$
+  \item $\sqrt[4]{\dfrac{64}{16}}$
+  \item $\sqrt{4^3}$
+  \item $\left(\sqrt[3]{\sqrt{\pi}}\right)^6$
+  \item $\sqrt[5]{81^4\cdot 3^4}$
 \end{enumerate}
 \end{oefening}
 
@@ -532,6 +583,8 @@ $$\sqrt{1+101\cdot99}$$
 \newpage
 \section{Machten met rationale exponenten}
 
+\begin{theorie}
+
 Voor $n\in\mathbb{N}$ hebben we $a^n$ reeds gedefinieerd als $a^n=a\cdot a\cdot \ldots \cdot a$. Wat als de exponent nu rationaal is? Dus $n\in\mathbb{Q}^+_0$, met andere woorden, we kunnen $n$ herschrijven als $n=\dfrac{p}{q}$ met $p,q\in\mathbb{N}_0$.
 
 We definiëren:
@@ -539,37 +592,53 @@ We definiëren:
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{\frac{p}{q}}=\sqrt[q]{a^p}$$
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
-Gebruik bovenstaande definitie om onderstaande machten uit te rekenen:
+Gebruik de definitie van machten met rationale exponenten om onderstaande machten uit te rekenen:
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
   \itemsep.5em
-  \item $4^{\frac{2}{3}}=$\arulefill
-  \item $0.001^{\frac{1}{3}}=$\arulefill
+  \item $4^{\frac{1}{2}}$
+  \item $0.001^{\frac{1}{3}}$
+  \item $4^{\frac{3}{2}}$
+  \item $0.001^{\frac{2}{3}}$
+  \item $27^{\frac{1}{3}}$
+  \item $125^{\frac{2}{3}}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 Als de exponent een negatief rationaal getal is, dan wordt de definitie:
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{-\frac{p}{q}}=\dfrac{1}{a^{\frac{p}{q}}}=\dfrac{1}{\sqrt[q]{a^p}}$$
 
-\begin{oefening}
-Gebruik bovenstaande definitie om onderstaande machten uit te rekenen:
-\begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $4^{-\frac{1}{2}}=$\arulefill
-  \item $(0.0001)^{-\frac{1}{2}}=$\arulefill
-\end{enumerate}
-\end{oefening}
+\end{theorie}
 
 \begin{oefening}
 Bereken:
 \begin{enumerate}[(a)]
   \itemsep.5em
-  \item $8^{\frac{1}{3}}=$\arulefill
-  \item $0.09^{-\frac{1}{2}}=$\arulefill
-  \item $1^{-\frac{2}{5}}=$\arulefill
-  \item $65^{-\frac{2}{3}}\left(\dfrac{130}{2}\right)^{-\frac{1}{3}}=$\arulefill
-  \item $\sqrt[4]{3-\sqrt{13}}\cdot\sqrt[4]{3+\sqrt{13}}=$\arulefill
+  \item $4^{-\frac{1}{2}}$
+  \item $(0.0001)^{-\frac{1}{2}}$
 \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bereken door zo min mogelijk gebruik te maken van $n$-de machtswortels:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $8^{\frac{1}{3}}$
+  \item $0.09^{-\frac{1}{2}}$
+  \item $\sqrt[3]{5}\cdot25^{\frac{1}{3}}$
+  \item $\sqrt[6]{4}\cdot\sqrt[6]{16}\cdot\sqrt[6]{64}$
+  \item $1^{-\frac{2}{5}}$
+  \item $65^{-\frac{2}{3}}\left(\dfrac{130}{2}\right)^{-\frac{1}{3}}$
+  \item $\sqrt[4]{3-\sqrt{13}}\cdot\sqrt[4]{3+\sqrt{13}}$
+\end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \begin{oefening}
@@ -682,24 +751,10 @@ Bereken of vereenvoudig zoveel mogelijk (controleer zelf nadien je resultaat):
 \end{multicols}
 \end{oefening}
 
-\begin{oefening}
-Bereken of vereenvoudig zoveel mogelijk:
-\begin{multicols}{3}
-\begin{enumerate}[(a)]
-  \item $\sqrt{x\sqrt{x\sqrt{x}}}$
-  \item $\sqrt[4]{a^{4x}b^{8y}}$
-  \item $\dfrac{\sqrt{4a^{-2}b^4}}{b^2}$
-\end{enumerate}
-\end{multicols}
-\end{oefening}
-
-\begin{oefening}*
-Schrijf zo eenvoudig mogelijk:
-$$\sqrt{\left(8a\right)^{-4}\left(3b\right)^{-2}\sqrt{\left(4a\right)^{-4}\left(9b\right)^4}}\left(\dfrac{\left(4a\right)^4b^{\frac{1}{3}}}{3^2a^2\left(8b\right)^{-\frac{2}{3}}}\right)$$
-\end{oefening}
-
 \pagebreak
 \section{Machten met een reële exponent}
+
+\begin{theorie}
 
 We willen bijvoorbeeld voor $a\in\mathbb{R}_0^+$ de macht van $a$ met exponent $\sqrt{a}$, $a^{\sqrt{2}}$ definiëren.
 
@@ -731,24 +786,27 @@ Ook bij machten met reële exponenten gelden de reeds gekende rekenregels voor m
 
 Het is uiteraard niet doenbaar om een reëel getal met de hand te gaan benaderen door een rationaal getal. Gelukkig doen huidige rekentoestellen dit automatisch. Met het \zrm{ZRM} gaan we als volgt te werk: typ het grondtal, dan \zrm{$x^\blacksquare$} en daarna de reële exponent.
 
+\end{theorie}
+
 \begin{oefening}
 Bereken, geef je antwoord op vier decimalen:\\
 \begin{enumerate}[(a)]
   \itemsep1.5em
-  \item $3^{\sqrt{2}}=$\arulefill
-  \item $4^\pi=$\arulefill
-  \item $\pi^\pi=$\arulefill
+  \item $3^{\sqrt{2}}$
+  \item $4^\pi$
+  \item $\pi^\pi$
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
 Verklaar waarom je \zrm{ZRM} de macht $(-5)^{\sqrt{2}}$ niet kan uitrekenen.
-\arules{3}
 \end{oefening}
 
 \pagebreak
 
 \section{Logaritmen}
+
+\begin{theorie}
 
 \subsection{Logaritmen met grondtal 10}
 
@@ -769,16 +827,22 @@ We kunnen de definitie kort schrijven als
 $$\log x = y \Leftrightarrow 10^y = x$$
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
 Zoek de logaritme met grondtal 10 van de volgende getallen:\\
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $\log 100 = $\arule{2cm} want \arule{4cm}
-  \item $\log 10000 = $\arule{2cm} want \arule{4cm}
-  \item $\log 0.1 = $\arule{2cm} want \arule{4cm}
-  \item $\log \dfrac{1}{1000} = $\arule{2cm} want \arule{4cm}
+  \item $\log 100$
+  \item $\log 10000$
+  \item $\log 0.1$
+  \item $\log \dfrac{1}{1000}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Veralgemening: Logaritmen met grondtal $a$}
 
@@ -788,16 +852,24 @@ $$\log_a x = y \Leftrightarrow a^y = x$$
 
 Wij zullen ons echter beperken tot het eenvoudige geval waarbij het grondtal $a=10$ is.
 
+\end{theorie}
+
 \begin{oefening}
 Zoek de logaritme met grondtal $a$ van de volgende getallen:\\
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $\log_2 16 = $\arule{2cm} want \arule{4cm}
-  \item $\log_3 27 = $\arule{2cm} want \arule{4cm}
-  \item $\log_{\frac{1}{2}} 8 = $\arule{2cm} want \arule{4cm}
-  \item $\log_2 0.125 = $\arule{2cm} want \arule{4cm}
+  \item $\log_2 16$
+  \item $\log_3 27$
+  \item $\log_4 16$
+  \item $\log_{\frac{1}{2}} 8$
+  \item $\log_2 0.125$
+  \item $\log_3 \dfrac{1}{81}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Eigenschappen van logaritmen met grondtal 10}
 
@@ -810,16 +882,22 @@ $$\log (10^x) = x$$
 
 Deze eigenschap kunnen we handig gebruiken in berekeningen.
 
+\end{theorie}
+
 \begin{oefening}
-Bereken de logaritme met grondtal $10$ door steeds gebruik te maken van bovenstaande eigenschap:\\
+Bereken de logaritme met grondtal $10$ door steeds gebruik te maken van het feit dat $\log (10^x) = x$:\\
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $\log 100 = $\arulefill
-  \item $\log 10000 = $\arulefill
-  \item $\log 0.1 = $\arulefill
-  \item $\log \dfrac{1}{1000} = $\arulefill
+  \item $\log 100$
+  \item $\log 10000$
+  \item $\log 0.1$
+  \item $\log \dfrac{1}{1000}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 \pagebreak
 Ook zijn volgende rekenregels aantoonbaar:
@@ -835,16 +913,33 @@ $\forall x,y \in \mathbb{R}_0^+, \forall n\in \mathbb{R}:$
 \end{align*}
 \end{mdframed}
 
+\end{theorie}
+
 \begin{oefening}
-Bereken volgende logaritmen, maak steeds gebruik van één van bovenstaande rekenregels:\\
+Bereken volgende logaritmen, maak steeds gebruik van de rekenregels voor logaritmen:\\
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
-  \item $\log (100\cdot 10) = $\arulefill
-  \item $\log \dfrac{100}{1000} = $\arulefill
-  \item $\log 0.01 = $\arulefill
-  \item $\log (1000^6) = $\arulefill
+  \item $\log (100\cdot 10)$
+  \item $\log \dfrac{100}{1000}$
+  \item $\log 0.01$
+  \item $\log 1000^6$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\begin{oefening}
+Bereken:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $\displaystyle\log 100^3$
+  \item $\displaystyle\left(\log 100\right)^3$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+
+\begin{theorie}
 
 \subsection{Toepassingen op logaritmen}
 
@@ -856,15 +951,17 @@ Origineel werd $1\dB$ gedefinieerd als één tiende van het geluid van een bel. 
 
 $$d=10\cdot \log\dfrac{I}{I_0} \;\dB$$
 
+\end{theorie}
+
 \begin{oefening}
 Bepaal het aantal decibels geproduceerd door een geluid met een intensiteit van $5000I_0$.
-\arules{4}
 \end{oefening}
 
 \begin{oefening}
 Als een geluid een intensiteit heeft van $85\dB$, hoeveel intenser is dan dat geluid dan een tiende van een bel?
-\arules{6}
 \end{oefening}
+
+\begin{theorie}
 
 \subsubsection{Google PageRank}
 
@@ -877,10 +974,12 @@ De PageRank is opnieuw een logaritme, er wordt niet gemeten hoe groot de score i
 \includegraphics[width=\textwidth]{pagerank}
 \end{minipage}
 
-
+\end{theorie}
 
 \pagebreak
 \section{Exponentiële functies}
+
+\begin{theorie}
 
 \subsection{Inleiding}
 
@@ -891,12 +990,9 @@ Bij Isa's geboorte stelt haar grootmoeder, een wiskundige, aan de moeder van Isa
   \item[Plan B] Isa krijgt bij de geboorte 1 euro en bij elke verjaardag wordt het bedrag verdubbeld.
 \end{description}
 
-\begin{oefening}
 Welk plan zou jij kiezen?
 \arules{1}
-\end{oefening}
 
-\begin{oefening}
 Maak een tabel waarbij je de schenkingen uitzet in functie van de leeftijd:
 \begin{center}
   \renewcommand{\arraystretch}{1.1}
@@ -924,9 +1020,7 @@ Maak een tabel waarbij je de schenkingen uitzet in functie van de leeftijd:
   \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
   \end{tabular}
 \end{center}
-\end{oefening}
 
-\begin{oefening}
 Zoek voor elk het bijhorende functievoorschrift. Voer dit dan in op je \zrm{ZRM} en controleer bovenstaande tabel. De tabel functionaliteit op je rekenmachine gebruik je als volgt: \zrm{MODE}\zrm{4:TABLE}. Om terug naar de normale rekenmodus te gaan met je rekenmachine kies je \zrm{MODE}\zrm{4:COMP}. Teken dan ook de grafiek.\\
 
 \begin{minipage}{0.5\textwidth}
@@ -941,7 +1035,6 @@ Zoek voor elk het bijhorende functievoorschrift. Voer dit dan in op je \zrm{ZRM}
   $$y=\arule{3cm}$$
   \assenstelsel[0.7]{-1}{8}{-1}{20}
 \end{minipage}
-\end{oefening}
 
 De grafiek uit plan A herkennen we als punten gelegen op een rechte. Dit komt ook overéén met het functievoorschrift bij plan A (\arule{5cm} of \arule{5cm}). De grafiek uit plan B bestaat uit punten gelegen op een snel stijgende kromme. Een kromme van deze vorm zullen we een {\bf exponentiële kromme} noemen en horen bij {\bf exponentiële functies}. De eigenschappen van deze functies zullen we in dit hoofdstuk bestuderen.
 
@@ -956,91 +1049,41 @@ met $a\in\mathbb{R}^+\backslash\{0,1\}$.
 
 Het getal $a$ wordt het {\bf grondtal} van de exponentiële functie genoemd, de onbepaalde $x$ treedt op als de {\bf exponent}.
 
+\end{theorie}
+
 \begin{oefening}
-In de definitie worden drie eisen opgelegd aan het grondtal $a$, welke en waarom?
-\begin{itemize}
-  \item \arulefill\arules{1}
-  \item \arulefill\arules{1}
-  \item \arulefill\arules{1}
-\end{itemize}
+In de definitie van een exponentiële functie worden drie eisen opgelegd aan het grondtal $a$, welke en waarom?
 \end{oefening}
 
 \begin{oefening}
-Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze alle drie:
-\begin{itemize}
-  \itemsep1em
-  \item $f:\mathbb{R}\to\mathbb{R}: x\mapsto 3^x$
-  \item \arulefill
-  \item \arulefill
-\end{itemize}
+Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze alle drie voor de functie
+$$f:\mathbb{R}\to\mathbb{R}: x\mapsto 3^x$$
 \end{oefening}
 
 \vspace*{-0.75cm}
 \begin{oefening}
-Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze alle drie:
-\begin{itemize}
-  \itemsep1em
-  \item \arulefill
-  \item $f(x)=0.5^x$
-  \item \arulefill
-\end{itemize}
+Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze alle drie voor de functie
+$$f(x)=0.5^x$$
 \end{oefening}
 
+\begin{theorie}
 
 \subsection{Grafiek van een exponentiële functie}
 \vspace*{-1cm}
 
+\end{theorie}
+
 \begin{oefening}
-Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$
-\paragraph*{Functiewaardentabel:}
-\begin{center}
-\visgraad{12cm}
-\end{center}
-\paragraph*{Grafiek:}
-\begin{center}
-\vspace*{-0.5cm}
-\assenstelsel{-4}{5}{-1}{9}
-\end{center}
-\paragraph*{Domein en bereik:} \arulefill
-\paragraph*{Tekenverloop:}
-\begin{center}
-\vspace*{-0.5cm}
-\visgraad{5cm}
-\end{center}
-\paragraph*{Stijgen en dalen:}
-\begin{center}
-\vspace*{-0.5cm}
-\visgraad{5cm}
-\end{center}
-\paragraph*{Limieten:} \arulefill
-\paragraph*{Asymptoten:} \arulefill
+Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$\\
+(Functiewaardentabel, grafiek, domein, bereik, tekenverloop, stijgen\&dalen, limieten en asymptoten)
 \end{oefening}
 
 \begin{oefening}
-Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto \left(\dfrac{1}{2}\right)^x$
-\paragraph*{Functiewaardentabel:}
-\begin{center}
-\visgraad{12cm}
-\end{center}
-\paragraph*{Grafiek:}
-\begin{center}
-\vspace*{-0.5cm}
-\assenstelsel{-4}{5}{-1}{9}
-\end{center}
-\paragraph*{Domein en bereik:} \arulefill
-\paragraph*{Tekenverloop:}
-\begin{center}
-\vspace*{-0.5cm}
-\visgraad{5cm}
-\end{center}
-\paragraph*{Stijgen en dalen:}
-\begin{center}
-\vspace*{-0.5cm}
-\visgraad{5cm}
-\end{center}
-\paragraph*{Limieten:} \arulefill
-\paragraph*{Asymptoten:} \arulefill
+Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto \left(\dfrac{1}{2}\right)^x$\\
+(Functiewaardentabel, grafiek, domein, bereik, tekenverloop, stijgen\&dalen, limieten en asymptoten)
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Eigenschappen van exponentiële functies}
 
@@ -1081,10 +1124,8 @@ $$0<a<1$$
 \end{center}
 \end{minipage}
 
-\begin{oefening}
-Bepaal zelf de eigenschappen: domein, bereik, bijzondere punten, dalen\&stijgen, limieten en asymptoten:
-\arules{13}
-\end{oefening}
+Bepaal zelf de eigenschappen: domein, bereik, bijzondere punten, dalen\&stijgen, limieten en asymptoten
+\end{theorie}
 
 \begin{oefening}
 Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^x$ te plotten, waarbij $a$ een parameter is die je instelt via een schuifknop. Volg hierbij de volgende instructies:
@@ -1235,6 +1276,7 @@ Hint: Probeer (c) eerst in de vorm $f(x)=a^x$ te brengen.
 Bepaal de volgende limieten:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep1em
   \item $\displaystyle\lim_{x\to+\infty}3^x$
   \item $\displaystyle\lim_{x\to-\infty}3^x$
   \item $\displaystyle\lim_{x\to0}3^x$
@@ -1252,6 +1294,7 @@ Bepaal de volgende limieten:
 Gegeven de grafiek van $f(x)=e^x$, schets de grafieken van de functies met voorschriften:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep1em
   \item $g(x)=f(x)-1$
   \item $g(x)=-f(x)$
   \item $g(x)=2\cdot f(x)$
@@ -1270,11 +1313,11 @@ Een functie met voorschrift $y=k\cdot a^x$ gaat door $P(-1,2)$ en $Q(2,\dfrac{12
 
 \section{Toepassingen op exponentiële functies}
 
+\begin{theorie}
+
 \subsection{Exponentiële groei}
 
-\begin{oefening}
 Op het tijdstip $t=0$ bevat een bacteriënkolonie $N_0=400$ bacteriën. Elk uur groeit het aantal met $p\%=5\%$. Stel een formule op die het aantal bacteriën $N$ geeft na $t$ uur. Gebruik die formule om het aantal bacteriën te vinden na $24$ uur.
-\end{oefening}
 
 \paragraph*{Oplossing}
 We gaan het probleem opsplitsen. We zullen eerst onderzoeken hoeveel bacteriën er zullen zijn na één uur, dan na twee uur, dan na drie uur, \ldots
@@ -1323,20 +1366,21 @@ en hierin wordt $1+\dfrac{p}{100}$ de {\bf groeifactor} genoemd.
 
 De groeifactor zullen we meestal kort kunnen schrijven, als het groeipercentage bijvoorbeeld $15\%$ is, dan wordt de groeifactor, door invullen van $p$ en te vereenvoudigen, $1.15$.
 
+\end{theorie}
+
 \begin{oefening}
 Veronderstel dat de populatie van een bepaald land jaarlijks aangroeit met $2\%$. Als het land momenteel 3 miljoen inwoners telt, wat zal dan de populatie zijn over 10 jaar?
 \end{oefening}
 
 \begin{oefening}
 Geef een vijftal voorbeelden uit de natuur of het dagelijks leven waar je denkt van exponentiële groei tegen te komen.
-\arules{1}
 \end{oefening}
 
+\begin{theorie}
 \subsection{Exponentiële daling}
 
 We kunnen de formule van exponentiële groei ook gaan toepassen op problemen waarbij er op elk tijdstip een vermindering is i.p.v. een vermeerdering. Beschouw volgende oefening:
 
-\begin{oefening}
 Elk jaar sponsort de lokale tennisclub van Avelgem een tornooi. Er wordt begonnen met 128 deelnemers. Bij elke ronde wordt de helft van de deelnemers geëlimineerd. Hoeveel deelnemers blijven er over na 5 rondes?
 
 \paragraph*{Oplossing}
@@ -1355,7 +1399,6 @@ Elk jaar sponsort de lokale tennisclub van Avelgem een tornooi. Er wordt begonne
   Met $N_0 = \arule{2cm}$, $t=\arule{2cm}$ en $p=\arule{2cm}$:
   $$N=\arule{5cm}$$
 \end{itemize}
-\end{oefening}
 
 \pagebreak
 \subsection{Halveringstijd}
@@ -1369,13 +1412,11 @@ De {\bf halveringstijd} is de tijd nodig om het aantal deeltjes te halveren.
 \paragraph*{Voorbeeld}
 De pesticide {\em DDT} werd vroeger vaak gebruikt in de landbouw. Snel werd echter duidelijk dat DDT niet enkel onkruid verdelgde, maar ook giftig was voor dieren. Er wordt ondertussen ook aangenomen dat DDT bepaalde kankers veroorzaakt. De halveringstijd van DDT is 15 jaar. Dit wil zeggen dat als er 100 gram DDT aanwezig is op een akker van een boer, dat de DDT dan in de loop van 15 jaar afbreekt tot 50 gram. De volgende 15 jaar zal de DDT op de akker afbreken tot 25 gram, enz...
 
-\begin{oefening}
 Plot de functie die het verloop van 100 gram DDT  weergeeft over een periode van 100 jaar.
 \begin{center}
 \visgraad{12cm}
 \assenstelsel[0.9]{-1}{12}{-1}{12}
 \end{center}
-\end{oefening}
 
 Het is mogelijk om onmiddellijk de hoeveelheid DDT uit te rekenen na 100 jaar. We maken hiervoor gebruik van de volgende formule:
 
@@ -1386,7 +1427,6 @@ $$N=N_0\cdot2^{-\frac{t}{T}}\;.$$
 $N_0$ wordt ook nog de {\bf beginwaarde} genoemd. $t$ en $T$ moeten altijd in dezelfde eenheid gegeven worden.
 \end{mdframed}
 
-\begin{oefening}
 Maak gebruik van de halveringsformule
 $$N=N_0\cdot2^{-\frac{t}{T}}$$
 om te weten hoeveel gram van de 100 gram DDT er nog aanwezig zal zijn na 100 jaar.
@@ -1398,7 +1438,8 @@ om te weten hoeveel gram van de 100 gram DDT er nog aanwezig zal zijn na 100 jaa
   \item $T = \arule{4cm}$
   \item $N = $ \arulefill
 \end{itemize}
-\end{oefening}
+
+\end{theorie}
 
 \begin{oefening}
 Elke plant bevat de radioactieve koolstofisotoop $\ce{C14}$. Zolang de plant leeft, blijft de aanwezigheid van die isotoop constant. Wanneer de plant sterft, dan daalt de aanwezigheid van de koolstofisotoop.
@@ -1410,10 +1451,11 @@ Elke plant bevat de radioactieve koolstofisotoop $\ce{C14}$. Zolang de plant lee
 
 \begin{oefening}
 Geef een vijftal voorbeelden uit de natuur of het dagelijks leven waar je denkt exponentiële daling tegen te komen.
-\arules{1}
 \end{oefening}
 
+\begin{theorie}
 \subsection{Oefeningen}
+\end{theorie}
 
 \begin{oefening}
 We beleggen 10000 euro op de bank. De bank geeft ons een interest van $2.5\%$ (interest + getrouwheidspremie).
@@ -1460,6 +1502,7 @@ Bereken met de formule $N=N_0\cdot 2^{-t/T}$ hoeveel percent van de deeltjes nog
 Licht radioactief afval met een halveringstijd van 30 jaar wordt gedurende 300 jaar in tonnen bewaard. Hoeveel percent van het oorspronkelijke aantal radioactieve elementen blijft er dan nog over?
 \end{oefening}
 
+\pagebreak
 \appendix
 \section{Machten met natuurlijk grondtal en natuurlijke exponent}
 
