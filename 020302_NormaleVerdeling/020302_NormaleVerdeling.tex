@@ -237,7 +237,7 @@ Deze gegevens zeggen uiteraard niet veel. Omdat de gegevens \arule{4cm} zijn, ve
 \end{center}
 
 \begin{minipage}{\textwidth}
-We laten {\em GeoGebra} ook de volgende \arule{4cm} uitrekenen, we vinden volgende resultaten:
+We laten {\em GeoGebra} ook de \arule{4cm} uitrekenen, we vinden volgende resultaten:\\
 
 %\begin{center}
   \begin{tabular}{c l|r}
@@ -312,10 +312,10 @@ krommen. Ze hebben allemaal dezelfde globale vorm, zie rechts.
 
 Vergelijk nu het voorschrift van $f(x)$ uit ons initieel voorbeeld, dat waarbij de lengtes van 160 dames werd gemeten, met de centrumgetallen en de spreidingsmaten van dat voorbeeld om een algemeen voorschrift af te leiden voor een normale verdeling:
 
-\begin{oefening}
-Vul de normale verdeling aan met $\bar{x}$ en $s$
+\begin{oefening}\\
+Vul de normale verdeling aan met het gemiddelde $\bar{x}$ en de standaard afwijking $s$
 
-$$f(x)=\dfrac{1}{\arule{1cm}{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\arule{1cm}}{\arule{1cm}}\right)^2}\;.$$
+$$f(x)=\dfrac{1}{\arule{1cm}{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\arule{1cm}}{\arule{1cm}}\right)^2}$$
 \end{oefening}
 
 Wanneer een enquête wordt uitgevoerd, wordt steeds gewerkt met een steekproef. Voor deze steekproef berekenen we dan het gemiddelde $\bar{x}$ en de standaardafwijking $s$.
@@ -390,7 +390,7 @@ het gemiddelde $\mu$ variëren, terwijl de standaardafwijking $\sigma$ constant 
 \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
 \draw[->,color=black] (0,-0.1) -- (0,0.6);
 \foreach \y in {,0.2,0.3,0.4,0.5}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,0.6);
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x)+3)^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
@@ -423,7 +423,7 @@ de standaardafwijking $\sigma$ variëren, terwijl we het gemiddelde $\mu$ consta
 \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
 \draw[->,color=black] (0,-0.1) -- (0,0.9);
 \foreach \y in {,0.2,0.4,0.6,0.8}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,0.85);
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x))/0.5)^2)/2)/(sqrt(2*3.1415926535)*abs(0.5))});
@@ -949,8 +949,6 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 
 
 \end{document}
-
-
 
 
 
