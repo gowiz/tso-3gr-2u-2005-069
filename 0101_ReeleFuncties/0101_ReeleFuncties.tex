@@ -1400,29 +1400,38 @@ We tonen eens algebraïsch aan dat het punt $(4,3)$ op de rechte inderdaad een p
 \end{theorie}
 
 \begin{oefening}
-Bepaal alle symmetrieën die bij volgende grafieken horen.
-    \vspace*{1cm}
-    \begin{center}
+Beschouw de grafiek van een functie $f$.
+\begin{center}
+  \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+  \begin{tikzpicture}[scale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    % \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.28,-3.34) grid (6.38,2.18);
+    \draw[->,color=black] (-3.28,0) -- (6.38,0);
+    \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[color=black] (6.06,0.08) node [anchor=south west] {$x$};
+    \draw[->,color=black] (0,-3.34) -- (0,2.18);
+    \foreach \y in {-3,-2,-1,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0.1,1.8) node [anchor=west] {$y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-3.28,-3.34) rectangle (6.38,2.18);
+    \draw[line width=1.6pt, smooth,samples=100,domain=-3.28:6.38] plot(\x,{0.5*(\x)-1.5});
+    \draw[color=black] (4,1) node[right] {\footnotesize $f$};
+  \end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+  \item Duid een lijnsymmetrie aan op de grafiek.
+  \item Zijn er nog andere lijnsymmetrieën?
+  \item Duid een puntsymmetrie aan op de grafiek.
+  \item Zijn er nog andere puntsymmetrieën?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de grafiek van een functie $f$.
+\begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-        % \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.28,-3.34) grid (6.38,2.18);
-        \draw[->,color=black] (-3.28,0) -- (6.38,0);
-        \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
-        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-        \draw[color=black] (6.06,0.08) node [anchor=south west] { x};
-        \draw[->,color=black] (0,-3.34) -- (0,2.18);
-        \foreach \y in {-3,-2,-1,1,2}
-        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-        \draw[color=black] (0.1,1.78) node [anchor=west] { y};
-        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-        \clip(-3.28,-3.34) rectangle (6.38,2.18);
-        \draw[line width=1.6pt, smooth,samples=100,domain=-3.2800000000000002:6.379999999999999] plot(\x,{0.5*(\x)-1.5});
-      \end{tikzpicture}
-    \end{center}
-    \vspace*{1cm}
-    \begin{center}
-      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \begin{tikzpicture}[scale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
         % \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.25,-3.2) grid (8.1,4.2);
         \draw[->,color=black] (-2.26,0) -- (8.11,0);
         \foreach \x in {-2,-1,1,2,3,4,5,6,7,8}
@@ -1435,10 +1444,20 @@ Bepaal alle symmetrieën die bij volgende grafieken horen.
         \draw[line width=1.8pt, smooth,samples=500,domain=-2.26:3.99] plot(\x,{1/((\x)-4)+1});
         \draw[line width=1.8pt, smooth,samples=500,domain=4.01:8.1] plot(\x,{1/((\x)-4)+1});
       \end{tikzpicture}
-    \end{center}
-    \vspace*{1cm}
-    \begin{center}
-      \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end{center}
+\begin{enumerate}[(a)]
+  \item Duid een lijnsymmetrie aan op de grafiek.
+  \item Zijn er nog andere lijnsymmetrieën?
+  \item Duid een puntsymmetrie aan op de grafiek.
+  \item Zijn er nog andere puntsymmetrieën?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de grafiek van een functie $f$.
+\begin{center}
+  \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[scale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
         \draw[->,color=black] (-5.42,0) -- (5.31,0);
         \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
         \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -1452,8 +1471,39 @@ Bepaal alle symmetrieën die bij volgende grafieken horen.
         \draw[line width=1.8pt, smooth,samples=100,domain=-5.4:5.3] plot(\x,{0.2*((\x)+3)*((\x)+1)*((\x)-2)});
         \draw (2.3,1.25) node[anchor=north west] {$f$};
       \end{tikzpicture}
-    \end{center}
+\end{center}
+\begin{enumerate}[(a)]
+  \item Duid een lijnsymmetrie aan op de grafiek.
+  \item Zijn er nog andere lijnsymmetrieën?
+  \item Duid een puntsymmetrie aan op de grafiek.
+  \item Zijn er nog andere puntsymmetrieën?
+\end{enumerate}
 \end{oefening}
+
+\begin{oefening}
+Beschouw de functie
+$$f(x)=-x^2+9x-18$$
+\begin{enumerate}[(a)]
+  \item Teken de grafiek.
+  \item Teken de as van symmetrie.
+  \item Wat is de vergelijking $x=p$ van de as van symmetrie?
+  \item Toon aan dat het punt (2,-4) op de grafiek van $f$ ligt.
+  \item Op welk punt spiegelt de as van symmetrie dat punt?
+  \item Toon dit ook algebraïsch aan m.b.v. de formule
+  $$f(p-a)=f(p+a)$$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De functie 
+$$f(x)=x^3-9x^2+6x+56$$
+heeft één punt van symmetrie, namelijk
+$$(p,q)=(3,20)$$
+Gebruik de formule
+$$\dfrac{f(p-a)+f(p+a)}{2}=q$$
+met drie zelf gekozen waarden voor de afstand $a$ om aan te tonen dat de functie inderdaad symmetrisch is rond dat punt.
+\end{oefening}
+
 
 \pagebreak
 
