@@ -334,7 +334,7 @@ Bepaal de polen en de nulwaarden van de volgende functies:
   \item $f(x)=\dfrac{x^2-4}{x+2}$
   \item $f(x)=\dfrac{x^2-4}{x-2}$
   \item $f(x)=\dfrac{1+4x}{x}+\dfrac{3x-6}{x}$
-  \item $f(x)=\dfrac{3x^3-x^2-2}{x^4+x^3-x^2-1}$
+  \item $f(x)=\dfrac{x^3-x^2-9x+9}{x^4-5x^2+4}$
   \item $f(x)=1+\dfrac{2x+6}{x}$
   \item $f(x)=\dfrac{3x}{4x+1}+\dfrac{1}{x}$
   \item $f(x)=\dfrac{3}{5-x}+\dfrac{2}{4-x}-\dfrac{5}{3-x}$
@@ -366,7 +366,7 @@ We wensen zo snel mogelijk de grafiek te tekenen. Hiervoor zullen we een functie
   Dit is een pool van de rationale functie, deze waarde behoort uiteraard niet tot het domein.
   \item nulwaarde teller: $x=1$\\
   Aangezien de nulwaarde van de teler geen pool is, is het ook een nulwaarde van de functie:
-  \item nulwaarde functie: $x=1$\\  
+  \item nulwaarde functie: $x=1$\\
 \end{itemize}
 
 Met deze informatie hebben we dus reeds het domein van de functie gevonden, dit is namelijk alle reële getallen zonder de polen:
@@ -380,7 +380,7 @@ We kunnen nu het tekenverloop van de functie bepalen door afzonderlijk van telle
   \item tekenverloop:
   \begin{center}
     \begin{tabular}{c|ccccccc}
-    $x$ & $-\infty$ & & -1 & & 1 & & $+\infty$\\   
+    $x$ & $-\infty$ & & -1 & & 1 & & $+\infty$\\
     \hline
     $x-1$ & & - &   & - & 0 & + & \\
     $x+1$ & & - & 0 & + &   & + & \\
@@ -548,10 +548,6 @@ Bespreek volgende homografische functies:
   \item $f(x)=\dfrac{5x-3}{x-2}$
   \item $f(x)=\dfrac{4x-4}{x-1}$
   \item $f(x)=\dfrac{5}{x-3}$
-  \item $f(x)=\dfrac{2x-4}{x-2}$
-  \item $f(x)=\dfrac{x^2-4}{x+2}$
-  \item $f(x)=\dfrac{x^2-4}{x-2}$
-  \item $f(x)=\dfrac{1+4x}{x}+\dfrac{3x-6}{x}$
   \item $f(x)=1+\dfrac{2x+6}{x}$
 \end{enumerate}
 \end{multicols}
@@ -562,6 +558,10 @@ Bespreek volgende rationale functies:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
+  \item $f(x)=\dfrac{2x-4}{x-2}$
+  \item $f(x)=\dfrac{x^2-4}{x+2}$
+  \item $f(x)=\dfrac{x^2-4}{x-2}$
+  \item $f(x)=\dfrac{1+4x}{x}+\dfrac{3x-6}{x}$
   \item $f(x)=\dfrac{x^2-4}{x^2-6x}$
   \item $f(x)=\dfrac{x^2+2x+1}{x+1}$
   \item $f(x)=\left(\dfrac{x-2}{x+2}\right)^2$
@@ -583,7 +583,7 @@ Bespreek volgende rationale functies:
 Beschouw de homografische functie
 $$f(x)=\dfrac{4x-7}{x-1}$$
 
-Homografische functies zijn ofwel stijgend, ofwel dalend in hun domein. Zonder de grafiek te tekenen kunnen we dit heel snel bepalen door de functiewaarde in twee nabijgelegen punten te bepalen en het verschil geeft dan de helling:
+Homografische functies zijn ofwel stijgend, ofwel dalend in hun domein. Zonder de grafiek te tekenen kunnen we dit heel snel bepalen door de functiewaarde in twee nabijgelegen punten te bepalen en het verschil geeft dan de verandering:
 
 \begin{itemize}
   \item $f(2)=1$ en $f(2.5)=2$ $\Rightarrow$ op het interval $[2,2.5]$ stijgt de functie $1$ eenheid
@@ -664,7 +664,7 @@ $$f'(a)=\lim_{b\to a}\dfrac{f(b)-f(a)}{b-a}$$
 \end{theorie}
 
 \begin{oefening}
-Bepaal voor de volgende functies het differentiequotiënt in het interval $[1,3]$ en duid de koorde aan op de functies.\\
+Bepaal voor de volgende functies het differentiequotiënt in het interval $[1,3]$ en duid de koorde aan op de functies.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
@@ -779,13 +779,13 @@ Als we eens kijken hoeveel huishoudtoestellen jaarlijks gemiddeld kosten aan ele
   \begin{tabular}{l|cl}
   Toestel & jaarlijkse kost\\
   \hline
-  Computer & 9 euro\\ 
+  Computer & 9 euro\\
   Televisie & 13 euro\\
   Microgolf & 13 euro\\
   Vaatwasmachine & 51 euro\\
   Droogkast & 75 euro\\
   Wasmachine & 79 euro\\
-  koelkast & 92 euro\\ 
+  koelkast & 92 euro\\
   \end{tabular}
 \end{center}
 
@@ -1026,7 +1026,7 @@ Grafiek van $f$ en $g$:
 \end{tikzpicture}
 \end{center}
 
-De ongelijkheid die we wensen op te lossen is 
+De ongelijkheid die we wensen op te lossen is
 $$\frac{x+4}{x+2}\geq x+2\;.$$
 Voor $f$ en $g$ moet dus gelden dat
 \dotlines{1}\\
