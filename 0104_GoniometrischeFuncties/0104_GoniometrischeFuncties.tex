@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt,twoside ]{article}
 
 \input{../gowiz.tex}
 
@@ -23,20 +23,16 @@ Je \hfill  {\scriptsize(LP 2005-069, LI 1.4)}
   \item kan de grafiek opbouwen van de functie $f(x) = a \sin(bx+c)+d$ en kunnen op deze grafiek de betekenis van $a$, $b$, $c$ en $d$ interpreteren
 \end{itemize}
 
-\pagestyle{empty}
 \mbox{}
-\newpage
 \clearpage
 \thispagestyle{empty}
-%\mbox{}
 {\singlespacing \tableofcontents}
-\newpage
 \clearpage
-\pagenumbering{arabic} 
 
+\pagenumbering{arabic}
 \pagestyle{fancy}
-\lhead{}
-\rhead{Goniometrische functies}
+\fancyhead[RO,LE]{Goniometrische functies}
+\fancyhead[RE,LO]{}
 
 \onehalfspacing
 
@@ -76,11 +72,11 @@ De hoekgrootte van een middelpuntshoek waarvan de bijbehorende cirkelboog precie
 \definecolor{wqwqwq}{rgb}{0.4,0.4,0.4}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
 \draw[->,color=black] (-1.5328277784215052,0.) -- (1.6277261422339706,0.);
-\foreach \x in {-1.,1.}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\foreach \x in {-1,1}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[anchor=north west] {\footnotesize $\x$};
 \draw[->,color=black] (0.,-1.567215720415761) -- (0.,1.3732996361434509);
-\foreach \y in {-1.,1.}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\foreach \y in {-1,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[anchor=north west] {\footnotesize $\y$};
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-1.5328277784215052,-1.567215720415761) rectangle (1.6277261422339706,1.3732996361434509);
 \draw [shift={(0.,0.)},fill=black,fill opacity=0.1] (0,0) -- (0.:0.30005258740400087) arc (0.:57.29577951308232:0.30005258740400087) -- cycle;
@@ -109,8 +105,12 @@ $$360\degree = 2\pi \rad$$
 Een rechte hoek meet dus $\frac{\pi}{2}$ en een gestrekte hoek meet dus $\pi \rad$. Omdat de omtrek van de goniometrische cirkel $2\pi$ is, is de maat van de nulhoek niet ondubbelzinnig bepaald. De nulhoek meet zowel $0 \rad$ als $2\pi \rad$. We moeten dus de maatgetallen in radialen slechts op een geheel veelvoud van $2\pi$ na bepalen:
 
 \begin{mdframed}
-$$\forall \alpha \in \mathbb{R} : \alpha \rad = (\alpha + k2\pi) \rad (k\in \mathbb{Z})$$
+$$\forall \alpha \in \mathbb{R} : \alpha \rad = \alpha + k \cdot 2\pi \rad  \qquad (k\in \mathbb{Z})$$
 \end{mdframed}
+
+Omdat elke hoek oneindig veel maatgetallen heeft wordt vaak afgesproken om enkel te werken met het {\bf kleinste positieve maatgetal} (KPM) van een hoek. Zo beperken we de hoek dan tot
+$$\alpha \in [0, 2\pi[$$
+
 
 \subsubsection{Graden omzetten in radialen}
 We kunnen nu de omzetting berekenen met behulp van het volgende verband:
@@ -169,6 +169,7 @@ $$5.4 \rad=5.4\cdot\dfrac{180\degree}{\pi}=309\degree 23' 50''$$
 \begin{oefening} Zet om in zestigdelige graden, minuten en seconden
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
+  \itemsep1em
   \item $\pi \rad=$\arulefill
   \item $\dfrac{2\pi}{3} \rad=$\arulefill
   \item $\dfrac{5\pi}{4} \rad=$\arulefill
@@ -178,13 +179,13 @@ $$5.4 \rad=5.4\cdot\dfrac{180\degree}{\pi}=309\degree 23' 50''$$
   \item $2.86 \rad=$\arulefill
   \item $6 \rad=$\arulefill
   \item $0.456 \rad=$\arulefill
-  \item $-0.75 \rad=$\arulefill 
+  \item $-0.75 \rad=$\arulefill
 \end{enumerate}
 \end{multicols}
 \end{oefening}
 
 \subsubsection{Opmerking}
-In het vervolg zullen we de eenheid '$\rad$' niet meer vermelden. Wanneer we bv. spreken over een hoek  $\dfrac{2\pi}{3}$, bedoelen we dus steeds  $\dfrac{2\pi}{3} \rad$. Vanaf nu stappen we ook af van de zestigdelige graden en zullen we alles meten in radialen.
+In het vervolg zullen we de eenheid '$\rad$' niet meer vermelden. Wanneer we bv. spreken over een hoek  $\frac{2\pi}{3}$, bedoelen we dus steeds  $\frac{2\pi}{3} \rad$. Vanaf nu stappen we ook af van de zestigdelige graden en zullen we alles meten in radialen.
 
 \newpage
 \section{De goniometrische functies}
@@ -192,21 +193,19 @@ In het vervolg zullen we de eenheid '$\rad$' niet meer vermelden. Wanneer we bv.
 \subsubsection{Tabel}
 Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
 
-\begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
-    $x$ & -1 & 0 & 1 &  $\frac{\pi}{2}$ & 2 & 3 & $\pi$ & 4 & $\frac{3\pi}{2}$ & 5 & 6 & $2\pi$\\
+  \begin{tabular}{c|p{14cm}}
+    $x$ & \\
     \hline
-   $\sin x$ &\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}
+    $\sin x$
   \end{tabular}
 \end{center}
-\end{adjustwidth}
 
-\subsubsection{Grafiek} 
+\subsubsection{Grafiek}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
-\begin{tikzpicture}[yscale=1.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[yscale=1.5,xscale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.21,-1.47) grid (8.61,1.35);
 \draw[->,color=black] (-5.21,0) -- (8.61,0);
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
@@ -222,13 +221,13 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 
 \subsubsection{Kenmerken van de sinusfunctie}
 \begin{oefening}
-Vul de kenmerken aan van de sinusfunctie.
+Vul de kenmerken van de sinusfunctie aan.
 \begin{enumerate}[(a)]
   \item $\dom \sin=\arule{3cm}$ en $\ber \sin=\arule{3cm}$
 %  \item Periode\\ We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Duid deze afstand aan op de grafiek. Voor de sinusfunctie is dit $P=$....................
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -243,20 +242,18 @@ Vul de kenmerken aan van de sinusfunctie.
 \subsubsection{Tabel}
 Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
 
-\begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
-    $x$ & -1 & 0 & 1 &  $\frac{\pi}{2}$ & 2 & 3 & $\pi$ & 4 & $\frac{3\pi}{2}$ & 5 & 6 & $2\pi$\\
+  \begin{tabular}{c|p{14cm}}
+    $x$ & \\
     \hline
-   $\cos x$ &\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}
+    $\cos x$
   \end{tabular}
 \end{center}
-\end{adjustwidth}
 
 \subsubsection{Grafiek}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[yscale=1.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[yscale=1.5,xscale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.21,-1.47) grid (8.61,1.35);
 \draw[->,color=black] (-5.21,0) -- (8.61,0);
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
@@ -266,18 +263,18 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-5.21,-1.47) rectangle (8.61,1.35);
-\draw[line width=1.2pt, smooth,samples=100,domain=-5.211247613943133:8.61062736834769] plot(\x,{cos(((\x))*180/pi)});
+%\draw[line width=1.2pt, smooth,samples=100,domain=-5.211247613943133:8.61062736834769] plot(\x,{cos(((\x))*180/pi)});
 \end{tikzpicture}
 \end{center}
 
 \begin{oefening}
-Vul de kenmerken aan van de cosinusfunctie.
+Vul de kenmerken van de cosinusfunctie aan.
 \begin{enumerate}[(a)]
   \item $\dom \sin=\arule{3cm}$ en $\ber \sin=\arule{3cm}$
 %  \item Periode\\ We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Duid deze afstand aan op de grafiek. Voor de sinusfunctie is dit $P=$....................
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -296,7 +293,7 @@ $$\sin(x+\dfrac{\pi}{2})=\cos x$$
 
 \subsection{Periode van sinus- en cosinusfunctie}
 
-We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Voor de sinusfunctie is dit 
+We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Voor de sinusfunctie is dit
 $$p=2\pi\;.$$
 We merken op dat er voor de sinusfunctie geldt dat
 $$ \sin x = \sin (x+k\cdot 2\pi)\qquad k\in\mathbb{Z}\;.$$
@@ -441,19 +438,15 @@ Bepaal voor volgende functie
 \subsubsection{Tabel}
 Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
 
-\begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
-    x & $\frac{-\pi}{2}$ &-1 & 0 & 1 &  $\frac{\pi}{2}$ & 2 & 3 & $\pi$ & 4 & $\frac{3\pi}{2}$ 
-    \\
+  \begin{tabular}{c|p{14cm}}
+    $x$ & \\
     \hline
-   $\tan x$ &\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{1cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}
+    $\tan x$
   \end{tabular}
 \end{center}
-\end{adjustwidth}
 
-
-\subsubsection{Grafiek} 
+\subsubsection{Grafiek}
 
 \begin{center}
 \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -478,12 +471,12 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 
 \subsubsection{Kenmerken van de tangensfunctie}
 \begin{oefening}
-Vul de kenmerken aan van de cosinusfunctie.
+Vul de kenmerken van de tangensfunctie aan
 \begin{enumerate}[(a)]
   \item $\dom \sin=\arule{3cm}$ en $\ber \sin=\arule{3cm}$
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -611,7 +604,7 @@ Geef telkens amplitude en periode van volgende functies.
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (2x)}$}
 De grafiek van $y=\sin (2x)$ bekom je door deze van $y=\sin x$ horizontaal samen te duwen. We spreken van een verschaling  evenwijdig met de $x$-as met factor $\frac{1}{2}$.\\
-Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:  
+Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = \pi
@@ -684,7 +677,7 @@ Geef telkens amplitude en periode van volgende functies.
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (x-1)}$}
 De grafiek van $y=\sin (x-1)$ bekom je door deze van $y=\sin x$ horizontaal naar rechts te verschuiven met $1$ eenheid. We spreken van een verschuiving evenwijdig met de $x$-as, bepaald door het koppel $(1, 0)$.\\
-Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.  
+Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = 2\pi
@@ -727,7 +720,7 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 \end{enumerate}
 \end{oefening}
 
-\subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$} 
+\subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$}
 \subsubsection{Voorbeeld: $\boldsymbol{y=\sin x-1}$}
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
@@ -767,7 +760,7 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin x-1}$}
 De grafiek van $y=\sin x-1$ bekom je door deze van $y=\sin x$ verticaal naar beneden te verschuiven met 1 eenheid. We spreken van een verschuiving evenwijdig met de $y$-as, bepaald door het koppel $(0, -1)$.\\
-Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.  
+Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = 2\pi
@@ -809,7 +802,7 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
       \begin{itemize}
         \item Amplitude $\boldsymbol{A = a}$\\
         \item Periode $\boldsymbol{P=\dfrac{2\pi}{b}}$\\
-      \end{itemize}  
+      \end{itemize}
       Je kan de grafiek ervan bekomen uit deze van $\boldsymbol{y=\sin x}$ door
       \begin{itemize}
         \item Een verschaling evenwijdig met de $y$-as met factor a\\
@@ -825,9 +818,9 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
           $\boldsymbol{d>0 \Rightarrow}$ d eenheden naar boven\\
           $\boldsymbol{d<0 \Rightarrow}$ d eenheden naar beneden \\
       \end{itemize}}
-    }}   
+    }}
 \end{center}
-  
+
 \begin{oefening}Bepaal amplitude A en periode P van volgende functies. Zeg telkens in woorden hoe je de grafiek kan bekomen uit deze van $y=\sin x$.\\
 \begin{enumerate}[(a)]
   \item $y=\dfrac{1}{2}\cdot\sin [5\cdot(x+\dfrac{\pi}{8})]-3$
@@ -864,7 +857,7 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
       \item te verschuiven evenwijdig met de $y$-as met 4 eenheden naar boven
     \end{enumerate}
     \arules{4}
-    \item 
+    \item
     \begin{enumerate}[$\rightarrow$]
       \itemsep0.8em
       \item te verschalen evenwijdig met de $y$-as met factor $\dfrac{1}{4}$
