@@ -3,6 +3,17 @@
 \input{../gowiz.tex}
 
 \usepackage{hyperref}
+\usepackage{etoolbox}
+
+\makeatletter
+\newcommand\dataset[2][5]{{
+    \singlespace\vspace*{-0.5em}
+    \begin{multicols}{#1}
+      \forcsvlist{\dataset@item}{#2}
+    \end{multicols}
+  }}
+\newcommand\dataset@item[1]{\mbox{\texttt{#1}}\\}
+\makeatother
 
 % environment mmopdracht:
 \newcounter{nmmopdracht}
@@ -105,6 +116,10 @@ Noteer bij elke onderzoeksvraag de {\bf elementen} en de {\bf variabele}:
 \end{oefening}
 
 \begin{oefening}
+  De volgende keer dat je een M\&M snoepjes eet, denk dan eens wat er de elementen van een onderzoek zouden kunnen zijn en bedenk een tweetal variabelen die je zou kunnen onderzoeken.
+\end{oefening}
+
+\begin{oefening}
 Geef zelf een onderzoeksvraag, de bijhorende elementen en variabele. Maak hier een enquête voor op.
 \end{oefening}
 
@@ -130,12 +145,12 @@ Noteer van de volgende onderzoeken telkens de populatie, de steekproef en de ste
 \end{enumerate}
 \end{oefening}
 
-De eigenschap die we bestuderen noemen we de {\bf variabele}. Soms is dit een getal, bijvoorbeeld het aantal kilometer dat een leerling van school af woont, of soms niet, bijvoorbeeld het vervoersmiddel dat een leerlingen gebruikt om naar school te komen. We onderscheiden soorten variabelen die dan nog onderverdeeld zijn elk in twee soorten:
+De eigenschap die we bestuderen noemen we de {\bf variabele}. Soms is dit een getal, bijvoorbeeld het aantal kilometer dat een leerling van school af woont, of soms niet, bijvoorbeeld het vervoermiddel dat een leerlingen gebruikt om naar school te komen. We onderscheiden soorten variabelen die dan nog onderverdeeld zijn elk in twee soorten:
 \begin{itemize}
   \item {\bf Kwalitatieve variabelen}
   \begin{itemize}
     \item {\bf Nominaal}: De verschillende waarden die een variabele heeft zijn niet zinvol te vergelijken.\\
-    Bijvoorbeeld: Het vervoersmiddel van de leerling naar school (Te voet, Bus, Fiets, ...)
+    Bijvoorbeeld: Het vervoermiddel van de leerling naar school (Te voet, Bus, Fiets, ...)
     \item {\bf Ordinaal}: De verschillende waarden die een variabele heeft kunnen geordend worden, we kunnen dus vergelijkingen maken zoals 'goed', 'beter', 'best'.\\
     Bijvoorbeeld: De tevredenheid van een televisieprogramma (*, **, ***, ****)
   \end{itemize}
@@ -163,9 +178,8 @@ Geef bij de volgende variabelen aan of het kwalitatieve of kwantitatieve variabe
 \section{Kwalitatief onderzoek}
 
 Heel vaak krijgen we in een onderzoek een aantal verschillende waarden van een variabele die niet zinvol te vergelijken is, namelijk een nominale variabele. Zo werd er vorig jaar aan een aantal leerlingen gevraagd met welk vervoersmiddel ze naar school kwamen, volgende dataset kregen we terug:
-\begin{center}
-fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus
-\end{center}
+
+\dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}
 
 In een {\bf dataset} is het de gewoonte om de $n$ waarneming te labelen met $x_1$, $x_2$, \ldots, $x_n$. Een aantal waarnemingen kunnen meerdere keren voorkomen, zo is $x_1=x_5=\ldots=x_{60}=$'fiets'. We maken die waarnemingen uniek door deze te labelen met $\omega_1=$'fiets' en deze krijgt dan de frequentie $n_1=17$
 
@@ -188,14 +202,12 @@ $$f_1 + f_2 + \cdots f_k$$
 
 \begin{oefening}
 Maak de frequentietabel horende bij de dataset:
-\begin{center}
-fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus
-\end{center}
+\dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}
 \end{oefening}
 
 
 \begin{oefening}
-In september werd aan alle leerlingen van het derde jaar gevraagd of ze een rekentoestel hadden, en zo ja, van welk merk. Vervolledig de frequentietabel.
+In september werd aan alle leerlingen van het derde jaar gevraagd of ze een rekentoestel hadden, en zo ja, van welk merk. Vervolledig de frequentietabel.\\
 \begin{center}
 \begin{tabular}{l|c|c}
 Rekenmachine & Frequentie & Rel. Freq\\\hline
@@ -205,6 +217,19 @@ TI & &\\\hline
 n= & &\\
 \end{tabular}
 \end{center}
+\end{oefening}
+
+\begin{oefening}
+ We openen een aantal zakjes {\em Gummibärchen} (kleine fruitsnoepje, gemaakt van gelatine, elk snoepje is ongeveer $2 \cm$ lang en heeft de vorm van een beertje, ze zijn beschikbaar in veel verschillende kleuren). Als we van elk beertje de kleur noteren krijgen we volgende dataset:
+
+\dataset[10]{paars, bruin, geel, roze, blauw, oranje, paars, bruin, roze, oranje, geel, bruin, paars, bruin, bruin, geel, roze, bruin, roze, geel, blauw, oranje, paars, oranje, paars, roze, paars, oranje, bruin, geel, paars, paars, roze, geel, roze, roze, roze, roze, bruin, geel, geel, geel, paars, blauw, blauw, geel, oranje, bruin, blauw}
+
+\begin{enumerate}[(a)]
+\item Welk een soort variable hebben we?
+\item Geef de frequentietabel, de relatieve frequenties mag je afronden op twee cijfers na de komma.
+\item Wat zou theoretisch het antwoord zijn op $\sum_{i=1}^n f_i$.
+\item In deze oefening hebben we een verschil van twee hondersten in de som van de relatieve frequenties. Waarom?
+\end{enumerate}
 \end{oefening}
 
 \pagebreak
@@ -255,18 +280,21 @@ Om een staafdiagram te maken.
 \end{oefening}
 
 \begin{oefening}
-Aan 24 studenten werd gevraagd om een even getal tussen 0 en 9 te noemen en daarbij werd de volgende reeks getallen geregistreerd:\\
-2 \qquad 6 \qquad 4 \qquad 0 \qquad 6 \qquad 8 \qquad 6 \qquad 4 \qquad 2 \qquad 4 \qquad 0 \qquad 6 \qquad
-8 \qquad 0 \qquad 0 \qquad 2 \qquad 4 \qquad 6 \qquad 8 \qquad 4 \qquad 0 \qquad 2 \qquad 2 \qquad 0
+  Aan 24 studenten werd gevraagd om een even getal tussen 0 en 9 te noemen en daarbij werd de volgende reeks getallen geregistreerd:
 
-Maak de frequentietabel en teken het staafdiagram.
+  \begin{center}
+    \dataset[10]{2, 6, 4, 0, 6, 8, 6, 4, 2, 4, 0, 6, 8, 0, 0, 2, 4, 6, 8, 4, 0, 2, 2, 0,}
+  \end{center}
+  \begin{enumerate}[(a)]
+  \item Maak de frequentietabel.
+  \item Teken het staafdiagram.
+\end{enumerate}
 \end{oefening}
 
 \subsubsection{Schijfdiagram}
 
-Een {\bf schijfdiagram} of {\bf taartdiagram} is een grafische voorstelling van de relatieve frequenties.Bij het tekenen van een taartdiagram verdeel je een cirkeloppervlak in stukken, juist zoals je een
-taart in stukken snijdt. Eén zo'n stuk heet een {\bf sector}. De totale oppervlakte van de cirkel komt overeen
-met de som van alle percentages en dat is 100\%.
+\begin{minipage}{0.5\linewidth}
+Een {\bf schijfdiagram} of {\bf taartdiagram} is een grafische voorstelling van de relatieve frequenties.Bij het tekenen van een taartdiagram verdeel je een cirkeloppervlak in stukken, juist zoals je een taart in stukken snijdt. Eén zo'n stuk heet een {\bf sector}. De totale oppervlakte van de cirkel komt overeen met de som van alle percentages en dat is 100\%.
 
 Voor een taartdiagram maken we enkele afspraken:
 \begin{itemize}
@@ -275,36 +303,27 @@ Voor een taartdiagram maken we enkele afspraken:
 grootste, enzovoort.
 \end{itemize}
 
-
-Je ziet hier een voorbeeld van de marktaandelen van
-energiebevoorraders in België. Het gaat over de elektriciteit in
-het jaar 2004. Deze figuur staat in het weekblad Knack van 22
-juni 2005 en is goed leesbaar. Maar als je een krant of
-weekblad doorbladert, dan zie je soms verwarrende en zelfs
-verkeerde grafieken.
-
+Je ziet hier een voorbeeld van de marktaandelen van energiebevoorraders in België. Het gaat over de elektriciteit in het jaar 2004. Deze figuur staat in het weekblad Knack van 22 juni 2005 en is goed leesbaar. Maar als je een krant of weekblad doorbladert, dan zie je soms verwarrende en zelfs verkeerde grafieken.
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
 \begin{center}
-  \includegraphics[width=0.4\textwidth]{cirkeldiagram_electriciteit}
+  \includegraphics[width=0.9\textwidth]{cirkeldiagram_electriciteit}
 \end{center}
+\end{minipage}
 
-Hoeveel graden elke sector is, bereken je door de relatieve
-frequentie te vermenigvuldigen met $360\degree$. Dit doe je met je
-rekenmachine. Maak daarna “verstandige” afrondingen zodat
-alle sectoren samen terug $360\degree$ geven (je kan
-eventueel enkele keren tot op een halve graad werken).
+Hoeveel graden elke sector is, bereken je door de relatieve frequentie te vermenigvuldigen met $360\degree$. Dit doe je met je rekenmachine. Maak daarna “verstandige” afrondingen zodat alle sectoren samen terug $360\degree$ geven (je kan eventueel enkele keren tot op een halve graad werken).
 
 \begin{oefening}
-
 Gebruik de frequentietabel:
 \begin{center}
-  \begin{tabular}{c|c|c|c}
-    $\omega_i$ & $n_i$ & $f_i$ & hoek\\
+  \begin{tabular}{c|c|c}
+    $\omega_i$ & $n_i$ & $f_i$\\
     \hline
-    fiets      & 17    & 0.28  & \arule{1cm}\\
-    bus        & 21    & 0.34  & \arule{1cm}\\
-    auto       &  8    & 0.13  & \arule{1cm}\\
-    te voet    & 14    & 0.23  & \arule{1cm}\\
-    skate board&  1    & 0.02  & \arule{1cm}\\
+    fiets      & 17    & 0.28\\
+    bus        & 21    & 0.34\\
+    auto       &  8    & 0.13\\
+    te voet    & 14    & 0.23\\
+    skate board&  1    & 0.02\\
   \end{tabular}
 \end{center}
 Om een cirkeldiagram te maken.\\
@@ -313,10 +332,32 @@ Om een cirkeldiagram te maken.\\
 
 \begin{oefening}
 We vragen aan een aantal mensen wat hun lievelingskleur is en krijgen volgende antwoorden:
+\dataset[6]{rood, paars, groen, rood, groen, geel, purper, oranje, hemelsblauw, groen, rood, paars, geel, geel, zwart, groen, lichtgroen, oranje, geel, rood, oranje, groen, geel, groen, geel, blauw, rood, groen, oranje, blauw, rood, geel, groen, rood, paars, groen, rood, rood, blauw, geel, rood}
+\begin{enumerate}[(a)]
+\item Terwijl je turft kan je de dataset eigenlijk vereenvoudigen. Welke aannames kan je hier maken?
+\item Maak een taartdiagram.
+\end{enumerate}
+\end{oefening}
+
+
+\begin{oefening}
+Ik vraag aan een aantal leerlingen welk vak ze graag doen. De leerlingen antwoorden heel ''eerlijk''. Ik turf de dataset en krijg volgende frequentietabel:
+
 \begin{center}
-  rood, paars, groen, rood, groen, geel, purper, oranje, hemelsblauw, groen, rood, paars, geel, geel, zwart, groen, lichtgroen, oranje, geel, rood, oranje, groen, geel, groen, geel, blauw, rood, groen, oranje, blauw, rood, geel, groen, rood, paars, groen, rood, rood, blauw, geel, rood
+  \begin{tabular}{r|ccccc}
+    Vak  & Wiskunde & Natuurwetenschappen & Nederlands & Frans & Duits \\
+    \hline
+    Freq & 12       & 3                   & 8          & 4     & 6     \\
+  \end{tabular}
 \end{center}
-Maak een taartdiagram.
+
+\begin{enumerate}[(a)]
+\item Wat is hier de variabele en welk soort variabele is het?
+\item Maak de frequentietabel opnieuw, maar nu zodanig dat er kolommen met berekeningen toegevoegd kunnen worden.
+\item Welk een figuur past er hier best bij de relatieve frequentie?
+\item Welk een kolom moet je toevoegen?
+\item Maak deze figuur.
+\end{enumerate}
 \end{oefening}
 
 \pagebreak
@@ -324,42 +365,31 @@ Maak een taartdiagram.
 
 \begin{oefening}
 
-Soms kom je de uitdrukking “horizontaal staafdiagram” tegen. Kijk daarvoor naar de figuur
-die je vindt in de Gazet van Antwerpen van 3 november 2004. Voor de 364 jobs die in
-oktober 2004 bij de 4 grootste faillissementen in Vlaanderen verloren gingen, heeft men een
-figuur getekend.
+Soms kom je de uitdrukking “horizontaal staafdiagram” tegen. Kijk daarvoor naar de figuur die je vindt in de Gazet van Antwerpen van 3 november 2004. Voor de 364 jobs die in oktober 2004 bij de 4 grootste faillissementen in Vlaanderen verloren gingen, heeft men een figuur getekend.
 
 \begin{center}
-  \includegraphics[width=0.6\textwidth]{horizontaal_staafdiagram-faillissementen}
+  \includegraphics[width=0.5\textwidth]{horizontaal_staafdiagram-faillissementen}
 \end{center}
 
-
-\begin{itemize}
+\begin{enumerate}[(a)]
 \item Welke variabele is er genoteerd bij elke persoon die zijn job is kwijtgeraakt?
-\arules{1}
 \item Welk soort variabele is dat?
-\arules{1}
 \item Wat zijn haar waarden?
-\arules{2}
 \item Is de figuur goed getekend?
-\arules{2}
-\end{itemize}
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
-
 Als je een frequentietabel ziet, dan moet je die juist kunnen interpreteren. Bekijk de tabel over XTC en Speed (Gazet van Antwerpen van 20-10-2004). Kijk enkel naar de informatie die daarin staat over het jaar 2003.
 
 \begin{center}
-\includegraphics[width=0.7\textwidth]{tabel-drugs}
+\includegraphics[width=0.6\textwidth]{tabel-drugs}
 \end{center}
 
-\begin{itemize}
+\begin{enumerate}[(a)]
   \item Is “druggebruik” daar behandeld als een kwalitatieve variabele?
-  \arules{2}
   \item Is de tabel correct?
-  \arules{3}
-\end{itemize}
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -370,12 +400,10 @@ vrijetijdsbesteding van jongeren (De Standaard van 6-12-2000).
   \includegraphics[width=1\textwidth]{cirkeldiagram-vrijetijdsbesteding}
 \end{center}
 
-\begin{itemize}
+\begin{enumerate}[(a)]
   \item Is “vrijetijdsbesteding” hier behandeld als een kwalitatieve variabele?
-  \arules{3}
   \item Is het taartdiagram correct getekend?
-  \arules{3}
-\end{itemize}
+\end{enumerate}
 \end{oefening}
 
 \pagebreak
@@ -383,7 +411,7 @@ vrijetijdsbesteding van jongeren (De Standaard van 6-12-2000).
 
 We herinneren ons dat we met een kwantitatieve variabele kunnen rekenen. We beschouwen nu een voorbeeld waarbij de directeur een aantal jaar terug de tijd heeft opgemeten dat het duurt voordat de leerling aan de les beginnen nadat het belsignaal heeft gerinkeld. We krijgen een lijst van 65 getallen waarbij elk getal een tijdstip in seconden voorstelt:
 
-193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262
+\dataset[10]{193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262}
 
 
 \subsection{Een frequentietabel met klassenindeling}
@@ -424,52 +452,42 @@ Meestal neem je eenvoudige “ronde” getallen. Hier zou je bijvoorbeeld kunnen
   \item Zorg ervoor dat het overgrote deel van de waarnemingen niet binnen één of twee klassen valt. Als richtlijn neem je tussen de 5 en de 15 klassen, maar deze richtlijn hoef je niet te strikt te nemen. Als je de frequentietabel gebruikt om een histogram te tekenen (zoals uitgelegd in volgend puntje), dan zal je ervaren dat te veel klassen dikwijls een zeer onrustige figuur geven terwijl te weinig klassen bijna niets meer tonen.
 \end{itemize}
 
+\begin{minipage}{0.8\linewidth}
 Als de tabel gemaakt is, dan kan het turven beginnen. {\bf Turven} is tellen door streepjes per vijf te groeperen. Dit doe je door de elementen van je dataset te overlopen en voor elk element een streepje te plaatsen bij de correcte klasse.
-
-%\vfill
+\end{minipage}
+\begin{minipage}{0.2\linewidth}
 \begin{center}
-\includegraphics[width=0.3\textwidth]{turven}
+\includegraphics[width=0.9\textwidth]{turven}
 \end{center}
-
-%\newpage
-\begin{oefening}
-Stel nu een frequentietabel voor de volgende dataset. Kies een verstandige klassenbreedte.\\
-193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262
-\\
-\begin{center}
-  \setlength{\tabcolsep}{5pt}
-  \renewcommand{\arraystretch}{1}
-  \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-    \hline
-    Klasse & Turf & Frequentie &&Relatieve Frequentie&\\
-    \hline&&&&&\\\hline&&&&&\\\hline&&&&&\\\hline&&&&&\\\hline&&&&&\\
-    \hline&&&&&\\\hline&&&&&\\\hline&&&&&\\\hline&&&&&\\\hline&&&&&\\
-    \hline&&&&&\\\hline&&&&&\\\hline
-  \end{tabular}
-\end{center}
-\end{oefening}
+\end{minipage}
 
 Naast de frequentie en de relatieve frequentie bestaan er ook nog de {\it cumulatieve} versies van deze frequenties. Cumulatief wil zeggen dat iets steeds toeneemt of ophoopt. In het geval van de frequentie is de {\bf cumulatieve frequentie} het aantal gegevens dat tot deze klasse en alle lagere klassen behoord. De {\bf relatieve cumulatieve frequentie} van een klasse is dan de verhouding van de cumulatieve frequentie van die klasse en het totale aantal gegevens.
 
-Vul de frequentietabel verder aan met de cumulatieve frequentie en de relatieve cumulatieve frequentie.
-
 \begin{oefening}
-Gemiddeld is een basketbal speler $2.01 \m$ groot. Op de website van de (National Basketball Association) NBA vinden we volgende dataset.\\
-
-1.93, 2.22, 2.08, 2.26, 1.98, 2.13, 2.16, 1.94, 1.89, 1.96, 1.92, 2.09, 2.11, 2.09, 2.13, 2, 1.67, 2.08, 2.2, 2.18, 2.18, 2.17, 1.96, 1.95, 2.01, 2.07, 1.74, 1.81, 2.04, 1.99, 1.99, 1.91, 1.74, 2.12, 1.95, 2, 2.25, 2.29, 1.9, 1.98, 2.03, 2.16, 1.82, 2.17, 1.92, 1.99, 1.95, 2, 2, 1.91, 2.26, 2.21, 2.31, 1.91, 2.1, 2.09, 2.17, 1.98, 1.95, 1.96, 2.21, 2.18, 1.96, 1.82, 1.89, 2.21, 2.09, 1.87, 1.83, 2.16, 1.87, 2.18, 2.09, 2.1, 1.7, 2.01, 2.2, 1.67, 1.87, 2.14\\
-
-Maak een goede frequentietabel.
+  Stel nu een frequentietabel voor de volgende dataset. Kies een verstandige klassenbreedte.
+  \dataset[10]{
+193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262
+}
 \end{oefening}
 
 \begin{oefening}
-In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:\\
-
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8\\
-
-Maak een goede frequentietabel.
+  Gemiddeld is een basketbal speler $2.01 \m$ groot. Op de website van de (National Basketball Association) NBA vinden we volgende dataset.
+  \dataset[10]{
+    1.93, 2.22, 2.08, 2.26, 1.98, 2.13, 2.16, 1.94, 1.89, 1.96, 1.92, 2.09, 2.11, 2.09, 2.13, 2, 1.67, 2.08, 2.2, 2.18, 2.18, 2.17, 1.96, 1.95, 2.01, 2.07, 1.74, 1.81, 2.04, 1.99, 1.99, 1.91, 1.74, 2.12, 1.95, 2, 2.25, 2.29, 1.9, 1.98, 2.03, 2.16, 1.82, 2.17, 1.92, 1.99, 1.95, 2, 2, 1.91, 2.26, 2.21, 2.31, 1.91, 2.1, 2.09, 2.17, 1.98, 1.95, 1.96, 2.21, 2.18, 1.96, 1.82, 1.89, 2.21, 2.09, 1.87, 1.83, 2.16, 1.87, 2.18, 2.09, 2.1, 1.7, 2.01, 2.2, 1.67, 1.87, 2.14
+  }
+  Maak een goede frequentietabel.
 \end{oefening}
 
-\pagebreak
+\begin{oefening}
+  In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:
+  \begin{center}
+    \dataset[10]{
+      7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+    }
+  \end{center}
+  Is het hier nodig om een frequentietabel te maken met klassen?
+\end{oefening}
+
 \subsection{Het histogram}
 
 Een {\bf histogram} is de meest gebruikte figuur om het globale gedrag van continu
@@ -483,9 +501,11 @@ grafisch voor. We maken een histogram als volgt:
 
 Vaak zal men boven het histogram ook nog een {\bf frequentiepolygoon} tekenen. Hierbij verbind men het hoogste punt van de staafjes binnen het histogram in het klassenmidden met elkaar. Soms wordt voor de kleinste waarde en na de grootste waarde nog twee fictieve waarden toevoegen, elk met frequentie nul, zodat de frequentiepolygoon begint en eindigt op de $x$-as.
 
+\subsubsection*{Verschil tussen een staafdiagram en een histogram}
+Sommigen denken dat een histogram en een staafdiagram goed op elkaar lijken. Dat is fout, want er zijn fundamentele verschillen. Een histogram hoort bij een continu kwantitatieve variabele waar geen tussenstappen zijn tussen de “mogelijke” uitkomsten. Bij een histogram liggen de rechthoeken dus tegen elkaar. Bij een staafdiagram is er open ruimte tussen de staafjes. Bovendien kijk je bij een staafdiagram naar de hoogte en bij een histogram naar de oppervlakte.
+
 \begin{oefening}
 Teken het histogram en het frequentiepolygoon horende bij volgende frequentietabel.\\
-\begin{minipage}{0.5\textwidth}
 \begin{center}
 \begin{tabular}{c|c|c|c}
 $i$ & klasse     & $n_i$ & $f_i$\\
@@ -503,27 +523,25 @@ $i$ & klasse     & $n_i$ & $f_i$\\
  11 & $[360, 390[$ &   2 &  0.03\\
 \end{tabular}
 \end{center}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
+\end{oefening}
+
+\begin{oefening}
+In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:
 \begin{center}
-\assenstelsel[0.6]{-1}{13}{-1}{17}
+\dataset[10] {
+  7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+}
 \end{center}
-\end{minipage}
+\begin{enumerate}[(a)]
+\item Je kan hier kiezen om de dataset onder te verdelen in klassen, waarbij de klassen geen interval zijn, maar de waarnemingen zelf.
+\item Maak dan een staafdiagram.
+\item Maak dan een histogram.
+\end{enumerate}
 \end{oefening}
 
 
-\subsubsection*{Verschil tussen een staafdiagram en een histogram}
-Sommigen denken dat een histogram en een staafdiagram goed op elkaar
-lijken. Dat is fout, want er zijn fundamentele verschillen. Een histogram hoort
-bij een continu kwantitatieve variabele waar geen tussenstappen zijn tussen
-de “mogelijke” uitkomsten. Bij een histogram liggen de rechthoeken dus tegen
-elkaar. Bij een staafdiagram is er open ruimte tussen de staafjes. Bovendien
-kijk je bij een staafdiagram naar de hoogte en bij een histogram naar de
-oppervlakte.
-
 \begin{oefening}
 Als je de groottes van de basketbalspelers in acht klassen hebt opgedeeld krijgen we volgende frequentietabel. Maak zelf het bijhorende histogram en teken het frequentiepolygoon.\\
-\begin{minipage}{0.5\textwidth}
 \begin{center}
 \begin{tabular}{c|c|c}
 $i$ & klasse     & $n_i$\\
@@ -538,25 +556,8 @@ $i$ & klasse     & $n_i$\\
   8 & $[ 2.30,  2.40[$ &   1\\
 \end{tabular}
 \end{center}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
-\begin{center}
-\assenstelsel[0.7]{-1}{10}{-1}{14}
-\end{center}
-\end{minipage}
 \end{oefening}
 
-\begin{oefening}
-In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:
-\begin{center}
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
-\end{center}
-Maak frequentietabel en een staafdiagram.
-\end{oefening}
-
-
-
-\pagebreak
 \subsection{Numerieke kenmerken: de kengetallen}
 
 Jij en je buur kunnen elkaars punten van het rapport vergelijken. Elke reeks punten van een rapport kan je zien als een reeks waarnemingsgetallen. Hiervan zou je bijvoorbeeld elkaars gemiddelde kunnen vergelijken of hoe de punten verspreid liggen.
@@ -565,7 +566,7 @@ Je zou ook een onderzoek kunnen doen naar lichaamsgrootte binnen een aantal vers
 
 \subsubsection{Centrummaten}
 
-{\bf Centrummaten} geven de waarde waarrond de waarnemingsgetallen gecentreerd zijn. Ze tonen ons het midden van de data.
+{\bf Centrummaten} geven de waarde waar rond de waarnemingsgetallen gecentreerd zijn. Ze tonen ons het midden van de data.
 
 De ons best gekende is het {\bf gemiddelde} $\bar{x}$. Bij een reeks van $n$ waarnemingsgetallen $x_1$, $x_2$, $\ldots$, $x_n$ berekenen we het gemiddelde met
 $$\bar{x}=\dfrac{x_1 + x_2 + \cdots + x_n}{n}$$
@@ -582,7 +583,7 @@ Als we een indeling in klassen hebben kunnen we niet langer het gemiddelde exact
 \begin{oefening}
 Bepaal het gemiddelde van de volgende toetsresultaten:
 \begin{center}
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\dataset[10]{7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8}
 \end{center}
 \end{oefening}
 
@@ -614,8 +615,9 @@ Als we een indeling in klassen hebben nemen we het klassenmidden (of het gemidde
 \begin{oefening}
 Bepaal de mediaan van de volgende toetsresultaten:
 \begin{enumerate}[(a)]
-  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
-  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8, 3
+  \item \dataset[10]{5, 4, 4, 7, 7}
+  \item \dataset[10]{5, 7.5, 4, 8, 6, 8}
+  \item \dataset[10]{6, 7, 6, 6, 6, 7, 6, 10}
 \end{enumerate}
 \end{oefening}
 
@@ -663,9 +665,7 @@ We merken verder op dat het gemiddelde veel gevoeliger is dan de mediaan. Wat we
 
 \begin{oefening}
 In een fabriek worden 1 liter flessen gevuld met ketchup. Om te controleren dat er geen fout zit op de machine wordt er elk uur steekproefgewijs 8 flessen gewogen. We krijgen volgende data de maandagmorgen:
-\begin{center}
-  230 gr; 1202 gr; 1212 gr; 1183 gr; 1191 gr; 1236 gr; 1232 gr; 1193 gr
-\end{center}
+\dataset[8]{230 gr, 1202 gr, 1212 gr, 1183 gr, 1191 gr, 1236 gr, 1232 gr, 1193 gr}
 \begin{enumerate}[(a)]
   \item Bepaal het gemiddelde.
   \item Bepaal de mediaan.
@@ -673,12 +673,11 @@ In een fabriek worden 1 liter flessen gevuld met ketchup. Om te controleren dat 
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsubsection{Spreidingsmaten}
 
 Met {\bf spreidingsmaten} kunnen we met getallen weergeven hoe de waarnemingsgetallen verspreid liggen rond een centrummaat. Beschouw bijvoorbeeld volgende twee datasets
 \begin{center}
-  4\; 6\; 8\; 10 \qquad\qquad en \qquad\qquad 1\; 4\; 5\; 9\; 11\; 12
+  \texttt{4\; 6\; 8\; 10} \qquad\qquad en \qquad\qquad \texttt{1\; 4\; 5\; 9\; 11\; 12}
 \end{center}
 Beide reeksen hebben hetzelfde gemiddelde en dezelfde mediaan. Toch is er een verschil, namelijk de linker dataset ligt dichter ronde het gemiddelde en de mediaan dan de rechter dataset. We zeggen dat de spreiding links kleiner is.
 
@@ -689,7 +688,7 @@ Bij een indeling in klassen wordt de afstand tussen de kleinste en grootste klas
 \begin{oefening}
 Bepaal de variatiebreedte van volgende waarnemingsgetallen:
 \begin{center}
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\dataset[10]{7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8}
 \end{center}
 \end{oefening}
 
@@ -711,7 +710,6 @@ $i$ & klasse     & $n_i$\\
 \end{center}
 \end{oefening}
 
-\pagebreak
 Een weinig gebruikte spreidingsmaat is de {\bf gemiddelde absolute afwijking} $Mad$ die de gemiddelde afstand van een reeks waarnemingsgetallen $x_1$, $x_2$, $\ldots$, $x_n$ bepaalt:
 $$Mad=\dfrac{1}{n}\sum_{i=1}^n|x_i-\bar{x}|$$
 
@@ -770,11 +768,36 @@ De volgende zijn belangrijk:
 \begin{oefening}
 Bepaal de 1-variabele statistieken van volgende waarnemingsgetallen m.b.v. het \zrm{ZRM}:
 \begin{center}
-7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+\dataset[10]{7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8}
 \end{center}
 \end{oefening}
 
-\pagebreak
+\begin{oefening}
+Door 88 willekeurige 17 jarigen wordt een IQ test afgelegd. De dataset krijgen we niet, maar we krijgen wel volgende frequentietabel met klassenindeling:
+\begin{center}
+  \begin{tabular}{c|c}
+    Interval & Frequentie\\
+    \hline
+    $[50, 60[$ & 2\\
+    $[60, 70[$ & 2\\
+    $[70, 80[$ & 5\\
+    $[80, 90[$ & 25\\
+    $[90, 100[$ & 22\\
+    $[100, 110[$ & 16\\
+    $[110, 120[$ & 11\\
+    $[120, 130[$ & 5
+  \end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+  \item Teken het histogram, gebruik een blauwe stylo.
+  \item Teken op het histogram het frequentiepolygoon, gebruik een groene stylo.
+  \item Wat is het gemiddelde?
+  \item Wat is de mediaan?
+  \item Wat de modus?
+\end{enumerate}
+\end{oefening}
+
 \subsection{De boxplot}
 
 \begin{wrapfigure}[10]{l}{0.4\textwidth}
@@ -797,10 +820,27 @@ getallen. De rechterrechthoek gaat van Med tot Q3, en daar ligt het derde kwart 
 getallen.
 
 \begin{oefening}
-Teken de boxplot voor volgende waarnemingsgetallen:
+Een uitzendbureau onderzoekt bij haar ingeschreven studenten (dus allemaal studenten die effectief studentenjobs doen) hoeveel uur per jaar ze werken. Ze krijgen volgende dataset:
+
+\dataset[10]{277, 356, 281, 32, 256, 281, 284, 332, 234, 262, 219, 235, 272, 141, 249, 282, 288, 306, 313, 82, 309, 284, 258, 329, 290, 316, 168, 255, 214, 293, 330, 258, 43, 244, 302, 214, 290, 223, 333, 265, 269, 255, 280, 271, 261, 327, 246, 245, 301, 325, 225, 275}
+
+We vinden volgende kengetallen:
+\begin{center}
+  \begin{tabular}{r|l}
+    Minimum & 32\\
+    Eerste kwartiel & 244.5\\
+    Mediaan & 271.5\\
+    Derde kwartiel & 297\\
+    Maximum & 356
+  \end{tabular}
+\end{center}
+
 \begin{enumerate}[(a)]
-  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
-  \item 7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 22, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+  \item Controleer of de kengetallen kloppen.
+  \item Hoeveel is $IQR$?
+  \item Hoeveel is $Q_1-1.5\cdot IQR$
+  \item Hoeveel is $Q_3+1.5\cdot IQR$
+  \item Teken de boxplot.
 \end{enumerate}
 \end{oefening}
 
@@ -828,6 +868,20 @@ Welke eigenschap probeert de interkwartielafstand te beschrijven? Zeg in woorden
 kwartielen zijn en hoe je de interkwartielafstand berekent. Kan je daaruit afleiden of de
 interkwartielafstand gevoelig is voor uitschieters? Kan je daarvan een eenvoudig voorbeeld
 geven?
+\end{oefening}
+
+\begin{oefening}
+Geef de benaming of het symbool van volgende kengetallen en duidt aan, met een kruisje, of ze al dan niet centrummaten of spreidingsmaten zijn.\\
+\begin{center}
+  \begin{tabular}{c|c|c|c|c}
+        & Kengetal        & Symbool     & Centrummaat & Spreidingsmaat \\
+    \hline
+    (a) & \arule{4cm}     & $\bar{x}$   & \arule{1cm} & \arule{1cm}    \\
+    (b) & Mediaan         & \arule{2cm} & \arule{1cm} & \arule{1cm}    \\
+    (c) & Variatiebreedte & \arule{2cm} & \arule{1cm} & \arule{1cm}    \\
+    (d) & \arule{4cm}     & $IQR$       & \arule{1cm} & \arule{1cm}    \\
+  \end{tabular}
+\end{center}
 \end{oefening}
 
 \pagebreak
