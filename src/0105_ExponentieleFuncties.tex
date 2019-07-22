@@ -1,51 +1,36 @@
-\documentclass[12pt, twoside]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
-\usepackage{relsize}
-
-\usepackage{versions}
-\excludeversion{theorie}
-%\includeversion{theorie}
+\usepackage{mhchem}
 
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Exponentiële Functies}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
-  \centering
-  \fontsize{40}{60}\selectfont Exponentiële functies
+    \centering
+    \fontsize{40}{60}\selectfont Exponentiële functies
   \end{mdframed}
   \vfill
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-2.52,0) -- (6.4,0);
-\foreach \x in {-2,2,4,6}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-1.22) -- (0,4.36);
-\foreach \y in {,2,4}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-2.52,-1.22) rectangle (6.4,4.36);
-\draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
-\draw[line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(\x)});
-\draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))});
-\draw (1.26,3.98) node[anchor=north west] {$f(x)=e^x$};
-\draw (3.5,1.3) node[anchor=north west] {$f^{-1}(x)=\ln(x)$};
-\end{tikzpicture}
-%  \includegraphics[width=0.8\textwidth]{}
-  \vfill
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-2.52,0) -- (6.4,0);
+    \foreach \x in {-2,2,4,6}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-1.22) -- (0,4.36);
+    \foreach \y in {,2,4}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-2.52,-1.22) rectangle (6.4,4.36);
+    \draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
+    \draw[line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(\x)});
+    \draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))});
+    \draw (1.26,3.98) node[anchor=north west] {$f(x)=e^x$};
+    \draw (3.5,1.3) node[anchor=north west] {$f^{-1}(x)=\ln(x)$};
+  \end{tikzpicture}
 \end{center}
 
 \subsection*{Doelstellingen}
-\vspace*{-0.8cm}
-{\singlespacing
+\begin{singlespacing}
 Je \hfill  {\scriptsize(LP2005-069, LI1.5, ET10-11-13)}
 \begin{itemize}
   \itemsep-0.2em
@@ -60,10 +45,8 @@ Je \hfill  {\scriptsize(LP2005-069, LI1.5, ET10-11-13)}
   \item kan van de grafiek van exponentiële functies $f(x)=b\cdot a^x$ het stijgen/dalen, de limietwaarden en
 het asymptotisch gedrag aflezen.
   \item kan problemen van groeitoepassingen met gegeven functioneel verband oplossen met behulp van ICT en deze oplossing interpreteren.
-\end{itemize}}
+\end{itemize}
 \subsection*{Vaardigheden en attitudes}
-\vspace*{-0.8cm}
-{\singlespacing
 Je \hfill {\scriptsize(LP2005-069, ET2-3-6)}
 \begin{itemize}
   \itemsep-0.2em
@@ -71,28 +54,24 @@ Je \hfill {\scriptsize(LP2005-069, ET2-3-6)}
   \item maakt functioneel gebruik van ICT bij het oplossen van problemen.
   \item verantwoordt keuzes m.b.t. representatie en gevolgde werkwijze.
 \end{itemize}
-}
+\end{singlespacing}
 \vspace*{-1cm}
 
 \thispagestyle{empty}
-\mbox{}
-\newpage
 \clearpage
-\thispagestyle{empty}
-%\mbox{}
-\tableofcontents
-\newpage
-\clearpage
-\pagenumbering{arabic} 
 
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Exponentiële functies}
 \fancyhead[RE,LO]{}
 
-\end{theorie}
-
+\cleardoublepage
 \section{Machten met natuurlijke exponenten}
-
-\begin{theorie}
 
 Herinner je nog de definitie voor een macht met een reëel grondtal en een natuurlijke exponent:
 
@@ -107,8 +86,6 @@ a^1 &= a\\
 \end{mdframed}
 
 We lezen de $n$-de macht van $a$ of $a$ tot de macht $n$, $a$ noemen we het {\bf grondtal} en $n$ de {\bf exponent}. Als de exponent even is, spreken we van een {\bf even macht} en anders van een {\bf oneven macht}.
-
-\end{theorie}
 
 \begin{oefening}
 In de definitie voor een macht met natuurlijke exponent moet de exponent $n\in \mathbb{N}\setminus\{0,1\}$ zijn, geef de mogelijke waarden voor $n$.
@@ -153,10 +130,8 @@ Bereken
 Geef de tekenregels voor machten.
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Machten met negatieve gehele exponenten}
-
-\begin{theorie}
 
 Vroeger definieerden we reeds machten met negatieve gehele exponenten:
 \paragraph*{Definitie}
@@ -165,8 +140,6 @@ Vroeger definieerden we reeds machten met negatieve gehele exponenten:
 \forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} = \left(a^{-1}\right)^n=\left(a^n\right)^{-1}=\dfrac{1}{a^n}
 \end{align*}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken:
@@ -184,8 +157,6 @@ Bereken:
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 De rekenregels die gelden voor natuurlijke exponenten blijven gelden voor machten met gehele exponenten.
 
 \paragraph*{Rekenregels voor machten met gehele exponenten}
@@ -199,8 +170,6 @@ a^m\cdot a^n &= a^{m+n} && \mbox{machten met zelfde grondtal vermenigvuldigen}\\
 \left(\dfrac{a}{b}\right)^m &= \dfrac{a^m}{b^m} && \mbox{quotiënt tot een macht}\\
 \end{align*}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Begrijp je bij de rekenregels voor machten de gekozen benamingen (zelfde grondtal, macht van een macht, product van een ...)?
@@ -448,11 +417,8 @@ Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponen
 \end{multicols}
 \end{oefening}
 
-
-\pagebreak
+\cleardoublepage
 \section{Machtswortels}
-
-\begin{theorie}
 
 \paragraph*{Definitie}
 \begin{mdframed}
@@ -461,8 +427,6 @@ $$x^n=a$$
 \end{mdframed}
 
 Uit bovenstaande definitie blijkt dat we $x$ de $n$-de machtswortel of kort de {\bf wortel} noemen. We zullen dan $a$ het {\bf (wortel)grondtal} noemen en $n$ de {\bf (wortel)exponent}.
-
-\end{theorie}
 
 \begin{oefening}
 $-8$ en $8$ zijn de 2-de machtswortels uit $64$, waarom?
@@ -476,8 +440,6 @@ Geef alle $3$-de machtswortels uit $-64$ en zeg waarom het $3$-de machtswortels 
 Hoeveel $2$-de machtswortels heeft $-64$?
 \end{oefening}
 
-\begin{theorie}
-
 \paragraph*{Aantal $n$-de machtswortels}
 \begin{mdframed}
 \begin{itemize}
@@ -487,20 +449,12 @@ Hoeveel $2$-de machtswortels heeft $-64$?
 \end{itemize}
 \end{mdframed}
 
-
-
-\end{theorie}
-
 \begin{oefening}
 Neem $n$ oneven, wat weet je dan over het teken van de $n$-de machtswortel?
 \end{oefening}
 
-\begin{theorie}
-
 De positieve $2$-de machtswortel uit $a\in\mathbb{R}^+$ wordt de {\bf vierkantswortel} uit $a$ genoemd. De $n=2$ kan weg gelaten worden in de notatie van de wortel:
 $$\sqrt{a}:=\sqrt[2]{a}$$
-
-\end{theorie}
 
 \begin{oefening}
 \begin{enumerate}[(a)]
@@ -517,8 +471,6 @@ Een eenvoudig trucje van een getal $a\in\mathbb{R}$ de absolute waarde te vinden
 $$|a| = \sqrt{a^2}$$
 \end{oefening}
 
-\begin{theorie}
-
 \paragraph*{Eigenschappen van machtswortels}
 \begin{mdframed}
 $\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, \forall m,n,p\in\mathbb{N}_0$
@@ -531,8 +483,6 @@ $\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, 
   \sqrt[n]{a^n} &= a && \mbox{wegwerken van wortel}
 \end{align*}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
   Werk uit, gebruik steeds één van de eigenschappen van machtswortels
@@ -589,16 +539,12 @@ $$\sqrt{1+101\cdot99}$$
 \newpage
 \section{Machten met rationale exponenten}
 
-\begin{theorie}
-
 Voor $n\in\mathbb{N}$ hebben we $a^n$ reeds gedefinieerd als $a^n=a\cdot a\cdot \ldots \cdot a$. Wat als de exponent nu rationaal is? Dus $n\in\mathbb{Q}^+_0$, met andere woorden, we kunnen $n$ herschrijven als $n=\dfrac{p}{q}$ met $p,q\in\mathbb{N}_0$.
 
 We definiëren:
 \begin{mdframed}
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{\frac{p}{q}}=\sqrt[q]{a^p}$$
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Gebruik de definitie van machten met rationale exponenten om onderstaande machten uit te rekenen:
@@ -615,12 +561,8 @@ Gebruik de definitie van machten met rationale exponenten om onderstaande machte
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 Als de exponent een negatief rationaal getal is, dan wordt de definitie:
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{-\frac{p}{q}}=\dfrac{1}{a^{\frac{p}{q}}}=\dfrac{1}{\sqrt[q]{a^p}}$$
-
-\end{theorie}
 
 \begin{oefening}
 Bereken:
@@ -760,8 +702,6 @@ Bereken of vereenvoudig zoveel mogelijk (controleer zelf nadien je resultaat):
 \pagebreak
 \section{Machten met een reële exponent}
 
-\begin{theorie}
-
 We willen bijvoorbeeld voor $a\in\mathbb{R}_0^+$ de macht van $a$ met exponent $\sqrt{a}$, $a^{\sqrt{2}}$ definiëren.
 
 Beschouwen we de decimale voorstelling van $\sqrt{2}$:
@@ -792,8 +732,6 @@ Ook bij machten met reële exponenten gelden de reeds gekende rekenregels voor m
 
 Het is uiteraard niet doenbaar om een reëel getal met de hand te gaan benaderen door een rationaal getal. Gelukkig doen huidige rekentoestellen dit automatisch. Met het \zrm{ZRM} gaan we als volgt te werk: typ het grondtal, dan \zrm{$x^\blacksquare$} en daarna de reële exponent.
 
-\end{theorie}
-
 \begin{oefening}
 Bereken, geef je antwoord op vier decimalen:\\
 \begin{multicols}{3}
@@ -811,11 +749,8 @@ Bereken, geef je antwoord op vier decimalen:\\
 Verklaar waarom je \zrm{ZRM} de macht $(-5)^{\sqrt{2}}$ niet kan uitrekenen.
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Logaritmen}
-
-\begin{theorie}
 
 \subsection{Logaritmen met grondtal 10}
 
@@ -836,8 +771,6 @@ We kunnen de definitie kort schrijven als
 $$\log x = y \Leftrightarrow 10^y = x$$
 \end{mdframed}
 
-\end{theorie}
-
 \begin{oefening}
 Zoek de logaritme met grondtal 10 van de volgende getallen:\\
 \begin{multicols}{2}
@@ -851,8 +784,6 @@ Zoek de logaritme met grondtal 10 van de volgende getallen:\\
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Veralgemening: Logaritmen met grondtal $a$}
 
 In de wetenschappen zijn vaak logaritmen nodig met andere grondtallen dan 10. Zo kunnen we voorgaande definitie veralgemenen tot:\\
@@ -860,8 +791,6 @@ Voor een strikt positief reëel getal $x$ is de logaritme met grondtal $a$ van $
 $$\log_a x = y \Leftrightarrow a^y = x$$
 
 Wij zullen ons echter beperken tot het eenvoudige geval waarbij het grondtal $a=10$ is.
-
-\end{theorie}
 
 \begin{oefening}
 Zoek de logaritme met grondtal $a$ van de volgende getallen:\\
@@ -878,8 +807,6 @@ Zoek de logaritme met grondtal $a$ van de volgende getallen:\\
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Eigenschappen van logaritmen met grondtal 10}
 
 De definitie zegt dat $\log x = y \Leftrightarrow 10^y = x$. Als we binnen de logaritme de $x$ vervangen door $10^y$, dan krijgen we onmiddellijk de volgende handige regel:
@@ -890,8 +817,6 @@ $$\log (10^x) = x$$
 \end{mdframed}
 
 Deze eigenschap kunnen we handig gebruiken in berekeningen.
-
-\end{theorie}
 
 \begin{oefening}
 Bereken de logaritme met grondtal $10$ door steeds gebruik te maken van het feit dat $\log (10^x) = x$:
@@ -906,8 +831,6 @@ Bereken de logaritme met grondtal $10$ door steeds gebruik te maken van het feit
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 Ook zijn volgende rekenregels aantoonbaar:
 
 \paragraph*{Rekenregels van logaritmen met grondtal $10$}
@@ -920,8 +843,6 @@ $\forall x,y \in \mathbb{R}_0^+, \forall n\in \mathbb{R}:$
 \log(x^n) &= n\cdot\log x && \mbox{logaritme van een macht}
 \end{align*}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken volgende logaritmen, maak steeds gebruik van de rekenregels voor logaritmen:
@@ -947,8 +868,6 @@ Bereken:
 \end{oefening}
 
 
-\begin{theorie}
-
 \subsection{Toepassingen op logaritmen}
 
 \subsubsection{Meten van geluid met behulp van decibels}
@@ -959,8 +878,6 @@ Origineel werd $1\dB$ gedefinieerd als één tiende van het geluid van een bel. 
 
 $$d=10\cdot \log\dfrac{I}{I_0} \;\dB$$
 
-\end{theorie}
-
 \begin{oefening}
 Bepaal het aantal decibels geproduceerd door een geluid met een intensiteit van $5000I_0$.
 \end{oefening}
@@ -968,8 +885,6 @@ Bepaal het aantal decibels geproduceerd door een geluid met een intensiteit van 
 \begin{oefening}
 Als een geluid een intensiteit heeft van $85\dB$, hoeveel intenser is dan dat geluid dan een tiende van een bel?
 \end{oefening}
-
-\begin{theorie}
 
 \subsubsection{Google PageRank}
 
@@ -982,12 +897,8 @@ De PageRank is opnieuw een logaritme, er wordt niet gemeten hoe groot de score i
 \includegraphics[width=\textwidth]{pagerank}
 \end{minipage}
 
-\end{theorie}
-
-\pagebreak
+\cleardoublepage
 \section{Exponentiële functies}
-
-\begin{theorie}
 
 \subsection{Inleiding}
 
@@ -1007,25 +918,25 @@ Maak een tabel waarbij je de schenkingen uitzet in functie van de leeftijd:
   \begin{tabular}{c|c|c}
   \arule{3cm}&\arule{3cm}&\arule{3cm}\\
   \hline
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
-  \arule{2cm}&\arule{2cm}&\arule{2cm}\\    
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
+  \arule{2cm}&\arule{2cm}&\arule{2cm}\\
   \end{tabular}
 \end{center}
 
@@ -1057,8 +968,6 @@ met $a\in\mathbb{R}^+\backslash\{0,1\}$.
 
 Het getal $a$ wordt het {\bf grondtal} van de exponentiële functie genoemd, de onbepaalde $x$ treedt op als de {\bf exponent}.
 
-\end{theorie}
-
 \begin{oefening}
 In de definitie van een exponentiële functie worden drie eisen opgelegd aan het grondtal $a$, welke en waarom?
 \end{oefening}
@@ -1074,12 +983,7 @@ Er zijn drie manieren waarop we een functievoorschrift kunnen geven, geef ze all
 $$f(x)=0.5^x$$
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Grafiek van een exponentiële functie}
-\vspace*{-1cm}
-
-\end{theorie}
 
 \begin{oefening}
 Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$\\
@@ -1090,8 +994,6 @@ Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto 2^x$\\
 Bespreek de exponentiële functie $f:\mathbb{R}\to\mathbb{R}: x\mapsto \left(\dfrac{1}{2}\right)^x$\\
 (Functiewaardentabel, grafiek, domein, bereik, tekenverloop, stijgen\&dalen, limieten en asymptoten)
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Eigenschappen van exponentiële functies}
 
@@ -1133,7 +1035,6 @@ $$0<a<1$$
 \end{minipage}
 
 Bepaal zelf de eigenschappen: domein, bereik, bijzondere punten, dalen\&stijgen, limieten en asymptoten
-\end{theorie}
 
 \begin{oefening}
 Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^x$ te plotten, waarbij $a$ een parameter is die je instelt via een schuifknop. Volg hierbij de volgende instructies:
@@ -1166,7 +1067,7 @@ Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^x$ te plotten, waarbi
     \includegraphics[width=0.7\textwidth]{gg_schuifknop_eigenschappen}
   \end{center}
   \end{minipage}
-  \item 
+  \item
   \begin{minipage}[t]{0.6\textwidth}
   \vspace{0pt}
   Typ \verb#f(x)=a^x# in de invoer om de functie te definiëren. Het symbool '\verb#^#' staat voor 'tot de macht'.
@@ -1331,11 +1232,8 @@ Gegeven de grafiek van $f(x)=e^x$, schets de grafieken van de functies met voors
 Een functie met voorschrift $y=k\cdot a^x$ gaat door $P(-1,2)$ en $Q(2,\dfrac{125}{32})$. Bepaal $a$ en $k$.
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Toepassingen op exponentiële functies}
-
-\begin{theorie}
 
 \subsection{Exponentiële groei}
 
@@ -1388,20 +1286,18 @@ en hierin wordt $1+\dfrac{p}{100}$ de {\bf groeifactor} genoemd.
 
 De groeifactor zullen we meestal kort kunnen schrijven, als het groeipercentage bijvoorbeeld $15\%$ is, dan wordt de groeifactor, door invullen van $p$ en te vereenvoudigen, $1.15$.
 
-\end{theorie}
-
 \begin{oefening}
 Vul volgende tabel aan:
 \begin{center}
 \begin{tabular}{c|c|c}
-      & Groeipercentage & Groeifactor\\
-      & $p\%$           & $1+\dfrac{p}{100}$\\
+      & Groeipercentage & Groeifactor        \\
+      & $p\%$           & $1+\dfrac{p}{100}$ \\
       \hline
-  (a) & $2\%$           & \arule{1cm}\\
-  (b) & $0.2\%$           & \arule{1cm}\\
-  (c) & $20\%$           & \arule{1cm}\\
-  (d) & \arule{1cm}           & 1.035\\
-  (e) & \arule{1cm}           & 2\\
+  (a) & $2\%$           & \arule{1cm}        \\
+  (b) & $0.2\%$         & \arule{1cm}        \\
+  (c) & $20\%$          & \arule{1cm}        \\
+  (d) & \arule{1cm}     & 1.035              \\
+  (e) & \arule{1cm}     & 2                  \\
 \end{tabular}
 \end{center}
 \end{oefening}
@@ -1414,7 +1310,6 @@ Veronderstel dat de populatie van een bepaald land jaarlijks aangroeit met $2\%$
 Geef een vijftal voorbeelden uit de natuur of het dagelijks leven waar je denkt van exponentiële groei tegen te komen.
 \end{oefening}
 
-\begin{theorie}
 \pagebreak
 \subsection{Exponentiële daling}
 
@@ -1428,18 +1323,17 @@ Elk jaar sponsort de lokale tennisclub van Avelgem een tornooi. Er wordt begonne
   \item Gebruik een tabel:
   \begin{center}
     \begin{tabular}{c|r|r|r|r|r|r}
-      Ronde & start & 1ste & 2de & 3de & 4de & 5de\\
+      Ronde   & start & 1ste        & 2de         & 3de         & 4de         & 5de \\
       \hline
-      Spelers & 128 & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm}
+      Spelers & 128   & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm}
     \end{tabular}
   \end{center}
-  \item Gebruik de formule:\\
-  $$N=N_0\cdot\left(1+\dfrac{p}{100}\right)^t$$\\
+  \item Gebruik de formule:
+  $$N=N_0\cdot\left(1+\dfrac{p}{100}\right)^t$$
   Met $N_0 = \arule{2cm}$, $t=\arule{2cm}$ en $p=\arule{2cm}$:
   $$N=\arule{5cm}$$
 \end{itemize}
 
-\pagebreak
 \subsection{Halveringstijd}
 
 In de vorige oefening werden het aantal deelnemers elke ronde gehalveerd. In veel problemen met de natuur is de tijd nodig om 'iets' te halveren belangrijk, daarom volgende definitie:\\
@@ -1478,8 +1372,6 @@ om te weten hoeveel gram van de 100 gram DDT er nog aanwezig zal zijn na 100 jaa
   \item $N = $ \arulefill
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Elke plant bevat de radioactieve koolstofisotoop $\ce{C14}$. Zolang de plant leeft, blijft de aanwezigheid van die isotoop constant. Wanneer de plant sterft, dan daalt de aanwezigheid van de koolstofisotoop.
 \begin{enumerate}[(a)]
@@ -1492,9 +1384,7 @@ Elke plant bevat de radioactieve koolstofisotoop $\ce{C14}$. Zolang de plant lee
 Geef een vijftal voorbeelden uit de natuur of het dagelijks leven waar je denkt exponentiële daling tegen te komen.
 \end{oefening}
 
-\begin{theorie}
 \subsection{Oefeningen}
-\end{theorie}
 
 \begin{oefening}
 We beleggen 10000 euro op de bank. De bank geeft ons een interest van $2.5\%$ (interest + getrouwheidspremie).
@@ -1528,11 +1418,11 @@ Een tropisch land haalt voor zijn watervoorziening aan de noordpool een ijsberg 
 \end{oefening}
 
 \begin{oefening} % source: Jennenkens p246
-Bereken met de formule $N=N_0\cdot 2^{-t/T}$ hoeveel percent van de deeltjes nog aanwezig is na de gegeven tijd voor:\\
+Bereken met de formule $N=N_0\cdot 2^{-t/T}$ hoeveel percent van de deeltjes nog aanwezig is na de gegeven tijd voor:
 \begin{tabular}{clll}
-(a) & \ce{Pb214} (lood) & T=27 min & na 1 uur\\    
-(b) & \ce{Rn222} (radon) & T=3.8 dagen & na 10 dagen\\
-(c) & \ce{Th234} (thallium) & T=24 dagen & na 90 dagen\\
+(a) & \ce{Pb214} (lood)     & T=27 min    & na 1 uur    \\
+(b) & \ce{Rn222} (radon)    & T=3.8 dagen & na 10 dagen \\
+(c) & \ce{Th234} (thallium) & T=24 dagen  & na 90 dagen \\
 (d) & \ce{Po210} (polonium) & T=140 dagen & na 1 jaar
 \end{tabular}
 \end{oefening}
@@ -1541,12 +1431,14 @@ Bereken met de formule $N=N_0\cdot 2^{-t/T}$ hoeveel percent van de deeltjes nog
 Licht radioactief afval met een halveringstijd van 30 jaar wordt gedurende 300 jaar in tonnen bewaard. Hoeveel percent van het oorspronkelijke aantal radioactieve elementen blijft er dan nog over?
 \end{oefening}
 
-\pagebreak
 \appendix
+\cleardoublepage
 \section{Machten met natuurlijk grondtal en natuurlijke exponent}
 
 Volgende machten kennen we nog uit het hoofd:
 
+
+\begin{adjustwidth}{-1cm}{1cm}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
   \hline
@@ -1592,39 +1484,6 @@ Volgende machten kennen we nog uit het hoofd:
   \cline{1-2}
 \end{tabular}
 \end{center}
+\end{adjustwidth}
 
-%\begin{center}
-%\includegraphics[width=0.5\textwidth]{atoom_boor}
-%\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-\dotlines{10}
-\end{minipage}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

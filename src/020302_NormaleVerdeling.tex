@@ -1,15 +1,9 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
-
-%\renewcommand{\rmdefault}{phv} % Arial
-%\renewcommand{\sfdefault}{phv} % Arial
-
 \begin{document}
 
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -19,198 +13,38 @@
   \includegraphics[width=0.8\textwidth]{normal}
   \vfill
 \end{center}
-%\vfill
 \vspace*{-2cm}
 \subsection*{Doelstellingen}
-{\singlespacing
+\begin{singlespacing}
 Je \hfill  {\scriptsize(LP 2005/069, LI 2.3.2, ET16)}
 \begin{itemize}
   \item kan aan de hand van voorbeelden, in betekenisvolle situaties, gebruik maken van de normale verdeling (met de bijhorende klokcurve) als model van een reeks statistische gegevens.
   \item kan het gemiddelde en de standaardafwijking gebruiken als karakteristieken van een normale verdeling en deze kengetallen ook grafisch interpreteren.
 \end{itemize}
+\end{singlespacing}
 
 \thispagestyle{empty}
-\mbox{}
-\newpage
 \clearpage
-\thispagestyle{empty}
+
 \tableofcontents
-\newpage
+\thispagestyle{empty}
 \clearpage
-\pagenumbering{arabic} 
 
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 \fancyhead[RO,LE]{De normale verdeling}
 \fancyhead[RE,LO]{}
 
-\onehalfspacing
-
+\cleardoublepage
 \section{Inleiding}
 
 Vorig jaar heeft een bekend kledingmerk een statistische onderzoek verricht naar de lichaamsafmetingen van vrouwen. Dit om beter passende kledij te ontwikkelen. Voor het onderzoek werden bij 160 willekeurig gekozen vrouwen 11 lichamelijke kenmerken gemeten. De resultaten voor de lichaamslengte vind je in onderstaande dataset:
 
-\begin{center}  
+\begin{center}
 \singlespacing
 \scriptsize
-166.38
-165.46
-163.8
-169.75
-168.27
-167.44
-165.56
-165.75
-166.13
-165.41
-168.69
-166.14
-166.68
-165.99
-164.67
-164.26
-165.05
-168.58
-166.6
-168.13
-161.26
-167.9
-165.5
-164.28
-163.38
-167.01
-164.52
-162.84
-166.19
-165.3
-167.28
-165.32
-167.57
-168.4
-163.71
-166.59
-167.85
-164.36
-166.83
-166.05
-163.94
-164.85
-168
-166.2
-167.14
-162.93
-169.47
-166.84
-169.08
-166.58
-166.53
-165.85
-167.04
-168.66
-169.41
-170.1
-164.27
-163.26
-164.8
-164.49
-164.54
-169.09
-165.39
-164.29
-164.86
-166.14
-166.49
-167.32
-164.38
-166.54
-170.92
-163.83
-167.41
-168.67
-168.88
-167.66
-165.89
-166.17
-165.4
-166.27
-166.32
-162.55
-169.33
-168.61
-167.09
-164.28
-165.94
-164.22
-165.43
-164.07
-167.75
-163.86
-167.35
-163.78
-167.08
-167.82
-164.48
-166.06
-164.62
-167.08
-169.12
-166.27
-163.5
-168.67
-164.44
-165.63
-164.62
-165.56
-166.86
-164.41
-166.95
-167.41
-167.43
-166.06
-166.73
-168.92
-167.56
-168.81
-166.89
-164.34
-164.3
-165.24
-168.7
-165.63
-164.34
-165.41
-165.71
-165.58
-166.49
-165.61
-167.36
-169.06
-164.41
-167.77
-167.16
-168.1
-164.56
-162.29
-166.1
-164.13
-159.48
-167.98
-162.43
-167.57
-167.25
-163.9
-168.06
-160.94
-164.24
-163.75
-168.11
-162.9
-164.1
-165.36
-165.81
-166.31
-163.96
-166.32
-165.45
-165.06
+166.38 165.46 163.8 169.75 168.27 167.44 165.56 165.75 166.13 165.41 168.69 166.14 166.68 165.99 164.67 164.26 165.05 168.58 166.6 168.13 161.26 167.9 165.5 164.28 163.38 167.01 164.52 162.84 166.19 165.3 167.28 165.32 167.57 168.4 163.71 166.59 167.85 164.36 166.83 166.05 163.94 164.85 168 166.2 167.14 162.93 169.47 166.84 169.08 166.58 166.53 165.85 167.04 168.66 169.41 170.1 164.27 163.26 164.8 164.49 164.54 169.09 165.39 164.29 164.86 166.14 166.49 167.32 164.38 166.54 170.92 163.83 167.41 168.67 168.88 167.66 165.89 166.17 165.4 166.27 166.32 162.55 169.33 168.61 167.09 164.28 165.94 164.22 165.43 164.07 167.75 163.86 167.35 163.78 167.08 167.82 164.48 166.06 164.62 167.08 169.12 166.27 163.5 168.67 164.44 165.63 164.62 165.56 166.86 164.41 166.95 167.41 167.43 166.06 166.73 168.92 167.56 168.81 166.89 164.34 164.3 165.24 168.7 165.63 164.34 165.41 165.71 165.58 166.49 165.61 167.36 169.06 164.41 167.77 167.16 168.1 164.56 162.29 166.1 164.13 159.48 167.98 162.43 167.57 167.25 163.9 168.06 160.94 164.24 163.75 168.11 162.9 164.1 165.36 165.81 166.31 163.96 166.32 165.45 165.06
 \end{center}
 
 Deze gegevens zeggen uiteraard niet veel. Omdat de gegevens \arule{4cm} zijn, verdelen we ze in 10 klassen en plaatsen we ze in volgende \arule{4cm}:
@@ -239,18 +73,16 @@ Deze gegevens zeggen uiteraard niet veel. Omdat de gegevens \arule{4cm} zijn, ve
 \begin{minipage}{\textwidth}
 We laten {\em GeoGebra} ook de \arule{4cm} uitrekenen, we vinden volgende resultaten:\\
 
-%\begin{center}
-  \begin{tabular}{c l|r}
-      \arule{4cm} & $n$ & 160\\
-      \arule{4cm} & $\bar{x}$ & 166.03\\
-      \arule{4cm} & $s$ & 1.94\\
-                    & min & 159.5\\
-                    & $Q_1$ & 164.5\\
-                    & Med & 166.07\\
-                    & $Q_3$ & 167.4\\
-                    & max & 170.9\\
-  \end{tabular}
-%\end{center}
+\begin{tabular}{c l|r}
+  \arule{4cm} & $n$       & 160    \\
+  \arule{4cm} & $\bar{x}$ & 166.03 \\
+  \arule{4cm} & $s$       & 1.94   \\
+              & min       & 159.5  \\
+              & $Q_1$     & 164.5  \\
+              & Med       & 166.07 \\
+              & $Q_3$     & 167.4  \\
+              & max       & 170.9  \\
+\end{tabular}
 \end{minipage}
 
 Het histogram geeft ons de mogelijkheid een tweede grafiek te tekenen, de {\bf frequentiepolygoon}. Deze verkrijgen we door de middens van de bovenste zijden van alle rechthoeken met elkaar te verbinden.
@@ -281,7 +113,7 @@ Dit is een typisch voorbeeld van een {\bf normale verdeling}. Dergelijke kromme 
 
 $$f(x)=\dfrac{1}{1.94\sqrt{2\pi}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-166.03}{1.94}\right)^2}\;.$$
 
-\pagebreak
+\cleardoublepage
 \section{Algemeen}
 
 \begin{minipage}{0.5\textwidth}
@@ -329,10 +161,10 @@ Indien de omvang van de steekproef voldoende groot is, veralgemenen we deze resu
 
 \begin{center}
 \begin{tabular}{c|c|c}
-& Steekproef & Populatie\\
+                   & Steekproef & Populatie   \\
 \hline
-Gemiddelde & $\bar{x}$ & $\mu$ (mu)\\
-Standaardafwijking & $s$ & $\sigma$ (sigma)\\
+Gemiddelde         & $\bar{x}$  & $\mu$ (mu)    \\
+Standaardafwijking & $s$        & $\sigma$ (sigma) \\
 \end{tabular}
 \end{center}
 
@@ -342,7 +174,7 @@ $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigm
 
 Omdat dit voorschrift volledig bepaald is door het gemiddelde $\mu$ en de standaardafwijking $\sigma$, noteren we dit kort als $N(\mu,\sigma)$.
 
-\pagebreak
+\cleardoublepage
 \section{Voorbeelden van normaal verdeelde gegevens}
 
 De normale verdeling is zonder twijfel de meest gebruikte verdeling in de statistiek. Van heel wat gegevens is immers geweten dat ze normaal verdeeld zijn:
@@ -373,7 +205,7 @@ Men mag hier echter niet uit besluiten dat alles normaal verdeeld zou zijn. Typi
 \includegraphics[width=\textwidth]{Income-curve}
 \end{center}
 
-\newpage
+\cleardoublepage
 \section{Grafische betekenis van $\mu$ en $\sigma$}
 
 \subsection{Grafische betekenis van $\mu$}
@@ -410,7 +242,7 @@ Voor welke $x$-waarde vinden we steeds de top van de klokvormige kromme?
 
 \subsection{Grafische betekenis van $\sigma$}
 
-We laten nu in het functievoorschrift 
+We laten nu in het functievoorschrift
 $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
 de standaardafwijking $\sigma$ variëren, terwijl we het gemiddelde $\mu$ constant houden op $\mu=0$.
 
@@ -548,10 +380,6 @@ In de vorige paragraaf werden grafieken van de normale verdeling verschoven (met
 Een normale verdelingen met gemiddelde 0 en standaardafwijking 1 of kort $N(0,1)$ noemen we {\bf standaardnormaal verdeeld}. Om aan te duiden dat we met de standaardnormale verdeling werken, gebruiken we de letter $Z$ i.p.v. $X$ om de kansvariabele aan te duiden.
 
 Een normale verdeling herken je aan de grafiek van de kansfunctie. De grafiek is namelijk steeds een symmetrische, ééntoppige, klokvormige kromme. Op de volgende figuur zie je de grafiek horend bij N(0, 1).
-
-\pgfmathdeclarefunction{gauss}{2}{%
-  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
-}
 
 \begin{center}
 \begin{tikzpicture}
@@ -753,8 +581,7 @@ Bepaal volgende kansen, {\bf zonder} gebruik te maken van de tabel van de standa
 \end{enumerate}
 \end{oefening}
 
-
-\pagebreak
+\cleardoublepage
 \section{Kansen berekenen bij de normale verdeling}
 
 \subsection{Standaardisering}
@@ -808,7 +635,7 @@ Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populati
 \paragraph*{Opmerking: } De $z$-score mag afgerond worden op $2$ cijfers na de komma want de tabel achteraan is maar correct op 2 cijfers na de komma.
 
 \begin{oefening}
-Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g. 
+Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g.
 Welke percentage peren weegt minder dan 125g?
 \begin{enumerate}[(a)]
   \item Bereken eerst de $z$-score van $x=125$.
@@ -858,23 +685,19 @@ Welk van de volgende resultaten op een examen statistiek is het meest uitzonderl
 Punten van verschillende leerlingen in eenzelfde klas zouden normaal verdeeld moeten zijn. We kunnen dit gebruiken om {\em relatief gezien} je beste resultaat over de verschillende dagelijkse werken te vinden. Maak hiervoor een tabel met 5 kolommen als volgt:
 \begin{center}
   \begin{tabular}{l|c|c|c|c}
-  Leerling & DW2 & Z-score DW2 & DW3 & Z-score DW3\\
+  Leerling           & DW2 & Z-score DW2 & DW3 & Z-score DW3 \\
   \hline
-  \vdots&&&&\\
-%  \vdots&&&&\\
-%  \vdots&&&&\\
+  \vdots                  &     &             &     &             \\
   \hline
-  gemiddelde&&&&\\
-  standaardafwijking&&&&\\
+  gemiddelde         &     &             &     &             \\
+  standaardafwijking &     &             &     &             \\
   \end{tabular}
 \end{center}
 Je kan dit bijvoorbeeld gebruiken wanneer je absoluut gezien een lager cijfer hebt bij DW3, maar relatief gezien een hoger cijfer bij DW3 om je ouders gerust te stellen.
 \end{oefening}
 
-\newpage
 \appendix
-%\section*{Bijlagen}
-
+\cleardoublepage
 \section*{Tabel standaardnormale verdeling}
 
 \begin{center}
@@ -949,20 +772,3 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

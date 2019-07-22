@@ -1,99 +1,56 @@
-\documentclass[12pt,twoside]{article}
-
-% ------Schakel tussen versie leerkracht/leerling
-\newif\ifleerkracht
-% \leerkrachttrue
-\leerkrachtfalse
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
 \usepackage{pgfplots}
 
-\usepackage{versions}
-%\excludeversion{theorie}
-\includeversion{theorie}
-
-% \renewcommand{\rmdefault}{phv} % Arial
-% \renewcommand{\sfdefault}{phv} % Arial
-
-% gebruik: \teacher{Dit is een notitie voor de leerkracht}
-% eerste parameter is de notitie
-\ifleerkracht
-\newcommand{\teacher}[1]{\textcolor{gray}{\emph{\underline{Opmerking:} #1}}}
-\else
-\newcommand{\teacher}[1]{}
-\fi
-
 \newtheorem{definition}{Definitie}
 \newtheorem{eigenschap}{Eigenschap}
 
-% vergelijkingen mooi uitlijnen:
-% \begin{alignat}{2}
-%   &&    a^2-b^2 &= 0\\
-%   \lra && (a-b)(a+b) &= 0\\
-% \end{alignat}
-\newcommand{\lra}{\ensuremath{\Leftrightarrow\qquad}}
-
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Reële Functies}
-
-\begin{theorie}
-
-  \thispagestyle{empty}
-  \begin{center}
-    \begin{mdframed}
-      \centering
-      \fontsize{35}{70}\selectfont Reële Functies
-    \end{mdframed}
-    \vfill
-    \includegraphics[width=0.8\textwidth]{FunctieMachine}
-    \vfill
-  \end{center}
-  % \vfill
-  \vspace*{-2cm}
-  \subsection*{Doelstellingen}
-  {\singlespacing
-
-    Je kan bijzonderheden van grafieken,
-    eventueel aangevuld met tabellen,\\ aflezen zoals: \hfill  {\scriptsize(LP 2005/069, LI 1.1, ET10)}
-    \begin{itemize}
-    \item het domein,
-    \item het bereik, \teacher{het bereik moet niet gekend zijn volgens leerplan}
-    \item de nulwaarden,
-    \item het stijgen en dalen,
-    \item het tekenverloop,
-    %\item de periodiciteit,
-    \item de symmetrieën,
-    \item de extreme waarden
-    \end{itemize}
-  }
-
+\begin{center}
+  \begin{mdframed}
+    \centering
+    \fontsize{35}{70}\selectfont Reële Functies
+  \end{mdframed}
+  \vfill
+  \includegraphics[width=0.8\textwidth]{FunctieMachine}
+  \vfill
+\end{center}
+\vspace*{-2cm}
+\subsection*{Doelstellingen}
+\begin{singlespacing}
+  Je kan bijzonderheden van grafieken,
+  eventueel aangevuld met tabellen,\\ aflezen zoals: \hfill  {\scriptsize(LP 2005/069, LI 1.1, ET10)}
+  \begin{itemize}
+  \item het domein,
+  \item het bereik, % TEACHER: het bereik moet niet gekend zijn volgens leerplan
+  \item de nulwaarden,
+  \item het stijgen en dalen,
+  \item het tekenverloop,
+    % \item de periodiciteit,
+  \item de symmetrieën,
+  \item de extreme waarden
+  \end{itemize}
+\end{singlespacing}
 
 \thispagestyle{empty}
-\mbox{}
-\newpage
 \clearpage
-\thispagestyle{empty}
-%\mbox{}
+
 \tableofcontents
-\newpage
+\thispagestyle{empty}
 \clearpage
-\pagenumbering{arabic} 
 
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Reële Functies}
 \fancyhead[RE,LO]{}
 
-\onehalfspacing
-
-\pagebreak
-\end{theorie}
-
+\cleardoublepage
 \section{Reële functie}
 
-\begin{theorie}
 \begin{definition}
   Een {\bf reële functie}, of functie in $\mathbb{R}$, is een verzameling van {\em koppels} reële getallen $(x,y)$, zodat elk getal $x$ {\em hoogstens één beeld} $y$ heeft.
 \end{definition}
@@ -112,8 +69,6 @@ $$(x,y) \in \mathbb{R}^2$$
   \item $\mathbb{R}^2$ verzameling van alle koppels reële getallen
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Geef twee koppels $(x,y)$ waarvan je weet dat ze niet tot dezelfde functie kunnen behoren.
 \end{oefening}
@@ -131,9 +86,9 @@ $$(x,y) \in \mathbb{R}^2$$
   Beschouw een functie met de naam $f$. De argumenten zijn steeds negatieve reële getallen zonder nul en de beelden zijn steeds positieve reële getallen. Noteer $f$ zo expliciet mogelijk.
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Voorstellingswijzen}
-\begin{theorie}
+
 We kunnen een functie voorstellen op 3 verschillende manieren. Neem bijvoorbeeld de reële functie die de verzameling van alle koppels $(x,\sqrt{x})$ is.
 
 \paragraph{Functievoorschrift:}
@@ -182,8 +137,6 @@ We hebben de volgende opmerkingen
 \item[Functiewaardentabel:] Dit gebruiken we om te helpen bij het tekenen van de grafiek. Hier plaatsen we de koppels $(x,y)$ in een tabel. Weten welke koppels in de tabel moeten komen vraagt een beetje ervaring. Hier hebben we ervoor gekozen om te beginnen bij $-2$ en te eindigen met $4$ en telkens met stapjes van $1$ te verspringen. Een betere keuze was geweest om te beginnen bij $0$ en te eindigen bij $9$. Merk ook op dat we de beelden bij $2$ en $3$ afgerond hebben naar respectievelijk $1.4$ en $1.7$, dit is verantwoord daar we bij het tekenen van de grafiek toch geen grotere nauwkeurigheid kunnen verwachten.
 \item[Grafiek:] We beginnen met een orthonormaal assenstelsel te tekenen, dit wil zeggen dat de assen loodrecht op elkaar moeten staan en dat de ijking (de afstand tussen 0 en 1) op elke as gelijk moet zijn. We vergeten niet van de $x$-as en de $y$-as te labelen. Daarna kijken we in de functiewaardentabel. Elk koppel $(x,y)$ die op het assenstelsel past duiden we aan met een punt. De grafiek is dan de vloeiende lijn die de punten verbindt. Merk op dat we de grafiek na het koppel $(4,2)$ blijven verder tekenen. Dit moet ook, want het koppel $(9,3)$ is ook nog een element van de verzameling koppels $(x,\sqrt{x})$.
 \end{description}
-
-\end{theorie}
 
 \begin{oefening}
   Schrijf de functie met functievoorschrift
@@ -294,7 +247,6 @@ We hebben de volgende opmerkingen
 
 \end{oefening}
 
-
 \begin{oefening}
   Welke van onderstaande koppels behoren tot de functie met
   $$f:\mathbb{R}\to\mathbb{R}:x\mapsto\frac{6}{x}$$
@@ -334,11 +286,9 @@ $$(5,-8)\qquad(-1,4)\qquad(2,3)\qquad(\sqrt{2},\frac{2}{3})\qquad(-6,-1)$$
   dezelfde of verschillende functies?
 \end{oefening}
 
-
-\newpage
+\cleardoublepage
 \section{Domein en bereik van een functie}
 
-\begin{theorie}
 \subsection{Domein}
 
 \begin{definition}
@@ -374,8 +324,6 @@ Hier zeggen we dus dat het domein van de functie $f$ alle reële getallen zonder
 $$f(3)=\dfrac{1}{x-3}=\dfrac{1}{3-3}=\dfrac{1}{0}=/$$
 omdat we niet kunnen delen door $0$! Eender wel ander getal kunnen we wel kiezen als $x$ en behoort dus wel tot het domein.
 
-\end{theorie}
-
 \begin{oefening}
   Beschouw de functie $\displaystyle f(x)=\dfrac{1}{-3-x}$\\
   \begin{enumerate}[(a)]
@@ -386,7 +334,6 @@ omdat we niet kunnen delen door $0$! Eender wel ander getal kunnen we wel kiezen
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
 \subsubsection{Het domein bepalen aan de hand van de grafiek}
 
 Het domein bepalen aan de hand van het voorschrift is vaak niet zo eenvoudig. Je moet ofwel alle mogelijke reële getallen proberen, wat praktisch niet haalbaar is omdat $\mathbb{R}$ oneindig veel getallen bevat. Of je moet beredeneren welke getallen wel of niet tot het domein behoren.
@@ -395,7 +342,6 @@ Gelukkig bestaat er een veel eenvoudiger methode. Je tekent eerst de grafiek en 
 
 Dit lijkt misschien nog steeds moeilijk, maar in de praktijk valt dit best mee. Je gaat als het ware de grafiek van de functie gaan samen drukken op de $x$-as. Alle punten die zo op de $x$-as terecht komen behoren dan tot het domein.
 
-\pagebreak
 \paragraph*{Voorbeeld} We bepalen het domein van
 $$f:\mathbb{R}\to\mathbb{R}:x\mapsto\sqrt{x+1.5}\;.$$
 
@@ -443,8 +389,6 @@ Binnen het volgende assenstelsel hebben we de volgende stappen ondernomen:
 
 We kijken nu op de $x$-as om het domein te bepalen. De kleinste $x$-waarde die tot het domein behoort is $x=-1.5$, er is geen grootste $x$-waarde die tot het domein behoort. We krijgen dus als domein het interval
 $$\dom\sqrt{x+1.5}=[-1.5,+\infty[\;.$$
-
-\end{theorie}
 
 \begin{oefening}
   Bepaal grafisch het domein van\\
@@ -502,8 +446,6 @@ $$\dom\sqrt{x+1.5}=[-1.5,+\infty[\;.$$
   \end{center}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Bereik}
 
 \begin{definition}
@@ -513,7 +455,6 @@ $$\dom\sqrt{x+1.5}=[-1.5,+\infty[\;.$$
 \paragraph{Notatie:} Het bereik van de functie $f$ wordt genoteerd als $$\ber f$$ en we lezen dit als {\em bereik f}.
 
 \paragraph{Opmerking:} Men spreekt ook soms van het {\bf beeld} van een functie. Dit staat dus synoniem met het bereik van een functie. Het beeld van een functie is dan dus de verzameling van alle beelden van een functie. De notatie in dit geval is $\mbox{bld }f$.
-
 
 \subsubsection{Het domein bepalen aan de hand van het functievoorschrift}
 
@@ -552,8 +493,6 @@ Eenvoudig is dit allemaal niet, gelukkig kunnen we het bereik ook snel aflezen m
 
 We kijken nu op de $y$-as. De kleinste $y$-waarde is $y=0$, er is geen grootste $y$ waarde, dus het bereik is het interval dat begint bij $0$ en geen einde heeft en we dus noteren met $+\infty$. Dit is dus het interval $[0,+\infty[$ wat we korter kunnen schrijven met $\mathbb{R}^+$:
 $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
-
-\end{theorie}
 
 \begin{oefening}
   Bepaal grafisch het bereik van
@@ -645,7 +584,6 @@ $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
   \end{center}
 \end{oefening}
 
-
 \begin{oefening}
   Teken de grafiek van de functies met onderstaande voorschriften. Bepaal dan het domein en bereik van deze functies:
   \begin{enumerate}[(a)]
@@ -661,11 +599,9 @@ $$\ber \sqrt{x+1.5}=\mathbb{R}^+\;.$$
   \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Nulwaarden}
 
-\begin{theorie}
-  
 \begin{definition}
   Een {\bf nulwaarde} of {\bf nulpunt} van een functie is een $x$-waarde waarvoor geldt dat het beeld gelijk is aan nul, m.a.w $f(x)=0$.
 \end{definition}
@@ -698,7 +634,6 @@ We vinden één nulwaarde, namelijk $x_0=2$.
 
 \paragraph*{Opmerking:} Om de verschillende nulwaarden uit elkaar te houden gaan we ze nummeren met een index, dit is een getal dat rechtsonder de $x$ staat. Is er maar één nulwaarde, dan noteren we deze zoals hierboven met $x_0$. Zijn er verschillende nulwaarden, dan nummeren we ze vanaf één. Zijn er bijvoorbeeld drie nulwaarden, dan krijgen we $x_1$, $x_2$ en $x_3$.
 
-
 \subsection{Grafisch}
 
 \begin{minipage}{0.5\textwidth}
@@ -725,8 +660,6 @@ We vinden één nulwaarde, namelijk $x_0=2$.
 \end{minipage}
 
 De {\bf nulwaarden} van een functie $f$ zijn alle $x$-waarden van de snijpunten van de grafiek van $f$ met de $x$-as.
-
-\end{theorie}
 
 \begin{oefening}
   Bepaal zowel algebraïsch als grafisch alle nulwaarden van de volgende functies:
@@ -814,10 +747,8 @@ De {\bf nulwaarden} van een functie $f$ zijn alle $x$-waarden van de snijpunten 
   \end{center}
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{Tekenverloop}
-
-\begin{theorie}
 
 Met het tekenverloop van een functie $f(x)$ bedoelen we dat we nagaan welk teken (positief, negatief of nul) het beeld $y$ heeft als het argument $x$ het domein doorloopt. Een tekenverloop kan overzichtelijk voorgesteld worden in een tabel met de $x$-waarden en het teken van het overeenkomstig beeld.
 
@@ -834,11 +765,11 @@ Met behulp van een functiewaardentabel tekenen we eerst de grafiek:
     \draw[->,color=black] (-3.28,0) -- (6.38,0);
     \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \draw[color=black] (6.06,0.08) node [anchor=south west] { x};
+    \draw[color=black] (6.06,0.08) node [anchor=south west] {$x$};
     \draw[->,color=black] (0,-3.34) -- (0,2.18);
     \foreach \y in {-3,-2,-1,1,2}
     \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \draw[color=black] (0.1,1.78) node [anchor=west] { y};
+    \draw[color=black] (0.1,1.78) node [anchor=west] {$y$};
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-3.28,-3.34) rectangle (6.38,2.18);
     \draw[line width=1.6pt, smooth,samples=100,domain=-3.2800000000000002:6.379999999999999] plot(\x,{0.5*(\x)-1.5});
@@ -925,7 +856,7 @@ Het bijhorende tekenverloop is
   \end{tabular}
 \end{center}
 
-\end{theorie}
+
 
 \begin{oefening}
   Bepaal het tekenverloop van de functie $f$ uit de volgende grafiek:
@@ -934,11 +865,11 @@ Het bijhorende tekenverloop is
       \draw[->,color=black] (-5.42,0) -- (5.31,0);
       \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
       \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-      \draw[color=black] (5,0.08) node [anchor=south west] { x};
+      \draw[color=black] (5,0.08) node [anchor=south west] {$x$};
       \draw[->,color=black] (0,-2.34) -- (0,2.45);
       \foreach \y in {-2,-1,1,2}
       \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-      \draw[color=black] (0.1,2.26) node [anchor=west] { y};
+      \draw[color=black] (0.1,2.26) node [anchor=west] {$y$};
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-5.42,-2.34) rectangle (5.31,2.45);
       \draw[line width=1.8pt, smooth,samples=100,domain=-5.4:5.3] plot(\x,{0.2*((\x)+3)*((\x)+1)*((\x)-2)});
@@ -986,12 +917,10 @@ Het bijhorende tekenverloop is
   \end{center}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Stijgen en dalen}
 
 \subsection{Definities}
-
-\begin{theorie}
 
 \begin{definition}
   De functie $f$ is {\bf stijgend} in een interval $I$ als voor de $x$-waarden $a,b\in I$ met $a<b$ geldt
@@ -1107,8 +1036,6 @@ Samengevat in het stijgen\&dalen:
   \end{tabular}
 \end{center}
 
-\end{theorie}
-
 \begin{oefening}
 Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
     \vspace*{1cm}
@@ -1188,11 +1115,8 @@ Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
     \end{center}
 \end{oefening}
 
-\newpage
-
+\cleardoublepage
 \section{Extrema}
-
-\begin{theorie}
 
 \subsection{Definities}
 
@@ -1246,8 +1170,6 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
 \end{center}
 
 \paragraph{Onthoud!} Zoek de $y$-waarden om te bepalen waar de functie een minimum/maximum bereikt.
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal alle extrema van de volgende grafieken.
@@ -1308,11 +1230,8 @@ Bepaal alle extrema van de volgende grafieken.
     \end{center}
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Symmetrie}
-
-\begin{theorie}
 
 Een functie $f$ kan een {\bf lijnsymmetrie} of een {\bf puntsymmetrie} hebben. In het eerste geval is er een rechte, de {\bf as van symmetrie} genoemd waarrond we de grafiek van de functie kunnen spiegelen zonder dat grafiek zal veranderen. In het tweede geval is er een punt waarrond we de grafiek kunnen spiegelen, namelijk {\bf punt van symmetrie} waarrond we de grafiek kunnen spiegelen. Een functie kan meer dan één lijn- en/of puntsymmetrie hebben.
 
@@ -1344,7 +1263,7 @@ We nemen bijvoorbeeld de functie $f(x)=x^2-4x+3$
 \end{center}
 
 Grafisch kunnen we de as van symmetrie bepalen met onze geodriehoek, deze is
-$$x=2$$.
+$$x=2$$
 
 Algebraïsch kunnen we bovenstaande identiteit gebruiken, hier is $p=2$ en we tonen aan dat $f(2-a)=f(2+a)$ voor een willekeurige $a$:
 \begin{eqnarray*}
@@ -1396,8 +1315,6 @@ We tonen eens algebraïsch aan dat het punt $(4,3)$ op de rechte inderdaad een p
                            &=& \dfrac{6}{2}\\
                            &=& 3
 \end{eqnarray*}
-
-\end{theorie}
 
 \begin{oefening}
 Beschouw de grafiek van een functie $f$.
@@ -1495,7 +1412,7 @@ $$f(x)=-x^2+9x-18$$
 \end{oefening}
 
 \begin{oefening}
-De functie 
+De functie
 $$f(x)=x^3-9x^2+6x+56$$
 heeft één punt van symmetrie, namelijk
 $$(p,q)=(3,20)$$
@@ -1504,9 +1421,7 @@ $$\dfrac{f(p-a)+f(p+a)}{2}=q$$
 met drie zelf gekozen waarden voor de afstand $a$ om aan te tonen dat de functie inderdaad symmetrisch is rond dat punt.
 \end{oefening}
 
-
-\pagebreak
-
+\cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
@@ -1546,7 +1461,6 @@ met drie zelf gekozen waarden voor de afstand $a$ om aan te tonen dat de functie
   \end{itemize}
 \end{oefening}
 
-
 \begin{oefening}
   Gebruik de grafiek om het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën te bepalen.
 
@@ -1568,7 +1482,6 @@ met drie zelf gekozen waarden voor de afstand $a$ om aan te tonen dat de functie
   \end{center}
 
 \end{oefening}
-
 
 \begin{oefening}
   Gebruik de grafiek om het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen \& dalen, de extrema en de symmetrieën te bepalen.
@@ -1626,6 +1539,5 @@ met drie zelf gekozen waarden voor de afstand $a$ om aan te tonen dat de functie
   \end{enumerate}
 
 \end{oefening}
-
 
 \end{document}

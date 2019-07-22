@@ -4,7 +4,6 @@
 
 \begin{document}
 
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -23,20 +22,20 @@ Je \hfill  {\scriptsize(LP 2005-069, LI 1.4)}
   \item kan de grafiek opbouwen van de functie $f(x) = a \sin(bx+c)+d$ en kunnen op deze grafiek de betekenis van $a$, $b$, $c$ en $d$ interpreteren
 \end{itemize}
 
-\mbox{}
-\clearpage
 \thispagestyle{empty}
-{\singlespacing \tableofcontents}
+\clearpage
+
+\tableofcontents
+\thispagestyle{empty}
 \clearpage
 
 \pagenumbering{arabic}
+
 \pagestyle{fancy}
 \fancyhead[RO,LE]{Goniometrische functies}
 \fancyhead[RE,LO]{}
 
-\onehalfspacing
-
-
+\cleardoublepage
 \section{Hoekeenheden}
 Op onze rekenmachine vinden we in \zrm{MODE} 3 soorten hoekeenheden:\\
 
@@ -111,14 +110,13 @@ $$\forall \alpha \in \mathbb{R} : \alpha \rad = \alpha + k \cdot 2\pi \rad  \qqu
 Omdat elke hoek oneindig veel maatgetallen heeft wordt vaak afgesproken om enkel te werken met het {\bf kleinste positieve maatgetal} (KPM) van een hoek. Zo beperken we de hoek dan tot
 $$\alpha \in [0, 2\pi[$$
 
-
 \subsubsection{Graden omzetten in radialen}
 We kunnen nu de omzetting berekenen met behulp van het volgende verband:
 \begin{alignat*}{2}
      &&360\degree &= 2\pi \rad\\
-\LRA &&180\degree &= \pi \rad\\
-\LRA &&  1\degree &= \frac{\pi}{180} \rad\\[1em]
-\LRA &&  x\degree &= x\cdot\frac{\pi}{180\degree} \rad
+\lra &&180\degree &= \pi \rad\\
+\lra &&  1\degree &= \frac{\pi}{180} \rad\\[1em]
+\lra &&  x\degree &= x\cdot\frac{\pi}{180\degree} \rad
 \end{alignat*}
 
 \begin{oefening}
@@ -142,9 +140,9 @@ $$309\degree 23' 50''=309\degree 23' 50''\cdot \dfrac{\pi}{180\degree}=5.4\rad$$
 We kunnen de omzetting berekenen met behulp van het volgende verband:
 \begin{alignat*}{2}
      &&2\pi\rad &=360\degree\\
-\LRA &&\pi \rad &=180\degree\\
-\LRA &&  1 \rad &= \frac{180\degree}{\pi}\\[1em]
-\LRA &&  x \rad &= x\cdot\frac{180\degree}{\pi}
+\lra &&\pi \rad &=180\degree\\
+\lra &&  1 \rad &= \frac{180\degree}{\pi}\\[1em]
+\lra &&  x \rad &= x\cdot\frac{180\degree}{\pi}
 \end{alignat*}
 
 \paragraph{Voorbeeld:}
@@ -187,11 +185,11 @@ $$5.4 \rad=5.4\cdot\dfrac{180\degree}{\pi}=309\degree 23' 50''$$
 \subsubsection{Opmerking}
 In het vervolg zullen we de eenheid '$\rad$' niet meer vermelden. Wanneer we bv. spreken over een hoek  $\frac{2\pi}{3}$, bedoelen we dus steeds  $\frac{2\pi}{3} \rad$. Vanaf nu stappen we ook af van de zestigdelige graden en zullen we alles meten in radialen.
 
-\newpage
+\cleardoublepage
 \section{De goniometrische functies}
 \subsection{De sinusfunctie}
-\subsubsection{Tabel}
-Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
+\subsubsection*{Tabel}
+Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 1 decimaal.
 
 \begin{center}
   \begin{tabular}{c|p{14cm}}
@@ -201,11 +199,11 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
   \end{tabular}
 \end{center}
 
-\subsubsection{Grafiek}
+\subsubsection*{Grafiek}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
-\begin{tikzpicture}[yscale=1.5,xscale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[yscale=1.4,xscale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.21,-1.47) grid (8.61,1.35);
 \draw[->,color=black] (-5.21,0) -- (8.61,0);
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
@@ -219,7 +217,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Kenmerken van de sinusfunctie}
+\subsubsection*{Kenmerken van de sinusfunctie}
 \begin{oefening}
 Vul de kenmerken van de sinusfunctie aan.
 \begin{enumerate}[(a)]
@@ -238,9 +236,10 @@ Vul de kenmerken van de sinusfunctie aan.
 \end{enumerate}
 \end{oefening}
 
+\vspace{-1cm}
 \subsection{De cosinusfunctie}
-\subsubsection{Tabel}
-Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
+\subsubsection*{Tabel}
+Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 1 decimaal.
 
 \begin{center}
   \begin{tabular}{c|p{14cm}}
@@ -250,7 +249,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
   \end{tabular}
 \end{center}
 
-\subsubsection{Grafiek}
+\subsubsection*{Grafiek}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \begin{tikzpicture}[yscale=1.5,xscale=1.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -267,6 +266,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{tikzpicture}
 \end{center}
 
+\subsubsection*{Kenmerken van de cosinusfunctie}
 \begin{oefening}
 Vul de kenmerken van de cosinusfunctie aan.
 \begin{enumerate}[(a)]
@@ -435,7 +435,7 @@ Bepaal voor volgende functie
 
 \pagebreak
 \subsection{De tangensfunctie}
-\subsubsection{Tabel}
+\subsubsection*{Tabel}
 Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
 
 \begin{center}
@@ -446,7 +446,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
   \end{tabular}
 \end{center}
 
-\subsubsection{Grafiek}
+\subsubsection*{Grafiek}
 
 \begin{center}
 \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -469,7 +469,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Kenmerken van de tangensfunctie}
+\subsubsection*{Kenmerken van de tangensfunctie}
 \begin{oefening}
 Vul de kenmerken van de tangensfunctie aan
 \begin{enumerate}[(a)]
@@ -488,13 +488,12 @@ Vul de kenmerken van de tangensfunctie aan
 \end{enumerate}
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{De algemene sinusfunctie}
 
 \subsection{$\boldsymbol{f(x)=a\cdot\sin x}$ met $\boldsymbol{a\in \mathbb{R}^+_{0}}$}
 
-\subsubsection{Voorbeeld: $\boldsymbol{y=3\cdot\sin x}$}
-
+\subsubsection*{Voorbeeld: $\boldsymbol{y=3\cdot\sin x}$}
 
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
@@ -530,14 +529,14 @@ Vul de kenmerken van de tangensfunctie aan
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=3\cdot\sin x}$}
+\subsubsection*{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=3\cdot\sin x}$}
 De grafiek van $y=3\cdot\sin x$ bekom je door deze van $y=\sin x$ met een factor 3 verticaal uit te rekken. We spreken van een verschaling evenwijdig met de $y$-as met factor 3.\\
 Hierdoor wordt de amplitude A met 3 vermenigvuldigd, terwijl de periode P gelijk blijft:
 \begin{center}
   amplitude = A = 3\\
   periode = P = $2\pi$
 \end{center}
-\subsubsection{Algemeen}
+\subsubsection*{Algemeen}
 {\bfseries
 Voor $\boldsymbol{y=a\cdot\sin x}$ geldt:
   \begin{center}
@@ -564,7 +563,7 @@ Geef telkens amplitude en periode van volgende functies.
 \end{oefening}
 
 \subsection{$\boldsymbol{f(x)=\sin (b\cdot x)}$ met $\boldsymbol{b\in \mathbb{R}^+_{0}}$}
-\subsubsection{Voorbeeld: $\boldsymbol{y=\sin (2x)}$}
+\subsubsection*{Voorbeeld: $\boldsymbol{y=\sin (2x)}$}
 
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
@@ -602,7 +601,7 @@ Geef telkens amplitude en periode van volgende functies.
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (2x)}$}
+\subsubsection*{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (2x)}$}
 De grafiek van $y=\sin (2x)$ bekom je door deze van $y=\sin x$ horizontaal samen te duwen. We spreken van een verschaling  evenwijdig met de $x$-as met factor $\frac{1}{2}$.\\
 Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:
 \begin{eqnarray*}
@@ -610,7 +609,7 @@ Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk 
   \mbox{periode} &=& P = \pi
 \end{eqnarray*}
 
-\subsubsection{Algemeen}
+\subsubsection*{Algemeen}
 {\bfseries
 Voor $\boldsymbol{y=\sin (bx)}$ geldt:
   \begin{center}
@@ -637,7 +636,7 @@ Geef telkens amplitude en periode van volgende functies.
 \end{oefening}
 
 \subsection{$\boldsymbol{f(x)=\sin (x+c)}$ met $\boldsymbol{c\in \mathbb{R}}$}
-\subsubsection{Voorbeeld: $\boldsymbol{y=\sin (x-1)}$}
+\subsubsection*{Voorbeeld: $\boldsymbol{y=\sin (x-1)}$}
 
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
@@ -675,7 +674,7 @@ Geef telkens amplitude en periode van volgende functies.
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (x-1)}$}
+\subsubsection*{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (x-1)}$}
 De grafiek van $y=\sin (x-1)$ bekom je door deze van $y=\sin x$ horizontaal naar rechts te verschuiven met $1$ eenheid. We spreken van een verschuiving evenwijdig met de $x$-as, bepaald door het koppel $(1, 0)$.\\
 Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
@@ -683,7 +682,7 @@ Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
   \mbox{periode} &=& P = 2\pi
 \end{eqnarray*}
 
-\subsubsection{Algemeen}
+\subsubsection*{Algemeen}
 {\bfseries
 Voor $\boldsymbol{y=\sin (x+c)}$ geldt:
   \begin{center}
@@ -721,7 +720,7 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 \end{oefening}
 
 \subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$}
-\subsubsection{Voorbeeld: $\boldsymbol{y=\sin x-1}$}
+\subsubsection*{Voorbeeld: $\boldsymbol{y=\sin x-1}$}
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
 \scriptsize
@@ -758,7 +757,7 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin x-1}$}
+\subsubsection*{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin x-1}$}
 De grafiek van $y=\sin x-1$ bekom je door deze van $y=\sin x$ verticaal naar beneden te verschuiven met 1 eenheid. We spreken van een verschuiving evenwijdig met de $y$-as, bepaald door het koppel $(0, -1)$.\\
 Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
@@ -766,7 +765,7 @@ Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
   \mbox{periode} &=& P = 2\pi
 \end{eqnarray*}
 
-\subsubsection{Algemeen}
+\subsubsection*{Algemeen}
 {\bfseries
 Voor $\boldsymbol{y=\sin x+d}$ geldt:
   \begin{center}

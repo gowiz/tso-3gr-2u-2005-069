@@ -1,20 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
 \usepackage{tabto}
 
-\usepackage{versions}
-%\excludeversion{theorie}
-\includeversion{theorie}
-
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Veeltermfuncties}
-
-\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -22,17 +12,48 @@
     \centering
     \fontsize{35}{70}\selectfont Veeltermfuncties
   \end{mdframed}
-  \vfill
-  \includegraphics[width=0.8\textwidth]{veeltermen}
-  \vfill
+    \begin{tikzpicture}
+    \begin{axis}[
+      scale=2.0,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-2.4,
+      xmax=2.9,
+      ymin=-1.4,
+      ymax=1.9,
+      xlabel={x},
+      ylabel={y},
+      xticklabels={,,},
+      yticklabels={,,},
+      samples=100]
+      \clip(-2.4,-1.4) rectangle (2.9,1.9);
+      \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-2.5:3.4] (x,1);
+      \foreach \n in {1,2,3,4} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-2.0:2.0] (x,x^\n);
+      }
+      \foreach \n in {5,6,...,9} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.4:1.4] (x,x^\n);
+      }
+      \foreach \n in {10,11,...,24} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.2:1.2] (x,x^\n);
+      }
+      \foreach \n in {25,26,...,50} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.01:1.01] (x,x^\n);
+      }
+      \foreach \n in {50,51,...,100} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.01:1.01] (x,x^\n);
+      }
+      \draw (0.2,-.5) node[anchor=west] {\texttt foreach $n$ in $\{0,1,2,\ldots\}$};
+      \draw (0.6,-.8) node[anchor=west] {\texttt plot $f(x)=x^n$ };
+    \end{axis}
+  \end{tikzpicture}
 \end{center}
-% \vfill
-\vspace*{-2cm}
-
 \subsection*{Doelstellingen}
-{\singlespacing
+\begin{singlespacing}
+  \small
   Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
   \begin{itemize}
+    \itemsep0em
   \item vergelijkingen van de eerste en tweede graad in één onbekende oplossen;
   \item veeltermvergelijkingen van graad hoger dan 2 oplossen met behulp van ICT;
   \item aan de hand van het functievoorschrift
@@ -52,29 +73,23 @@
   \item de gevonden oplossing terug vertalen naar de oplossing van het oorspronkelijke vraagstuk of probleem;
   \item problemen met gegeven functioneel verband oplossen en deze oplossing interpreteren.
   \end{itemize}
+\end{singlespacing}
 
-}
 \thispagestyle{empty}
-\mbox{}
-\newpage
 \clearpage
-\thispagestyle{empty}
+
 \tableofcontents
-\newpage
+\thispagestyle{empty}
 \clearpage
+
 \pagenumbering{arabic}
 
-
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
 
-\end{theorie}
-
-\onehalfspacing
-
+\cleardoublepage
 \section{Veeltermvergelijkingen}
-
-\begin{theorie}
 
 \subsection{Definitie}
 
@@ -100,8 +115,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   De hoogste exponent bij de onbekende $x$ is de {\bf graad} van de veelterm.
 \end{mdframed}
 
-\end{theorie}
-
 \begin{oefening}
   Zijn volgende vergelijkingen veeltermvergelijkingen en zo ja, van welke graad?
   \begin{multicols}{2}
@@ -114,14 +127,10 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 \paragraph{Oplossen van een veeltermvergelijking}
 \begin{mdframed}
   Een veeltermvergelijking {\bf oplossen} is het zoeken naar alle onbekenden $x$ zodat de vergelijking waar wordt.
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
   Beschouw de vergelijking
@@ -131,8 +140,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \item Zijn er nog andere getallen die aan deze vergelijking voldoen?
   \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van de eerste graad}
@@ -156,9 +163,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
 \item Oplossingenverzameling opschrijven en proef maken
 \end{enumerate}
 
-\end{theorie}
-
-
 \begin{oefening}
   Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
   \begin{multicols}{2}
@@ -181,8 +185,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-\pagebreak
 \subsubsection*{Toepassingen}
 
 Volgende oefeningen geven toepassingen waarbij we vergelijkingen van de eerste graad oplossen. Ga steeds als volgt te werk:
@@ -193,8 +195,6 @@ Volgende oefeningen geven toepassingen waarbij we vergelijkingen van de eerste g
   \item[Oplossen] Als de vergelijkingen meerdere onbekenden bevatten, probeer dan de vergelijkingen te herschrijven zodat ze maar één onbekende meer bevatten. Los de vergelijking dan op met de geziene methode.
   \item[Antwoord] Kijk naar je oplossingenverzameling en lees de vraag opnieuw. Beantwoord nu specifiek op het gevraagde.
 \end{description}
-
-\end{theorie}
 
 \begin{oefening}
 Twee getallen hebben als som 60. De som van de helft van het eerste getal en een derde van het tweede getal is 20. Bepaal die getallen.
@@ -222,8 +222,6 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
     \hspace*{-2cm}
         \includegraphics[width=4cm]{fietser}
 \end{tikzpicture}
-
-\begin{theorie}
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van de tweede graad}
@@ -253,12 +251,10 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
   Een tweedegraadsvergelijking is {\bf onvolledig} als $b=0$ of $c=0$ is. Onvolledige tweedegraadsvergelijkingen kunnen als volgt eenvoudig opgelost worden:
   \begin{itemize}
     \item $b=0$ en $c=0$, dus $ax^2=0$, dan kan $x$ enkel de waarde nul hebben, dus $V=\{0\}$
-    \item $b=0$, dus $ax^2+c=0\LRA x^2=\dfrac{-c}{a}$, dus er zijn twee oplossingen als $\dfrac{-c}{a}$ positief is, dus $V=\{-\sqrt{\dfrac{-c}{a}}, +\sqrt{\dfrac{-c}{a}}\}$
-    \item $c=0$, dus $ax^2+bx=0\LRA x(ax+b)=0$, dus er zijn altijd twee oplossingen namelijk $x=0$ en de oplossing van de eerstegraadsvergelijking $ax+b=0$, dus $V=\{0, -\dfrac{b}{a}\}$
+    \item $b=0$, dus $ax^2+c=0\lra x^2=\dfrac{-c}{a}$, dus er zijn twee oplossingen als $\dfrac{-c}{a}$ positief is, dus $V=\{-\sqrt{\dfrac{-c}{a}}, +\sqrt{\dfrac{-c}{a}}\}$
+    \item $c=0$, dus $ax^2+bx=0\lra x(ax+b)=0$, dus er zijn altijd twee oplossingen namelijk $x=0$ en de oplossing van de eerstegraadsvergelijking $ax+b=0$, dus $V=\{0, -\dfrac{b}{a}\}$
   \end{itemize}
 \end{itemize}
-
-\end{theorie}
 
 \begin{oefening}
   Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
@@ -307,12 +303,7 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection*{Toepassingen}
-
-\end{theorie}
 
 \begin{oefening}
 We gooien een bal recht omhoog. De begin hoogte is dan $1.75 \m$. We doen dit met een snelheid van $17 \mpers$. Na hoeveel seconden zal de bal op de grond terecht komen?
@@ -348,8 +339,6 @@ De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 \end{center}
 \end{oefening}
 
-\begin{theorie}
-
 \pagebreak
 \subsection{Veeltermvergelijkingen van graad $\geq 3$}
 
@@ -369,7 +358,7 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \item Dus $x=-1$ is een oplossing. Dit wil zeggen dat $x-(-1)$ of korter $x+1$ een deler is van de de veelterm. We herschrijven de vergelijking:
   \begin{eqnarray*}
     x^3-4x^2+x+6&=&0\\
-    \LRA (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{restveelterm}}&=&0\\
+    \lra (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{restveelterm}}&=&0\\
   \end{eqnarray*}
 \item De restveelterm vinden we m.b.v. het algoritme van Horner:
   \begin{center}
@@ -383,7 +372,7 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \item We krijgen dus:
   \begin{eqnarray*}
     x^3-4x^2+x+6&=&0\\
-    \LRA (x+1)(x^2-5x+6)&=&0\\
+    \lra (x+1)(x^2-5x+6)&=&0\\
   \end{eqnarray*}
 \item Voor de factor $(x+1)$ hebben we reeds de oplossing $x_0=-1$ gevonden. Ook de factor $(x^2-5x+6)$ heeft oplossingen. Deze vinden we m.b.v. de discriminantmethode:
   $$x^2-5x+6=0$$
@@ -392,8 +381,6 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \item Dus $x^3-4x^2+x+6=0$ heeft als oplossingenverzameling
   $$V=\{-1, 2, 3\}$$
 \end{itemize}
-
-\end{theorie}
 
 \begin{oefening}
   Los op in $\mathbb{R}$
@@ -429,7 +416,6 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
   %\end{multicols}
 \end{oefening}
 
-\begin{theorie}
 \pagebreak
 \subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
 
@@ -457,7 +443,7 @@ $$V=\{-1, 1, 3\}$$
 $$x^3-2x^2-1=x^2+x-4$$
 
 We herschrijven deze vergelijking eerst in zijn standaardvorm:
-$$\LRA x^3-3x^2-x + 3=0$$
+$$\lra x^3-3x^2-x + 3=0$$
 
 We hoeven nu enkel het linkerlid als de functie
 $$f(x)=x^3-3x^2-x + 3$$
@@ -468,8 +454,6 @@ Construeer de grafiek van deze functie $f$ in Geogebra en lees de nulwaarde af v
 $$V=\{-1, 1, 3\}$$
 
 moeten vinden.
-
-\end{theorie}
 
 \begin{oefening}
   Los op in $\mathbb{R}$\\
@@ -508,11 +492,8 @@ moeten vinden.
   \end{multicols}
 \end{oefening}
 
-
-\pagebreak
+\cleardoublepage
 \section{Veeltermfuncties}
-
-\begin{theorie}
 
 \subsection{Definities}
 
@@ -523,8 +504,6 @@ moeten vinden.
 \end{mdframed}
 
 De {\bf graad van de veeltermfunctie} is gelijk aan de graad van de veelterm. In de definitie is de veeltermfunctie dus van de $n$-de graad.
-
-\end{theorie}
 
 \begin{oefening}
   Welke van de volgende functies zijn veeltermfuncties. Als het veeltermfuncties zijn, wat is dan hun graad?
@@ -562,7 +541,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
 \pagebreak
 \subsection{Veeltermfuncties van graad 0}
 
@@ -578,8 +556,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item Als $a=0$ dan heeft deze functie alle reële getallen als nulwaarden.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=-2\;.$$
@@ -591,8 +567,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Teken de grafiek zonder een functiewaardentabel te maken.
   \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \paragraph*{Constante functie bespreken}
 \begin{mdframed}
@@ -615,8 +589,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Functiewaardentabel en grafiek: /
   \end{itemize}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
   Beschrijf volgende constante functies:
@@ -650,8 +622,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{center}
 \end{oefening}
 
-\begin{theorie}
-
 \pagebreak
 \subsection{Veeltermfuncties van graad 1}
 
@@ -668,8 +638,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item De grafiek van deze functie heeft geen extrema.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=-\dfrac{1}{2}x+2\;.$$
@@ -683,8 +651,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
+\pagebreak
 \paragraph*{Eerstegraadsfunctie bespreken}
 \begin{mdframed}
   \begin{itemize}
@@ -720,8 +687,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
     \end{minipage}
   \end{itemize}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
   Beschrijf volgende eerstegraadsfuncties:
@@ -765,8 +730,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{center}
 \end{oefening}
 
-\begin{theorie}
-
 \pagebreak
 \subsection{Veeltermfuncties van graad 2}
 
@@ -784,8 +747,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item Een tweedegraadsfunctie kan $0, 1$ of $2$ nulwaarden hebben, afhankelijk van de discriminant.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=x^2-x-6\;.$$
@@ -799,8 +760,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Teken de grafiek zonder een functiewaardentabel te maken.
   \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \pagebreak
 \paragraph*{Tweedegraadsfuncties bespreken}
@@ -861,7 +820,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{itemize}
 \end{mdframed}
 
-\end{theorie}
+
 
 \begin{oefening}
   Bespreek de volgende functies:
@@ -930,7 +889,7 @@ Een landbouwer beschikt over $800 \m$ prikkeldraad. Hij wil daarmee een zo groot
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
+
 
 \pagebreak
 \subsection{Veeltermfuncties van graad 3 of hoger}
@@ -958,7 +917,7 @@ Een landbouwer beschikt over $800 \m$ prikkeldraad. Hij wil daarmee een zo groot
   \end{itemize}
 \end{mdframed}
 
-\end{theorie}
+
 
 \begin{oefening}
   Bespreek volgende functies:
@@ -974,13 +933,13 @@ Een landbouwer beschikt over $800 \m$ prikkeldraad. Hij wil daarmee een zo groot
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
+
 
 \pagebreak
-\subsection{Hogeregraadsveeltermfuncties bespreken met behulp van Geogebra}
+\subsection{Hogeregraadsveeltermfuncties bespreken m.b.v. van Geogebra}
 Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra} gebruiken om hogeregraadsveeltermfuncties te bespreken. We plotten eerst de grafiek en bespreken daarna alle karakteristieken.
 
-\end{theorie}
+
 
 \begin{oefening}
   Met Geogebra werd de grafiek van de functie met functievoorschrift
@@ -992,11 +951,11 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
       \draw[->,color=black] (-7.22,0) -- (8.13,0);
       \foreach \x in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
       \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-      \draw[color=black] (7.87,0.07) node [anchor=south west] { x};
+      \draw[color=black] (7.87,0.07) node [anchor=south west] {$x$};
       \draw[->,color=black] (0,-6.82) -- (0,6.66);
       \foreach \y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
       \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-      \draw[color=black] (0.08,6.33) node [anchor=west] { y};
+      \draw[color=black] (0.08,6.33) node [anchor=west] {$y$};
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-7.22,-6.82) rectangle (8.13,6.66);
       \draw[line width=1.6pt, smooth,samples=100,domain=-2.2:2.2] plot(\x,{(\x)^5-5*(\x)^3+4*(\x)});
@@ -1004,10 +963,8 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
   \end{center}
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{Differentiequotiënt}
-
-\begin{theorie}
 
 \subsection{Voorbeeld}
 
@@ -1073,7 +1030,6 @@ Dus door de afgelegde afstand te delen door de lengte van het tijdsinterval vind
   het differentiequotiënt $\dfrac{\Delta y}{\Delta x}$ van een functie $f$ voor een interval $[a, b]$ is de gemiddelde verandering van deze functie in interval. We bereken
   $$\dfrac{\Delta y}{\Delta x}=\dfrac{f(b)-f(a)}{b-a}$$
 \end{mdframed}
-
 
 \begin{center}
   \begin{tikzpicture}[scale=2, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1162,8 +1118,6 @@ Het differentiequotiënt van een eerstegraadsfunctie is constant en gelijk aan d
   hierin is $m=\dfrac{\Delta y}{\Delta x}=\dfrac{y_2-y_1}{x_2-x_1}$.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Bepaal het differentiequotiënt in het interval $[-3,-1]$ van de rechte
   \begin{enumerate}[(a)]
@@ -1202,8 +1156,6 @@ Bepaal de differentiequotiënt $\frac{\Delta y}{\Delta x}$ van volgende functies
   \item Bepaal indien mogelijk de differentiequotiënt van de rechte door de punten $(2.4,4.8)$ en $(1.2,4.5)$.
   \item Waarom is het wel of niet mogelijk om de differentiequotiënt in deze oefening te berekenen.\end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \pagebreak
 \subsection{Differentiequotiënt van een tweedegraadsfunctie}
@@ -1251,11 +1203,9 @@ Het differentiequotiënt van deze functie is niet constant.
 
 We bekijken terug het differentiequotiënt in het interval $[1,2]$, deze is $\frac{\Delta y}{\Delta x}=1.5$. We bepalen nu de vergelijking van de rechte door de punten $A(1, 0.5)$ en $B(2,2)$:
 $$y-y_0=\dfrac{y_1-y_0}{x_1-x_0}(x-x_0)$$
-$$\LRA y=1.5x-1$$
+$$\lra y=1.5x-1$$
 
 Het differentiequotient is de richtingscoëfficiënt van de rechte die bepaald wordt door de koorde die bij de grafiek en het beschouwde interval hoort.
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal de differentiequotiënt $\frac{\Delta y}{\Delta x}$ van volgende functies in het interval $[2,4]$ en in het interval $[-3,-1]$.
@@ -1283,11 +1233,7 @@ We laten laten een muntstuk vallen in een waterput en na 3 seconden horen we een
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
   Maak de grafiek van de functie
@@ -1357,7 +1303,7 @@ We laten laten een muntstuk vallen in een waterput en na 3 seconden horen we een
 
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{Toepassingen}
 
 \begin{oefening}\\
@@ -1441,23 +1387,18 @@ We laten laten een muntstuk vallen in een waterput en na 3 seconden horen we een
   \end{center}
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section*{Het raadsel van Diophantus}
-
-\subsection*{Diophantus}
 
 Uit wikipedia:
 
-
-
-\begin{wrapfigure}[16]{r}{0.4\textwidth}
-  \vspace{-2cm}
+\begin{wrapfigure}[21]{r}{0.4\textwidth}
+%  \vspace{-2cm}
   \includegraphics[width=0.4\textwidth]{diophantus}
 \end{wrapfigure}
 
-\singlespacing
-
+\begin{singlespacing}
+  \small
 Diophantus van Alexandrië was een Griekse wiskundige, afkomstig uit Alexandrië. Wanneer hij leefde is niet erg duidelijk, het moet ergens tussen de 1e eeuw v.Chr. en de 4e eeuw na Chr. geweest zijn. Als meest waarschijnlijke datum geldt het midden van de 3e eeuw. Hij zou 84 jaar oud geworden zijn.
 
 Binnen de Griekse wiskunde neemt Diophantus een bijzondere positie in. Waar de andere Griekse wiskundigen zich voornamelijk met de meetkunde bezighielden, en de andere aspecten van de wiskunde vanuit de meetkunde beschouwden, hield Diophantus zich bezig met algebra als een 'doel op zich'.
@@ -1468,12 +1409,13 @@ Zijn werk houdt zich bezig met datgene wat tegenwoordig naar hem als Diophantisc
 
 Diophantus schreef zijn werk op in de Arithmetika. Dit bestond uit 13 delen, waarvan echter lange tijd slechts 6 delen (1-3 en 8-10) bekend waren. Pas in 1982 werden 4 verdere delen (4-7) teruggevonden, zij het in Arabische vertaling. De laatste 3 delen zijn verdwenen. Het was in de kantlijn van Diophantus' Arithmetika dat Fermat zijn beroemde 'laatste' stelling schreef.
 
-\subsection*{Raadsel}
+\end{singlespacing}
 
 Bepaal hoe oud Diophantus werd aan de hand van het volgende raadsel:
 
 {\em God vergunde hem een zesde deel van zijn leven een jongen te zijn. Na een twaalfde deel kreeg hij een bebaard gelaat. Na nog eens een zevende deel ontstak hij het huwelijksvuur. Vijf jaar na zijn huwelijk kreeg hij een zoon, een geliefd maar ongelukkig kind. Na het bereiken van de helft van zijn vaders volle levensjaren sloeg het wrede noodlot toe. De vader had de laatste vier jaar van zijn leven om over het verdriet heen te komen. }
 
+\cleardoublepage
 \section*{Peilingen naar vroeger}
 
 \begin{oefening}

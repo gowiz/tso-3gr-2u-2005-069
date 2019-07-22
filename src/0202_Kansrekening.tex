@@ -2,10 +2,6 @@
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\includeversion{theorie}
-%\excludeversion{theorie}
-
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
   \draw[rounded corners=1] (0,0) rectangle (1,1);
@@ -29,13 +25,6 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Kansrekening}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -45,25 +34,25 @@
   \includegraphics[width=0.8\textwidth]{dice}
   \vfill
 \end{center}
-%\vfill
 \subsection*{Doelstellingen}
-{\singlespacing
+\begin{singlespacing}
 Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.2)}
 \begin{itemize}
   \item de begrippen kansexperiment, uitkomst, uitkomstenverzameling en gebeurtenis in de context van een toepassing onderscheiden.
   \item de regel van Laplace, de somregel en de complementregel bij het oplossen van oefeningen toepassen.
-\end{itemize}}
+\end{itemize}
+\end{singlespacing}
 
 \thispagestyle{empty}
-\mbox{}
-\newpage
+\clearpage
+
 \tableofcontents
 \thispagestyle{empty}
-\mbox{}
-\newpage
 \clearpage
-\pagenumbering{arabic} 
 
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Kansrekening}
 \fancyhead[RE,LO]{}
 
@@ -78,21 +67,21 @@ Ga voor volgende problemen na of je de kans zou kunnen berekenen of je ze enkel 
   \item Hoe groot is de kans om met 1 dobbelsteen 4 ogen te gooien?
   %\arules{2}
   \item Hoe groot is de kans om met 2 dobbelstenen ten minste 7 ogen te gooien?
-  %\arules{2}\\  
+  %\arules{2}\\
   \begin{center}
     \begin{tabular}{c|c|c|c|c|c|c}
     &\dice{1}&\dice{2}&\dice{3}&\dice{4}&\dice{5}&\dice{6}\\
-    \hline      
+    \hline
     \dice{1}&&&&&&\\
-    \hline      
+    \hline
     \dice{2}&&&&&&\\
-    \hline      
+    \hline
     \dice{3}&&&&&&\\
-    \hline      
+    \hline
     \dice{4}&&&&&&\\
-    \hline      
+    \hline
     \dice{5}&&&&&&\\
-    \hline      
+    \hline
     \dice{6}&&&&&&\\
     \end{tabular}
   \end{center}
@@ -100,11 +89,8 @@ Ga voor volgende problemen na of je de kans zou kunnen berekenen of je ze enkel 
 
 In dit hoofdstuk zullen we kansen leren berekenen!
 
-\end{theorie}
-\pagebreak
+\cleardoublepage
 \section{Begrippen}
-
-\begin{theorie}
 
 \subsection{Een kansexperiment}
 
@@ -131,13 +117,9 @@ echter wel gekend.
 \paragraph*{Tegenvoorbeeld}
 De gaspedaal induwen bij het rijden met een wagen is geen experiment. Je weet wat er zal gebeuren, de wagen zal versnellen. Er is dus geen toeval meer.
 
-\end{theorie}
-
 \begin{oefening}
 Geef zelf een voorbeeld van een kansexperiment dat niets te maken heeft met muntstukken, dobbelstenen of kaarten.
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Een uitkomst}
 
@@ -177,8 +159,6 @@ leven richten. In geval van experiment $E_2$ zullen we waarnemer 1 volgen.
   Merk op: Elke uitkomst is een koppel! Het eerste cijfer geeft het aantal ogen op de eerste dobbelsteen, het tweede cijfer geeft dat op de tweede dobbelsteen. Nu wordt er dus wel een volgorde opgelegd aan de elementen. Met andere woorden $(1, 5)$ is een andere uitkomst dan $(5, 1)$. Dit komt goed uit, want als je twee dobbelstenen na elkaar opgooit, dan weet je de uitkomst van de eerste dobbelsteen en de uitkomst van de tweede dobbelsteen.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Geef 4 mogelijke uitkomsten horende bij $E_6$, vier kaarten uit een spel van 52 kaarten trekken zonder terugleggen. De volgorde waarbij je de kaarten nadien in je hand houdt maakt niets uit.
 %\arules{2}
@@ -187,8 +167,6 @@ Geef 4 mogelijke uitkomsten horende bij $E_6$, vier kaarten uit een spel van 52 
 \begin{oefening}
 Geef, voor een zelfgekozen kansexperiment dat niets te maken heeft met muntstukken, dobbelstenen of kaarten, een aantal mogelijke uitkomsten.
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{De uitkomstenverzameling}
 
@@ -209,8 +187,6 @@ $U=\{u_1, u_2, \ldots, u_n\}$ met $\#U=n$.
   Er zijn 31 dagen in mei, we hebben dus als uitkomst 1 mei, 2 mei, ... enz. Laten we voor het gemak enkel het getal van de dag gebruiken in de uitkomstenverzameling, dat het in de maand mei valt weten we reeds.\\
   $U_3 = \{1, 2, 3, \ldots, 30, 31\}$ met $\#U_3=31$
 \end{itemize}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal de uitkomstenverzameling $U$ en het aantal elementen $\#U$ van de volgende experimenten:
@@ -235,8 +211,6 @@ Beschrijf een uitkomstenverzameling bij het trekken van twee knikkers uit een ur
 \begin{oefening}
 Geef, voor een zelfgekozen kansexperiment dat niets te maken heeft met muntstukken, dobbelstenen of kaarten, de volledige uitkomsten verzameling en controleer het aantal elementen.
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Een gebeurtenis}
 
@@ -285,8 +259,6 @@ We zoeken ook telkens het aantal elementen op.
   Merk op dat er geen dagen in april zitten in de uitkomstenverzameling, daarmee dat de gebeurtenis $C_3$ leeg is.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Geef voor $E_4$, twee dobbelstenen tegelijk opgooien, de volgende gebeurtenissen en ook het aantal elementen in de gebeurtenis.
 \begin{enumerate}[(a)]
@@ -317,8 +289,6 @@ Geef voor $E_6$, vier kaarten uit een spel van 52 kaarten trekken zonder terugle
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \paragraph*{Opmerking}
 Als een uitkomst $u$ van een experiment $E$ tot de gebeurtenis $A$ behoort, dan zeggen we dat {\bf de gebeurtenis A gerealiseerd is} of nog dat {\bf de gebeurtenis A zich voor doet}.
 
@@ -326,13 +296,9 @@ Als een uitkomst $u$ van een experiment $E$ tot de gebeurtenis $A$ behoort, dan 
 Neem het experiment $E_2$ en beschouw de gebeurtenis $A$: een aas trekken. Nu is $A = \{a_h , a_r , a_s , a_k \}$.
 Als we $a_r$ trekken dan zeggen we dat de gebeurtenis $A$ zich gerealiseerd heeft (want $a_r \in A$).
 
-\end{theorie}
-
 \begin{oefening}
 Geef, voor een zelfgekozen kansexperiment dat niets te maken heeft met muntstukken, dobbelstenen of kaarten, een mogelijke gebeurtenis. Schrijf alle elementen in deze gebeurtenis op en controleer of dit een deelverzameling is van de uitkomstenverzameling.
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Bijzondere gebeurtenissen}
 
@@ -359,12 +325,8 @@ Neem experiment $E_1$, het gooien van een muntstuk. Deze heeft twee elementaire 
 \paragraph*{Opmerking}
 Er bestaat juist één onmogelijke gebeurtenis al kan die wel op veel manieren omschreven zijn. Zo ook is er slechts één zekere gebeurtenis per experiment. Als $\#U = n$ dan zijn er $n$ elementaire gebeurtenissen.
 
-\end{theorie}
-
-\pagebreak
+\cleardoublepage
 \section{Kanswaarde}
-
-\begin{theorie}
 
 \subsection{Definitie}
 
@@ -411,8 +373,6 @@ Kort krijgen we\\
 $$P(A)=\dfrac{\#A}{\#U}\;.$$
 \end{mdframed}
 
-\end{theorie}
-
 \begin{oefening}
 Uit een spel van 52 kaarten trekken we lukraak één kaart. Hoe groot is volgens Laplace de kans op: de getrokken kaart een aas is?
 %\arules{3}
@@ -421,8 +381,6 @@ Uit een spel van 52 kaarten trekken we lukraak één kaart. Hoe groot is volgens
 \begin{oefening}
 We gooien een zuiver muntstuk 3 maal na elkaar op. Bereken met Laplace de kans op de gebeurtenis $A$, we gooien juist 2 maal kop.
 \end{oefening}
-
-\begin{theorie}
 
 \vspace*{1cm}
 \begin{mdframed}
@@ -439,8 +397,6 @@ Grondlegger van de kansrekening. Bewees daarnaast ook dat ons zonnestelsel stabi
 De theorie van de kansrekening is in zijn essentie niets anders dan het gezond verstand herleidt tot analyse. Het maakt het ons mogelijk om exact vast te leggen wat de intuïtie ons reeds vertelt, maar wat we niet aan een ander kunnen verklaren.\\ \hfill{Uit \em Théorie Analytique des Probabilitiés (1812)}
 \end{minipage}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 In een vaas zitten 10 identieke balletjes met daarop telkens een verschillend getal van 0 tot 9. Beschouw het kansexperiment: 1 balletje uit de vaas nemen.
@@ -477,8 +433,6 @@ Geef de uitkomstenverzameling $U$.
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \paragraph*{Opmerking}
 Laplace zullen we vooral de beperktheid van zijn methode verwijten. Alleen die
 experimenten waarvoor we $U$ kunnen herleiden tot een eindige verzameling van
@@ -507,7 +461,7 @@ dus de regel van Laplace. We mogen ze hier dus niet gebruiken.
 
 Met andere woorden, $\bar{A}$ is het complement van $A$ in $U$.
 
-\paragraph*{Voorbeelden} 
+\paragraph*{Voorbeelden}
 \begin{itemize}
   \item $E_1$: Een muntstuk opgooien. Neem als gebeurtenis $A$: kop gooien\\
   $\bar{A}=\{m\}$, inderdaad $\bar{A}=U\setminus A=\{k,m\}\setminus\{k\}=\{m\}$
@@ -540,8 +494,6 @@ $$P(A)=1-P(\bar{A})$$
 
 We noemen bovenstaande formule de {\bf complementregel} en kan soms handig gebruikt worden in oefeningen. Meestal als het te moeilijk is om de kans op een gebeurtenis te berekenen, dan zal het heel gemakkelijk zijn om de kans op de tegengestelde gebeurtenis te berekenen.
 
-\end{theorie}
-
 \begin{oefening}
   \begin{enumerate}[(a)]
   \item Een zuivere dobbelsteen wordt tweemaal na elkaar lukraak opgegooid. Bereken de kans om minstens één zes te gooien.
@@ -552,8 +504,6 @@ We noemen bovenstaande formule de {\bf complementregel} en kan soms handig gebru
 \begin{oefening}
 Uit een spel van 52 kaarten trekt men 5 kaarten. Hoe groot is de kans op: minstens één aas?
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Somregel}
 
@@ -622,8 +572,6 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
 \end{eqnarray*}
 \end{samepage}
 
-\end{theorie}
-
 \begin{oefening}
 We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
 een priemgetal of een even getal gooien.
@@ -641,8 +589,6 @@ Uit een spel van 52 kaarten trekken we lukraak een kaart. Hoe groot is de kans d
 getrokken kaart een harten of een boer is?
 \end{oefening}
 
-\begin{theorie}
-
 \subsubsection{Bijzonder geval, de somregel}
 Beschouwen we nu twee disjuncte gebeurtenissen $A$ en $B$, dan is $A \cap B = \emptyset$.
 De aangepaste formule wordt dan:\\
@@ -653,15 +599,13 @@ Deze wet wordt heel dikwijls de {\bf somregel} voor de kansrekening genoemd. Dez
 kan men uitbreiden voor meerdere gebeurtenissen, maar ze moeten dan wel 2 aan 2
 disjunct zijn. We zullen hier niet over uitweiden.
 
-\end{theorie}
-
 \begin{oefening}
 In een urne bevinden zich 8 rode, 5 zwarte en 17 gele bollen. We trekken lukraak een
 bol. Bereken de kans dat de bol rood of zwart is.
 %\arules{9}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
@@ -681,7 +625,7 @@ Bij het opgooien van een muntstuk zijn er twee even waarschijnlijke uitkomsten: 
 \end{oefening}
 
 \begin{oefening}
-In een bak zitten 3 witte, 4 rode en 5 blauwe knikkers. We nemen lukraak 1 knikker. Bereken de kans dat de knikker 
+In een bak zitten 3 witte, 4 rode en 5 blauwe knikkers. We nemen lukraak 1 knikker. Bereken de kans dat de knikker
 \begin{enumerate}[(a)]
   \item Wit is
   \item Rood is
@@ -771,13 +715,12 @@ Op een meerkeuze examen met 40 vragen waarbij er telkens 4 keuzes, A-B-C-D, zijn
 \end{enumerate}
 \end{oefening}
 
-
 \begin{oefening}
 Je gooit met een paar dobbelstenen. Wat is de kans dat de som van de ogen 3 is?
 \end{oefening}
 
 \begin{oefening}*
-Een vaas bevat 3 rode en 2 witte knikkers, een tweede vaas 4 rode en 1 witte. Als men met een dobbelsteen een zes werpt neemt men een knikker uit vaas 2, in alle andere gevallen uit vaas 1. Hoe groot is de kans een witte knikker uit vaas 1 te trekken? 
+Een vaas bevat 3 rode en 2 witte knikkers, een tweede vaas 4 rode en 1 witte. Als men met een dobbelsteen een zes werpt neemt men een knikker uit vaas 2, in alle andere gevallen uit vaas 1. Hoe groot is de kans een witte knikker uit vaas 1 te trekken?
 \end{oefening}
 
 \begin{oefening}*
@@ -785,43 +728,11 @@ In een schroevenfabriek fabriceren de machines A, B en C resp. 25, 35 en 40 \% v
 is door A, B of C?
 \end{oefening}
 
-\pagebreak
 \appendix
-\section*{Bijlagen}
-
-\subsection*{Het kaartspel}
+\cleardoublepage
+\section{Het kaartspel}
 Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (j), koningin (q) en koning (k), aas (a). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de volgorde en dan als index de soort. Zo wordt de harten dame $q_h$ en de schoppen zeven $7_s$.
 
 \includegraphics[width=\textwidth, angle=0]{kaartspel}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-\dotlines{10}
-\end{minipage}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

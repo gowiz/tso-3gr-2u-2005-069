@@ -1,19 +1,8 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{hyperref}
 \usepackage{etoolbox}
-
-\makeatletter
-\newcommand\dataset[2][5]{{
-    \singlespace\vspace*{-0.5em}
-    \begin{multicols}{#1}
-      \forcsvlist{\dataset@item}{#2}
-    \end{multicols}
-  }}
-\newcommand\dataset@item[1]{\mbox{\texttt{#1}}\\}
-\makeatother
 
 % environment mmopdracht:
 \newcounter{nmmopdracht}
@@ -61,7 +50,6 @@
 
 \begin{document}
 
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -73,7 +61,7 @@
 \end{center}
 \vfill
 \subsection*{Doelstellingen}
-{\singlespacing
+\begin{singlespacing}
 Je kan \hfill (LP 2005-069, LI 2.3.1, ET14, ET15, ET17)
 \begin{itemize}
   \item het onderscheid maken tussen een steekproef en een populatie,
@@ -84,21 +72,22 @@ Je kan \hfill (LP 2005-069, LI 2.3.1, ET14, ET15, ET17)
   \item aan de hand van voorbeelden het belang uitleggen van de representativiteit van een steekproef voor het formuleren van statische besluiten over de populatie, hierbij functioneel gebruik maken van centrummaten, spreidingsmaten en grafische voorstellingen,
   \item kritisch omgaan met het gebruik van statistiek in de media.
 \end{itemize}
-}
+\end{singlespacing}
 
 \thispagestyle{empty}
-\newpage
-\thispagestyle{empty}
-\tableofcontents
-\newpage
 \clearpage
-\pagenumbering{arabic}
-\pagestyle{fancy}
-\lhead{}
 
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Beschrijvende statistiek}
 \fancyhead[RE,LO]{}
 
+\cleardoublepage
 \section{Begrip beschrijvende statistiek}
 
 Met beschrijvende statistiek gaan we gegevens die we bekomen door tellen, waarnemen of enquêtes kort gaan weergeven of grafisch voorstellen. Het weergeven wordt vaak gedaan met behulp van {\em kengetallen} en het grafisch voorstellen met behulp van een aantal verschillende grafieken.
@@ -123,7 +112,7 @@ Noteer bij elke onderzoeksvraag de {\bf elementen} en de {\bf variabele}:
 Geef zelf een onderzoeksvraag, de bijhorende elementen en variabele. Maak hier een enquête voor op.
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Populatie en steekproef}
 
 De {\bf populatie} van een statistisch onderzoek is de verzameling van alle personen of objecten die bestudeerd worden. Als we bijvoorbeeld onderzoeken met welk vervoersmiddel onze leerlingen naar school komen, dan is de populatie alle leerlingen van onze school.
@@ -135,7 +124,6 @@ Een steekproef moet {\bf representatief} (ze moet een juist beeld geven van de p
 \begin{oefening}
 Hoe zou je ervoor kunnen zorgen dat we een goede steekproef hebben van alle leerlingen van onze school?
 \end{oefening}
-
 
 \begin{oefening}
 Noteer van de volgende onderzoeken telkens de populatie, de steekproef en de steekproefgrootte.
@@ -174,7 +162,7 @@ Geef bij de volgende variabelen aan of het kwalitatieve of kwantitatieve variabe
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Kwalitatief onderzoek}
 
 Heel vaak krijgen we in een onderzoek een aantal verschillende waarden van een variabele die niet zinvol te vergelijken is, namelijk een nominale variabele. Zo werd er vorig jaar aan een aantal leerlingen gevraagd met welk vervoersmiddel ze naar school kwamen, volgende dataset kregen we terug:
@@ -182,7 +170,6 @@ Heel vaak krijgen we in een onderzoek een aantal verschillende waarden van een v
 \dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}
 
 In een {\bf dataset} is het de gewoonte om de $n$ waarneming te labelen met $x_1$, $x_2$, \ldots, $x_n$. Een aantal waarnemingen kunnen meerdere keren voorkomen, zo is $x_1=x_5=\ldots=x_{60}=$'fiets'. We maken die waarnemingen uniek door deze te labelen met $\omega_1=$'fiets' en deze krijgt dan de frequentie $n_1=17$
-
 
 \subsection{Frequentietabel bij een kwalitatieve variabele}
 
@@ -205,16 +192,15 @@ Maak de frequentietabel horende bij de dataset:
 \dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}
 \end{oefening}
 
-
 \begin{oefening}
-In september werd aan alle leerlingen van het derde jaar gevraagd of ze een rekentoestel hadden, en zo ja, van welk merk. Vervolledig de frequentietabel.\\
+In september werd aan alle leerlingen van het derde jaar gevraagd of ze een rekentoestel hadden, en zo ja, van welk merk. Vervolledig de frequentietabel.
 \begin{center}
 \begin{tabular}{l|c|c}
-Rekenmachine & Frequentie & Rel. Freq\\\hline
-Geen & & 0.54\\\hline
-Casio & 27 & 0.18\\\hline
-TI & &\\\hline
-n= & &\\
+Rekenmachine & Frequentie & Rel. Freq \\\hline
+Geen         &            & 0.54      \\\hline
+Casio        & 27         & 0.18      \\\hline
+TI           &            &           \\\hline
+n=           &            &           \\
 \end{tabular}
 \end{center}
 \end{oefening}
@@ -232,7 +218,6 @@ n= & &\\
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsection{Grafische voorstellingen bij een kwalitatieve variabele}
 
 \subsubsection{Staafdiagram}
@@ -245,7 +230,6 @@ informatie die hier wordt weergegeven, kan
 je vinden in het boekje “Vlaanderen in
 cijfers” op de website:
 \url{http://www4.vlaanderen.be/dar/svr/Cijfers/Pages/Excel.aspx}.
-
 
 \begin{minipage}{0.5\textwidth}
 De namen van de provincies zijn afgekort als:
@@ -263,7 +247,6 @@ De namen van de provincies zijn afgekort als:
 \end{minipage}
 
 \begin{oefening}
-
 Gebruik de frequentietabel:
 \begin{center}
   \begin{tabular}{c|c|c}
@@ -406,22 +389,16 @@ vrijetijdsbesteding van jongeren (De Standaard van 6-12-2000).
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Kwantitatief onderzoek}
 
 We herinneren ons dat we met een kwantitatieve variabele kunnen rekenen. We beschouwen nu een voorbeeld waarbij de directeur een aantal jaar terug de tijd heeft opgemeten dat het duurt voordat de leerling aan de les beginnen nadat het belsignaal heeft gerinkeld. We krijgen een lijst van 65 getallen waarbij elk getal een tijdstip in seconden voorstelt:
 
 \dataset[10]{193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262}
 
-
 \subsection{Een frequentietabel met klassenindeling}
 
-Je beschikt nu over een groot aantal opmetingen van een continu kwantitatieve variabele. In feite is
-elke geschatte tijdsduur verschillend van elke andere, maar daarvoor had je moeten meten tot op een
-miljardste van een seconde (of misschien nog preciezer!). Als elke “echte” waarde verschillend is
-van elke andere, dan komt elke “echte” waarde slechts één keer voor. Een frequentietabel zou dan
-(theoretisch) al die verschillende “echte” waarden moeten bevatten, allemaal met een frequentie
-gelijk aan één. Dat is zinloos.
+Je beschikt nu over een groot aantal opmetingen van een continu kwantitatieve variabele. In feite is elke geschatte tijdsduur verschillend van elke andere, maar daarvoor had je moeten meten tot op een miljardste van een seconde (of misschien nog preciezer!). Als elke “echte” waarde verschillend is van elke andere, dan komt elke “echte” waarde slechts één keer voor. Een frequentietabel zou dan (theoretisch) al die verschillende “echte” waarden moeten bevatten, allemaal met een frequentie gelijk aan één. Dat is zinloos.
 
 De tijdsmetingen die je hier hebt, worden, zoals alle continue variabelen, samengevat in een
 {\bf frequentietabel met klassenindeling}.
@@ -444,9 +421,7 @@ De tijdsmetingen die je hier hebt, worden, zoals alle continue variabelen, samen
 
 Voor het maken van de klassen kan je als volgt te werk gaan.
 \begin{itemize}
-  \item Start met een interval dat groot genoeg is om al je opmetingen te kunnen bevatten. Als je
-kleinste observatie 60 is en je grootste is 379, dan moet je dus minstens van 60 tot 379 gaan.
-Meestal neem je eenvoudige “ronde” getallen. Hier zou je bijvoorbeeld kunnen starten bij 60 en eindigen bij 380 of 390 (13 keer een halve minuut).
+  \item Start met een interval dat groot genoeg is om al je opmetingen te kunnen bevatten. Als je kleinste observatie 60 is en je grootste is 379, dan moet je dus minstens van 60 tot 379 gaan. Meestal neem je eenvoudige “ronde” getallen. Hier zou je bijvoorbeeld kunnen starten bij 60 en eindigen bij 380 of 390 (13 keer een halve minuut).
   \item Op dit grote interval maak je nu deelintervallen die mooi aan elkaar aansluiten en elkaar niet overlappen. Dat zijn je klassen. De breedte van die klassen mag je zelf kiezen en ze hoeven zelfs niet allemaal even breed te zijn.
   \item Elke klasse is een “links gesloten – rechts open” interval, zoals bijvoorbeeld $[60;65[$. De grenzen van een klasse heten {\bf klassengrenzen}. Het midden heet {\bf klassenmidden} en de breedte heet {\bf klassenbreedte}.
   \item Zorg ervoor dat het overgrote deel van de waarnemingen niet binnen één of twee klassen valt. Als richtlijn neem je tussen de 5 en de 15 klassen, maar deze richtlijn hoef je niet te strikt te nemen. Als je de frequentietabel gebruikt om een histogram te tekenen (zoals uitgelegd in volgend puntje), dan zal je ervaren dat te veel klassen dikwijls een zeer onrustige figuur geven terwijl te weinig klassen bijna niets meer tonen.
@@ -798,7 +773,6 @@ Door 88 willekeurige 17 jarigen wordt een IQ test afgelegd. De dataset krijgen w
 \end{enumerate}
 \end{oefening}
 
-
 \needspace{8cm}
 \subsection{De boxplot}
 
@@ -850,7 +824,7 @@ We vinden volgende kengetallen:
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
@@ -926,11 +900,9 @@ Stel je data grafisch voor (op twee manieren)
 Aan een aantal studenten uit het eerste jaar hoger onderwijs werd gevraagd hoeveel auto's er bij hen in het gezin waren. De data die we terugkregen was als volgt:
 2; 0; 3; 1; 1; 1; 3; 1; 1; 1; 2; 1; 0; 0; 2; 0; 0; 0; 7; 1; 2; 2; 2; 2; 1; 1; 1; 2; 2; 3
 
-Wat zijn de elementen in dit onderzoek?
-\arules{1}
+Wat zijn de elementen in dit onderzoek? \arulefill
 
-Welke variabele wordt hier onderzocht?
-\arules{1}
+Welke variabele wordt hier onderzocht? \arulefill
 
 Waarom mag je zeggen dat de variabele in dit onderzoek kwantitatief is?
 \arules{2}
@@ -943,17 +915,17 @@ Vervolledig de frequentietabel (het is niet nodig om de data in klassen op te de
   \setlength{\tabcolsep}{7pt}
   \renewcommand{\arraystretch}{1.5}
   \begin{tabular}{p{4cm}|p{4cm}|p{4cm}}
-    &&\\
+      &    & \\
     \hline
-    0&&\\
-    1&&\\
-    2&&\\
-    3&&\\
-    4&&\\
-    5&&\\
-    6&&\\
-    7&&\\
-    &n=&\\
+    0 &    & \\
+    1 &    & \\
+    2 &    & \\
+    3 &    & \\
+    4 &    & \\
+    5 &    & \\
+    6 &    & \\
+    7 &    & \\
+      & n= & \\
   \end{tabular}
 \end{center}
 
@@ -987,14 +959,11 @@ Bereken het gemiddeld aantal auto's per gezin:
 %\vspace*{1cm}
 $$\bar{x}=\arule{5cm}$$
 
-Voor wat is het gemiddelde gevoelig?
-\arules{1}
+Voor wat is het gemiddelde gevoelig? \arulefill
 
-Wat is de oplossing hierop?
-\arules{1}
+Wat is de oplossing hierop? \arulefill
 
-Geef deze voor ons voorbeeld:
-\arules{1}
+Geef deze voor ons voorbeeld: \arulefill
 
 \newpage
 \paragraph{Vraag 3}
@@ -1024,468 +993,5 @@ Interkwartielafstand:\arulefill
 Teken de boxplot:
 
 \ruitjes{3cm}
-
-\end{document}
-
-\subsubsection*{Gemiddelde en mediaan}
-
-Hoe de testpersonen de tijdsduur van 1 minuut geschat hebben is mooi weergegeven
-in het histogram. Maar wat doe je als men vraagt om al die informatie in enkele
-getallen samen te vatten?
-
-Een samenvatting in getallen (die {\bf kengetallen} worden genoemd) geeft je zelden evenveel
-informatie als een goede figuur. Maar soms kan een kengetal dienen als “typisch” resultaat. Dat is
-natuurlijk wel handig.
-
-Als eerste kenmerk wil je weten hoelang een typische proefpersoon denkt dat een minuut duurt.
-Daarom ga je op zoek naar een getal dat “het centrum” van al je resultaten weergeeft. Een
-gebruikelijk kengetal hiervoor is het {\bf gemiddelde}. Een ander kengetal voor “centrum” is de
-{\bf mediaan}.
-
-Deze kengetallen kunnen enkel berekend worden bij kwantitatieve gegevens.
-
-Bij {\bf discrete kwantitatieve gegevens} wordt het gemiddelde berekend door het quotiënt te nemen van hun som en hun aantal. De mediaan wordt berekend door de gegevens te rangschikken van klein naar groot en het middelste getal te nemen als het aantal gegevens oneven is of het gemiddelde te nemen van de middelste twee getallen als het aantal getallen even is.
-
-Een simpel voorbeeld is:
-
-\begin{oefening}
-Bereken het gemiddelde van de volgende toetsresultaten: 4, 5.5, 6, 6, 6, 6.5, 7, 7, 7, 7.5, 7.5, 8, 8, 8, 8, 8.5, 8.5, 9, 9.5, 10, 10.\\
-\ruitjes{3cm}
-\end{oefening}
-
-\begin{oefening}
-Bereken de mediaan van de volgende toetsresultaten: 4, 5.5, 6, 6, 6, 6.5, 7, 7, 7, 7.5, 7.5, 8, 8, 8, 8, 8.5, 8.5, 9, 9.5, 10, 10.\\
-\ruitjes{3cm}
-\end{oefening}
-
-In het vorige voorbeeld werd het gemiddelde en mediaan berekend van discrete kwantitatieve gegevens. Ons
-onderzoek bevat {\bf continue kwantitatieve gegevens} die gegroepeerd zijn in een frequentietabel. Om hiervan
-het gemiddelde te berekenen zoeken we van elke klasse het {\bf klassenmidden}, dit is de halve som van de
-ondergrens en de bovengrens van die klasse. Bijvoorbeeld van de klasse $[42, 46[$ is het klassenmidden
-$$
-\frac{42 + 46}{2}=44\;.
-$$
-
-Dit klassenmidden wordt nu vermenigvuldigd met elke frequentie. Dit noemen we het product. Alle bekomen producten worden opgeteld. Het gemiddelde is dan het quotiënt van som van de producten en de som van de frequenties.
-\newpage
-
-\begin{stopdracht}
-Bereken nu het gemiddelde.
-\begin{center}
-  \setlength{\tabcolsep}{7pt}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{2cm}|}
-    \hline
-    Klasse & Klassenmidden & Frequentie & Product\\
-    \hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\
-    \hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\
-    \hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\\hline&&&\\\hline
-    \multicolumn{2}{r|}{Som:} & &\\\cline{3-4}
-  \end{tabular}
-\end{center}
-\vspace*{0.5cm}
-Het gemiddelde is:
-$$
-\bar{x}=\frac{\phantom{.......................}}{\phantom{.....................}}=
-$$
-\vspace*{0.5cm}
-\end{stopdracht}
-\vspace*{-0.5cm}
-
-Omdat onze gegevens gegroepeerd zijn moeten we bij het berekenden van de mediaan de gegevens ordenen van klein naar groot en kijken in welke klasse de middelste waarde zich bevind. Hiervoor hebben we dus de ruwe data nodig. Deze sorteren we van klein naar groot. De middelste waarde bij een oneven aantal gegevens bepaald de klasse waar de mediaan in ligt. Het klassenmidden is dan de mediaan. Bij een even aantal gegevens bepaald het gemiddelde van de twee middelste gegevens de klasse. De mediaan is dan ook het klassenmidden van deze klassen.
-
-\newpage
-\begin{stopdracht}
-Bepaal de mediaan van ons onderzoek.\\
-\ruitjes{4cm}
-\end{stopdracht}
-
-\subsubsection*{Standaardafwijking en interkwartielafstand}
-
-Om je opmetingen te karakteriseren is het “centrum” maar een eerste stap. Een tweede karakteristiek
-is de spreiding rond dit centrum. De gebruikelijke kengetallen hiervoor zijn de standaardafwijking en
-de interkwartielafstand. Zij worden ook {\bf spreidingsmaten} genoemd.
-
-Om de spreiding van de gegevens rond het gemiddelde te berekenen, gebruik je de
-{\bf standaardafwijking} $s$. Voor de standaardafwijking bestaat een “te gekke” formule. Die ziet eruit als
-$$
-s = \sqrt{\frac{1}{n-1}\sum^n_{i=1}(x_i - \bar{x})^2}
-$$
-waarbij $n$ staat voor het aantal gegevens, $\bar{x}$ voor het gemiddelde en $x_i$ voor het $i$-de gegeven. Dit kengetal zullen we straks berekenen met software.
-
-Een andere maat voor spreiding is de lengte van het gebied waarin de middelste 50\% van de
-geordende opmetingen liggen. Dit gebied loopt van het {\bf eerste kwartiel} Q1 tot het {\bf derde kwartiel} Q3.
-De lengte van dit interval is de {\bf interkwartielafstand}, genoteerd als IQR (= InterQuartile Range).
-Als we de reeds berekende mediaan Q2 noemen, dan is Q1 te bepalen door de mediaan te nemen van de
-gegevens links van Q2 en Q3 is te bepalen door de mediaan te nemen van de gegevens rechts van Q2. Ook
-dit kengetal zullen we berekenen met software.
-
-\subsubsection{Berekenen van de 1-variabele statistieken}
-
-Alle voorgaande kengetallen vatten we samen met de {\bf 1-variabele statistieken}. Deze kunnen allemaal
-in één keer berekend worden met Geogebra. Selecteer hiervoor de lijst met data en kies het icoon
-{\it onderzoek één variabele}. Verschuif het aantal klassen naar $10$. Geogebra zal het histogram plotten
-een lijst geven met kengetallen.
-
-De volgende zijn belangrijk:
-\begin{center}
-  \begin{tabular}{r|l}
-    $n$ & Het aantal gegevens.\\
-    Gemiddelde & Het rekenkundig gemiddelde.\\
-    $s$ & De standaard afwijking.\\
-    Min & De laagste waarde.\\
-    Q1 & Het eerste kwartiel.\\
-    Mediaan & De mediaan.\\
-    Q3 & Het derde kwartiel.\\
-    Max & De hoogste waarde.\\
-  \end{tabular}
-\end{center}
-
-\begin{center}
-  \includegraphics[width=14cm]{gg-1var_stat}
-\end{center}
-
-\subsubsection{De boxplot}
-
-\begin{wrapfigure}[10]{l}{0.4\textwidth}
-  \vspace{-1cm}
-  \includegraphics[width=0.4\textwidth]{boxplot}
-\end{wrapfigure}
-
-Een goed zicht op zowel het centrum als de spreiding van je opmetingen, krijg je uit een boxplot. Dit
-is een grafiek die gebruik maakt van de begrippen minimum, maximum, mediaan, eerste kwartiel
-Q1, derde kwartiel Q3, IQR en uitschieters.
-
-De rechterstaart begint vanaf Q3. Dit lijnstuk gaat tot aan de grootste opmeting die kleiner of
-gelijk is aan $\mbox{Q3} + (1.5\cdot\mbox{IQR})$. Elke observatie die nog groter is, wordt als een uitschieter
-beschouwd en apart aangeduid. In deze studie loopt de rechterstaart van $66$ tot $81$ en heeft
-dus een lengte van $15$. Op een analoge manier teken je de linkerstaart, links van Q1. Die
-loopt hier van $42$ tot $51.5$, wat een lengte van $9.5$ oplevert.
-De rechthoekjes duiden aan waar de middelste getallen van de dataset liggen. De
-linkerrechthoek gaat van Q1 tot Med. In dat gebied ligt het tweede kwart van de geordende
-getallen. De rechter rechthoek gaat van Med tot Q3, en daar ligt het derde kwart van deze
-getallen.
-
-\begin{stopdracht}
-Teken nu de boxplot van het onderzoek. Vergeet de x-as niet te voorzien van de juiste getallen en de juiste eenheid.
-\ruitjes{6cm}
-\end{stopdracht}
-
-\begin{stopdracht}
-Zijn er uitschieters in je dataset? Was dat te verwachten?
-\arules{3}
-\end{stopdracht}
-
-In Geogebra krijg je een boxplot door in het venster van de 1-variabele statistieken {\it Boxplot} te kiezen in plaats van {\it Histogram}.
-
-\begin{center}
-  \includegraphics[width=14cm]{gg-boxplot}
-\end{center}
-
-\subsection{Wat heb je gevonden? Hoever kan je gaan in je conclusie?}
-
-\subsubsection{De variabiliteit van steekproefresultaten}
-
-Je bent er nu al mee vertrouwd. Een steekproef levert toevallige resultaten op, en bij een andere
-steekproef krijg je andere resultaten. Indien je de populatie van alle leerlingen van je school in
-identieke omstandigheden de tijdsduur van één minuut zou laten schatten, dan zou het gemiddelde
-van al die schattingen niet exact samenvallen met het gemiddelde dat jij in je steekproef hebt
-gevonden. Dat is niet erg. De statistiek is er juist om je te helpen om goede uitspraken over de
-populatie te doen. Als er tenminste geen andere problemen opduiken... .
-
-In dit onderzoek heb je elke leerling aan een kleine test onderworpen. De manier waarop die test
-moet worden afgenomen heb je vooraf heel precies vastgelegd, en je hebt je aan die procedure strikt
-gehouden bij elke leerling die je hebt getest. Maar er is nog iets anders dat voor fouten kan zorgen.
-Je werkt met meetapparatuur, en is die wel goed geijkt? Als je een chronometer gebruikt die start bij
-2 in plaats van bij 0, dan heb je in al je opmetingen een systematische fout van 2 seconden. Je krijgt
-dan een vertekend beeld van de werkelijkheid.
-
-Als al je opmetingen op een systematische manier te klein (of te groot) zijn dan heb je {\bf vertekening}.
-Vertekening in metingen kan je met statistiek niet opsporen. Je moet vooraf controleren of je
-apparatuur wel juist geijkt is. Doe dit vooraleer je aan je onderzoek begint!
-
-\begin{oefening}
-Je moet de lengte van 20 planken meten en je doet dat met een rolmeter. Op welke manier
-zou hier vertekening kunnen optreden?
-\arules{3}
-\end{oefening}
-
-\begin{center}
-\includegraphics[width=5cm]{rolmeter}
-\end{center}
-
-\begin{oefening}
-Soms kan je op een spitsvondige manier vertekening in opmetingen neutraliseren. Als je een
-weegschaal moet gebruiken waarvan je vermoedt dat zij systematisch een te laag gewicht
-aangeeft, hoe zou jij dan een boekentas daarop wegen, als je met die weegschaal vooraf niets
-mag doen?
-\ruitjes{7cm}
-\end{oefening}
-
-\subsubsection{Een uitspraak over de populatie}
-
-Wat we in het “exploratief” onderzoek hebben gevonden is van toepassing op de dataset die we hebben
-onderzocht, en dus op alle leerlingen van de klas. Als je op een goede manier een steekproef trekt, als je je
-strikt houdt aan de procedure om de leerlingen te testen, en als je meetapparatuur goed geijkt is, dan
-kan je met statistiek verantwoorde uitspraken doen over hoe heel de school een minuut zou schatten.
-Voor deze steekproef was het gemiddelde $58.85$ seconden en de mediaan was $58$ seconden. Dat ligt
-niet ver uit elkaar, en je zou kunnen vermoeden dat het gemiddelde en de mediaan van de hele
-populatie ook wel in de buurt van $58$ seconden liggen. Waarschijnlijk is dat nog waar ook.
-
-\subsection{Kernachtige samenvatting van dit onderzoek}
-
-Je samenvatting bestaat uit twee delen
-\begin{enumerate}
-  \item De antwoorden op de contextvragen (de www-vragen),
-  \item De besluiten over het uitgevoerde onderzoek.
-\end{enumerate}
-
-Betrek ook de kengetallen in je besluit: vermeld hun getalwaarde en ga na in hoever ze een zinvolle
-karakteristiek zijn voor dit onderzoek. Vergeet ook nooit om goede grafieken te tekenen en die te
-interpreteren.
-
-\begin{stopdracht}
-Formuleer nu de antwoorden op de contextvragen (de www-vragen).
-\arules{8}
-\end{stopdracht}
-
-\begin{stopdracht}
-Formuleer nu de besluiten over het uitgevoerde onderzoek.
-\arules{8}
-\end{stopdracht}
-
-\newpage
-\subsection{Zelfevaluatie}
-
-In dit onderzoek heb je geleerd over:
-\begin{itemize}
-  \item vertekening bij opmetingen
-  \item de continu kwantitatieve variabele
-  \item de frequentietabel met klassenindeling
-  \item het histogram en de boxplot
-  \item het gemiddelde en de mediaan
-  \item de standaardafwijking en de interkwartielafstand
-  \item de interpretatie van kengetallen in combinatie met grafieken
-\end{itemize}
-
-Je bent nu in staat om volgende opdrachten uit te voeren:
-
-\begin{oefening}
-Wanneer is een kwantitatieve variabele continu? Zeg dat in je eigen woorden, en geef
-enkele voorbeelden.
-\arules{6}
-\end{oefening}
-
-\begin{oefening}
-Schrijf je een continu kwantitatieve variabele altijd op met kommagetallen? Motiveer je
-antwoord.
-\arules{6}
-\end{oefening}
-
-\begin{oefening}
-Welke eigenschap probeert de standaardafwijking te beschrijven? Zeg in woorden hoe je de
-standaardafwijking berekent. Kan je daaruit afleiden of de standaardafwijking gevoelig is
-voor uitschieters? Kan je daarvan een eenvoudig voorbeeld geven?
-\arules{6}
-\end{oefening}
-
-\begin{oefening}
-Welke eigenschap probeert de interkwartielafstand te beschrijven? Zeg in woorden wat
-kwartielen zijn en hoe je de interkwartielafstand berekent. Kan je daaruit afleiden of de
-interkwartielafstand gevoelig is voor uitschieters? Kan je daarvan een eenvoudig voorbeeld
-geven?
-\arules{6}
-\end{oefening}
-
-\newpage
-\section*{Voorbeeld examen}
-\vraag{14}
-Van de {\em sweet \& fair shop} krijg je de volgende dataset\footnote{Met dank aan de studenten van 6SETA.}:
-
-druivensuiker aardbei; druivensuiker mango; kinderrozijnen; amandel chocolades; zure frieten; zure frieten; coco-mango reep; koban mix; kinderrozijnen; druivensuiker mango; zure frieten; kinderrozijnen;  druivensuiker mango; druivensuiker aardbei;  druivensuiker mango; druivensuiker mango; druivensuiker mango; druivensuiker aardbei; druivensuiker aardbei; druivensuiker aardbei; druivensuiker aardbei; kinderrozijnen;
-
-Stel een frequentietabel op:
-\begin{center}
-  \begin{tabular}{p{4cm}|p{4cm}|p{4cm}}
-    &absolute frequentie&relatieve frequentie\\
-    \hline
-    &&\\[6cm]
-  \end{tabular}
-\end{center}
-
-Wat heb je genomen als variabele? \arulefill
-Dit is een kwalitatieve/kwantitatieve variabele. {\tiny (schrappen wat niet past)}
-Wat is de steekproefgrootte? \arulefill
-Er zijn twee manieren om de data grafisch voor te stellen, welke:
-\begin{itemize}
-  \item \arule{6cm}
-  \item \arule{6cm}
-\end{itemize}
-
-\newpage
-Stel je data grafisch voor (op twee manieren)
-
-\ruitjes{20cm}
-
-\newpage
-\vraag{16}
-Aan een aantal studenten uit het eerste jaar hoger onderwijs werd gevraagd hoeveel auto's er bij hen in het gezin waren. De data die we terugkregen was als volgt:
-2; 0; 3; 1; 1; 1; 3; 1; 1; 1; 2; 1; 0; 0; 2; 0; 0; 0; 7; 1; 2; 2; 2; 2; 1; 1; 1; 2; 2; 3
-
-Wat zijn de elementen in dit onderzoek?
-\arules{1}
-
-Welke variabele wordt hier onderzocht?
-\arules{1}
-
-Waarom mag je zeggen dat de variabele in dit onderzoek kwantitatief is?
-\arules{2}
-
-Is de kwantitatieve variabele discreet of continue?
-\arules{1}
-
-Vervolledig de frequentietabel (het is niet nodig om de data in klassen op te delen):
-\begin{center}
-  \setlength{\tabcolsep}{7pt}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{p{4cm}|p{4cm}|p{4cm}}
-    &&\\
-    \hline
-    0&&\\
-    1&&\\
-    2&&\\
-    3&&\\
-    4&&\\
-    5&&\\
-    6&&\\
-    7&&\\
-    &n=&\\
-  \end{tabular}
-\end{center}
-
-Maak een histogram waarin je absolute frequenties gebruikt.
-
-\begin{center}
-\definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
-\begin{tikzpicture}[xscale=1,yscale=0.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-1,-1) grid (12,12);
-\draw[->,color=black] (-1,0) -- (12,0);
-\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
-\draw[color=black] (0.25,12.07) node [anchor=south west] { x};
-\draw[->,color=black] (0,-1) -- (0,12);
-\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
-\draw[color=black] (12.09,-1.25) node [anchor=west] { y};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\end{tikzpicture}
-\end{center}
-
-Is het belangrijk de grootste absolute frequentie vooraan wordt geplaatst?
-\arules{1}
-
-In hoeveel gezinnen zijn er $4$ auto's? \arulefill
-Waarom staat de waarde $4$ dan toch in de frequentietabel?
-\arules{3}
-
-Is het nuttig om ook in het histogram een plaatsje op de $x$-as te voorzien voor $4$ auto's, hoewel er daar geen staaf getekend is?
-\arules{2}
-
-Bereken het gemiddeld aantal auto's per gezin:
-%\vspace*{1cm}
-$$\bar{x}=\arule{5cm}$$
-
-Voor wat is het gemiddelde gevoelig?
-\arules{1}
-
-Wat is de oplossing hierop?
-\arules{1}
-
-Geef deze voor ons voorbeeld:
-\arules{1}
-
-\newpage
-\vraag{10}
-Tijdens de opendeurdag laat de afdeling hout de leerlingen uit het zesde leerjaar planken zagen op 180 cm. Na tien planken meten we de reeds gezaagde planken en we vinden de volgende lengtes:\\
-177; 178; 178; 179; 179; 180; 181; 181; 183; 184 cm\\
-
-{\em Bereken of bepaal en geef ook steeds het correcte symbool!}
-
-Steekproefgrootte:\arulefill
-
-Gemiddelde:\arulefill
-
-Standaard afwijking\footnote{$s = \sqrt{\frac{\mbox{som van alle gekwadrateerde afwijkingen t.o.v. het gemiddelde}}{n-1}} = \sqrt{\frac{\sum_{i=0}^n(\bar{x}-x_i)^2}{n-1}}$}:\arulefill
-
-Maximum:\arulefill
-
-Minimum:\arulefill
-
-Eerste kwartiel:\arulefill
-
-Mediaan:\arulefill
-
-Derde kwartiel:\arulefill
-
-Interkwartielafstand:\arulefill
-
-Teken de boxplot:
-
-\ruitjes{3cm}
-
-\end{document}
-
-\newpage
-\section{Projecten}
-
-Kies één van volgende projecten om zelf een onderzoek rond uit te voeren:
-
-\vraag{Je wenst als dierenarts te beginnen in een stad. Om te kunnen inschatten hoeveel
-'klanten' je zal hebben wil je weten hoeveel huisdieren er ongeveer zijn in het dorp. Je
-kan uiteraard niet bij iedereen langs gaan. Zet een onderzoek op om het totaal aantal
-huisdieren in te schatten.}{1cm}
-
-
-\vraag{Een fietsenmaker wenst voor de nieuwe collectie 20 MTB te kopen. Hij weet alleen
-niet goed welke kleuren hij zou nemen. Hij weet dat jij reeds statistiek hebt gevolgd en vraagt
-je raad. Hoe zul je dit aanpakken. Wat is de populatie, wat is een goede steekproef? Zal de
-data bestaan uit kwantitatieve of kwalitatieve gegevens?}{1cm}
-
-\vraag{De leesbaarheid van een tekst hangt onder meer af van de lengte van de zinnen. Korte zinnen
-lezen gemakkelijker dan lange zinnen. Als je aanneemt dat zowat elke nieuwe zin met een
-hoofdletter begint, en dat er verder niet te veel afkortingen in hoofdletters voorkomen, dan is
-de verhouding van het aantal hoofdletters ten opzichte van het totale aantal letters een goede
-maat voor de lengte van de zinnen. Het is nu aan jou om voor deze werktekst een goede schatting te
-maken van de proportie hoofdletters. Hoe ga je dat doen? Is er een mogelijkheid om een getrapte
-steekproef te nemen?}{1cm}
-
-\vraag{Stel zelf een onderzoek op naar iets dat je interesseert. Bepaal eerst een goede
-onderzoeksvraag. Bepaal daarna pas de populatie en geef dan een methode om een steekproef
-te nemen.}{1cm}
-
-Kijk steeds eerst wat je wilt weten en hoe je gaat meten. Onderzoek dan de dataset en trek je
-conclusies. Geef op het einde een samenvatting van het onderzoek.
-
-\end{document}
-
-\begin{thebibliography}{1}
-\bibitem{1}\label{1} Prof. dr. Herman Callaert, Hans Bekaert, Celine Goethals, Lies Provoost, Marc Vancaudenberg, \textit{Exploratieve statistiek, Werktekst voor de leerling}, Centrum voor statistiek, Universiteit Hasselt, 2005\\
-\bibitem{2}\label{2} J.-P. Daems, E. Jennekens, \textit{Argument, Algebra - Meetkunde - Driehoeksmeting}, Uitgeverij de boeck, 2003\\
-\end{thebibliography}
-
-%Deze bundel is grotendeels gebaseerd op \cite{1}. Hiervoor werd toestemming verleend. Voor correcties, meer informatie of een nieuwere versie kan ik gecontacteerd worden op \href{mailto:pieter.pareit@ugent.be}{pieter.pareit@ugent.be}.
-
-
-\end{document}
-
-
-\begin{wrapfigure}[13]{r}{0.3\textwidth}
-  \includegraphics[width=0.3\textwidth]{figuur}
-\end{wrapfigure}
-
-\begin{center}
-  \includegraphics[width=14cm]{gg-gegroepeerde_frequentietabel}
-\end{center}
-
-
-
 
 \end{document}

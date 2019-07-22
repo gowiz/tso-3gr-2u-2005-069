@@ -1,24 +1,6 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 \input{../gowiz.tex}
-
-\usepackage{exsheets}
-%\DeclareTranslation{Dutch}{exsheets-question-name}{Oefening}
-% questions, used when type=exam is active:
-\DeclareTranslation{dutch}{exsheets-question-name}{Oefening}
-% questions, used when type=exercise is active (default):
-\DeclareTranslation{dutch}{exsheets-exercise-name}{Oefening}
-% solutions:
-\DeclareTranslation{dutch}{exsheets-solution-name}{Oplossing}
-
-\usepackage{versions}
-\includeversion{theorie}
-%\excludeversion{theorie}
-
-\usepackage{pgfplots}
-
-%\renewcommand{\rmdefault}{phv} % Arial
-%\renewcommand{\sfdefault}{phv} % Arial
 
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
@@ -43,20 +25,12 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Telproblemen}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
   \fontsize{40}{60}\selectfont Telproblemen
   \end{mdframed}
   \vfill
-%  \includegraphics[width=\textwidth]{anewkindofcounting}
   \includegraphics[width=\textwidth]{counting-sheep}
   \vfill
 \end{center}
@@ -80,27 +54,23 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.1)}
 %}
 
 \thispagestyle{empty}
-\newpage
-\thispagestyle{empty}
-\tableofcontents
-\newpage
 \clearpage
-\pagenumbering{arabic}
-\pagestyle{fancy}
-\lhead{}
-\rhead{Telproblemen}
 
-\onehalfspacing
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Telproblemen}
+\fancyhead[RE,LO]{}
 
 %\section{Inleiding}
 
 We beginnen aan een hoofdstuk die vaak combinatoriek of combinatieleer wordt genoemd. Wij zullen voornamelijk problemen bespreken waarbij we het aantal mogelijkheden of het aantal objecten van een verzameling moeten tellen. We spreken dan ook van {\bf telproblemen}.
 
-\end{theorie}
-
 \section{Productregel}
-
-\begin{theorie}
 
 \subsubsection*{Voorbeeld}
 
@@ -195,10 +165,8 @@ $$n_1\cdot n_2\cdot \ldots \cdot n_r$$
 mogelijkheden.
 \end{mdframed}
 
-\pagebreak
-\subsection{Oefeningen}%\vspace*{-1cm}
-
-\end{theorie}
+\needspace{4cm}
+\subsection{Oefeningen}
 
 \begin{oefening}
 In een sportclub stelt men T-shirts, shorts en kousen ter beschikking voor de spelers. Er zijn oranje, witte, blauwe, rode en groene T-shirts. De shorts zijn zwart, blauw of wit. De kousen zijn wit met een blauwe boord ofwel effen wit. Er zijn dus heel wat outfits voor de spelers mogelijk.
@@ -213,17 +181,13 @@ Teken het wegendiagram. Bepaal het aantal knoppen op de machine.
 \end{oefening}
 
 \begin{oefening}
-Vanaf de ingang van de zoo zijn er drie paden naar het dolfinarium. Van het dolfinarium naar de apen zijn er 4 paden. Van de apen naar de pinguïns zijn er twee paden. En van de pinguïns naar de tijgers zijn er drie paden.
-
+Vanaf de ingang van de zoo zijn er drie paden naar het dolfinarium. Van het dolfinarium naar de apen zijn er 4 paden. Van de apen naar de pinguïns zijn er twee paden. En van de pinguïns naar de tijgers zijn er drie paden.\\
 Ik wil naar de show van de dolfijnen gaan kijken. Als ik van de ingang naar de dolfijnen wandel zie ik de uren van de shows geafficheerd staan en merk ik dat ik nog ruim voldoende tijd heb om eerst een bezoekje te brengen aan de apen, de pinguïns en de tijgers.
-
 \begin{enumerate}[(a)]
   \item Hoeveel verschillende wandelingen zijn er mogelijk van de ingang tot de tijgers?
-  \item Bij de tijgers pauzeer ik even tot het tijd is om terug te keren naar het dolfinarium voor de show. Ik kies een wandeling terug via de pinguïns en de apen, maar wil een pad dat ik op de heenweg nam geen tweede keer bewandelen.
-  
+  \item Bij de tijgers pauzeer ik even tot het tijd is om terug te keren naar het dolfinarium voor de show. Ik kies een wandeling terug via de pinguïns en de apen, maar wil een pad dat ik op de heenweg nam geen tweede keer bewandelen.\\
   Schets en wegendiagram van deze tweede wandeling. Hoeveel wandelingen zijn er nu mogelijk van de tijgers naar de dolfijnen?
 \end{enumerate}
-
 \begin{center}
   \includegraphics[width=\textwidth]{zoodieren}
 \end{center}
@@ -239,10 +203,8 @@ Los volgende problemen op met behulp van een boomdiagram.
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Somregel}
-
-\begin{theorie}
 
 \subsection{Somregel met dubbele telling}
 
@@ -267,13 +229,9 @@ waarin
 \end{itemize}
 \end{mdframed}
 
-\end{theorie}
-
 \begin{oefening}
 Bepaal met behulp van de somregel het aantal kaarten in een set van 52 kaarten die harten of koning zijn. Gebruik een set kaarten om dit te controleren. Maak ook een het bijhorende venndiagram.
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Somregel van elkaar uitsluitende mogelijkheden}
 
@@ -310,7 +268,7 @@ Zijn de twee verzamelingen $A$ en $B$ elkaar uitsluitende mogelijkheden omdat ze
 $$\#(A\cup B) = \#A + \#B$$
 \end{mdframed}
 
-\end{theorie}
+
 
 \begin{oefening}
 Een club bestaat uit 30 mannelijke en 50 vrouwelijke leden.
@@ -324,8 +282,6 @@ Een club bestaat uit 30 mannelijke en 50 vrouwelijke leden.
 In een bibliotheek zijn 50 wetenschappelijke verhandelingen, 100 detectiveverhalen en 180 romans beschikbaar. Op hoeveel manieren kan men hieruit 1 boek kiezen? Op hoeveel manieren kan iemand een lijstje opstellen met 1 boek van elke soort?
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Praktisch}
 
 \begin{mdframed}
@@ -337,8 +293,6 @@ Bij het oplossen van telproblemen tel je als volgt:
   \item Kan je een probleem herschrijven met behulp van {\bf OF}, dan gebruik je de somregel.
 \end{itemize}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{minipage}{0.7\textwidth}
 \begin{oefening}
@@ -398,20 +352,18 @@ Ik ben de pincode van mijn GSM vergeten. Ik weet enkel nog dat er geen 5 in komt
 % \begin{oefening}
 % Stel een boomdiagram op voor de natuurlijke getallen, bestaande uit drie verschillende cijfers, die je met 0, 1, 2, 3 en 4 kan vormen. Hoeveel mogelijke getallen zijn er?
 % \end{oefening}
-% 
+%
 % \begin{oefening}
 % Hoeveel getallen, gevormd met de cijfers 0, 5, 6 en 8, liggen tussen 5000 en 6000 (deze twee uitersten inbegrepen) als een cijfer geen tweede maal mag gebruikt worden? Verduidelijk je antwoord met een boomdiagram.
 % \end{oefening}
-% 
+%
 % \begin{oefening}
 % Je moet een menu opstellen. Hierbij moet er keuze zijn tussen 2 voorgerechten en 3 hoofdgerechten voor de {\em vegetariërs} en 3 voorgerechten en 4 hoofdgerechten voor de {\em alleseters}. Voor {\em iedereen} is er keuze uit 2 desserts. Hoeveel mogelijke menu's kan je samenstellen?
 % \end{oefening}
 
-
 \pagebreak
 \section{Variaties}
 
-\begin{theorie}
 \subsection{Voorbeeld}
 
 Op hoeveel manieren kunnen vier verschillende bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
@@ -425,14 +377,11 @@ We definiëren:
 De manier van bollen plaatsen is een samengestelde beslissing. Uit hoeveel deelbeslissingen bestaat deze?
 \arules{2}
 
-
 Neem de verschillende deelbeslissingen:
 \arules{12}
 
-
 Geef een paar verschillende mogelijke plaatsingen.
 \arules{2}
-
 
 Daar er in elk vakje hoogstens één bol mag liggen wordt geen vakje herhaald.
 Elk viertal is een samengestelde beslissing zonder herhaling. Wel, zulk viertal
@@ -462,7 +411,6 @@ $$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
   \item De elementen kunnen maar éénmaal worden gebruikt, {\bf herhaling is niet mogelijk}.
 \end{itemize}
 
-
 Bereken:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -491,8 +439,6 @@ Omdat dit vaak voorkomt zullen we hier een naam aan geven, we spreken van {\bf d
 \end{enumerate}
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{minipage}{0.7\textwidth}
 \begin{oefening}
@@ -587,10 +533,8 @@ Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevo
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Herhalingsvariaties}
-
-\begin{theorie}
 
 \subsection{Voorbeeld}
 
@@ -651,10 +595,8 @@ $$\bar{V}^k_n=n^k$$
   \item De elementen kunnen meer dan eens op de zelfde positie terecht komen, {\bf herhaling is mogelijk}.
 \end{itemize}
 
-\pagebreak
+\needspace{4cm}
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Aline, Birgit, Celine en Delphine zijn leerlingen uit eenzelfde klas die alle vier in de maand april verjaren.
@@ -739,10 +681,8 @@ Hoeveel getallen bestaande uit 3 cijfers kunnen gemaakt worden met 3 vieren, 4 t
 Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een leger van 5000 trollen die een draak aanviel. Na het gevecht merkten de overlevende trollen dat geen twee van hun nog de zelfde verzameling tanden had (geen één trol had nog tanden op dezelfde plaats als een andere trol). Hoeveel trollen zijn er tijdens het gevecht tegen de draak op zijn minst gestorven?
 \end{oefening}
 
-\pagebreak
+\clearpage
 \section{n-faculteit}
-
-\begin{theorie}
 
 \subsection{Definitie}
 
@@ -772,15 +712,11 @@ Bereken zonder \zrm{ZRM}
   \item $5!=$\arulefill\arules{1}
 \end{enumerate}
 
-\end{theorie}
-
 \begin{oefening}
 Als je weet dat
 $$9!=362880\;.$$
 Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
 \end{oefening}
-
-\begin{theorie}
 
 \paragraph*{Eigenschap van de n-faculteit}
 \begin{mdframed}
@@ -789,8 +725,6 @@ Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
   n!&=n(n-1)!\\
 \end{align*}
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken zonder \zrm{ZRM}:
@@ -828,9 +762,6 @@ Vereenvoudig:
 Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bestaat dan het getal $100!$
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Formule voor $V^k_n$ met behulp van faculteiten}
 
 Bereken $V^3_7$ door gebruik te maken van faculteiten.
@@ -843,8 +774,6 @@ Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we twee formules:\\
@@ -861,10 +790,9 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
 
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Combinaties}
 
-\begin{theorie}
 \subsection{Voorbeeld}
 
 Op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
@@ -916,8 +844,6 @@ $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
 \end{itemize}
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Voor het voetbalteam van de school stellen zich 19 jongens kandidaat.
@@ -1006,7 +932,7 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Gemengde oefeningen}
 
 \subsection{Reeks 1}
@@ -1030,11 +956,11 @@ Vul volgende schema aan met
 \begin{center}
   \begin{tabular}{|c|c|c|}
   \hline
-  &     Zonder herhaling & Met herhaling\\
+                        & Zonder herhaling & Met herhaling \\
   \hline
-  Volgorde belangrijk & \hspace*{4cm} & \hspace*{4cm}\\[2cm]
+  Volgorde belangrijk   & \hspace*{4cm}    & \hspace*{4cm} \\[2cm]
   \hline
-  Volgorde onbelangrijk & &\\[2cm]
+  Volgorde onbelangrijk &                  &               \\[2cm]
   \hline
   \end{tabular}
 \end{center}
@@ -1113,7 +1039,7 @@ Voor een toelatingstest moeten 16 tweekeuzevragen worden beantwoord.
 \end{oefening}
 
 \begin{oefening}
- Winkelier Phillips heeft zijn etalage versierd met feestverlichting. De verlichting bestaat uit 16 lampjes die onafhankelijk van elkaar voortdurend aan en uit gaan. Een mogelijke situatie is dat de lampjes 2, 5, 7, 9, 10 en 12 branden. 
+ Winkelier Phillips heeft zijn etalage versierd met feestverlichting. De verlichting bestaat uit 16 lampjes die onafhankelijk van elkaar voortdurend aan en uit gaan. Een mogelijke situatie is dat de lampjes 2, 5, 7, 9, 10 en 12 branden.
 \begin{enumerate}[(a)]
   \item Hoeveel situaties zijn er in totaal mogelijk?
   \item In hoeveel situaties branden er precies 4 lampjes?
@@ -1290,19 +1216,8 @@ Hoeveel verschillende sommen kan men bekomen als men drie van de getallen 1, 10,
 \end{oefening}
 
 \begin{oefening}
-In een voetbalcompetitie zijn er 18 ploegen die elk tweemaal tegen elkaar spelen (1 x thuis en 1x op
+In een voetbalcompetitie zijn er 18 ploegen die elk tweemaal tegen elkaar spelen (1 maal thuis en 1 maal op
 verplaatsing ). Hoeveel wedstrijden worden er gespeeld?
 \end{oefening}
 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-
-

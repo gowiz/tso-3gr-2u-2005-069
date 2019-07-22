@@ -1,22 +1,11 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
 \usepackage[unboxed]{cwpuzzle}
 
-\usepackage{versions}
-%\excludeversion{theorie}
-\includeversion{theorie}
-
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Rationale Functies}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -26,7 +15,6 @@
   \includegraphics[width=0.8\textwidth]{youshallnotpass}
   \vfill
 \end{center}
-%\vfill
 \vspace*{-2cm}
 \begin{singlespace}
 \subsection*{Doelstellingen}
@@ -41,18 +29,17 @@ Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.3, ET10,11,12,13)}
 \end{singlespace}
 
 \thispagestyle{empty}
-\newpage
-\thispagestyle{empty}
-\tableofcontents
-\newpage
 \clearpage
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
 \pagenumbering{arabic}
+
 \pagestyle{fancy}
-\lhead{}
 \fancyhead[RO,LE]{Rationale functies}
 \fancyhead[RE,LO]{}
-
-\onehalfspacing
 
 \vspace*{-2cm}
 \section*{Inleidende woordzoeker}
@@ -107,19 +94,14 @@ Normaal gezien zou je onderstaande vragen redelijk vlot moeten kunnen oplossen. 
 \end{Puzzle}
 
 \subsection*{Oplossing}
-\begin{wrapfigure}[0]{r}{0.25\textwidth}
-  \vspace*{-2cm}
-  \includegraphics[width=0.25\textwidth]{taj-mahal}
-\end{wrapfigure}
 Het gevonden wiskundewoord is \arule{5cm}.
+\vfill
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{taj-mahal}
+\end{center}
 
-\pagebreak
-
-\end{theorie}
-
+\cleardoublepage
 \section{Rationale vergelijkingen}
-
-\begin{theorie}
 
 \subsection{Definitie}
 
@@ -140,8 +122,6 @@ de {\bf standaardvorm}.
 \end{mdframed}
 Dit is een simpele vorm van rationale vergelijkingen. De teller en de noemer zijn beide eerstegraadsveeltermen. Wij zullen deze in detail bespreken, daarnaast zullen we ook rationale vergelijkingen zien waarbij de graad van teller en noemer hoger kan zijn.
 
-\end{theorie}
-
 \begin{oefening}
 Zijn de volgende vergelijkingen rationale vergelijkingen? Herleid de rationale vergelijkingen ook steeds op 0.
 \begin{multicols}{2}
@@ -161,8 +141,6 @@ Zijn de volgende vergelijkingen rationale vergelijkingen? Herleid de rationale v
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Bestaansvoorwaarde}
 Als we vergelijkingen oplossen, dan eisen we dat de gevonden oplossingen wel degelijk in de vergelijking ingevuld kunnen worden. Bij rationale vergelijkingen zullen we daarom eisen dat de noemer geen nul wordt. Deze eis is de {\bf bestaansvoorwaarde} of kort {\bf BV}. Voor onze eenvoudige standaardvorm
 $$\dfrac{ax+b}{cx+d}=0$$
@@ -173,13 +151,11 @@ wordt dit
                  x &\neq -\dfrac{d}{c}
 \end{align*}
 
-
 \subsection{Voorbeelden}
 
 Los op in $\mathbb{R}$:
 $$\frac{2x+3}{x+3} = 0$$
 $$\mbox{BV: }x\neq -3 \qquad V=\{-\dfrac{3}{2}\}$$
-
 
 Los op in $\mathbb{R}$:
 $$\frac{1}{x+2}+\frac{4}{3x-4}=1$$
@@ -189,6 +165,7 @@ Los op in $\mathbb{R}$:
 $$\frac{x^2-4}{x+2}=0$$
 $$\mbox{BV: }x\neq -2 \qquad V=\{2\}$$
 
+\begin{samepage}
 \subsection{Werkwijze}
 \begin{enumerate}[(1)]
   \item Je herleidt de gegeven vergelijking op nul.
@@ -196,8 +173,7 @@ $$\mbox{BV: }x\neq -2 \qquad V=\{2\}$$
   \item Je stelt de teller gelijk aan nul en lost deze op.
   \item Je schrijft de oplossingsverzameling $V$, hier komen alle oplossingen in als ze voldoen aan de bestaansvoorwaarde.
 \end{enumerate}
-
-\end{theorie}
+\end{samepage}
 
 \begin{oefening}
 Los op in $\mathbb{R}$:
@@ -243,10 +219,8 @@ Los de volgende rationale vergelijkingen op:
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Rationale functies}
-
-\begin{theorie}
 
 \subsection{Definities}
 
@@ -275,8 +249,6 @@ $$f(x)=\dfrac{ax+b}{cx+d}$$
 met $c\neq 0$ en $a\cdot d\neq b\cdot c$.
 \end{mdframed}
 
-\end{theorie}
-
 \begin{oefening}
 Zijn volgende functies rationale functies? Zijn ze homografische functies?
 \begin{multicols}{2}
@@ -304,8 +276,6 @@ Bespreek:
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 Om de nulwaarden van een rationale functie te vinden zullen we de $y$-waarde gelijk stellen aan $0$. We lossen dus een rationale vergelijking op. Daarom krijgen we de volgende eigenschap:
 
 \paragraph*{Eigenschap}
@@ -319,8 +289,6 @@ In de nulwaarde van de noemer heeft de rationale functie uiteraard geen functiew
 \begin{mdframed}
 Een nulwaarde van de noemer van een rationale functie noemen we een {\bf pool} van de rationale functie.
 \end{mdframed}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal de polen en de nulwaarden van de volgende functies:
@@ -350,8 +318,6 @@ Bepaal de polen en de nulwaarden van de volgende functies:
   \item Kan een rationale functie geen nulwaarden hebben? Geef een voorbeeld.
 \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \pagebreak
 \subsection{Bespreken van een rationale functie}
@@ -493,7 +459,6 @@ We verbeteren nu nog onze grafiek door ook de asymptoten (in een ander kleur of 
 \end{tikzpicture}
 \end{center}
 
-
 \subsubsection*{Werkwijze}
 
 %Bij het bespreken van een rationale functie wil je zo snel mogelijk de grafiek kunnen maken. Hiervoor heb je de functiewaardentabel van de functie nodig. Het probleem is nu om te weten van waar tot waar we de functiewaardentabel moeten maken en met welke stapjes we moeten gaan. In je functiewaardentabel wens je zeker alle interessante waarden te vinden, en deze vind je bij een functie meestal rond de nulwaarden. Daarom ga je als volgt te werk:\\
@@ -531,8 +496,6 @@ $$f(x)=\dfrac{T(x)}{N(x)}$$
   \item Bepaal ook nog het stijgen, dalen en eventueel de extrema.
   %\item Bereken eventueel ook nog de differentiequotiënten.
 \end{enumerate}
-
-\end{theorie}
 
 \begin{oefening}
 Bespreek volgende homografische functies:
@@ -573,10 +536,8 @@ Bespreek volgende rationale functies:
 \end{multicols}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Differentiequotiënt van een rationale functie}
-
-\begin{theorie}
 
 \subsection{Voorbeeld}
 
@@ -658,10 +619,8 @@ We spreken af dat we geen differentiequotiënt kunnen berekenen in een interval 
 Als we in het interval $[a,b]$ de grens $b$ naar $a$ laten gaan, dan krijgen we de helling van de raaklijn aan de functie $f$ in $a$. We krijgen met andere woorden de ogenblikkelijke verandering in $a$. We noteren dit als de afgeleide waarde van $f$ in $a$:
 $$f'(a)=\lim_{b\to a}\dfrac{f(b)-f(a)}{b-a}$$
 
-\pagebreak
+\needspace{4cm}
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal voor de volgende functies het differentiequotiënt in het interval $[1,3]$ en duid de koorde aan op de functies.
@@ -767,9 +726,8 @@ Beschouw de functie $f(x)=\dfrac{3x}{2x-1}$
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Toepassingen op rationale functies}
-
 
 \begin{oefening}
 Hoeveel kost een koelkast echt?
@@ -811,7 +769,6 @@ Voor deze oefening moet je met twee zijn, laten we jullie persoon $\mathcal{A}$ 
 \end{enumerate}
 \end{oefening}
 
-
 \begin{oefening} {\bf Geneesmiddelen}\\
 De functie
 $$C(t)=\frac{5t}{0.01t^2+3.3}$$
@@ -826,7 +783,9 @@ geeft de concentratie van een geneesmiddel in het bloed weer in functie van de t
   \item We hebben net een wiskundig model besproken van de concentratie geneesmiddel in het bloed nadat we dit innemen. Gebruik het internet eens om de grafiek van de concentratie van een geneesmiddel in het bloed te zoeken waarbij gemeten waarden werden gebruikt. Gebruik hiervoor de afbeeldingszoeker in Google, en typ als sleutelwoorden 'grafiek geneesmiddel concentratie' of 'graph drug concentration' in.
 \end{enumerate}
 \end{oefening}
+\vspace*{-3cm}
 
+\cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
@@ -861,7 +820,7 @@ $$P=\frac{1500-8p}{1-p} \qquad\qquad (0<p<1)\;.$$
 Hoeveel percent van het publiek kan het hoogstens bereiken als het maandelijks niet meer dan 10000 euro wil uitgeven?
 \end{oefening}
 
-
+\cleardoublepage
 \section*{Peilingen naar vroeger}
 
 \begin{oefening} Ontbind in factoren:
@@ -931,180 +890,3 @@ $$(11a+2)(11b+4)$$
 
 \end{document}
 
-
-
-
-
-\section{Transformaties van rationale functies}
-
-Beschouw de rationale functie
-$$f:y=\dfrac{1}{x}$$
-
-De functiewaardentabel van deze functie is
-\begin{center}
-\end{center}
-
-De grafiek van deze functie is
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-\section{Rationale ongelijkheden*}
-\subsection{Inleiding}
-
-Beschouw de ongelijkheid
-$$\frac{x+4}{x+2}\geq x+2$$
-met één onbekende $x$, die opgelost moet worden in $\mathbb{R}$.
-
-Is de ongelijkheid waar of vals voor $x=-1$?
-\dotlines{3}
-
-Is de ongelijkheid waar of vals voor $x=1$?
-\dotlines{3}
-
-Het oplossen van de ongelijkheid is het zoeken naar alle $x$-waarden die bovenstaande ongelijkheid waar maken.
-
-\subsection{Rationale ongelijkheden grafisch oplossen}
-\subsubsection{Voorbeeld}
-
-We kunnen uit de ongelijkheid twee functies halen, één voor het linkerlid:
-$$f(x)=\frac{x+4}{x+2}$$
-en één voor het rechterlid:
-$$g(x)=x+2$$
-
-Teken nu in éénzelfde assenstelsel beide functies ({em gebruik voor elke functie een ander kleur}). De eerste functie $f$ is een rationale functie. Bepaal dus ook de asymptoten om deze te tekenen. De tweede functie $g$ is een eerstegraadsfunctie, bepaal dus twee punten om deze te teken.
-
-Asymptoten van $f(x)$:
-\dotlines{3}
-
-Functiewaardentabel van $f(x)$:
-\begin{center}
-\begin{tabular}{c|cccccccccccccccc}
-  $x$ & -5 & -4 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & 4\\
-  \hline
-  $f(x)$\\
-\end{tabular}
-\end{center}
-
-Een aantal goed gekozen punten van $g(x)$:
-\dotlines{3}
-
-Grafiek van $f$ en $g$:
-\begin{center}
-\definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.5,-4.5) grid (5.5,5.5);
-\draw[->,color=black] (-5.5,0) -- (5.5,0);
-\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[color=black] (5.2,0.07) node [anchor=south west] { x};
-\draw[->,color=black] (0,-4.5) -- (0,5.5);
-\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0.09,5.13) node [anchor=west] { y};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-3.5,-4.5) rectangle (3.5,4.5);
-%\draw[smooth,samples=100,domain=-3.5:3.5] plot(\x,{(\x)^3-3*(\x)-2});
-\end{tikzpicture}
-\end{center}
-
-De ongelijkheid die we wensen op te lossen is
-$$\frac{x+4}{x+2}\geq x+2\;.$$
-Voor $f$ en $g$ moet dus gelden dat
-\dotlines{1}\\
-En dit is zo in de intervallen:
-\dotlines{1}\\
-We zeggen dat de oplossingenverzameling gelijk is aan
-\dotlines{1}
-
-\subsubsection{Methode}
-
-De methode bestaat dus uit de volgende stappen:
-\begin{enumerate}
-  \item Neem elk lid als voorschrift van een reële functie.
-  \item Maak t.o.v. eenzelfde assenstelsel de grafiek van beide functies.
-  \item Lees af voor welke $x$-waarden de grafiek van de éne functie boven of onder de grafiek van de andere functie ligt en bepaal zo de oplossingenverzameling.
-\end{enumerate}
-
-\oefening
-Los op in $\mathbb{R}$:
-\begin{enumerate}[(a)]
-  \item $\frac{3}{2x-5}\leq x$
-  \item $x-\frac{2}{x} > 1$
-  \item $\frac{x-1}{x+2}\leq\frac{x+2}{x-4}$
-  \item $\frac{4x+9}{x+1}\geq\frac{4x+1}{x-1}$
-  \item $\frac{1}{x} \leq \frac{5-x}{x+4}$
-  \item $-\frac{2x+1}{2x-3}>x$
-  \item $\frac{3}{5-x}+{2}{4-x}\geq \frac{5}{3-x}$
-\end{enumerate}
-
-\oefening
-Welke reële getallen zijn kleiner dan hun omgekeerde?
-
-\newpage
-\subsection{Toepassingen op rationale ongelijkheden}
-
-{\bf Opgave:}\\
-Een azijnoplossing van 4 liter bevat 25\% zuivere azijn. Hoeveel liter zuivere azijn moeten we bijvoegen opdat de oplossing ten minste 50\% zuivere azijn zou bevatten?
-
-{\bf Keuze onbekenden:}\\
-We stellen het aantal bij te voegen liter zuivere azijn voor door $x$ met $x\in\mathbb{R}^+$.
-
-{\bf Gegevens vertalen naar de wiskunde:}
-
-Wat is dan de grootte van de nieuwe oplossing in liter? \dotfill
-
-Hoeveel liter zuivere azijn was er in de oorspronkelijke oplossing? \dotfill
-
-Hoeveel liter zuivere azijn zal er dan zijn in de nieuwe oplossing? \dotfill
-
-Met andere woorden de concentratie zuivere azijn in de nieuwe oplossing is dan \dotfill
-
-Welke ongelijkheid moet dan opgelost worden?
-\dotlines{1}
-
-{\bf Oplossen:}
-
-\end{document}
-
-
-
-\newpage
-{\bf Differentiequotiënten:}\\
-\begin{itemize}
-  \item Voor het deel van de grafiek met $x<-1$:\\
-De differentiequotiënt in het interval $[-4,-3]$:
-\arules{2}\\
-De differentiequotiënt in het interval $[-3,-2]$:
-\arules{2}\\
-Wat merk je op als je dichter bij de verticale asymptoot komt?
-\arules{2}\\
-  \item Voor het deel van de grafiek met $x>-1$:\\
-De differentiequotiënt in het interval $[1,2]$:
-\arules{2}\\
-De differentiequotiënt in het interval $[3,4]$:
-\arules{2}\\
-Wat merk je op als je dichter bij de verticale asymptoot komt?
-\arules{2}
-\end{itemize}
-
-
-\end{document}

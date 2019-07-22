@@ -1,34 +1,33 @@
-\textwidth 17cm \textheight 25cm \evensidemargin 0cm
-\oddsidemargin 0cm \topmargin -2.5cm
-\parindent 0pt
-%\parskip \bigskipamount
 
+\usepackage[pdftex,top=3cm,bottom=1.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage[dutch]{babel}
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage[utf8]{inputenc}
-\usepackage{nopageno}
 \usepackage{pdfpages}
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{wrapfig}
-\usepackage{pgf,tikz}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
 \usepackage{color}
-\usetikzlibrary{arrows}
-\usetikzlibrary{patterns}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage[version=3]{mhchem}
 \usepackage{multicol}
 \usepackage{fix-cm}
 \usepackage{setspace}
-\usepackage{mhchem}
 \usepackage{xhfill}
 \usepackage{parskip}
 \usepackage{cancel}
 \usepackage{mdframed}
 \usepackage{url}
+\usepackage{hyperref}
+\usepackage{mathtools}
 \usepackage{changepage}
+\usepackage{calc}
+\usepackage{relsize}
 
 \newcommand{\todo}[1]{{\color{red} TODO: #1}}
 
@@ -37,8 +36,11 @@
 
 \newcommand\ggd{\qopname\relax o{\mathrm{ggd}}}
 
-\def\LRA{\Leftrightarrow}%\mkern40mu}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
 
+\newcommand{\lra}{\ensuremath{\Leftrightarrow}}
 \newcommand{\zrmbox}{\framebox{\phantom{EXE}}\phantom{X}}
 \newcommand{\zrm}[1]{\framebox{#1}}
 
@@ -55,8 +57,6 @@
 }{%
   \end{minipage}
 }
-
-\usepackage{calc}
 
 % vraag
 \reversemarginpar
@@ -76,31 +76,10 @@
 \addtocounter{punten}{#1}}
 
 % arulefill
-\newcommand\arulefill[1][]{
-  \ifstrempty{#1}{
-    \leavevmode{
-      \xrfill[-5pt]{0.3pt}[lightgray]
-      \endgraf
-    }
-    \vspace*{0.2cm}
-  }{
-    \leavevmode{
-      \xrfill[-5pt]{0.3pt}[lightgray]
-      \endgraf
-      \vspace*{0.2cm}
-    }
-    \foreach \n in {1,...,#1}{
-      \leavevmode{
-        \xrfill[-5pt]{0.3pt}[lightgray]
-        \endgraf
-        \vspace*{0.2cm}
-      }
-    }
-  }
-}
+\def\arulefill{\leavevmode{\xrfill[-5pt]{0.3pt}[lightgray]\endgraf}\vspace*{0.2cm}}
+
 % \arules{n}
 \newcommand{\arules}[1]{
-\mbox{}
 \color{lightgray}
 %\vspace*{0.05cm}
 \foreach \n in {1,...,#1}{
@@ -130,18 +109,17 @@
 \end{tikzpicture}
 }
 
-
 \newcommand{\assenstelsel}[5][1]{
 \definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
-\begin{tikzpicture}[scale=#1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=#1cm,y=#1cm]
 \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (#2,#4) grid (#3,#5);
 \draw[->,color=black] (#2,0) -- (#3,0);
-\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
-\draw[color=black] (#3.25,0.07) node [anchor=south west] { x};
+%\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
+%\draw[color=black] (#3.25,0.07) node [anchor=south west] {$x$};
 \draw[->,color=black] (0,#4) -- (0,#5);
-\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
-\draw[color=black] (0.09,#5.25) node [anchor=west] { y};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+%\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
+\draw[color=black] (0.09,#5.25) node [anchor=west] {\phantom{$y$}};
+%\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \end{tikzpicture}
 }
 
@@ -159,6 +137,16 @@
 \newcommand{\visgraad}[1]{\begin{tabular}{p{0.5cm}|p{#1}}&\\\hline\\\end{tabular}}
 
 \newcommand{\tekenschema}[2]{\begin{tabular}{p{0.5cm}|p{#1}}&\\\hline\\[#2]\end{tabular}}
+
+\makeatletter
+\newcommand\dataset[2][5]{{
+    \singlespace\vspace*{-0.5em}
+    \begin{multicols}{#1}
+      \forcsvlist{\dataset@item}{#2}
+    \end{multicols}
+  }}
+\newcommand\dataset@item[1]{\mbox{\texttt{#1}}\\}
+\makeatother
 
 % schema van Horner
 \newcommand{\schemahorner}{
@@ -199,6 +187,17 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \end{tabular}
 }
 
+\newcommand\ub[1][]{
+  \underbracket{\makebox*{$HV$}{$#1$}}
+}
+\newcommand\ubx[1][]{
+  \underbracket{\makebox*{$\oplus\ominus\otimes\oslash\odot$}{$#1$}}
+}
+
+\newcommand\Overset[2]{
+  \overset{\textstyle #1\mathstrut}{#2}
+}
+
 \newcommand{\oefeningen}[1]{
 
 \fancyhead[LE, RO]{\vspace{0.5cm} #1}
@@ -209,6 +208,13 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 }
 
 \raggedbottom
+
+\DeclareMathOperator*{\Bgsin}{Bgsin}
+\DeclareMathOperator*{\Bgcos}{Bgcos}
+\DeclareMathOperator*{\Bgtan}{Bgtan}
+\DeclareMathOperator*{\Bgcot}{Bgcot}
+
+\newcommand\vl{\qopname\relax o{\mathrm{vl}}}
 
 \newcommand\dom{\qopname\relax o{\mathrm{dom}}}
 \newcommand\ber{\qopname\relax o{\mathrm{ber}}}
@@ -251,8 +257,8 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 
 \newcommand\h{\qopname\relax o{\mathrm{h}}}
 
-\newcommand{\mpers}{\;\mbox{m/s}}
 \newcommand{\kmperh}{\;\mbox{km/h}}
+\newcommand{\mpers}{\;\mbox{m/s}}
 \newcommand{\kmpermin}{\;\mbox{km/min}}
 \newcommand{\kmpers}{\;\mbox{km/s}}
 
@@ -316,20 +322,18 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 
 \newcommand\dB{\qopname\relax o{\mathrm{dB}}}
 
+\newcommand\Var{\qopname\relax o{\mathrm{Var}}}
+
 \newcommand{\EE}[1]{\cdot 10^{#1}}
 
 \onehalfspacing
-
-%\singlespacing
-%\onehalfspacing
-%\doublespacing
 
 %\setlength{\headsep}{0cm}
 
 \newenvironment{exlist}[1] %
 { \begin{multicols}{#1}
   \begin{enumerate}[(a)]
-    \setlength{\itemsep}{0.8em} }
+    \setlength{\itemsep}{0.5em} }
 { \end{enumerate}
   \end{multicols} }
 
