@@ -2,6 +2,11 @@
 
 \input{../gowiz.tex}
 
+\usepackage[outputdir=./build/]{dot2texi}
+\usepackage{venndiagram}
+\usepackage{makebox}
+\usepackage{listings}
+
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
   \draw[rounded corners=1] (0,0) rectangle (1,1);
@@ -42,16 +47,6 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.1)}
   \item telproblemen oplossen waarbij de volgorde van de elementen van een groepering van belang is en herhaling van de elementen niet mogelijk.
   \item telproblemen oplossen waarbij de volgorde van de elementen van een groepering niet van belang is en herhaling van de elementen niet mogelijk.
 \end{itemize}}
-%\subsection*{Algemene vaardigheden en attitudes}
-%{\singlespacing
-%Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
-%\begin{itemize}
-%  \itemsep0em
-%  \item begrijpt en gebruikt wiskundetaal.
-%  \item gebruikt kennis, inzicht en vaardigheden die je verwerft in de wiskunde bij het verkennen, vertolken en verklaren van problemen uit de realiteit.
-%  \item ontwikkelt zelfregulatie met betrekking tot het verwerven en verwerken van wiskundige informatie en het oplossen van problemen
-%\end{itemize}
-%}
 
 \thispagestyle{empty}
 \clearpage
@@ -66,36 +61,38 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.1)}
 \fancyhead[RO,LE]{Telproblemen}
 \fancyhead[RE,LO]{}
 
-%\section{Inleiding}
-
 We beginnen aan een hoofdstuk die vaak combinatoriek of combinatieleer wordt genoemd. Wij zullen voornamelijk problemen bespreken waarbij we het aantal mogelijkheden of het aantal objecten van een verzameling moeten tellen. We spreken dan ook van {\bf telproblemen}.
 
 \section{Productregel}
 
-\subsubsection*{Voorbeeld}
+\subsection{Voorbeeld}
 
 Deze zomer ben ik eens op restaurant geweest en daar hing volgende menu:
 
-\begin{mdframed}
-\begin{itemize}
-  \item Voorgerechten:
-  \begin{itemize}
-    \item Garnaalkroketten
-    \item Gerookte zalm
-  \end{itemize}
-  \item Hoofdgerechten:
-  \begin{itemize}
-    \item Lasagne
-    \item Pasta met kip
-    \item Biefstuk met peper-roomsaus
-  \end{itemize}
-  \item desserts:
-  \begin{itemize}
-    \item Appeltaart
-    \item Sorbet
-  \end{itemize}
-\end{itemize}
-\end{mdframed}
+\begin{center}
+  \begin{minipage}{0.6\linewidth}
+    \begin{mdframed}
+      \begin{itemize}
+      \item Voorgerechten:
+        \begin{itemize}
+        \item Garnaalkroketten
+        \item Gerookte zalm
+        \end{itemize}
+      \item Hoofdgerechten:
+        \begin{itemize}
+        \item Lasagne
+        \item Pasta met kip
+        \item Biefstuk met pepersaus
+        \end{itemize}
+      \item Nagerechten:
+        \begin{itemize}
+        \item Appeltaart
+        \item Sorbet
+        \end{itemize}
+      \end{itemize}
+    \end{mdframed}
+  \end{minipage}
+\end{center}
 
 Ik had uiteraard veel honger en bestelde één voorgerecht, één hoofdgerecht en één dessert.
 
@@ -108,60 +105,150 @@ Om zeker te zijn dat we de telling juist doen zullen we het probleem grafisch ga
 
 \subsection{Boomdiagram}
 
-\hspace*{2cm} Voorgerecht \hfill Hoofdgerecht \hfill Dessert \hspace*{2cm}
-
-\vspace*{8cm}
-start
-\vspace*{8cm}
+\begin{adjustwidth}{-1.5cm}{-1.5cm}
+\begin{dot2tex}[tikz, options=--tikzedgelabel]
+  digraph G {
+    node [shape=none,label=""];
+    edge [arrowhead=none,lblstyle="above, sloped"];
+    rankdir=LR;
+    ranksep=0.3;
+    a0 -> b0 [label="garnaal"];
+    a0 -> b1 [label="zalm"];
+    b0 -> c0 [label="lasagne"];
+    b0 -> c1 [label="pasta"];
+    b0 -> c2 [label="biefstuk"];
+    b1 -> c3 [label="lasagne"];
+    b1 -> c4 [label="pasta"];
+    b1 -> c5 [label="biefstuk"];
+    c0 -> d0 [label="taart"];
+    c0 -> d1 [label="sorbet"];
+    c1 -> d2 [label="taart"];
+    c1 -> d3 [label="sorbet"];
+    c2 -> d4 [label="taart"];
+    c2 -> d5 [label="sorbet"];
+    c3 -> d6 [label="taart"];
+    c3 -> d7 [label="sorbet"];
+    c4 -> d8 [label="taart"];
+    c4 -> d9 [label="sorbet"];
+    c5 -> d10 [label="taart"];
+    c5 -> d11 [label="sorbet"];
+    d0 [shape=none, label="ga,la,ta"]
+    d1 [shape=none, label="ga,la,so"]
+    d2 [shape=none, label="ga,pa,ta"]
+    d3 [shape=none, label="ga,pa,so"]
+    d4 [shape=none, label="ga,bi,ta"]
+    d5 [shape=none, label="ga,bi,so"]
+    d6 [shape=none, label="za,la,ta"]
+    d7 [shape=none, label="za,la,so"]
+    d8 [shape=none, label="za,pa,ta"]
+    d9 [shape=none, label="za,pa,so"]
+    d10 [shape=none, label="za,bi,ta"]
+    d11 [shape=none, label="za,bi,so"]
+    aa -> bb [style=dashed, label="Voorgerecht"];
+    bb -> cc [style=dashed, label="Hoofdgerecht"];
+    cc -> dd [style=dashed, label="Nagerecht"];
+  }
+\end{dot2tex}
+\end{adjustwidth}
 
 In een wiskundige boom worden de lijntjes de {\bf takken} genoemd. De takken komen steeds samen in de {\bf knopen}. De knoop waar begonnen wordt noemen we de {\bf wortel} en het eindpunten van de boom worden de {\bf bladen} genoemd.
 
-Hoeveel mogelijke menu's kunnen we kiezen en wat hebben we moeten tellen op de boom?
-\arules{2}
+In de bladen worden de mogelijke menu's opgeschreven. Zo hebben we bijvoorbeeld {\em ga,la,ta} voor garnaalkroketten als voorgerecht, lasagne als hoofdgerecht en appeltaart als dessert. We besluiten dat we eenvoudigweg het aantal mogelijke menu's kunnen bepalen door het aantal bladen te tellen.
 
+\begin{oefening}
 Neem eens de beslissingen in een andere volgorde, namelijk kies eerst een dessert, dan een voorgerecht en dan pas het hoofdgerecht. Teken de boom. Krijg je dezelfde boom? Krijg hetzelfde aantal mogelijkheden?
+\end{oefening}
 
 \subsection{Wegendiagram}
 
-Een boomdiagram heeft als voornaamste nadeel dat deze heel snel heel groot wordt. Als je nu eens kijkt naar de boom, dan merk je dat er per beslissing evenveel takken vertrekken uit een knoop. Laat je de vertrekkende takken dus toekomen in éénzelfde knoop dan wordt de figuur veel compacter:
+Een boomdiagram heeft als voornaamste nadeel dat deze heel snel heel groot wordt. Als je nu eens kijkt naar de boom, dan merk je dat er per beslissing evenveel takken vertrekken uit een knoop. Laat je de vertrekkende takken dus toekomen in eenzelfde knoop dan wordt de figuur veel compacter:
 
-\hspace*{2cm} Voorgerecht \hfill Hoofdgerecht \hfill Dessert \hspace*{2cm}
-
-\vspace*{3cm}
-start
-\vspace*{3cm}
+\begin{adjustwidth}{-1.5cm}{-1.5cm}
+\begin{dot2tex}[tikz]
+  digraph G {
+    node [shape=none,label=""];
+    edge [arrowhead=none];
+    rankdir=LR;
+    ranksep=0.55;
+    a0 -> b0 [label="garnaal"];
+    a0 -> b0 [label="zalm"];
+    b0 -> c0 [label="lasagne"];
+    b0 -> c0 [label="pasta"];
+    b0 -> c0 [label="biefstuk"];
+    c0 -> d0 [label="taart"];
+    c0 -> d0 [label="sorbet"];
+    aa -> bb [style=dashed, label="Voorgerecht"];
+    bb -> cc [style=dashed, label="Hoofdgerecht"];
+    cc -> dd [style=dashed, label="Nagerecht"];
+  }
+\end{dot2tex}
+\end{adjustwidth}
 
 Het tellen wordt nu moeilijker, we bekijken de verschillende deelbeslissingen apart.
 \begin{itemize}
-  \item Voor je voorgerecht neem je een éérste beslissing, je hebt \arule{2cm} keuzes.
-  \item Voor je hoofdgerecht neem je een tweede beslissing, je hebt \arule{2cm} keuzes.
-  \item Voor je dessert neem je een derde beslissing, je hebt \arule{2cm} keuzes.
+  \item Voor je voorgerecht neem je een eerste beslissing, je hebt $2$ keuzes.
+  \item Voor je hoofdgerecht neem je een tweede beslissing, je hebt $3$ keuzes.
+  \item Voor je dessert neem je een derde beslissing, je hebt $2$ keuzes.
 \end{itemize}
 
 We weten nu dat het aantal mogelijke menu's via de methode van het wegendiagram evenveel moet zijn als via de methode van het boomdiagram.
 
-Hoeveel mogelijke menu's kunnen we kiezen en hoe berekenen we dit?
-\arules{2}
+Het is dus evident dat we de keuzes bij elke deelbeslissing mogen vermenigvuldigen. Vandaar de productregel:
+\begin{center}
+  Het aantal mogelijke menu's is $2 \times 3 \times 2 = 12$
+\end{center}
 
 \subsection{Vaasmodel}
 
 We kunnen het probleem ook voorstellen met behulp van vazen. Voor elke beslissing die we moeten nemen, nemen we een vaas met in deze vaas evenveel balletjes als het aantal keuzen die deze beslissing heeft.
 
-\hspace*{2cm} Voorgerecht \hfill Hoofdgerecht \hfill Dessert \hspace*{2cm}
+\begin{multicols}{3}
+  \begin{center}
+    Voorgerecht
+    \begin{tikzpicture}[scale=0.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \clip(-1.,-1.) rectangle (7.,3.);
+      \draw [line width=1.6pt] (0.,2.)-- (0.,0.);
+      \draw [line width=1.6pt] (0.,0.)-- (6.,0.);
+      \draw [line width=1.6pt] (6.,0.)-- (6.,2.);
+      \draw (1.1,1.8) node[anchor=north west] {ga};
+      \draw (3.5,1.5) node[anchor=north west] {za};
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    Hoofdgerecht
+    \begin{tikzpicture}[scale=0.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \clip(-1.,-1.) rectangle (7.,3.);
+      \draw [line width=1.6pt] (0.,2.)-- (0.,0.);
+      \draw [line width=1.6pt] (0.,0.)-- (6.,0.);
+      \draw [line width=1.6pt] (6.,0.)-- (6.,2.);
+      \draw (0.7,1.1) node[anchor=north west] {la};
+      \draw (2.5,1.9) node[anchor=north west] {pa};
+      \draw (3.8,1.0) node[anchor=north west] {bi};
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    Nagerecht
+    \begin{tikzpicture}[scale=0.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \clip(-1.,-1.) rectangle (7.,3.);
+      \draw [line width=1.6pt] (0.,2.)-- (0.,0.);
+      \draw [line width=1.6pt] (0.,0.)-- (6.,0.);
+      \draw [line width=1.6pt] (6.,0.)-- (6.,2.);
+      \draw (1.1,1.2) node[anchor=north west] {ta};
+      \draw (3.5,1.9) node[anchor=north west] {so};
+    \end{tikzpicture}
+  \end{center}
+\end{multicols}
 
-\vspace*{4cm}
-
-Neem nu uit elke vaas een balletje, welk gerecht heb je samengesteld? Hoeveel andere gerechten kan je nog samenstellen?
-\arules{2}
+Je kan nu uit elke vaas een balletje nemen. Zo stel je bijvoorbeeld {\em ga,la,ta} samen. Dit kan je opnieuw doen, maar dan met andere keuzes. In het totaal kan je dat opnieuw 12 keer doen. Merk echter op dat we hier niet echt een formule krijgen waarbij we het totale aantal mogelijkheden vinden. Het vaasmodel verschaft ons echter wel inzicht in het telprobleem.
 
 \subsection{Productregel}
 
-Om een ander voorbeeld te bekijken, we wensen ons aan te kleden en we hebben keuze uit 3 truien en 2 broeken, dan kunnen we ons op $3\cdot 2 = 6$ manieren kleden. Je kiest eerst een trui wat op 3 manieren kan, en bij elk van de drie keuzes van truien heb je twee mogelijkheden om een broek te kiezen. Dit soort telproblemen kunnen we oplossen met wat we de productregel noemen:
+Om een ander voorbeeld te bekijken: we wensen ons aan te kleden en we hebben keuze uit 3 truien en 2 broeken, dan kunnen we ons op $3 \cdot 2 = 6$ manieren kleden. Je kiest eerst een trui wat op 3 manieren kan, en bij elk van de drie keuzes van truien heb je twee mogelijkheden om een broek te kiezen. Dit soort telproblemen kunnen we oplossen met wat we de productregel noemen:
 
 \paragraph*{Productregel}
 \begin{mdframed}
-Als een telprobleem bestaat uit $r$ onafhankelijke deelbeslissingen waarbij er voor de deelbeslissingen respectievelijk $n_1, n_2, \ldots, n_r$ mogelijkheden zijn, dan zijn er in het totaal
-$$n_1\cdot n_2\cdot \ldots \cdot n_r$$
+Als een telprobleem bestaat uit $r$ onafhankelijke deelbeslissingen waarbij er voor de deelbeslissingen respectievelijk $n_1, n_2, \ldots , n_r$ mogelijkheden zijn, dan zijn er in het totaal
+\[n_1 \cdot n_2 \cdot \ldots \cdot n_r\]
 mogelijkheden.
 \end{mdframed}
 
@@ -213,14 +300,23 @@ Los volgende problemen op met behulp van een boomdiagram.
 Vorige winter ben ik met een aantal vrienden uit het middelbaar iets gaan eten. We bestelden allemaal een hoofdgerecht en er werden 11 voorgerechten en 7 desserts besteld. Met vijf aten we zowel een voorgerecht als een dessert. Met hoeveel waren we?
 
 Maak een venndiagram van de verzameling van de voorgerecht-eters en de nagerecht-eters. Leid hieruit het aantal af.
-\vspace*{4cm}
 
-Als je dus het aantal personen met een dessert het aantal personen met een voorgerecht optelt dan tel je de personen die een voorgerecht en een dessert hebben gegeten dubbel. Je kan dit compenseren door door éénmaal de personen die je dubbel hebt geteld er weer van af te trekken.
+\begin{center}
+\begin{venndiagram2sets}[labelOnlyA={$6$}, labelOnlyB={$2$}, labelAB={$5$}, labelNotAB={$\geq 0$}]
+  \setpostvennhook{
+    \draw[<-] (labelA) --++(120:1.6) node[above]{Voorgerecht (en hoofdgerecht)};
+    \draw[<-] (labelB) --++(50:1.5) node[right]{Nagerecht (en hoofdgerecht)};
+    \draw[<-] (labelAB) --++(-20:2.8) node[right, text width=4.5cm]{Voorgerecht en nagerecht (en hoofdgerecht)};
+    \draw[<-] (labelNotAB) --++(-120:0.8) node[left]{Enkel hoofdgerecht};
+  }
+\end{venndiagram2sets}
+\end{center}
+Als je dus het aantal personen met een dessert het aantal personen met een voorgerecht optelt dan tel je de personen die een voorgerecht en een dessert hebben gegeten dubbel. Je kan dit compenseren door door eenmaal de personen die je dubbel hebt geteld er weer van af te trekken.
 
 \paragraph*{Somregel}
 \begin{mdframed}
 Voor het aantal elementen van de unie van twee verzamelingen $A$ en $B$ geldt:
-$$\#(A\cup B) = \#A + \#B - \#(A\cap B)$$
+$$\#(A \cup B) = \#A + \#B - \#(A \cap B)$$
 waarin
 \begin{itemize}
   \item $\#A$ staat voor het aantal elementen van de verzameling $A$
@@ -239,36 +335,42 @@ Bepaal met behulp van de somregel het aantal kaarten in een set van 52 kaarten d
 
 Bepaal het aantal natuurlijke getallen van vier verschillende cijfers die deelbaar zijn door 5.
 
-Geef een goede voorstelling van het getal. Duid ook per cijfer het aantal mogelijkheden aan.
-\arules{2}
+Om inzicht te krijgen in het probleem beginnen we met een aantal voorbeelden op te schrijven:
+\begin{center}
+  \texttt{1235} \qquad \texttt{2345} \qquad \texttt{1250} \\
+  \texttt{\cancel{5023}} \qquad \texttt{6520} \qquad \texttt{\cancel{6500}}
+\end{center}
 
-Stel $B=$ de verzameling van alle mogelijke getallen van 4 verschillende cijfers die deelbaar zijn door 5
+We merken dat de getallen die we zoeken steeds eindigen op $0$ of op $5$. We gebruiken deze eigenschap om twee verzamelingen te maken:
+\begin{itemize}
+\item $A$: verzameling van alle getallen bestaande uit 4 verschillende cijfers die eindigen op $0$
+\item $B$: verzameling van alle getallen bestaande uit 4 verschillende cijfers die eindigen op $5$
+\end{itemize}
 
-Hoe herkennen we getallen die deelbaar zijn door vijf? Gebruik deze eigenschap om $B$ te splitsen in een aantal deelverzamelingen. Definieer de deelverzamelingen en teken het bijhorende venndiagram.
-\arules{4}
-\vspace*{4cm}
+\begin{center}
+  \begin{venndiagram2sets}
+    [labelOnlyA={\scalebox{0.5}{$\ub\ub\ub\ub[0]$}},
+    labelOnlyB={\scalebox{0.5}{$\ub\ub\ub\ub[5]$}}]
+    \fillACapB
+  \end{venndiagram2sets}
+\end{center}
 
-Wat weten we over de deelverzamelingen?
-\arules{2}
+We merken dat de doorsnede ledig is:
+$$A \cap B = \emptyset$$
 
 We zeggen dat de deelverzamelingen elkaar {\bf uitsluitende mogelijkheden} zijn. Dit wil zeggen dat we de somregel kunnen toepassen zonder dat we het aantal elementen in de doorsnede moeten uitrekenen.
 
-\begin{enumerate}[(a)]
-  \item Bereken $\#B_1$ met behulp van de productregel.
-  \arules{6}
-  \item Bereken $\#B_2$ met behulp van de productregel.
-  \arules{6}
-  \item Bereken nu $\#B$ uit met behulp van de somregel en los het telprobleem op.
-  \arules{2}
-\end{enumerate}
+\begin{align*}
+\#A &= 9 \cdot 8 \cdot 7 \cdot 1 = 504\\
+\#B &= 8 \cdot 8 \cdot 7 \cdot 1 = 448\\
+\Rightarrow \#(A \cup B) &= 504 + 448 = 952
+\end{align*}
 
 \paragraph*{Somregel voor elkaar uitsluitende mogelijkheden}
 \begin{mdframed}
 Zijn de twee verzamelingen $A$ en $B$ elkaar uitsluitende mogelijkheden omdat ze geen elementen gemeenschappelijk hebben, dan geldt voor het aantal elementen in hun unie:
-$$\#(A\cup B) = \#A + \#B$$
+\[\#(A\cup B) = \#A + \#B\]
 \end{mdframed}
-
-
 
 \begin{oefening}
 Een club bestaat uit 30 mannelijke en 50 vrouwelijke leden.
@@ -294,15 +396,20 @@ Bij het oplossen van telproblemen tel je als volgt:
 \end{itemize}
 \end{mdframed}
 
-\begin{minipage}{0.7\textwidth}
-\begin{oefening}
+Hint: Maak steeds een het vaasmodel om inzicht te krijgen in het probleem.
+
+\needspace{4cm}
+\subsection{Oefeningen}
+
+\begin{oefening}\\
+\begin{minipage}[]{0.7\textwidth}
 We moeten de afloop van 10 voetbalwedstrijden voorspellen. Voor elke match zijn er 3 mogelijkheden: winnen, verliezen en gelijkspel. Hoeveel lijstjes met voorspellingen zijn er mogelijk? Hoe groot is het aantal als we zeker weten dat in de eerste wedstrijd de thuisploeg niet verliest?
+\end{minipage}
+\begin{minipage}[]{0.29\textwidth}
+  \centering
+  \includegraphics[width=0.5\textwidth]{voetbal}
+\end{minipage}
 \end{oefening}
-\end{minipage}
-\begin{minipage}{0.25\textwidth}
-\hfill
-  \includegraphics[width=0.6\textwidth]{voetbal}
-\end{minipage}
 
 \begin{oefening}
 Voor de samenstelling van je lessenrooster moet je twee keuzevakken kiezen, elk uit een verschillend vakgebied. Er is keuze uit 3 talen, 4 wetenschappelijke vakken en 2 sporten. Hoeveel keuzemogelijkheden heb je?
@@ -349,19 +456,19 @@ Met de cijfers $1, 2, 3, \ldots , 8, 9$ worden getallen van 6 verschillende cijf
 Ik ben de pincode van mijn GSM vergeten. Ik weet enkel nog dat er geen 5 in komt, maar wel een 4, en dat het allemaal verschillende cijfers waren. Hoeveel keer moet ik ten hoogste proberen om mijn code terug te vinden (in de veronderstelling dat je zoveel mag proberen als je wilt, zonder dat je sim-kaart geblokkeerd wordt)?
 \end{oefening}
 
-% \begin{oefening}
-% Stel een boomdiagram op voor de natuurlijke getallen, bestaande uit drie verschillende cijfers, die je met 0, 1, 2, 3 en 4 kan vormen. Hoeveel mogelijke getallen zijn er?
-% \end{oefening}
-%
-% \begin{oefening}
-% Hoeveel getallen, gevormd met de cijfers 0, 5, 6 en 8, liggen tussen 5000 en 6000 (deze twee uitersten inbegrepen) als een cijfer geen tweede maal mag gebruikt worden? Verduidelijk je antwoord met een boomdiagram.
-% \end{oefening}
-%
-% \begin{oefening}
-% Je moet een menu opstellen. Hierbij moet er keuze zijn tussen 2 voorgerechten en 3 hoofdgerechten voor de {\em vegetariërs} en 3 voorgerechten en 4 hoofdgerechten voor de {\em alleseters}. Voor {\em iedereen} is er keuze uit 2 desserts. Hoeveel mogelijke menu's kan je samenstellen?
-% \end{oefening}
+\begin{oefening}
+Stel een boomdiagram op voor de natuurlijke getallen, bestaande uit drie verschillende cijfers, die je met 0, 1, 2, 3 en 4 kan vormen. Hoeveel mogelijke getallen zijn er?
+\end{oefening}
 
-\pagebreak
+\begin{oefening}
+Hoeveel getallen, gevormd met de cijfers 0, 5, 6 en 8, liggen tussen 5000 en 6000 (deze twee uitersten inbegrepen) als een cijfer geen tweede maal mag gebruikt worden? Verduidelijk je antwoord met een boomdiagram.
+\end{oefening}
+
+\begin{oefening}
+Je moet een menu opstellen. Hierbij moet er keuze zijn tussen 2 voorgerechten en 3 hoofdgerechten voor de {\em vegetariërs} en 3 voorgerechten en 4 hoofdgerechten voor de {\em alleseters}. Voor {\em iedereen} is er keuze uit 2 desserts. Hoeveel mogelijke menu's kan je samenstellen?
+\end{oefening}
+
+\cleardoublepage
 \section{Variaties}
 
 \subsection{Voorbeeld}
@@ -370,38 +477,48 @@ Op hoeveel manieren kunnen vier verschillende bollen in zes verschillende vakjes
 
 We definiëren:
 \begin{itemize}
-  \item De verzameling bollen = $\{b_1, b_2, b_3, b_4\}$
-  \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
+  \item De verzameling bollen = $\{ \ast, \star, \circ, \bullet \}$
+  \item De verzameling vakjes = $\{ \ub_a, \ub_b, \ub_c, \ub_d, \ub_e, \ub_f\}=\{a,b,c,d,e,f\}$
 \end{itemize}
 
-De manier van bollen plaatsen is een samengestelde beslissing. Uit hoeveel deelbeslissingen bestaat deze?
-\arules{2}
+Een aantal voorbeelden van plaatsingen zijn
+\[\ub[\ast]_a\ub[\star]_b\ub[\circ]_c\ub[\bullet]_d\ub_e\ub_f \qquad \ub_a\ub[\ast]_b\ub[\star]_c\ub[\circ]_d\ub[\bullet]_e\ub_f \]
+\[\cancel{\ub[\ast]_a\ub[\ast]_b\ub[\ast]_c\ub[\ast]_d\ub_e\ub_f} \qquad \ub_a\ub[\bullet]_b\ub[\circ]_c\ub[\star]_d\ub[\ast]_e\ub_f \]
+\[\ub[\ast]_a\ub_b\ub[\circ]_c\ub_d\ub[\bullet]_e\ub[\star]_f \qquad \cancel{\ub[\Overset{\bullet}{\circ}]_a\ub[\ast]_b\ub[\star]_c\ub_d\ub_e\ub_f} \]
 
-Neem de verschillende deelbeslissingen:
-\arules{12}
+Het is duidelijk dat elke plaatsing bestaat uit het nemen van $4$ deelbeslissingen. Namelijk, kiezen waar we eerst $\ast$ plaatsen, dan kiezen waar we $\star$ plaatsen, dan kiezen waar we $\circ$ plaatsen en uiteindelijk kiezen waar we $\bullet$ plaatsen. Om de plaatsing
+\[\ub[\ast]_a\ub_b\ub[\circ]_c\ub_d\ub[\bullet]_e\ub[\star]_f\]
+te krijgen, worden volgende vakjes gekozen:
+\[a, f, c, e\]
 
-Geef een paar verschillende mogelijke plaatsingen.
-\arules{2}
+Merk op dat het wijzigen van de volgorde, namelijk $a, c, e, f$ ons een andere plaatsing geeft. We zeggen dat de volgorde van belang is. Merk ook op dat er in elk vakje hoogstens één bol mag liggen of ook dat elke bol maar in hoogstens één vakje mag liggen. We zeggen dat herhaling niet toegestaan is.
 
-Daar er in elk vakje hoogstens één bol mag liggen wordt geen vakje herhaald.
 Elk viertal is een samengestelde beslissing zonder herhaling. Wel, zulk viertal
-noemt men een variatie zonder herhaling, kortweg variatie van vier verschillende elementen gekozen uit zes verschillende elementen $a, b, c, d, e en f$.
-Het aantal variaties kunnen we nu gemakkelijk vinden als we de
-productregel gebruiken. Het aantal variaties van 4 elementen uit 6 elementen schrijven we kort met het nieuwe symbool $V^4_6$.
+noemt men een variatie zonder herhaling, kortweg variatie van vier verschillende bollen gekozen uit zes verschillende vakjes.
 
-Geef in ons voorbeeld het aantal mogelijke plaatsingen:
-\arules{3}
+Het aantal variaties kunnen we nu gemakkelijk vinden als we de productregel gebruiken. Het aantal variaties van 4 elementen uit 6 elementen schrijven we kort met het nieuwe symbool $V^4_6$. We vinden dus
+\[ V^4_6 = 6 \cdot 5 \cdot 4 \cdot 3 = 360 \]
 
 \subsection{Formule}
 
-Leid de formule voor het aantal variaties van $k$ elementen gekozen uit $n$ elementen af:
-\arules{10}
-
-\paragraph*{Variaties}
+\paragraph*{Stelling}
 \begin{mdframed}
 Het aantal {\bf variaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $V^k_n$ en er geldt:
-$$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
+$$V^k_n=n \cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
 \end{mdframed}
+
+\paragraph*{Bewijs}
+Er worden $k$ elementen gekozen. We nemen dus $k$ deelbeslissingen:
+\begin{center}
+\begin{tabular}{lp{12cm}}
+$1$-ste beslissing: & We kunnen kiezen uit $n$ verschillende elementen\\
+$2$-de beslissing: & We kunnen maar niet meer kiezen uit $n-1$ verschilende elementen meer want bij een variatie is herhaling niet toegestaan.\\
+$\vdots$ & \\
+$k$-de beslissing: & Er zijn nog $n-(k-1)=n-k+1$ elementen over om uit te kiezen.
+\end{tabular}
+\end{center}
+Daar elke beslissing moet worden genomen, kunnen we elke beslissing verbinden met een '{\bf en}'. Met de productregel volgt dus de stelling.
+
 
 \paragraph*{Opmerking} Er zal steeds gelden dat $k\leq n$.
 
@@ -411,32 +528,42 @@ $$V^k_n=n\cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
   \item De elementen kunnen maar éénmaal worden gebruikt, {\bf herhaling is niet mogelijk}.
 \end{itemize}
 
+\begin{oefening}
 Bereken:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
-  \item $V^3_5=$\arulefill
-  \item $V^2_7=$\arulefill
-  \item $V^4_4=$\arulefill
+  \item $V^3_5$
+  \item $V^2_7$
+  \item $V^4_4$
 \end{enumerate}
 \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Hoeveel variaties zijn er van $5$ elementen gekozen uit $8$ elementen?
+  \item Hoeveel variaties zijn er als we $7$ keuzes hebben en we moeten $2$ elementen kiezen?
+  \item Waarom kunnen we de $V^4_2$ niet uitrekenen?
+  \end{enumerate}
+\end{oefening}
 
 \subsection{Bijzonder geval}
 
 Voor $k=n$ wordt de formule
-$$V^n_n=n(n-1)(n-2)\cdots 3\cdot 2 \cdot 1$$
+\[V^n_n = n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1\]
 
 Het product van de opeenvolgende natuurlijke getallen van $1$ t.e.m. $n$ noteren we met $n!$ en we zeggen $n$-faculteit. We komen hier later nog op terug.
 
 Omdat dit vaak voorkomt zullen we hier een naam aan geven, we spreken van {\bf de permutaties van $n$ elementen}. Dus een permutatie is een variatie van alle $n$ elementen uit $n$.
 
-\paragraph*{Notatie:} $P_n=n!=n\cdot(n-1)\cdot(n-2)\cdots 3\cdot 2\cdot 1$
+\paragraph*{Notatie:} $P_n = n! = n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1$
 
+\begin{oefening}
 \begin{enumerate}[(a)]
   \item Wat is het aantal variaties van 5 elementen gekozen uit 5 elementen?
-  \arules{1}
   \item Hoeveel permutaties van 7 elementen zijn er?
-  \arules{1}
 \end{enumerate}
+\end{oefening}
 
 \subsection{Oefeningen}
 
@@ -526,10 +653,10 @@ Men beschikt over 8 kleuren. Hoeveel vlaggen zijn hiermee samen te stellen?
 \end{oefening}
 
 \begin{oefening}
-Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevormd.
+Met de cijfers $3, 4, 5, 6, 7, 8$ worden getallen van $3$ verschillende cijfers gevormd.
 \begin{enumerate}[(a)]
   \item Hoeveel dergelijke getallen bestaan er?
-  \item Hoeveel van deze getallen eindigen op 5?
+  \item Hoeveel van deze getallen eindigen op $5$?
 \end{enumerate}
 \end{oefening}
 
@@ -538,56 +665,42 @@ Met de cijfers 3, 4, 5, 6, 7, 8 worden getallen van 3 verschillende cijfers gevo
 
 \subsection{Voorbeeld}
 
-Op hoeveel manieren kunnen vijf, verschillend gekleurde bollen in de vakjes $a$, $b$ en $c$ geplaatst worden? In elk vakje is er plaats voor méér dan één bol.
+Op hoeveel manieren kunnen vijf, verschillend gekleurde bollen in 3 vakjes geplaatst worden? In elk vakje is er plaats voor méér dan één bol.
 
-Definieer de verzameling van bollen en verzameling vakjes voor het probleem:
+We definieren de verzameling van bollen en verzameling vakjes voor het probleem:
+
 \begin{itemize}
-  \item \arule{4cm}:  $A =$ \arulefill%\{b_1 , b_2 , b_3 , b_4 , b_5 \}$ met $\#A = 5$
-  \item \arule{4cm}: $B =$\arulefill %\{a, b, c\}$ met $\#B = 3$.
+\item bollen = $\{ \oplus, \ominus, \otimes, \oslash, \odot \}$
+\item vakjes = $\{ \ubx_a, \ubx_b, \ubx_c \} = \{ a, b, c\}$
 \end{itemize}
 
-De manier van bollen plaatsen is een samengestelde beslissing. Uit hoeveel deelbeslissingen bestaat deze?
-\arules{2}
+Een aantal voorbeeldplaatsingen zijn
+\[ \ubx[\oplus\ominus\otimes\oslash\odot]_a\ubx_b\ubx_c \qquad \ubx[\oplus\otimes\ominus]_a\ubx_b\ubx[\odot\oslash]_c\]
+\[ \cancel{\ubx[\oplus\oplus]_a\ubx_b\ubx_c} \qquad \ubx[\oplus\ominus]_a\ubx_b\ubx[\odot\oslash\otimes]_c\]
+\[ \ubx[\oplus]_a\ubx[\ominus]_b\ubx[\otimes\oslash\odot]_c=\ubx[\oplus]_a\ub[\ominus]_b\ubx[\odot\oslash\otimes]_c \]
 
-Neem de verschillende deelbeslissingen:
-\arules{12}
+De manier van bollen plaatsen is een samengestelde beslissing bestaande uit $5$ deelbeslissingen. Plaatsen we $\oplus, \ominus, \otimes, \oslash, \odot$ in die volgorde om de volgende plaatsing te verkrijgen
+\[\ubx[\otimes\oslash]_a\ubx[\ominus]_b\ubx[\oplus\odot]_c\]
+dan kiezen we de volgende vakjes
+\[c, b, a, a, c\]
 
-Geef een paar verschillende mogelijke plaatsingen.
-\arules{3}
+Merk ook hier op dat het wijzigen van de volgorde, bijvoorbeeld $a, a, b, c, c$ ons een totaal andere plaatsing geeft. Opnieuw krijgen we een probleem waarbij de volgorde van belang is. Bij dit probleem kan het wel dat er in een vakje meer dan één bol mag liggen. We zeggen dat herhaling toegestaann is.
 
-Deze manier van plaatsen noteren we met behulp van een vijftal, bijvoorbeeld:
-$$(a, a, b, c, b)\;.$$
-Voor andere keuzen zullen we andere vijftallen vinden: bv: $(b, a, b, a, c)$, $(c, c, c, a, a)$, $(b, a, a, a,
-b)$, $(b, b, b, b, b)$ enz.
-
-Geef het vijftal dat je zelf gebruikt hebt als voorbeeld toen je de verschillende deelbeslissingen nam:
-\arules{1}
-
-Daar er in elk vakje meerdere bollen kunnen liggen kan een vakje herhaald worden.
-Elk vijftal is een samengestelde beslissing met herhaling. Wel, zulk vijftal noemen
-we een herhalingsvariatie van vijf elementen gekozen uit een totaal van drie elementen.
-Het aantal herhalingsvariaties kunnen we nu gemakkelijk vinden als we de productregel gebruiken.
-Het aantal herhalingsvariaties van 5 elementen uit 3 elementen schrijven we kort met het nieuwe symbool $\bar{V}^5_3$.
-
-Geef in ons voorbeeld het aantal mogelijke plaatsingen:
-\arules{3}
+Elk vijftal is een samengestelde beslissing met herhaling. Wel, zulk vijftal noemen we een herhalingsvariatie van vijf elementen gekozen uit een totaal van drie elementen. Het aantal herhalingsvariaties kunnen we nu gemakkelijk vinden als we de productregel gebruiken. Het aantal herhalingsvariaties van 5 elementen uit 3 elementen schrijven we kort met het nieuwe symbool $\bar{V}^5_3$. We vinden dus
+\[\bar{V}^5_3 = 3 \cdot 3 \cdot 3 = 3^5 = 243\]
 
 \paragraph*{Let op de notatie}
-De $\bar{V}$ is het symbool voor het aantal herhalingsvariaties.
-Het aantal elementen (vakjes) wordt onderaan als index geschreven. Het aantal
-deelbeslissingen (bollen leggen) wordt bovenaan genoteerd.
+De $\bar{V}$ is het symbool voor het aantal herhalingsvariaties. Het aantal deelbeslissingen (bollen leggen) wordt bovenaan genoteerd. Het aantal keuzes (vakjes) wordt onderaan als index geschreven.
 
-\pagebreak
 \subsection{Formule}
 
-Leid de formule voor het aantal herhalingsvariaties van $k$ elementen gekozen uit $n$ elementen af:
-\arules{10}
-
-\paragraph*{Herhalingsvariaties}
+\paragraph*{Stelling}
 \begin{mdframed}
 Het aantal {\bf herhalingsvariaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $\bar{V}^k_n$ en er geldt:
 $$\bar{V}^k_n=n^k$$
 \end{mdframed}
+
+\paragraph*{Bewijs} Het bewijs verloopt analoog als het bewijs van de formule voor gewone variaties. Met het verschil natuurlijk dat herhaling nu wel mag. Doe dit bewijs als oefening.
 
 \paragraph*{Belangrijk}
 \begin{itemize}
@@ -595,7 +708,6 @@ $$\bar{V}^k_n=n^k$$
   \item De elementen kunnen meer dan eens op de zelfde positie terecht komen, {\bf herhaling is mogelijk}.
 \end{itemize}
 
-\needspace{4cm}
 \subsection{Oefeningen}
 
 \begin{oefening}
@@ -615,7 +727,6 @@ Met de cijfers 1, 2 en 3 worden getallen van 5 cijfers gevormd.
   \item Hoeveel van die getallen bevatten geen cijfer 1?
   \item Hoeveel van die getallen bestaan uit 5 verschillende cijfers?
   \item Welk getal staat op de vijfde plaats als je alle getallen van klein naar groot rangschikt?
-  \item Bereken de som van alle getallen.
 \end{enumerate}
 \end{oefening}
 
@@ -661,28 +772,28 @@ wedstrijden worden gespeeld ?
 \end{oefening}
 
 \begin{oefening}
-Hoeveel “woorden” kunnen we vormen met de letters \verb#a, b, ..., k#. Elk woord
+Hoeveel “woorden” kunnen we vormen met de letters \texttt{a, b, ..., k}. Elk woord
 bestaat uit drie letters.
 \end{oefening}
 
 \begin{oefening}
-Belgische nummerplaten bestaan uit 3 letters en 3 cijfers, bijvoorbeeld \verb#ABA 123#. De letters \verb#I# en de \verb#O# worden niet gebruikt, wegens overeenkomsten met de 1 en de 0. Hoeveel mogelijkheden zijn er om nummerplaten samen te stellen.
+Belgische nummerplaten bestaan uit 3 letters en 3 cijfers, bijvoorbeeld \texttt{ABA 123}. De letters \texttt{I} en de \texttt{O} worden niet gebruikt, wegens overeenkomsten met de 1 en de 0. Hoeveel mogelijkheden zijn er om nummerplaten samen te stellen.
 \end{oefening}
 
 \begin{oefening} % opmerking, geen herhalingsvariatie!
 De fanfare kiest een nieuw bestuur. Uit de 20 leden wordt één directeur, één onderdirecteur en één secretaris gekozen. Op hoeveel manieren kan dit?
 \end{oefening}
 
-\begin{oefening} % moeilijk
+\begin{oefening}* % moeilijk
 Hoeveel getallen bestaande uit 3 cijfers kunnen gemaakt worden met 3 vieren, 4 tweeën en 2 drieën.
 \end{oefening}
 
-\begin{oefening}
+\begin{oefening}*
 Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een leger van 5000 trollen die een draak aanviel. Na het gevecht merkten de overlevende trollen dat geen twee van hun nog de zelfde verzameling tanden had (geen één trol had nog tanden op dezelfde plaats als een andere trol). Hoeveel trollen zijn er tijdens het gevecht tegen de draak op zijn minst gestorven?
 \end{oefening}
 
-\clearpage
-\section{n-faculteit}
+\cleardoublepage
+\section{Faculteiten}
 
 \subsection{Definitie}
 
@@ -690,8 +801,8 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 \begin{mdframed}
 \begin{align*}
 \forall n \in \mathbb{N}\backslash\{0,1\}: n!&=n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot2\cdot1\\
-                                           1!&=1\\
-                                           0!&=1\\
+                           1!&=1\\
+                           0!&=1\\
 \end{align*}
 \end{mdframed}
 
@@ -700,17 +811,27 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 De toets voor $n$-faculteit bevindt zich boven het rechter haakje. Om bijvoorbeeld $24!$ uit te rekenen toetsen we
 $$24 \zrm{SHIFT} \zrm{x!} \zrm{EXE}\;.$$
 
-We krijgen een heel groot getal $6.204484017\EE{23}$ of voluit $620448401733239439360000$.
+We krijgen een heel groot getal, namelijk $620448401733239439360000$. Voor de leesbaarheid zullen we deze grote getallen steeds in wetenschappelijke notatie schrijven. Dit wil zeggen dat de getallen zullen schrijven in de vorm $a \cdot 10^b$ met $1 \leq a < 10$ en met 2 cijfers na de komma. In ons geval schrijven we dus
+\[24! = 6.20\EE{23}\]
 
 \subsection{Eigenschap}
 
-Bereken zonder \zrm{ZRM}
-\begin{enumerate}[(a)]
-  \item $2!=$\arulefill
-  \item $3!=$\arulefill\arules{1}
-  \item $4!=$\arulefill\arules{1}
-  \item $5!=$\arulefill\arules{1}
-\end{enumerate}
+Bereken we de eerste faculteiten zonder \zrm{ZRM}
+\begin{align*}
+  2! &= 2 \cdot 1 = 2\\
+  3! &= 3 \cdot 2 \cdot 1 = 6\\
+  4! &= 4 \cdot 3 \cdot 2 \cdot 1 = 24\\
+  5! &= 5 \cdot \underbrace{4 \cdot 3 \cdot 2 \cdot 1}_{=4!} = 5 \cdot 24 = 120
+\end{align*}
+
+Dan zien we snel dat er een manier is om faculteiten uit re rekenen als we reeds de waarde van de vorige faculteiten kennen. Daarom ook
+\paragraph*{Eigenschap van de n-faculteit}
+\begin{mdframed}
+\begin{align*}
+  (n+1)! &= (n+1) \cdot n!\\
+  n!     &= n \cdot (n-1)!\\
+\end{align*}
+\end{mdframed}
 
 \begin{oefening}
 Als je weet dat
@@ -718,19 +839,11 @@ $$9!=362880\;.$$
 Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
 \end{oefening}
 
-\paragraph*{Eigenschap van de n-faculteit}
-\begin{mdframed}
-\begin{align*}
-  (n+1)!&=(n+1)n!\\
-  n!&=n(n-1)!\\
-\end{align*}
-\end{mdframed}
-
 \begin{oefening}
 Bereken zonder \zrm{ZRM}:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
-  \itemsep0.7em
+  \itemsep.7em
   \item $\dfrac{17!}{14!}$
   \item $\dfrac{10!}{7!}$
   \item $\dfrac{11!}{8!}$
@@ -745,15 +858,15 @@ Bereken zonder \zrm{ZRM}:
 Vereenvoudig:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-  \itemsep0.7em
+  \itemsep.7em
   \item $\dfrac{(n+1)!}{n!}$
   \item $\dfrac{(n-1)!}{n!}$
   \item $\dfrac{n!}{(n+1)!}$
   \item $\dfrac{(n+1)!}{(n-2)!}$
   \item $\dfrac{(n+2)!}{n!}$
-  \item $\dfrac{(2n+2)!}{2n!}$
   \item $\dfrac{(n+1)!}{n!}-\dfrac{n!}{(n-1)!}$
   \item $\dfrac{(n+1)!}{(n-1)!}-\dfrac{n!}{(n-2)!}$
+  \item $\dfrac{n}{n!}$
 \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -762,24 +875,43 @@ Vereenvoudig:
 Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bestaat dan het getal $100!$
 \end{oefening}
 
+\subsection*{Weetjes}
+\begin{itemize}
+  \item Zes weken is juist $10!$ seconden: ontbind $60\cdot 60\cdot 24\cdot 7\cdot 6$ in factoren en herschik en neem sommige factoren samen.
+  \item Er zijn $52!=8.066\EE{67}$ manieren om een pak kaarten te schudden. Dit aantal is zo groot dat wanneer je een pak kaarten schudt, je eigenlijk zeker bent dat nog nooit iemand anders een pak in dezelfde volgorde geschud heeft!
+  \item Men schat dat er ongeveer tussen de $10^{78}$ en $10^{82}$ atomen in het universum zijn. Kort kunnen we dus zeggen dat er ongeveer $60!$ atomen zijn.
+\end{itemize}
+
 \subsection{Formule voor $V^k_n$ met behulp van faculteiten}
 
-Bereken $V^3_7$ door gebruik te maken van faculteiten.
-\arules{5}
+We bereken $V^3_7$ door gebruik te maken van faculteiten:
+\begin{align*}
+  V^3_7 &= 7 \cdot 6 \cdot 5\\
+        &= \dfrac{7 \cdot 6 \cdot 5 \, \color{gray}{ \cdot \, 4 \cdot 3 \cdot 2 \cdot 1}}{\color{gray}{4 \cdot 3 \cdot 2 \cdot 1}}\\
+        &= \dfrac{7!}{4!}\\
+        &= \dfrac{7!}{(7-3)!}\\
+\end{align*}
 
-Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
-\arules{6}
+We krijgen algemeen dan volgende formule
 
-\paragraph*{Het aantal variaties van $k$ elementen uit $n$ elementen}
+\paragraph*{Stelling}
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
+
+\paragraph*{Bewijs}
+\begin{align*}
+  V^k_n &= n \cdot (n-1) \cdot \ldots \cdot (n-k+1)\\
+        &= \dfrac{n \cdot (n-1) \cdot \ldots \cdot (n-k+1) \, \color{gray}{ \cdot \, (n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}{\color{gray}{(n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}\\
+        &= \dfrac{n!}{(n-k)!}\\
+\end{align*}
+
 
 \begin{oefening}
 Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we twee formules:\\
 \begin{itemize}
   \itemsep1em
-  \item $\displaystyle V^{20}_{24}=24\cdot 23\cdot 22\cdot 21\cdot\;\cdots\;\cdot(24-20+1)$
+  \item $\displaystyle V^{20}_{24}=24\cdot23\cdot22\cdot21\cdot\;\cdots\;\cdot(24-20+1)$
   \item $\displaystyle V^{20}_{24}=\dfrac{24!}{(24-20)!}$
 \end{itemize}
 \begin{enumerate}[(a)]
@@ -787,47 +919,41 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
   \item Doe hetzelfde voor het aantal variaties van 3 elementen uit 10 elementen. Welke methode verkies je in dit geval?
   \item Welke methode zou je kiezen als je het aantal variaties van 100 elementen uit 1000 elementen zou moeten berekenen? Het is niet nodig om dit te proberen, hiervoor is speciale software nodig want onze rekenmachines kunnen niet met zulke grote getallen overweg.
 \end{enumerate}
-
 \end{oefening}
+
 
 \cleardoublepage
 \section{Combinaties}
 
 \subsection{Voorbeeld}
 
-Op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
+Op hoeveel manieren kunnen twee identieke bollen in vijf verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
 
 We definiëren:
 \begin{itemize}
   \item De bollen zijn identiek, we duiden één bol aan met de letter $B$
-  \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
+  \item De verzameling vakjes = $\{a, b, c, d, e\}$
 \end{itemize}
 
-We moeten vier gelijke bollen in zes vakjes leggen. Dit is hetzelfde als: we moeten de vier bollen tegelijkertijd in de bakjes leggen. Vermits de 4 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
+We moeten twee gelijke bollen in vijf vakjes leggen. Dit is hetzelfde als: we moeten de twee bollen tegelijkertijd in de bakjes leggen. Vermits de 2 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
 
-Teken een mogelijke plaatsing van de bollen:
-\arules{2}
+Een mogelijke plaatsing voor de bollen is dan
+\[\ub[B]\ub\ub[B]\ub\ub\]
 
-Elke plaatsing zouden we als een viertal $(a, c, d, f)$ kunnen noteren. Maar elk viertal, waarin dezelfde vakjes voorkomen zoals $(a, c, d, f)$, $(c, a, f, d)$, $(d, a, f, c)$, \ldots, $(f, d, c, a)$ stelt eenzelfde plaatsing voor.
+Deze plaatsing zouden we als een tweetal $(a, c)$ kunnen noteren. Maar elk tweetal, waarin dezelfde vakjes voorkomen zoals $(a, c)$ en $(c, a)$ stelt eenzelfde plaatsing voor.
 
-De volgorde waarin de vakjes opgesomd worden heeft geen belang. We spreken nu
-af om de plaatsing te noteren als een verzameling waarin de elementen in
-alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing
-wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e, f\}$.
+De volgorde waarin de vakjes opgesomd worden heeft geen belang. We spreken nu af om de plaatsing te noteren als een verzameling waarin de elementen in alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing wordt dan : $\{a, c\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e\}$.
 
-Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje
-herhaald. In een verzameling wordt óók geen element herhaald. Wel, de
-deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
-Het aantal van zulke combinaties stellen we nu voor door het symbool $C^4_6$ en kunnen we berekenen met behulp van faculteiten:
+Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje herhaald. In een verzameling wordt óók geen element herhaald. Wel, de deelverzameling $\{a, c\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 2 elementen gekozen uit 5 elementen.
+Het aantal van zulke combinaties stellen we nu voor door het symbool $C^2_5$ en kunnen we als volgt bepalen:
 
-$$C^4_6=\dfrac{6!}{4!\cdot (6-4)!}$$
+Codeer het gegeven probleem als volgt: We kiezen 5 plaatsen, 2 ervan moeten gevuld worden met de letter $B$ van bol plaatsen, de overige drie moeten gevuld worden met de letter $L$ van leeg laten. Een voorbeeld is dan
+\[\ub[B]\ub[L]\ub[B]\ub[L]\ub[L]\]
 
-Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
-\arules{2}
+Dit is net hetzelfde probleem als we tevoor opgelost hebben met een wegenrooster! Eenvoudiger is om onmiddellijk de ondertussen gekende formule te gebruiken:
+$$C^2_5 = \dfrac{5!}{2!\cdot (5-2)!} = 10$$
 
-Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder
-herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index
-genoteerd. Het aantal te vullen vakjes wordt bovenaan genoteerd.
+Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder herhaling. Het aantal beslissingen wordt als superscript (bovenaan) genoteerd. Het aantal vakjes (elementen) waar je keuze uit hebt wordt als subscript (onderaan) genoteerd.
 
 \subsection{Formule}
 
@@ -846,7 +972,7 @@ $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
 \subsection{Oefeningen}
 
 \begin{oefening}
-Voor het voetbalteam van de school stellen zich 19 jongens kandidaat.
+Voor het voetbalteam van de school stellen zich 19 leerlingen kandidaat.
 \begin{enumerate}[(a)]
   \item Hoeveel elftallen kan de coach hiermee vormen?
   \item Bij het samenstellen van de ploeg voor een belangrijke wedstrijd wil de coach zijn vijf beste spelers zeker opstellen en zijn drie zwakste niet. Hoeveel ploegen kan hij nu vormen?
