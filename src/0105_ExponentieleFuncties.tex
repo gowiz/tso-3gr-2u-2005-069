@@ -75,7 +75,7 @@ Je \hfill {\scriptsize(LP2005-069, ET2-3-6)}
 
 Herinner je nog de definitie voor een macht met een reëel grondtal en een natuurlijke exponent:
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 
 \begin{mdframed}
 \begin{align*}
@@ -131,13 +131,15 @@ Geef de tekenregels voor machten.
 \end{oefening}
 
 \cleardoublepage
-\section{Machten met negatieve gehele exponenten}
+\section{Machten met gehele exponenten}
 
-Vroeger definieerden we reeds machten met negatieve gehele exponenten:
-\paragraph*{Definitie}
+\subsection{Definitie}
+
+Gehele getallen kunnen positief zijn, dan zitten we eigenlijk in het vorige geval, waarbij de exponent een natuurlijk getal is en gelden de aldaar gedefinieerde definities. We moeten nu dus nog definiëren wat een macht met een negatieve gehele exponent is:
+\subsubsection*{Definitie}
 \begin{mdframed}
 \begin{align*}
-\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} = \left(a^{-1}\right)^n=\left(a^n\right)^{-1}=\dfrac{1}{a^n}
+\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} =\dfrac{1}{a^n}
 \end{align*}
 \end{mdframed}
 
@@ -157,9 +159,11 @@ Bereken:
 \end{multicols}
 \end{oefening}
 
+\subsection{Rekenregels}
+
 De rekenregels die gelden voor natuurlijke exponenten blijven gelden voor machten met gehele exponenten.
 
-\paragraph*{Rekenregels voor machten met gehele exponenten}
+\subsubsection*{Rekenregels voor machten met gehele exponenten}
 \begin{mdframed}
 $\forall a, b, c \in \mathbb{R}_0, \forall m, n\in \mathbb{Z}:$
 \begin{align*}
@@ -219,7 +223,7 @@ Bereken en controleer nadien met het \zrm{ZRM}.
   \item $[-1^6]^3$
   \item $\dfrac{0.8^{-3}}{0.8^{-6}}$
   \item $\dfrac{\left(-4\right)^{0}}{\left(-4\right)^{-2}}$
-  \item $[\left(-0.1\right)^2]^3$
+  \item $\left[\left(-0.1\right)^2\right]^3$
   \item $\left(\sqrt{2}\right)^{-2}$
   \item $1.1^2$
   \item $0.3^{-2}$
@@ -229,7 +233,7 @@ Bereken en controleer nadien met het \zrm{ZRM}.
   \item $0.08^{-3}$
   \item $0.5^{-2}\cdot0.5^{-3}$
   \item $\left(-2\cdot2^{-2}\right)^{-2}$
-  \item $\dfrac{1}{\left(\sqrt{2}\right)}^{-2}$
+  \item $\left(\dfrac{1}{\sqrt{2}}\right)^{-2}$
 \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -288,13 +292,13 @@ Vereenvoudig:
   \item $\dfrac{a^0}{b^0}$
   \item $\dfrac{a^1}{b^2}$
   \item $a^2+a^2$
-  \item $a^2+a^3$
+  \item $a^2+3a^2$
   \item $\dfrac{a^3}{a^2}$
   \item $\dfrac{a^{-10}}{a^{-5}}\cdot{a^3}$
   \item $\dfrac{x^2y^1z^0}{x^{-2}y^{-1}z^{0}}$
-  \item $4^a+2^{2a}$
-  \item $4^a\cdot2^{2a}$
-  \item $\frac{2a\cdot a^{2}}{a^{3}}$
+  \item $\dfrac{a^2 \cdot a^3}{a^5}$
+  \item $\dfrac{a \cdot a^2}{a} + \dfrac{a^3}{a^2}$
+  \item $\dfrac{2a\cdot a^{2}}{a^{3}}$
   \item $\left(-a^4\right)\cdot\left(+a^4\right)$
   \item $\left(-a^4\right):\left(+a^4\right)$
   \item $\left(-0.5ab^2\right)^3$
@@ -304,6 +308,76 @@ Vereenvoudig:
 \end{multicols}
 \end{oefening}
 
+\begin{oefening} % bron: ppareit
+  Tot wat kunnen we $$4^a+2^{2a}$$ vereenvoudigen?
+  \begin{enumerate}[(A)]
+  \item niets
+  \item $8^a$
+  \item $4^{2a}$
+  \item $2^{2a+1}$ % juist
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening} % bron: ppareit
+  Tot wat kunnen we $$4^a \cdot 2^{2a}$$ vereenvoudigen?
+  \begin{enumerate}[(A)]
+  \item niets
+  \item $8^a$
+  \item $16^a$ % juist
+  \item $32^a$
+  \end{enumerate}
+\end{oefening}
+
+\subsection{Toepassing: Wetenschappelijke notatie}
+
+Wetenschappelijke notatie wordt gebruikt om zeer grote getallen of om zeer kleine getallen weer te geven. Dit door de getallen in twee delen te splitsen, waarbij het tweede deel een macht van $10$ weergeeft.
+
+\paragraph*{Voorbeelden:}
+\begin{enumerate}[(a)]
+\item $234000000 = 2.34 \cdot 10^8$
+\item $0.00000456 = 4.56 \cdot 10^{-6}$
+\end{enumerate}
+
+\subsubsection*{Definitie}
+\begin{mdframed}
+Getallen in {\bf wetenschappelijke notatie} worden geschreven in de vorm
+$$a \cdot 10^b$$
+met $a\in]-10,10[$ de {\bf mantisse} en $b\in\mathbb{Z}$ de {\bf exponent}. Als $b=0$, dan wordt enkel de mantisse opgeschreven.
+\end{mdframed}
+
+\begin{oefening}
+  Schrijf volgende getallen in wetenschappelijke notatie
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+    \item $123$
+    \item $0.00123$
+    \item $0$
+    \item $5$
+    \item $-123400$
+    \item $0.123$
+    \item $-0.0008$
+    \item $-1.123$
+    \item $0.999\ldots$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Schrijf volgende getallen in wetenschappelijke, indien nodig, rond af tot 2 cijfers na de komma:
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+    \item $123456$
+    \item $234567$
+    \item $-444444$
+    \item $-555555$
+    \item $0.123456789$
+    \item $-0.00000123$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+
+\subsection{Extra oefeningen}
 \begin{oefening}
 Werk uit:
 \begin{multicols}{3}
@@ -374,8 +448,8 @@ Noteer korter, indien mogelijk.
     \item $\left(5a\right)^{-2}$
     \item $\left(\dfrac{-3}{y}\right)^{-3}$
     \item $\dfrac{\left(6a^3\right)^2}{\left(-3a\right)^3}$
-    \item $ab^-2:bz^-2$
-    \item $(ab^-2):(bz^-2)$
+    \item $ab^{-2}:bz^{-2}$
+    \item $(ab^{-2}):(bz^{-2})$
   \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -420,13 +494,22 @@ Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponen
 \cleardoublepage
 \section{Machtswortels}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 Indien $a$ een reëel getal is en $n$ een natuurlijk getal is verschillend van nul, dan is $x$ een {\bf n-de machtswortel} uit $a$ als
 $$x^n=a$$
 \end{mdframed}
 
 Uit bovenstaande definitie blijkt dat we $x$ de $n$-de machtswortel of kort de {\bf wortel} noemen. We zullen dan $a$ het {\bf (wortel)grondtal} noemen en $n$ de {\bf (wortel)exponent}.
+
+\begin{oefening}
+  Beschouw de uitdrukking
+  $$ 3^4=81 $$
+  \begin{enumerate}[(a)]
+  \item Als we dit beschouwen als een macht, wat is dan het grondtal, de exponent en de macht?
+    \item Als we dit beschouwen als een machtswortel, wat is dan het wortelgrondtal, de wortelexponent en de wortel?
+  \end{enumerate}
+\end{oefening}
 
 \begin{oefening}
 $-8$ en $8$ zijn de 2-de machtswortels uit $64$, waarom?
@@ -440,7 +523,7 @@ Geef alle $3$-de machtswortels uit $-64$ en zeg waarom het $3$-de machtswortels 
 Hoeveel $2$-de machtswortels heeft $-64$?
 \end{oefening}
 
-\paragraph*{Aantal $n$-de machtswortels}
+\subsubsection*{Aantal $n$-de machtswortels}
 \begin{mdframed}
 \begin{itemize}
   \item Indien $n$ even is en $a\geq 0$, dan heeft $a$ twee $n$-de machtswortels die tegengesteld zijn. De positieve $n$-de machtswortel wordt genoteerd als $\sqrt[n]{a}$, de negatieve als $-\sqrt[n]{a}$.
@@ -471,7 +554,7 @@ Een eenvoudig trucje van een getal $a\in\mathbb{R}$ de absolute waarde te vinden
 $$|a| = \sqrt{a^2}$$
 \end{oefening}
 
-\paragraph*{Eigenschappen van machtswortels}
+\subsubsection*{Eigenschappen van machtswortels}
 \begin{mdframed}
 $\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, \forall m,n,p\in\mathbb{N}_0$
 \begin{align*}
@@ -541,10 +624,12 @@ $$\sqrt{1+101\cdot99}$$
 
 Voor $n\in\mathbb{N}$ hebben we $a^n$ reeds gedefinieerd als $a^n=a\cdot a\cdot \ldots \cdot a$. Wat als de exponent nu rationaal is? Dus $n\in\mathbb{Q}^+_0$, met andere woorden, we kunnen $n$ herschrijven als $n=\dfrac{p}{q}$ met $p,q\in\mathbb{N}_0$.
 
-We definiëren:
+\subsubsection*{Definitie}
 \begin{mdframed}
 $$\forall a \in \mathbb{R}^+_0, \forall p,q\in  \mathbb{N}_0: \mathlarger a^{\frac{p}{q}}=\sqrt[q]{a^p}$$
 \end{mdframed}
+
+Opmerking: Alle rekenregels van machten blijven geldig.
 
 \begin{oefening}
 Gebruik de definitie van machten met rationale exponenten om onderstaande machten uit te rekenen:
@@ -574,16 +659,16 @@ Bereken:
 \end{oefening}
 
 \begin{oefening}
-Bereken door zo min mogelijk gebruik te maken van $n$-de machtswortels:
+Schrijf eerst als een macht met een rationale exponent en vereenvoudig dan volgende machtswortels:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep.5em
-  \item $8^{\frac{1}{3}}$
-  \item $0.09^{-\frac{1}{2}}$
+  \item $\sqrt[3]{8}$
+  \item $\sqrt{0.09^{-1}}$
   \item $\sqrt[3]{5}\cdot25^{\frac{1}{3}}$
   \item $\sqrt[6]{4}\cdot\sqrt[6]{16}\cdot\sqrt[6]{64}$
-  \item $1^{-\frac{2}{5}}$
-  \item $65^{-\frac{2}{3}}\left(\dfrac{130}{2}\right)^{-\frac{1}{3}}$
+  \item $\sqrt[5]{1^{-2}}$
+  \item $\sqrt[3]{65^{-2}} \cdot \sqrt[3]{\dfrac{130}{2}^{-1}}$
   \item $\sqrt[4]{3-\sqrt{13}}\cdot\sqrt[4]{3+\sqrt{13}}$
 \end{enumerate}
 \end{multicols}
@@ -613,6 +698,8 @@ Bereken zonder \zrm{ZRM}. Controleer je antwoord met het \zrm{ZRM}.
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+
 
 \begin{oefening}
 Bereken met het \zrm{ZRM}. Schrijf het antwoord telkens in wetenschappelijke notatie, rond af op 3 decimalen.
@@ -689,7 +776,7 @@ Bereken of vereenvoudig zoveel mogelijk (controleer zelf nadien je resultaat):
   \item $\sqrt[3]{1000^4}$
   \item $\sqrt{12600}$
   \item $\sqrt{\left(-2\right)^{-4}}$
-  \item $\left(\sqrt[4]{16}-\sqrt[4]{4}\right)^4$
+  \item $\sqrt{5}\cdot\sqrt[3]{5}\cdot\sqrt[4]{5}$
   \item $\sqrt[3]{-4}\sqrt[3]{9}\sqrt[3]{-6}$
   \item $\sqrt[5]{5^{(5^5)}}$
   \item $\sqrt[4]{11-\sqrt{40}}\cdot\sqrt[4]{11+\sqrt{40}}$
@@ -728,25 +815,48 @@ Dit strikt positief getal noemen we per definitie $a^{\sqrt{2}}$.
 
 Ook bij machten met reële exponenten gelden de reeds gekende rekenregels voor machten.
 
-\paragraph*{Praktisch}
+\subsubsection*{Praktisch}
 
 Het is uiteraard niet doenbaar om een reëel getal met de hand te gaan benaderen door een rationaal getal. Gelukkig doen huidige rekentoestellen dit automatisch. Met het \zrm{ZRM} gaan we als volgt te werk: typ het grondtal, dan \zrm{$x^\blacksquare$} en daarna de reële exponent.
 
 \begin{oefening}
 Bereken, geef je antwoord op vier decimalen:\\
-\begin{multicols}{3}
+%\begin{multicols}{3}
 \begin{enumerate}[(a)]
   \itemsep1.5em
   \item $3^{\sqrt{2}}$
   \item $4^\pi$
   \item $\pi^\pi$
 \end{enumerate}
-\end{multicols}
-
+%\end{multicols}
 \end{oefening}
 
 \begin{oefening}
-Verklaar waarom je \zrm{ZRM} de macht $(-5)^{\sqrt{2}}$ niet kan uitrekenen.
+Bereken, geef je antwoord in wetenschappelijke notatie, rond af op 2 decimalen:\\
+%\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep1.5em
+  \item $100^{\sqrt{5}}$
+  \item $0.001^\pi$
+\end{enumerate}
+%\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  \begin{enumerate}[(a)]
+  \item Schat, zonder gebruik te maken van een rekentoestel, hoeveel
+    $$\sqrt[3]{215}$$
+    is.\\
+    {\em Hint: Gebruik de lijst met machten.}
+  \item Bepaal nu bij benadering wat
+    $$10^{\sqrt[3]{215}}$$
+    is.
+    \item Controleer dit resultaat nu m.b.v. het \zrm{ZRM}.
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Verklaar waarom je \zrm{ZRM} de macht $(-5)^\pi$ niet kan uitrekenen.
 \end{oefening}
 
 \cleardoublepage
@@ -764,9 +874,11 @@ $$\log x$$
 Voor ons voorbeeld hebben we dus
 $$\log 1000 = 3 \mbox{ want } 10^3 = 1000$$
 
+\paragraph{Rekenmachine:} We kunnen de logaritmen berekenen op het \zrm{ZRM} met de toets \zrm{log}. Zo is $\log 1000 = 3$, wat ons niet verbaast. We kunnen gerust andere logaritmen berekenen, zo is $\log 5678 \approx 3.75$.
+
 We kunnen de definitie kort schrijven als
 
-\paragraph*{Definitie logaritme met grondtal 10}
+\subsubsection*{Definitie logaritme met grondtal 10}
 \begin{mdframed}
 $$\log x = y \Leftrightarrow 10^y = x$$
 \end{mdframed}
@@ -807,11 +919,11 @@ Zoek de logaritme met grondtal $a$ van de volgende getallen:\\
 \end{multicols}
 \end{oefening}
 
-\subsection{Eigenschappen van logaritmen met grondtal 10}
+\subsection{Eigenschap van logaritmen met grondtal 10}
 
 De definitie zegt dat $\log x = y \Leftrightarrow 10^y = x$. Als we binnen de logaritme de $x$ vervangen door $10^y$, dan krijgen we onmiddellijk de volgende handige regel:
 
-\paragraph*{Eerste eigenschap van de logaritme}
+\subsubsection*{Eigenschap van de logaritme}
 \begin{mdframed}
 $$\log (10^x) = x$$
 \end{mdframed}
@@ -831,9 +943,11 @@ Bereken de logaritme met grondtal $10$ door steeds gebruik te maken van het feit
 \end{multicols}
 \end{oefening}
 
+\subsection{Rekenregels van logaritmen met grondtal 10}
+
 Ook zijn volgende rekenregels aantoonbaar:
 
-\paragraph*{Rekenregels van logaritmen met grondtal $10$}
+\subsubsection*{Rekenregels van logaritmen met grondtal $10$}
 \begin{mdframed}
 $\forall x,y \in \mathbb{R}_0^+, \forall n\in \mathbb{R}:$
 \begin{align*}
@@ -845,24 +959,30 @@ $\forall x,y \in \mathbb{R}_0^+, \forall n\in \mathbb{R}:$
 \end{mdframed}
 
 \begin{oefening}
-Bereken volgende logaritmen, maak steeds gebruik van de rekenregels voor logaritmen:
+Bereken volgende logaritmen, maak steeds gebruik van de rekenregels voor logaritmen, gebruik geen \zrm{ZRM}:
 \begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep1em
-  \item $\log (100\cdot 10)$
-  \item $\log \dfrac{100}{1000}$
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item $\log 25 + \log 4$
+  \item $\log 8 + \log 125$
+  \item $\log 0.00025 + \log 2 + \log 5 +\log 4$
+  \item $\log 150 - \log 1.5$
+  \item $\log 60 - \log 6$
+  \item $\log 5 + \log 4000 - \log 20 $
   \item $\log 0.01$
   \item $\log 1000^6$
-\end{enumerate}
+  \end{enumerate}
 \end{multicols}
 \end{oefening}
 
 \begin{oefening}
-Bereken:
+Bereken zonder \zrm{ZRM}:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \item $\displaystyle\log 100^3$
   \item $\displaystyle\left(\log 100\right)^3$
+  \item $\displaystyle\log \left( 100 \cdot \log 10^{10} \right)$
+  \item $\displaystyle\log 100 \cdot \log 10^{10}$
 \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -959,7 +1079,7 @@ De grafiek uit plan A herkennen we als punten gelegen op een rechte. Dit komt oo
 
 \subsection{Definitie van een exponentiële functie}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 Een {\bf exponentiële functie} is een functie
 $$f:\mathbb{R}\to\mathbb{R}: x\mapsto a^x$$
@@ -1039,8 +1159,8 @@ Bepaal zelf de eigenschappen: domein, bereik, bijzondere punten, dalen\&stijgen,
 \begin{oefening}
 Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^x$ te plotten, waarbij $a$ een parameter is die je instelt via een schuifknop. Volg hierbij de volgende instructies:
 \begin{itemize}
-  \item Download of start geogebra vanuit \url{http://geogebra.org/}.
-  \item Het geogebravenster bevat bovenaan de {\em menubar}, daaronder de {\em iconen}, een {\em algebravenster} en een {\em tekenvenster}. Helemaal onderaan hebben we de {\em invoer} waar je commando's kan geven aan geogebra en waarbinnen je objecten kan definiëren.
+  \item Download of start GeoGebra vanuit \url{http://geogebra.org/}.
+  \item Het GeoGebra venster bevat bovenaan de {\em menubar}, daaronder de {\em iconen}, een {\em algebravenster} en een {\em tekenvenster}. Helemaal onderaan hebben we de {\em invoer} waar je commando's kan geven aan GeoGebra en waarbinnen je objecten kan definiëren.
   \item
   \begin{minipage}[t]{0.5\textwidth}
   \vspace{0pt}
@@ -1086,7 +1206,7 @@ Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^x$ te plotten, waarbi
 \end{oefening}
 
 \begin{oefening}
-Gebruik {\em Geogebra} om de exponentiële functie $f(x)=a^{x-b}+c$ te plotten, waarbij $a\in]0,3]$, $b\in[-3,3]$ en $c\in[-3,3]$ parameters zijn die je instelt via schuifknoppen. Gebruik haakjes om aan geogebra duidelijk te maken dat de exponent $x-b$ samen hoort.
+Gebruik {\em GeoGebra} om de exponentiële functie $f(x)=a^{x-b}+c$ te plotten, waarbij $a\in]0,3]$, $b\in[-3,3]$ en $c\in[-3,3]$ parameters zijn die je instelt via schuifknoppen. Gebruik haakjes om aan GeoGebra duidelijk te maken dat de exponent $x-b$ samen hoort.
 \end{oefening}
 
 \begin{oefening}
@@ -1237,47 +1357,59 @@ Een functie met voorschrift $y=k\cdot a^x$ gaat door $P(-1,2)$ en $Q(2,\dfrac{12
 
 \subsection{Exponentiële groei}
 
-Op het tijdstip $t=0$ bevat een bacteriënkolonie $N_0=400$ bacteriën. Elk uur groeit het aantal met $p\%=5\%$. Stel een formule op die het aantal bacteriën $N$ geeft na $t$ uur. Gebruik die formule om het aantal bacteriën te vinden na $24$ uur.
+Op het tijdstip $t=0$ bevat een bacteriënkolonie $N_0=400$ bacteriën. Elk uur groeit het aantal met $p\%=5\%$. Stel een formule op die het aantal bacteriën $N$ geeft na $t$ uur. Gebruik die formule om het aantal bacteriën te vinden na één dag, na één week en na één maand.
 
 \paragraph*{Oplossing}
 We gaan het probleem opsplitsen. We zullen eerst onderzoeken hoeveel bacteriën er zullen zijn na één uur, dan na twee uur, dan na drie uur, \ldots
 
 \begin{itemize}
-  \item Na 1 uur:
+\item Na 1 uur:
   \begin{itemize}
-    \item Bij aanvang: \arule{4cm}
-    \item Aangroei: \arule{4cm}
-    \item Na één uur: \arule{4cm}
+  \item Bij aanvang: $400$
+  \item Aangroei: $400 \cdot 5\%=400 \cdot \dfrac{5}{100}=20$
+  \item Na één uur: $420$
   \end{itemize}
-  Herschrijven geeft ons: \arules{2}\\
-  Dus $400$ met $5\%$ vermeerderen = \arulefill
-  \item Na 2 uur:
+  Herschrijven geeft ons:
+  \begin{align*}
+    420 &= 400 + 400 \cdot \dfrac{5}{100}\\
+        &= 400 \cdot \left(1+\dfrac{5}{100}\right)\\
+        &= 400 \cdot 1.05
+  \end{align*}
+  Dus $400$ met $5\%$ vermeerderen = $400 \cdot 1.05$
+\item Na 2 uur:
   \begin{itemize}
-    \item Bij aanvang: \arule{4cm}
-    \item Aangroei: \arule{4cm}
-    \item Na twee uur: \arule{4cm}
+  \item Bij aanvang: $420$
+  \item Aangroei: $420 \cdot \dfrac{5}{100}=21$
+  \item Na twee uur: $441$
   \end{itemize}
-  Herschrijven geeft ons: \arules{2}\\
-  Dus $420$ met $5\%$ vermeerderen = \arulefill
-  Maar $420$ konden we reeds bekomen uit onze oorspronkelijke aantal bacteriën: \arules{2}\\
-  Dus $400$ tweemaal met $5\%$ vermeerderen = \arulefill
-  \item Na 3 uur:
-  \begin{itemize}
-    \item Bij aanvang: \arule{4cm}
-    \item Aangroei: \arule{4cm}
-    \item Na drie uur: \arule{4cm}
-  \end{itemize}
-  Herschrijven geeft ons: \arules{2}\\
-  Dus $441$ met $5\%$ vermeerderen = \arulefill
-  Maar $441$ konden we reeds bekomen uit onze oorspronkelijke aantal bacteriën: \arules{2}\\
-  Dus $400$ driemaal met $5\%$ vermeerderen = \arulefill
-  \item Na 4 uur: \arulefill
-  \item Aantal bacteriën $N$ na $t$ uur: \arulefill
-  \item Toepassen van de formule voor na $24$ uur: \arulefill
+  Herschrijven geeft ons:
+  \begin{align*}
+    441 &= 420 + 420 \cdot \dfrac{5}{100}\\
+        &= 420 \cdot \left(1+\dfrac{5}{100}\right)\\
+        &= 420 \cdot 1.05
+  \end{align*}
+  Dus $420$ met $5\%$ vermeerderen = $420 \cdot 1.05$\\
+  Maar $420$ konden we reeds bekomen uit onze oorspronkelijke aantal bacteriën:
+  \begin{align*}
+    441 &= 420 \cdot 1.05\\
+        &= (400 \cdot 1.05) \cdot 1.05\\
+        &= 400 \cdot 1.05^2
+  \end{align*}
+  Dus $400$ tweemaal met $5\%$ vermeerderen = $400 \cdot 1.05^2$
+\item Na 3 uur:\\
+  Werk zelf uit dat $400$ driemaal met $5\%$ vermeerderen = $400 \cdot 1.05^3$
+\item[] $\vdots$
+\item Aantal bacteriën $N$ na $t$ uur: $400 \cdot 1.05^t$
+\item Toepassen van de formule voor één dag:
+  $$N_{\mbox{dag}} = 400 \cdot 1.05^{24} \approx 1290$$
+\item Toepassen van de formule voor één week
+  $$N_{\mbox{dag}} = 400 \cdot 1.05^{24 \cdot 7} \approx 1.5 \cdot 10^6$$
+\item Toepassen van de formule voor één maand
+  $$N_{\mbox{dag}} = 400 \cdot 1.05^{24 \cdot 7 \cdot 30} \approx 2.4 \cdot 10^{109}$$
+  Wat meer is dan het aantal atomen in het universum ($\approx 10^{80}$)!
 \end{itemize}
 
-\paragraph*{Exponentiële groei}
-
+\subsubsection*{Exponentiële groei}
 \begin{mdframed}
 Als $N_0$ de {\bf beginwaarde} is en $p\%$ het {\bf groeipercentage} is, dan wordt de aangroei na {\bf tijd} $t$ gegeven door
 $$N=N_0\cdot\left(1+\dfrac{p}{100}\right)^t$$
@@ -1285,6 +1417,10 @@ en hierin wordt $1+\dfrac{p}{100}$ de {\bf groeifactor} genoemd.
 \end{mdframed}
 
 De groeifactor zullen we meestal kort kunnen schrijven, als het groeipercentage bijvoorbeeld $15\%$ is, dan wordt de groeifactor, door invullen van $p$ en te vereenvoudigen, $1.15$.
+
+\begin{oefening}
+  Als een bacteriënkolonie van 400 bacteriën elk uur groeit met 5\%. Bepaal dan de aangroei na 3 uur, zonder de formule voor exponentiële groei te gebruiken. M.a.w. vervolledig de theorie voor het geval na 3 uur.
+\end{oefening}
 
 \begin{oefening}
 Vul volgende tabel aan:
@@ -1323,15 +1459,18 @@ Elk jaar sponsort de lokale tennisclub van Avelgem een tornooi. Er wordt begonne
   \item Gebruik een tabel:
   \begin{center}
     \begin{tabular}{c|r|r|r|r|r|r}
-      Ronde   & start & 1ste        & 2de         & 3de         & 4de         & 5de \\
+      Ronde   & start & 1ste & 2de & 3de & 4de & 5de \\
       \hline
-      Spelers & 128   & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm}
+      Spelers & 128   & 64   & 32  & 16  & 8   & 4 
     \end{tabular}
   \end{center}
   \item Gebruik de formule:
   $$N=N_0\cdot\left(1+\dfrac{p}{100}\right)^t$$
-  Met $N_0 = \arule{2cm}$, $t=\arule{2cm}$ en $p=\arule{2cm}$:
-  $$N=\arule{5cm}$$
+  Met $N_0 = 128$, $t=5$ en $p=-50$:
+  \begin{align*}
+    N &= 128\cdot0.5^5\\
+      &= 4
+  \end{align*}
 \end{itemize}
 
 \subsection{Halveringstijd}
@@ -1353,7 +1492,7 @@ Plot de functie die het verloop van 100 gram DDT  weergeeft over een periode van
 
 Het is mogelijk om onmiddellijk de hoeveelheid DDT uit te rekenen na 100 jaar. We maken hiervoor gebruik van de volgende formule:
 
-\paragraph*{Halveringsformule}
+\subsubsection*{Halveringsformule}
 \begin{mdframed}
 Als $N_0$ het aantal deeltijdjes is op tijdstip $t=0$ en $T$ is de {\bf halveringstijd}, dan wordt het aantal deeltjes op tijdstip $t$ gegeven door
 $$N=N_0\cdot2^{-\frac{t}{T}}\;.$$
@@ -1366,10 +1505,10 @@ om te weten hoeveel gram van de 100 gram DDT er nog aanwezig zal zijn na 100 jaa
 \paragraph*{Oplossing}
 \begin{itemize}
   \itemsep1em
-  \item $N_0=\arule{4cm}$
-  \item $t = \arule{4cm}$
-  \item $T = \arule{4cm}$
-  \item $N = $ \arulefill
+  \item $N_0=100$
+  \item $t = 100$
+  \item $T = 15$
+  \item $N = 100 \cdot 2^{-\dfrac{100}{15}} =0.98$
 \end{itemize}
 
 \begin{oefening}
@@ -1438,7 +1577,7 @@ Licht radioactief afval met een halveringstijd van 30 jaar wordt gedurende 300 j
 Volgende machten kennen we nog uit het hoofd:
 
 
-\begin{adjustwidth}{-1cm}{1cm}
+\begin{adjustwidth}{-0.3cm}{0.3cm}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
   \hline
@@ -1460,7 +1599,7 @@ Volgende machten kennen we nog uit het hoofd:
   \cline{1-3}
   9     & 81  & 729\\
   \cline{1-6}
-  10    & 100  & 1\,000 & 10\,000 & 100\,000 & 1\,000\,000\\
+  10    & 100  & 1\,000 & $10^4$ & $10^5$ & $10^6$\\
   \cline{1-6}
   11    & 121\\
   \cline{1-2}
@@ -1485,5 +1624,7 @@ Volgende machten kennen we nog uit het hoofd:
 \end{tabular}
 \end{center}
 \end{adjustwidth}
+
+Merk op: Machten van tien mogen we in de exponentiële notatie laten staan. Dat is leesbaarder dan een getal met veel nullen lezen.
 
 \end{document}
