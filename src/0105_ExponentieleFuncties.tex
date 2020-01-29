@@ -78,11 +78,12 @@ Herinner je nog de definitie voor een macht met een reëel grondtal en een natuu
 \subsubsection*{Definitie}
 
 \begin{mdframed}
-\begin{align*}
-\forall a \in \mathbb{R}, \forall n\in \mathbb{N}\setminus\{0,1\} : a^n &= \underbrace{a\cdot a\cdot a \ldots \cdot a}_{\mbox{$n$ factoren}}\\
-a^1 &= a\\
-\forall a \in \mathbb{R}_0 : a^0 &= 1
-\end{align*}
+  \vspace*{-1em}
+  \begin{align*}
+    \forall a \in \mathbb{R}, \forall n\in \mathbb{N}\setminus\{0,1\} : a^n &= \underbrace{a\cdot a \cdot a \ldots \cdot a}_{\mbox{$n$ factoren}}\\
+    a^1 &= a\\
+    \forall a \in \mathbb{R}_0 : a^0 &= 1
+  \end{align*}
 \end{mdframed}
 
 We lezen de $n$-de macht van $a$ of $a$ tot de macht $n$, $a$ noemen we het {\bf grondtal} en $n$ de {\bf exponent}. Als de exponent even is, spreken we van een {\bf even macht} en anders van een {\bf oneven macht}.
@@ -138,9 +139,7 @@ Geef de tekenregels voor machten.
 Gehele getallen kunnen positief zijn, dan zitten we eigenlijk in het vorige geval, waarbij de exponent een natuurlijk getal is en gelden de aldaar gedefinieerde definities. We moeten nu dus nog definiëren wat een macht met een negatieve gehele exponent is:
 \subsubsection*{Definitie}
 \begin{mdframed}
-\begin{align*}
-\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} =\dfrac{1}{a^n}
-\end{align*}
+$$\forall a \in \mathbb{R}_0, \forall n\in \mathbb{N}: a^{-n} =\dfrac{1}{a^n}$$
 \end{mdframed}
 
 \begin{oefening}
@@ -170,8 +169,8 @@ $\forall a, b, c \in \mathbb{R}_0, \forall m, n\in \mathbb{Z}:$
 a^m\cdot a^n &= a^{m+n} && \mbox{machten met zelfde grondtal vermenigvuldigen}\\
 \dfrac{a^m}{a^n} &= a^{m-n} && \mbox{machten met zelfde grondtal delen}\\
 \left(a^m\right)^n &= a^{m\cdot n} && \mbox{macht van een macht}\\
-\left(abc\right)^m &= a^mb^mc^m && \mbox{product tot een macht}\\
-\left(\dfrac{a}{b}\right)^m &= \dfrac{a^m}{b^m} && \mbox{quotiënt tot een macht}\\
+\left(abc\right)^m &= a^mb^mc^m && \mbox{macht van een product}\\
+\left(\dfrac{a}{b}\right)^m &= \dfrac{a^m}{b^m} && \mbox{macht van een quotiënt}\\
 \end{align*}
 \end{mdframed}
 
@@ -494,6 +493,8 @@ Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponen
 \cleardoublepage
 \section{Machtswortels}
 
+\subsection{Definitie}
+
 \subsubsection*{Definitie}
 \begin{mdframed}
 Indien $a$ een reëel getal is en $n$ een natuurlijk getal is verschillend van nul, dan is $x$ een {\bf n-de machtswortel} uit $a$ als
@@ -511,6 +512,8 @@ Uit bovenstaande definitie blijkt dat we $x$ de $n$-de machtswortel of kort de {
   \end{enumerate}
 \end{oefening}
 
+\subsection{Aantal machtswortels}
+
 \begin{oefening}
 $-8$ en $8$ zijn de 2-de machtswortels uit $64$, waarom?
 \end{oefening}
@@ -523,7 +526,7 @@ Geef alle $3$-de machtswortels uit $-64$ en zeg waarom het $3$-de machtswortels 
 Hoeveel $2$-de machtswortels heeft $-64$?
 \end{oefening}
 
-\subsubsection*{Aantal $n$-de machtswortels}
+\subsubsection*{Aantal machtswortels}
 \begin{mdframed}
 \begin{itemize}
   \item Indien $n$ even is en $a\geq 0$, dan heeft $a$ twee $n$-de machtswortels die tegengesteld zijn. De positieve $n$-de machtswortel wordt genoteerd als $\sqrt[n]{a}$, de negatieve als $-\sqrt[n]{a}$.
@@ -554,18 +557,65 @@ Een eenvoudig trucje van een getal $a\in\mathbb{R}$ de absolute waarde te vinden
 $$|a| = \sqrt{a^2}$$
 \end{oefening}
 
-\subsubsection*{Eigenschappen van machtswortels}
+\subsection{Eigenschappen van machtswortels}
+In het volgende veronderstellen we dat $a, b \in\mathbb{R}$ en dat $m,n,p\in\mathbb{N}_0$ en dat steeds alle machtswortels zinvol zijn.
+
+\subsubsection*{machtswortel van een product}
 \begin{mdframed}
-$\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, \forall m,n,p\in\mathbb{N}_0$
-\begin{align*}
-  \sqrt[n]{ab} &= \sqrt[n]{a}\sqrt[n]{b} && \mbox{machtswortel van een product}\\
-  \sqrt[n]{\dfrac{a}{b}} &= \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}} &&  \mbox{machtswortel van een quotiënt}\\
-  \sqrt[n]{a^m} &= \left(\sqrt[n]{a}\right)^m && \mbox{exponent binnen of buiten de wortel plaatsen}\\
-  \sqrt[n]{\sqrt[m]{a}} &= \sqrt[m\cdot n]{a} && \mbox{machtswortel van een machtswortel}\\
-  \sqrt[n\cdot p]{a^{m\cdot p}} &= \sqrt[n]{a^m} && \mbox{vereenvoudigen van wortel en exponent}\\
-  \sqrt[n]{a^n} &= a && \mbox{wegwerken van wortel}
-\end{align*}
+  $$\sqrt[n]{ab} = \sqrt[n]{a}\sqrt[n]{b}$$
 \end{mdframed}
+\paragraph{Voorbeeld:}
+\begin{align*}
+  \sqrt[3]{16}\sqrt[3]{4} &= \sqrt[3]{16 \cdot 4}\\
+                          &= \sqrt[3]{64}\\
+                          &= 4
+\end{align*}
+
+\needspace{3cm}
+\subsubsection*{machtswortel van een quotiënt}
+\begin{mdframed}
+$$\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}$$
+\end{mdframed}
+\begin{align*}
+  {\sqrt[4]{3^5} \over \sqrt[4]{3}} &= \sqrt[4]{3^5 \over 3}\\
+                                    &= \sqrt[4]{3^4}\\
+                                    &= 3
+\end{align*}
+
+\subsubsection*{exponent binnen of buiten de wortel plaatsen}
+\begin{mdframed}
+$$\sqrt[n]{a^m} = \sqrt[n]{a}^{^m}$$
+\end{mdframed}
+
+\subsubsection*{machtswortel van een machtswortel}
+\begin{mdframed}
+$$\sqrt[n]{\sqrt[m]{a}} = \sqrt[m\cdot n]{a}$$
+\end{mdframed}
+\begin{align*}
+  \sqrt[5]{\sqrt{1024}} &= \sqrt[5]{\sqrt[2]{1024}}\\
+                        &= \sqrt[10]{1024}\\
+                        &= 2
+\end{align*}
+
+\subsubsection*{vereenvoudigen van wortel en exponent}
+\begin{mdframed}
+$$\sqrt[n\cdot p]{a^{m\cdot p}} = \sqrt[n]{a^m}$$
+\end{mdframed}
+\begin{align*}
+  \sqrt[12]{729} &= \sqrt[6 \cdot 2]{3^6}\\
+                 &= \sqrt[2]{3}\\
+                 &= \sqrt{3}
+\end{align*}
+
+\subsubsection*{wegwerken van wortel}
+\begin{mdframed}
+$$\sqrt[n]{a^n} = a$$
+\end{mdframed}
+\begin{align*}
+  \sqrt[4]{625} &= \sqrt[4]{5^4}\\
+                 &= 5
+\end{align*}
+
 
 \begin{oefening}
   Werk uit, gebruik steeds één van de eigenschappen van machtswortels
@@ -577,7 +627,6 @@ $\forall a, b \in\mathbb{R}\mbox{ en zodat volgende machtswortels zinvol zijn}, 
   \item $\left(\sqrt[3]{\sqrt{\pi}}\right)^6$
   \item $\sqrt[5]{81^4\cdot 3^4}$
   \item $2\sqrt[3]{9}+ \sqrt[3]{9}$
-  \item $\sqrt[5]{50} + \sqrt[5]{250}$
   \end{exlist}
 \end{oefening}
 
