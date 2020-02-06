@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 \input{../gowiz.tex}
 
@@ -46,8 +46,8 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.2)}
 \thispagestyle{empty}
 \clearpage
 
-\tableofcontents
 \thispagestyle{empty}
+\tableofcontents
 \clearpage
 
 \pagenumbering{arabic}
@@ -56,38 +56,48 @@ Je kan \hfill  {\scriptsize(LP 2005-069, LI 2.2)}
 \fancyhead[RO,LE]{Kansrekening}
 \fancyhead[RE,LO]{}
 
+\cleardoublepage
 \section*{Inleiding}
 
 Ga voor volgende problemen na of je de kans zou kunnen berekenen of je ze enkel kan schatten.
 \begin{enumerate}[(a)]
   \item Hoe groot is de kans dat het in België in de maand januari 5 opeenvolgende nachten vriest?
-  %\arules{3}
   \item Hoe groot is de kans dat een willekeurig gekozen 16-jarige groter is dan $1.75\m$?
-  %\arules{3}
   \item Hoe groot is de kans om met 1 dobbelsteen 4 ogen te gooien?
-  %\arules{2}
   \item Hoe groot is de kans om met 2 dobbelstenen ten minste 7 ogen te gooien?
-  %\arules{2}\\
   \begin{center}
     \begin{tabular}{c|c|c|c|c|c|c}
-    &\dice{1}&\dice{2}&\dice{3}&\dice{4}&\dice{5}&\dice{6}\\
+             & \dice{1} & \dice{2} & \dice{3} & \dice{4} & \dice{5} & \dice{6} \\
+      \hline
+    \dice{1} &          &          &          &          &          &          \\
     \hline
-    \dice{1}&&&&&&\\
+    \dice{2} &          &          &          &          &          &          \\
     \hline
-    \dice{2}&&&&&&\\
+    \dice{3} &          &          &          &          &          &          \\
     \hline
-    \dice{3}&&&&&&\\
+    \dice{4} &          &          &          &          &          &          \\
     \hline
-    \dice{4}&&&&&&\\
+    \dice{5} &          &          &          &          &          &          \\
     \hline
-    \dice{5}&&&&&&\\
-    \hline
-    \dice{6}&&&&&&\\
+    \dice{6} &          &          &          &          &          &          \\
     \end{tabular}
   \end{center}
 \end{enumerate}
 
 In dit hoofdstuk zullen we kansen leren berekenen!
+\vfill\hfill
+\rotatebox[origin=c]{180}{
+\begin{minipage}{0.5\linewidth}
+  \paragraph{Antwoorden:}
+  \small
+  \begin{enumerate}[(a)]
+  \item We moeten dit schatten. Bijvoorbeeld door naar de voorbije 100 jaar te kijken.
+  \item We moeten dit schatten. Bijvoorbeeld door dit eerst aan 50 16-jarigen uit onze school te vragen.
+  \item 1 kans op 6.
+  \item $\dfrac{7}{12}$
+  \end{enumerate}
+\end{minipage}
+}
 
 \cleardoublepage
 \section{Begrippen}
@@ -97,11 +107,9 @@ In dit hoofdstuk zullen we kansen leren berekenen!
 Het begrip {\bf kansexperiment} (experiment) moet je in de breedste betekenis zien. Het kan een
 waarneming, een proefneming, een telling zijn. Wel moet steeds gelden:
 \begin{itemize}
-  \item Een experiment is {\bf niet tijdsgebonden}: het kan onder dezelfde omstandigheden
-herhaald worden.
-  \item De afloop wordt beheerst door {\bf het toeval}: die afloop kan niet met zekerheid
-vooraf bepaald worden; het aantal mogelijkheden dat zich kan voordoen is
-echter wel gekend.
+  \item Een experiment is {\bf niet tijdsgebonden}: het kan onder dezelfde omstandigheden herhaald worden.
+  \item Een experiment is {\bf niet locatiegebonden}: het kan eender waar opnieuw uitgevoerd worden
+  \item De afloop wordt beheerst door {\bf het toeval}: die afloop kan niet met zekerheid vooraf bepaald worden; het aantal mogelijkheden dat zich kan voordoen is echter wel gekend.
 \end{itemize}
 
 \paragraph*{Voorbeelden} Enkele voorbeelden van experimenten:
@@ -148,7 +156,7 @@ leven richten. In geval van experiment $E_2$ zullen we waarnemer 1 volgen.
   \item $E_1$: Een muntstuk opgooien.\\
   De mogelijke uitkomsten: kop (k) en munt (m) zijn je voldoende bekend.
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.\\
-  Uitkomsten: klaverennegen ($9_k$), hartenaas ($a_h$), ruitenboer ($b_r$), schoppenacht ($8_s$) ... enz.\footnote{Zie de bijlage voor een kaartspel}
+  Uitkomsten: klaverennegen ($k_9$), hartenaas ($h_1$), ruitenboer ($r_b$), schoppenacht ($s_8$) ... enz.\footnote{Zie de bijlage voor een kaartspel en de gebruikte notaties. Hiermee moet men ook leren werken, de bijlage mag gebruikt worden op toetsen en examens.}
   \item $E_3$: Verjaren in de maand mei.\\
   Uitkomsten: 3 mei, 15 mei, 26 mei, 31 mei ... enz.
   \item $E_4$: Twee dobbelstenen tegelijk opgooien.\\
@@ -161,7 +169,6 @@ leven richten. In geval van experiment $E_2$ zullen we waarnemer 1 volgen.
 
 \begin{oefening}
 Geef 4 mogelijke uitkomsten horende bij $E_6$, vier kaarten uit een spel van 52 kaarten trekken zonder terugleggen. De volgorde waarbij je de kaarten nadien in je hand houdt maakt niets uit.
-%\arules{2}
 \end{oefening}
 
 \begin{oefening}
@@ -182,7 +189,7 @@ $U=\{u_1, u_2, \ldots, u_n\}$ met $\#U=n$.
   \item $E_1$: Een muntstuk opgooien.\\
   $U_1 = \{k,m\}$ met $\#U_1=2$
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.\\
-  $U_2 = \{2_h, 3_h, \ldots , 10_h, b_h, d_h, k_h, a_h, 2_r, \ldots, a_r, 2_s, \ldots, a_s, 2_k, \ldots, a_k \}$ met $\#U_2=52$
+  $U_2 = \{h_1, h_2, h_3, \ldots , h_{10}, h_b, h_d, h_k, r_1, \ldots, a_k, s_1, \ldots, s_k, k_1, \ldots, k_k \}$ met $\#U_2=52$
   \item $E_3$: Verjaren in de maand mei.\\
   Er zijn 31 dagen in mei, we hebben dus als uitkomst 1 mei, 2 mei, ... enz. Laten we voor het gemak enkel het getal van de dag gebruiken in de uitkomstenverzameling, dat het in de maand mei valt weten we reeds.\\
   $U_3 = \{1, 2, 3, \ldots, 30, 31\}$ met $\#U_3=31$
@@ -192,11 +199,8 @@ $U=\{u_1, u_2, \ldots, u_n\}$ met $\#U=n$.
 Bepaal de uitkomstenverzameling $U$ en het aantal elementen $\#U$ van de volgende experimenten:
 \begin{enumerate}[(a)]
   \item $E_4$: Twee dobbelstenen tegelijk opgooien.
-  %\arules{3}
   \item $E_5$: Twee dobbelstenen na elkaar opgooien.
-  %\arules{3}
   \item $E_6$: Vier kaarten uit een spel van 52 kaarten trekken zonder terugleggen. De volgorde waarbij je de kaarten nadien in je hand houdt maakt niets uit.
-  %\arules{3}
 \end{enumerate}
 \end{oefening}
 
@@ -214,8 +218,7 @@ Geef, voor een zelfgekozen kansexperiment dat niets te maken heeft met muntstukk
 
 \subsection{Een gebeurtenis}
 
-\paragraph*{Definitie} Een {\bf gebeurtenis} is elke deelverzameling van de uitkomstenverzameling $U$ en stellen
-we voor door $A, B, \ldots$ .
+\paragraph*{Definitie} Een {\bf gebeurtenis} is elke deelverzameling van de uitkomstenverzameling $U$ en stellen we voor door $A, B, \ldots$ .
 
 Alternatief kunnen we dit ook definiëren als:\\
 \begin{mdframed}
@@ -240,11 +243,11 @@ We zoeken ook telkens het aantal elementen op.
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.
   \begin{itemize}
     \item $A_2$: Een harten trekken\\
-    $A_2=\{2_h, 3_h, \ldots, h_h, a_h\}$ met $\#A_2=13$
+    $A_2=\{h_1, h_2, \ldots, h_d, h_k\}$ met $\#A_2=13$
     \item $B_2$: Een aas trekken\\
-    $B_2=\{a_h, a_r, a_s, a_k\}$ met $\#B_2=4$
+    $B_2=\{h_1, r_1, s_1, k_1\}$ met $\#B_2=4$
     \item $C_2$: Een zwarte kaart trekken\\
-    $C_2=\{2_s, \ldots, a_s, 2_k, \ldots, a_k\}$ met $\#C_2=26$
+    $C_2=\{s_1, \ldots, s_k, k_1, \ldots, k_h\}$ met $\#C_2=26$
   \end{itemize}
   We stellen ook hier vast dat: $A_2\subset U_2$, $B_2\subset U_2$ en $C_2\subset U_2$.
   \item $E_3$: Verjaren in de maand mei.
@@ -263,9 +266,7 @@ We zoeken ook telkens het aantal elementen op.
 Geef voor $E_4$, twee dobbelstenen tegelijk opgooien, de volgende gebeurtenissen en ook het aantal elementen in de gebeurtenis.
 \begin{enumerate}[(a)]
   \item $A_4$: De som van de ogen is 10.
-  %\arules{3}
   \item $B_4$: Ten minste één van beide heeft 2 ogen.
-  %\arules{3}
 \end{enumerate}
 \end{oefening}
 
@@ -273,9 +274,7 @@ Geef voor $E_4$, twee dobbelstenen tegelijk opgooien, de volgende gebeurtenissen
 Geef voor $E_5$, twee dobbelstenen na elkaar opgooien, de volgende gebeurtenissen en ook het aantal elementen in de gebeurtenis.
 \begin{enumerate}[(a)]
   \item $A_5$: De som van de ogen is 10.
-  %\arules{3}
   \item $B_5$: Ten minste één van beide heeft 2 ogen.
-  %\arules{3}
 \end{enumerate}
 \end{oefening}
 
@@ -283,9 +282,7 @@ Geef voor $E_5$, twee dobbelstenen na elkaar opgooien, de volgende gebeurtenisse
 Geef voor $E_6$, vier kaarten uit een spel van 52 kaarten trekken zonder terugleggen, de volgende gebeurtenissen en ook het aantal elementen in de gebeurtenis.
 \begin{enumerate}[(a)]
   \item $A_6$: Vier boeren trekken.
-  %\arules{3}
   \item $B_6$: Twee zwarte en twee rode kaarten trekken.
-  %\arules{6}
 \end{enumerate}
 \end{oefening}
 
@@ -330,8 +327,7 @@ Er bestaat juist één onmogelijke gebeurtenis al kan die wel op veel manieren o
 
 \subsection{Definitie}
 
-Beschouw het experiment $E$ met uitkomstenverzameling $U$. Neem de gebeurtenis $A$.
-Nu gaan we aan die gebeurtenis $A$ een positief reëel getal toekennen zó dat
+Beschouw het experiment $E$ met uitkomstenverzameling $U$. Neem de gebeurtenis $A$. Nu gaan we aan die gebeurtenis $A$ een positief reëel getal toekennen zó dat
 \begin{itemize}
   \item we wat méér zeggen over de mogelijkheid dat de gebeurtenis zich zal voordoen bij het herhalen van het experiment.
   \item de zekere gebeurtenis U het getal 1 meekrijgt.
@@ -342,8 +338,7 @@ Dit getal noemen we de kanswaarde of kortweg de kans op de gebeurtenis $A$. Dit 
 $$0 \leq P(A) \leq 1\;.$$
 \end{mdframed}
 
-\paragraph*{Let op} Een kans op een gebeurtenis is dus gedefinieerd als een breuk en wordt liefst niet als
-een kommagetal geschreven.
+\paragraph*{Let op} Een kans op een gebeurtenis is dus gedefinieerd als een breuk en wordt liefst niet als een kommagetal geschreven.
 
 \paragraph*{Definitie} De {\bf kanswaarde} $P(A)$ is een reëel positief getal, hoogstens gelijk aan $1$, dat uitdrukt welk de kans is dat gebeurtenis $A$ zich voordoet bij het uitvoeren van een experiment $E$.
 
@@ -358,7 +353,7 @@ een kommagetal geschreven.
   \end{minipage}
   Bij de gebeurtenis $A$ hoort de kanswaarde $P(A) =\dfrac{1}{2}$. Dit drukt dus uit dat we $\dfrac{1}{2}$ kans hebben dat wanneer we een muntstuk opgooien, het kop zal zijn.
   \item Welke is de kans om een harten te trekken uit een spel van 52 kaarten?\\
-  Je weet $B = \{2_h , 3_h , 4_h , ..., h_h , a_h\}$, dus $\#B=13$.
+  Je weet $B = \{h_1, h_2 , h_3 , h_4 , ..., h_h\}$, dus $\#B=13$.
   Nu hoort bij de gebeurtenis $B$ de kanswaarde $P(B)=\dfrac{13}{52}=\dfrac{1}{4}$. De breuk $\dfrac{1}{4}$ drukt hier uit: de kans dat we een harten zullen trekken bij een volgende beurt.
 \end{itemize}
 
@@ -375,7 +370,6 @@ $$P(A)=\dfrac{\#A}{\#U}\;.$$
 
 \begin{oefening}
 Uit een spel van 52 kaarten trekken we lukraak één kaart. Hoe groot is volgens Laplace de kans op: de getrokken kaart een aas is?
-%\arules{3}
 \end{oefening}
 
 \begin{oefening}
@@ -402,13 +396,10 @@ De theorie van de kansrekening is in zijn essentie niets anders dan het gezond v
 In een vaas zitten 10 identieke balletjes met daarop telkens een verschillend getal van 0 tot 9. Beschouw het kansexperiment: 1 balletje uit de vaas nemen.
 \begin{enumerate}[(a)]
   \item Stop alle uitkomsten in de uitkomstenverzameling $U$ en tel de uitkomstenverzameling.
-  %$U=\{\arule{8cm}\}$ met $\#U=\arule{2cm}$
   \item Beschouw de deelverzameling $A$, waarvan de elementen veelvouden zijn van $4$. $A$ is dus de gebeurtenis, het getrokken getal is een veelvoud van $4$, geef deze gebeurtenis en tel de gebeurtenis.
-  %$A=\{\arule{8cm}\}$ met $\#A=\arule{2cm}$
   \item Geef met behulp van de regel van Laplace:
   $$P(A)=\dfrac{\mbox{aantal elementen van }A}{\mbox{aantal elementen van }U}$$
   de kans op gebeurtenis $A$:
-  %$P(A)=\arule{2cm}$
 \end{enumerate}
 \end{oefening}
 \vspace*{0.5cm}
@@ -416,38 +407,20 @@ In een vaas zitten 10 identieke balletjes met daarop telkens een verschillend ge
 \begin{oefening}
 In een vaas zitten 20 identieke balletjes met daarop telkens een verschillend getal van 1 tot 20. Beschouw het kansexperiment: 1 balletje uit de vaas nemen.\\
 Geef de uitkomstenverzameling $U$.
-%  \arules{1}
 \begin{enumerate}[(a)]
   \item Geef de gebeurtenis $A$ en de kans $P(A)$ dat het getrokken getal negatief is.
-  %\arules{2}
   \item Geef de gebeurtenis $B$ en de kans $P(B)$ dat het getrokken getal deelbaar door 7 is.
-  %\arules{2}
   \item Geef de gebeurtenis $C$ en de kans $P(C)$ dat het getrokken getal een priemgetal is.
-  %\arules{1}
   \item Geef de gebeurtenis $D$ en de kans $P(D)$ dat het getrokken getal $\leq 50$ is.
-  %\arules{1}
   \item Geef de gebeurtenis $E$ en de kans $P(E)$ dat het getrokken getal een veelvoud van 5 is.
-  %\arules{1}
   \item Geef de gebeurtenis $F$ en de kans $P(F)$ dat het getrokken getal deelbaar door 14 is.
-  %\arules{1}
 \end{enumerate}
 \end{oefening}
 
 \paragraph*{Opmerking}
-Laplace zullen we vooral de beperktheid van zijn methode verwijten. Alleen die
-experimenten waarvoor we $U$ kunnen herleiden tot een eindige verzameling van
-uitkomsten die alle even waarschijnlijk zijn, komen in aanmerking. Als we daarbij
-bedenken, dat {\em even waarschijnlijk} afgeleid wordt uit {\em dezelfde kanswaarde}
-komen we automatisch in een niet te doorbreken kringloop terecht. Geven we een
-concreet tegenvoorbeeld.\\
-Beschouwen we het experiment $E$: het voorspellen van de uitslag van een
-voetbalwedstrijd met $U = \{t, g, v\}$. ($t$: de thuisploeg wint, $g$: beide ploegen spelen
-gelijk, $v$: de ploeg op verplaatsing wint). Hierbij zijn niet alle uitkomsten even
-waarschijnlijk. Bovendien speelt de sterkte van de betrokken elftallen een rol. En aan
-wat meet men de sterkte? Jawel, aan de hand van de bekomen resultaten. Hier faalt
-dus de regel van Laplace. We mogen ze hier dus niet gebruiken.
+Laplace zullen we vooral de beperktheid van zijn methode verwijten. Alleen die experimenten waarvoor we $U$ kunnen herleiden tot een eindige verzameling van uitkomsten die alle even waarschijnlijk zijn, komen in aanmerking. Als we daarbij bedenken, dat {\em even waarschijnlijk} afgeleid wordt uit {\em dezelfde kanswaarde} komen we automatisch in een niet te doorbreken kringloop terecht. Geven we een concreet tegenvoorbeeld.\\
+Beschouwen we het experiment $E$: het voorspellen van de uitslag van een voetbalwedstrijd met $U = \{t, g, v\}$. ($t$: de thuisploeg wint, $g$: beide ploegen spelen gelijk, $v$: de ploeg op verplaatsing wint). Hierbij zijn niet alle uitkomsten even waarschijnlijk. Bovendien speelt de sterkte van de betrokken elftallen een rol. En aan wat meet men de sterkte? Jawel, aan de hand van de bekomen resultaten. Hier faalt dus de regel van Laplace. We mogen ze hier dus niet gebruiken.
 
-\pagebreak
 \subsection{De complementregel}
 
 \subsubsection{Tegengestelde gebeurtenis $\bar{A}$}
@@ -455,9 +428,9 @@ dus de regel van Laplace. We mogen ze hier dus niet gebruiken.
 \paragraph*{Definitie} $\bar{A}$ is de gebeurtenis: $A$ doet zich {\em niet} voor. We noemen $\bar{A}$ de tegengestelde gebeurtenis van $A$.
 
 \paragraph*{Gevolg}
-  \begin{mdframed}
+\begin{mdframed}
   $$\bar{A}=U\setminus A$$
-  \end{mdframed}
+\end{mdframed}
 
 Met andere woorden, $\bar{A}$ is het complement van $A$ in $U$.
 
@@ -553,7 +526,7 @@ $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
 
 \paragraph*{Bewijs}
 \begin{center}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(1.96,0.6) rectangle (9.52,4.75);
 \draw [rotate around={-1.89:(5.8,2.72)}] (5.8,2.72) ellipse (3.48cm and 2.0cm);
 \draw [rotate around={-4.59:(4.9,2.59)}] (4.9,2.59) ellipse (1.65cm and 1.2cm);
@@ -575,13 +548,6 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
 \begin{oefening}
 We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
 een priemgetal of een even getal gooien.
-% \paragraph*{Oplossing} $\#U=\arule{2cm}$\\
-% Stel $A$: een priemgetal gooien. $A=\arule{5cm}$\\
-% Stel $B$: een even getal gooien. $B=\arule{5cm}$\\
-% Dan is $A\cap B$: een even priemgetal gooien. $A\cap B=\arule{5cm}$\\
-% En dan is $A\cup B$: \arulefill
-% Dus $P(C)=P(A\cup B)=$
-% \arules{2}
 \end{oefening}
 
 \begin{oefening}
@@ -602,7 +568,6 @@ disjunct zijn. We zullen hier niet over uitweiden.
 \begin{oefening}
 In een urne bevinden zich 8 rode, 5 zwarte en 17 gele bollen. We trekken lukraak een
 bol. Bereken de kans dat de bol rood of zwart is.
-%\arules{9}
 \end{oefening}
 
 \cleardoublepage
@@ -666,28 +631,22 @@ Uit een spel van 32 kaarten (2, 3, 4, 5 en 6 zijn weggenomen) trekt men op asele
 \end{oefening}
 
 \begin{oefening}
-In een klas van 25 leerlingen zijn er 10 die graag dansen en 5 die graag
-zingen. Daarbij zijn er 2 leerlingen die zowel graag dansen als zingen. Als we lukraak een
-leerling aanduiden, wat is de kans dat die graag danst of graag zingt.
+In een klas van 25 leerlingen zijn er 10 die graag dansen en 5 die graag zingen. Daarbij zijn er 2 leerlingen die zowel graag dansen als zingen. Als we lukraak een leerling aanduiden, wat is de kans dat die graag danst of graag zingt.
 \end{oefening}
 
 \begin{oefening}
 \begin{enumerate}[(a)]
-  \item Men gooit lukraak drie dobbelstenen op. Wat is de kans dat de som van
-het aantal ogen ten minste gelijk is aan 5.
-  \item Men gooit lukraak acht dobbelstenen op. Wat is de kans dat de som van
-  het aantal ogen ten minste gelijk is aan 9.
+  \item Men gooit lukraak drie dobbelstenen op. Wat is de kans dat de som van het aantal ogen ten minste gelijk is aan 5.
+  \item Men gooit lukraak acht dobbelstenen op. Wat is de kans dat de som van het aantal ogen ten minste gelijk is aan 9.
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
-Uit een spel van 52 kaarten trek je lukraak vier kaarten. Wat is de kans
-dat er precies één boer bij is?
+Uit een spel van 52 kaarten trek je lukraak vier kaarten. Wat is de kans dat er precies één boer bij is?
 \end{oefening}
 
 \begin{oefening}
-Bij een spelletje poker krijgt een speler 5 kaarten uit een spel van 52
-kaarten. Bereken voor deze speler de kans dat hij 5 kaarten krijgt van dezelfde kleur.
+Bij een spelletje poker krijgt een speler 5 kaarten uit een spel van 52 kaarten. Bereken voor deze speler de kans dat hij 5 kaarten krijgt van dezelfde kleur.
 \end{oefening}
 
 \begin{oefening}
