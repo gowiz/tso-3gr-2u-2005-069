@@ -2,6 +2,15 @@
 
 \input{../gowiz.tex}
 
+\usepackage{auto-pst-pdf}
+\usepackage{pst-poker}
+\psset{inline=symbol}
+
+\usepackage{array}
+
+\usepackage{rotating}
+
+
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
   \draw[rounded corners=1] (0,0) rectangle (1,1);
@@ -224,7 +233,7 @@ Alternatief kunnen we dit ook definiëren als:\\
 \begin{mdframed}
 \begin{center}
 $A$ is een {\bf gebeurtenis} bij een experiment $E$ met uitkomstenverzameling $U$\\
-$\Leftrightarrow$\\
+$\Updownarrow$\\
 $A\subset U$
 \end{center}
 \end{mdframed}
@@ -475,7 +484,7 @@ We noemen bovenstaande formule de {\bf complementregel} en kan soms handig gebru
 \end{oefening}
 
 \begin{oefening}
-Uit een spel van 52 kaarten trekt men 5 kaarten. Hoe groot is de kans op: minstens één aas?
+Uit een spel van 52 kaarten trekt men 5 kaarten. Hoe groot is de kans op minstens één aas?
 \end{oefening}
 
 \subsection{Somregel}
@@ -545,14 +554,15 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
 \end{eqnarray*}
 \end{samepage}
 
+\paragraph{Voorbeeld}
+We gooien lukraak met een zuivere dobbelsteen. Bereken de kans dat we een priemgetal of een even getal gooien.
+
 \begin{oefening}
-We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
-een priemgetal of een even getal gooien.
+Uit een spel van 52 kaarten trekken we lukraak een kaart. Hoe groot is de kans dat de getrokken kaart een harten of een persoon is?
 \end{oefening}
 
 \begin{oefening}
-Uit een spel van 52 kaarten trekken we lukraak een kaart. Hoe groot is de kans dat de
-getrokken kaart een harten of een boer is?
+  We trekken een lotje uit een serie lotjes met de nummers $10, 11, 12, \ldots, 99$. Hoe groot is de kans dat we een lotje trekken met het cijfer $2$ in het lotnummer?
 \end{oefening}
 
 \subsubsection{Bijzonder geval, de somregel}
@@ -666,32 +676,66 @@ Uit een spel van 52 kaarten trekken we lukraak een kaart. Bereken de kans dat he
 Je doet mee aan een waar/vals quiz met 10 vragen. Wat is de kans dat je alle vragen juist hebt als je op elk antwoord gokt.
 \end{oefening}
 
-\begin{oefening}
-Op een meerkeuze examen met 40 vragen waarbij er telkens 4 keuzes, A-B-C-D, zijn.
-\begin{enumerate}[(a)]
-  \item Wat is de kans dat alle vragen juist beantwoord worden?
-  \item Wat is de kans dat de helft of meer dan de helft van de vragen juist beantwoord worden?
-\end{enumerate}
+\begin{oefening}\\
+  \begin{minipage}{.7\linewidth}
+    Sinds oktober 2011 gebruikt de Belgische lotto $45$ balletjes met op elk een verschillend nummer van $1$ tot en met $45$. Om mee te doen aan de lotto moet je $6$ kruisjes zetten op een rooster.
+    \begin{enumerate}[(a)]
+    \item Wat is de kans dat je de lotto wint als je de getallen $1$ tot en met $6$ kiest?
+    \item Wat is de kans dat je de lotto wint als je jouw $6$ favoriete getallen kiest?
+    \item Hoeveel roosters moet je invullen om zeker éénmaal het juiste rooster in te vullen?
+    \item Hoeveel geef je daarvoor uit, als één rooster 1.25 euro kost?
+    \item Wat is de kans dat een lotto trekking zeker het getal $42$ bevat?
+    \end{enumerate}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.27\linewidth}
+    \vspace{-.5em}
+    \includegraphics[width=\textwidth]{lotto}
+  \end{minipage}
 \end{oefening}
 
 \begin{oefening}
 Je gooit met een paar dobbelstenen. Wat is de kans dat de som van de ogen 3 is?
 \end{oefening}
 
-\begin{oefening}*
-Een vaas bevat 3 rode en 2 witte knikkers, een tweede vaas 4 rode en 1 witte. Als men met een dobbelsteen een zes werpt neemt men een knikker uit vaas 2, in alle andere gevallen uit vaas 1. Hoe groot is de kans een witte knikker uit vaas 1 te trekken?
-\end{oefening}
-
-\begin{oefening}*
-In een schroevenfabriek fabriceren de machines A, B en C resp. 25, 35 en 40 \% van de totale productie. Van hun producten zijn er resp. 5, 4 en 2 \% defect. Men kiest willekeurig een schroef en deze is slecht. Hoe groot is de kans dat deze gemaakt
-is door A, B of C?
-\end{oefening}
-
 \appendix
-\cleardoublepage
 \section{Het kaartspel}
-Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (j), koningin (q) en koning (k), aas (a). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de volgorde en dan als index de soort. Zo wordt de harten dame $q_h$ en de schoppen zeven $7_s$.
+\vspace*{-1em}
+\begin{minipage}[t][\paperheight]{.37\linewidth}
+    \vspace*{.5em}
+    Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: de aas (1 of A), 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (J), koningin (Q) en koning (K). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij.
+    \vfill
+    \begin{center}
+      \includegraphics{Ming_Dynasty_playing_card}
+    \end{center}
+    \vfill\vfill
+    \mbox\
+\end{minipage}
+\begin{minipage}[t]{.7\linewidth}
+  \raisebox{-\height}{
+    \begin{sideways}
+\begin{postscript}
+  \psset{unit=1.1}
+  \psset{colorset=bw}
 
-\includegraphics[width=\textwidth, angle=0]{kaartspel}
+  \crdAc\crdtwoc\crdtrec\crdfourc\crdfivec
+  \crdsixc\crdsevc\crdeigc\crdninec\crdtenc
+  \crdJc\crdQc\crdKc
+
+  \crdAd\crdtwod\crdtred\crdfourd\crdfived
+  \crdsixd\crdsevd\crdeigd\crdnined\crdtend
+  \crdJd\crdQd\crdKd
+
+  \crdAh\crdtwoh\crdtreh\crdfourh\crdfiveh
+  \crdsixh\crdsevh\crdeigh\crdnineh\crdtenh
+  \crdJh\crdQh\crdKh
+
+  \crdAs\crdtwos\crdtres\crdfours\crdfives
+  \crdsixs\crdsevs\crdeigs\crdnines\crdtens
+  \crdJs\crdQs\crdKs
+\end{postscript}
+\end{sideways}
+}
+\end{minipage}
 
 \end{document}
