@@ -1,0 +1,70 @@
+\documentclass[13pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage[dutch]{babel}
+\usepackage{dot2texi}
+
+\title{Beschrijvende statistiek}
+\subtitle{Leren liegen, met statistiek!}
+\author{}
+\institute{}
+\date{}%\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage%
+\end{frame}
+
+\begin{frame}
+  \frametitle{Beschrijvende statistiek}
+  \begin{itemize}
+  \item gegevens tellen
+  \item kort weergeven met kengetallen
+  \item grafisch voorstellen met grafieken
+  \end{itemize}
+  \vspace{1cm}
+  \begin{description}
+  \item[Onderzoeksvraag] verzamelen van gegevens
+  \item[Elementen] personen of objecten die we meten
+  \item[Variabele] eigenschap die we van de elementen bepalen
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Populatie en steekproef}
+  \begin{description}
+  \item[populatie] verzameling {\bf alle} elementen
+  \item[steekproef] deelverzameling van de populatie
+    \begin{description}
+    \item[representatief] alle deelgroepen vertegenwoordigd
+    \item[aselect] elk element populatie evenveel kans
+    \item[groot] minimum 24 elementen\\
+      is de {\bf steekproefgrootte} $n$
+    \end{description}
+  \end{description}
+  \begin{center}
+    \scriptsize
+    \begin{dot2tex}[dot]
+      digraph G {
+        graph [nodesep=0,ranksep=0];
+        Variabele -> Kwalitatief;
+        Variabele -> Kwantitatief;
+        Kwalitatief -> Nominaal;
+        Kwalitatief -> Ordinaal;
+        Kwantitatief -> Discreet;
+        Kwantitatief -> Continue;
+      }
+    \end{dot2tex}
+  \end{center}
+
+\end{frame}
+
+\end{document}
+
