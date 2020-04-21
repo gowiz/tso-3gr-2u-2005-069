@@ -1,0 +1,303 @@
+\documentclass[13pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage[dutch]{babel}
+\usepackage{dot2texi}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+\makeatletter
+\newcommand\dataset[2][5]{{
+    \singlespace\vspace*{-0.5em}
+    \begin{multicols}{#1}
+      \forcsvlist{\dataset@item}{#2}
+    \end{multicols}
+  }}
+\newcommand\dataset@item[1]{\mbox{\texttt{#1}}\\}
+\makeatother
+
+\newenvironment{answer}
+{\color{blue}}
+{\color{black}}
+
+\title{Beschrijvende statistiek}
+\subtitle{Oplossingen van de oefeningen}
+\author{}
+\institute{}
+\date{}%\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage%
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 1}
+  Noteer bij elke onderzoeksvraag de {\bf elementen} en de {\bf variabele}:
+  \begin{enumerate}[(a)]
+  \item Met welk vervoersmiddel komen de leerlingen naar onze school?
+    \begin{itemize}
+      \begin{answer}
+      \item Elementen: de leerlingen van onze school
+      \item Variabele: het vervoersmiddel
+      \end{answer}
+    \end{itemize}
+  \item Welke is het meest geliefde vak van alle laatstejaarsleerlingen in Vlaanderen?
+    \begin{itemize}
+      \begin{answer}
+      \item Elementen: de laatstejaarsleerlingen in Vlaanderen
+      \item Variabele: het geliefde vak (bijvoorbeeld wiskunde)
+      \end{answer}
+    \end{itemize}
+  \item Wat is het B.M.I. {\em (body mass index)} van de Belgen?
+    \begin{itemize}
+      \begin{answer}
+      \item Elementen: de Belgen
+      \item Variabele: het B.M.I. (een getal rond de 20)
+      \end{answer}
+    \end{itemize}
+  \item Hoeveel computers zijn er per leerling beschikbaar voor gans Avelgem?
+    \begin{itemize}
+      \begin{answer}
+      \item Elementen: de leerlingen in Avelgem
+      \item Variabele: het aantal computers voor die leerling (bijvoorbeeld één desktop thuis en een laptop in de slaapkamer)
+      \end{answer}
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 2}
+  De volgende keer dat je een M\&M snoepjes eet, denk dan eens wat er de elementen van een onderzoek zouden kunnen zijn en bedenk een tweetal variabelen die je zou kunnen onderzoeken.\\[1em]
+  \begin{itemize}
+    \begin{answer}
+    \item Kleur
+    \item Gewicht per M\&M snoepje
+    \item Gewicht van een volledig zakje M\&M snoepjes
+    \item Aantal M\&M snoepjes per zakje
+    \item Volume van een M\&M snoepje
+    \item ...
+    \end{answer}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 3}
+  Geef zelf een onderzoeksvraag, de bijhorende elementen en variabele. Maak hier een enquête voor op.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 4}
+  Hoe zou je ervoor kunnen zorgen dat we een goede steekproef hebben van alle leerlingen van onze school?\\[1em]
+  \begin{answer}
+    We zorgen dat ze representatief, aselect en groot genoeg is:
+    \begin{itemize}
+      \begin{answer}
+      \item representatief: we zorgen er bijvoorbeeld voor dat we op verschillende momenten van de dag aan alle ingangen van de school staan en mensen bevragen
+      \item aselect: we kiezen de leerlingen die we bevragen willekeurig uit, bijvoorbeeld elke tiende leerling die ons passeert
+      \item groot genoeg: we bevragen bijvoorbeeld minimaal 30 leerlingen van onze school
+      \end{answer}
+    \end{itemize}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 5}
+  Noteer van de volgende onderzoeken telkens de populatie, de steekproef en de steekproefgrootte.
+  \begin{enumerate}[(a)]
+  \item Een interviewer vraagt telefonisch aan 500 Vlamingen of ze voor of tegen nieuwe verkiezingen zijn.
+    \begin{itemize}
+      \begin{answer}
+      \item Populatie: alle Vlamingen
+      \item Steekproef: 500 Vlamingen
+      \item Steekproefgrootte: 500
+      \end{answer}
+    \end{itemize}
+  \item Na elke rit in de Ronde van Frankrijk wordt een aantal renners onderzocht op doping.
+    \begin{itemize}
+      \begin{answer}
+      \item Populatie: alle renners die meedoen aan de Ronde
+      \item Steekproef: een aantal renners, bijvoorbeeld 4 renners
+      \item Steekproefgrootte: een aantal, bijvoorbeeld 4
+      \end{answer}
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 6}
+  Geef bij de volgende variabelen aan of het kwalitatieve of kwantitatieve variabelen zijn. Geef ook telkens één voorbeeld van een aantal mogelijke waarden.
+  \begin{enumerate}[(a)]
+  \item De smaak van fruitsnoepjes.
+    \begin{itemize}
+      \begin{answer}
+      \item Kwalitatief nominaal
+      \item aardbei, banaan, citroen, ...
+      \end{answer}
+    \end{itemize}
+  \item Het aantal tv-toestellen dat Vlaamse gezinnen bezitten.
+    \begin{itemize}
+      \begin{answer}
+      \item Kwantitatief discreet
+      \item geen, 1, 2, ...
+      \end{answer}
+    \end{itemize}
+  \item De mate van tevredenheid bij klanten van een supermarkt.
+    \begin{itemize}
+      \begin{answer}
+      \item Kwalitatief ordinaal
+      \item ontevreden, tevreden, zeer tevreden, ...
+      \end{answer}
+    \end{itemize}
+  \item De afstand die leerlingen moeten afleggen als ze naar school komen.
+    \begin{itemize}
+      \begin{answer}
+      \item Kwantitatief continue
+      \item 5 km, 200 m, 8.3 km, ...
+      \end{answer}
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 7}
+  Als er $k$ unieke waarnemingen $\omega_1, \omega_2, \ldots, \omega_k$ zijn, wat is dan de waarde van
+  $$f_1 + f_2 + \cdots f_k$$
+  \begin{answer}
+    \begin{align*}
+      f_1 + f_2 + \cdots f_k &= \dfrac{n_1}{n} + \dfrac{n_2}{n} + \cdots \dfrac{n_k}{n}\\
+                             &= \dfrac{n_1 + n_2 + \cdots n_k}{n}\\
+                             &= \dfrac{n}{n}\\
+                             &= 1
+    \end{align*}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 8}
+  Maak de frequentietabel horende bij de dataset:
+  {\tiny \dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}}
+  \begin{answer}
+  \begin{center}
+    \begin{tabular}{c|r|r}
+      $\omega_i$ & $n_i$ & $f_i$\\
+      \hline
+      fiets      & 17    & 0.28\\
+      bus        & 21    & 0.34\\
+      auto       &  8    & 0.13\\
+      te voet    & 14    & 0.23\\
+      skate board&  1    & 0.02\\
+      \hline
+       & n=61&
+    \end{tabular}
+  \end{center}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 9}
+  In september werd aan alle leerlingen van het derde jaar gevraagd of ze een rekentoestel hadden, en zo ja, van welk merk. Vervolledig de frequentietabel.
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      Rekenmachine & Frequentie \textcolor{blue}{$n_i$} & Rel. Freq \textcolor{blue}{$f_i$} \\\hline
+      Geen         & \textcolor{blue}{81}               & 0.54                              \\\hline
+      Casio        & 27                                 & 0.18                              \\\hline
+      TI           & \textcolor{blue}{42}               & \textcolor{blue}{0.28}            \\\hline
+                   & n=\textcolor{blue}{150}            &                                   \\
+    \end{tabular}
+  \end{center}
+  \begin{answer}
+    \begin{align*}
+      f_i = \dfrac{n_i}{n} &\Rightarrow n=\dfrac{n_i}{f_i}=\dfrac{27}{0.18}=150\\
+                           &\Rightarrow n_i=f_i \cdot n = 0.54 \cdot 150 = 81
+    \end{align*}
+    \begin{align*}
+      n = n_1 + n_2 + n_3 \Rightarrow &= n - n_2 - n_3\\
+                                      &= 150 - 81 - 27\\
+                                      &= 42
+    \end{align*}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 10}
+  We openen een aantal zakjes {\em Gummibärchen}. Als we van elk beertje de kleur noteren krijgen we volgende dataset:
+  {\tiny \dataset[10]{paars, bruin, geel, roze, blauw, oranje, paars, bruin, roze, oranje, geel, bruin, paars, bruin, bruin, geel, roze, bruin, roze, geel, blauw, oranje, paars, oranje, paars, roze, paars, oranje, bruin, geel, paars, paars, roze, geel, roze, roze, roze, roze, bruin, geel, geel, geel, paars, blauw, blauw, geel, oranje, bruin, blauw}}
+  \begin{enumerate}[(a)]
+  \item Welk een soort variabel hebben we?\\
+    \begin{answer}
+      Kwalitatief nominaal
+    \end{answer}
+  \item Geef de frequentietabel, de relatieve frequenties mag je afronden op twee cijfers na de komma.
+  \item Wat zou theoretisch het antwoord zijn op $\sum_{i=1}^n f_i$.\\
+    \begin{answer}
+      De som van de relatieve frequenties is altijd 1.
+    \end{answer}
+  \item In deze oefening hebben we een verschil van twee honderdsten in de som van de relatieve frequenties. Waarom?\\
+    \begin{answer}
+      Afrondingsfouten, we hoeven ons daar geen zorgen over te maken.
+    \end{answer}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 11}
+  Gebruik de frequentietabel:
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      $\omega_i$ & $n_i$ & $f_i$\\
+      \hline
+      fiets      & 17    & 0.28\\
+      bus        & 21    & 0.34\\
+      auto       &  8    & 0.13\\
+      te voet    & 14    & 0.23\\
+      skate board&  1    & 0.02
+    \end{tabular}
+  \end{center}
+  Om een staafdiagram te maken.
+  \begin{answer}
+  \begin{center}
+    \definecolor{zzttqq}{rgb}{0.0,0.0,0.8}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45]
+      \begin{axis}[
+        x=.15cm,y=.1cm,
+        axis lines=middle,
+        xmin=-4,
+        xmax=54,
+        ymin=-3,
+        ymax=24.5,
+        ticks=none,
+        ytick={-0.0,5.0,...,25.0},]
+        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (5.,0.) -- (5.,21.) -- (10.,21.) -- (10.,0.) -- cycle;
+        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (15.,0.) -- (15.,17.) -- (20.,17.) -- (20.,0.) -- cycle;
+        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (25.,0.) -- (25.,14.) -- (30.,14.) -- (30.,0.) -- cycle;
+        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (35.,0.) -- (35.,8.) -- (40.,8.) -- (40.,0.) -- cycle;
+        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (45.,0.) -- (45.,1.) -- (50.,1.) -- (50.,0.) -- cycle;
+        \draw (7.5,23) node {21};
+        \draw (17.5,19) node {17};
+        \draw (27.5,16) node {14};
+        \draw (37.5,10) node {8};
+        \draw (47.5,3) node {1};
+        \draw (7.5,-1.5) node {\scriptsize bus};
+        \draw (17.5,-1.5) node {\scriptsize fiets};
+        \draw (27.5,-1.5) node {\scriptsize te voet};
+        \draw (37.5,-1.5) node {\scriptsize auto};
+        \draw (47.5,-1.5) node {\scriptsize skateboard};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{answer}
+\end{frame}
+
+\end{document}
+
