@@ -266,38 +266,191 @@
   \end{center}
   Om een staafdiagram te maken.
   \begin{answer}
+    \begin{center}
+      \definecolor{zzttqq}{rgb}{0.0,0.0,0.8}
+      \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45]
+        \begin{axis}[
+          x=.15cm,y=.1cm,
+          axis lines=middle,
+          xmin=-4,
+          xmax=54,
+          ymin=-3,
+          ymax=24.5,
+          ticks=none,
+          ytick={-0.0,5.0,...,25.0},]
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (5.,0.) -- (5.,21.) -- (10.,21.) -- (10.,0.) -- cycle;
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (15.,0.) -- (15.,17.) -- (20.,17.) -- (20.,0.) -- cycle;
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (25.,0.) -- (25.,14.) -- (30.,14.) -- (30.,0.) -- cycle;
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (35.,0.) -- (35.,8.) -- (40.,8.) -- (40.,0.) -- cycle;
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (45.,0.) -- (45.,1.) -- (50.,1.) -- (50.,0.) -- cycle;
+          \draw (7.5,23) node {21};
+          \draw (17.5,19) node {17};
+          \draw (27.5,16) node {14};
+          \draw (37.5,10) node {8};
+          \draw (47.5,3) node {1};
+          \draw (7.5,-1.5) node {\scriptsize bus};
+          \draw (17.5,-1.5) node {\scriptsize fiets};
+          \draw (27.5,-1.5) node {\scriptsize te voet};
+          \draw (37.5,-1.5) node {\scriptsize auto};
+          \draw (47.5,-1.5) node {\scriptsize skateboard};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 12}
+  Aan 24 studenten werd gevraagd om een even getal tussen 0 en 9 te noemen en daarbij werd de volgende reeks getallen geregistreerd:
   \begin{center}
-    \definecolor{zzttqq}{rgb}{0.0,0.0,0.8}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45]
-      \begin{axis}[
-        x=.15cm,y=.1cm,
-        axis lines=middle,
-        xmin=-4,
-        xmax=54,
-        ymin=-3,
-        ymax=24.5,
-        ticks=none,
-        ytick={-0.0,5.0,...,25.0},]
-        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (5.,0.) -- (5.,21.) -- (10.,21.) -- (10.,0.) -- cycle;
-        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (15.,0.) -- (15.,17.) -- (20.,17.) -- (20.,0.) -- cycle;
-        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (25.,0.) -- (25.,14.) -- (30.,14.) -- (30.,0.) -- cycle;
-        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (35.,0.) -- (35.,8.) -- (40.,8.) -- (40.,0.) -- cycle;
-        \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (45.,0.) -- (45.,1.) -- (50.,1.) -- (50.,0.) -- cycle;
-        \draw (7.5,23) node {21};
-        \draw (17.5,19) node {17};
-        \draw (27.5,16) node {14};
-        \draw (37.5,10) node {8};
-        \draw (47.5,3) node {1};
-        \draw (7.5,-1.5) node {\scriptsize bus};
-        \draw (17.5,-1.5) node {\scriptsize fiets};
-        \draw (27.5,-1.5) node {\scriptsize te voet};
-        \draw (37.5,-1.5) node {\scriptsize auto};
-        \draw (47.5,-1.5) node {\scriptsize skateboard};
-      \end{axis}
+    \small \dataset[8]{2, 6, 4, 0, 6, 8, 6, 4, 2, 4, 0, 6, 8, 0, 0, 2, 4, 6, 8, 4, 0, 2, 2, 0,}
+  \end{center}
+  \begin{enumerate}[(a)]
+  \item Maak de frequentietabel.
+    \begin{answer}
+      \begin{tabular}[t]{c|c|c}
+        Getal & Frequentie & Rel. Freq\\
+        \hline
+        0 & 6 & 0.25\\
+        2 & 5 & 0.21\\
+        4 & 5 & 0.21\\
+        6 & 5 & 0.21\\
+        8 & 3 & 0.13
+      \end{tabular}
+    \end{answer}
+  \item Teken het staafdiagram.
+    \begin{answer}
+      \definecolor{zzttqq}{rgb}{0.0,0.0,0.8}
+      \begin{tikzpicture}
+        [baseline={([yshift={-\ht\strutbox}]current bounding box.north)},
+        line cap=round,line join=round,>=triangle 45]
+        \begin{axis}[
+          x=.1cm,y=.1cm,
+          axis lines=middle,
+          xmin=-3,
+          xmax=54,
+          ymin=-3,
+          ymax=12,
+          ticks=none]
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.1]
+          (5.,0.) -- (5.,6) -- (10.,6) -- (10.,0.);
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.1]
+          (15.,0.) -- (15.,5) -- (20.,5) -- (20.,0.);
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.1]
+          (25.,0.) -- (25.,5) -- (30.,5) -- (30.,0.);
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.1]
+          (35.,0.) -- (35.,5) -- (40.,5) -- (40.,0.);
+          \draw[line width=1.2pt,color=zzttqq,fill=zzttqq,fill opacity=0.1]
+          (45.,0.) -- (45.,3) -- (50.,3) -- (50.,0.);
+          \draw (7.5,8) node {6};
+          \draw (17.5,7) node {5};
+          \draw (27.5,7) node {5};
+          \draw (37.5,7) node {5};
+          \draw (47.5,5) node {3};
+          \draw (7.5,-1.5) node {\scriptsize nul};
+          \draw (17.5,-1.5) node {\scriptsize twee};
+          \draw (27.5,-1.5) node {\scriptsize vier};
+          \draw (37.5,-1.5) node {\scriptsize zes};
+          \draw (47.5,-1.5) node {\scriptsize acht};
+        \end{axis}
+      \end{tikzpicture}
+    \end{answer}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 13}
+  Gebruik de frequentietabel:
+  \begin{center}
+    \begin{tabular}{c|c|c|c}
+      $\omega_i$ & $n_i$ & $f_i$& \color{blue}{Hoek}\\
+      \hline
+      fiets      & 17    & 0.28 & \color{blue}{$124\degree$}\\
+      bus        & 21    & 0.34 & \color{blue}{$100\degree$}\\
+      auto       &  8    & 0.13 & \color{blue}{$83\degree$}\\
+      te voet    & 14    & 0.23 & \color{blue}{$47\degree$}\\
+      skate board&  1    & 0.02 & \color{blue}{$6\degree$}\\
+    \end{tabular}
+  \end{center}
+  Om een cirkeldiagram te maken.
+  \begin{answer}
+  \begin{center}
+    \definecolor{qqffff}{rgb}{0.,1.,1.}
+    \definecolor{ubqqys}{rgb}{0.29411764705882354,0.,0.5098039215686274}
+    \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+    \definecolor{xfqqff}{rgb}{0.4980392156862745,0.,1.}
+    \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \clip(-6,-4) rectangle (6,3.5);
+      \draw [shift={(0.,0.)},line width=0.8pt,fill=xfqqff,fill opacity=0.1]
+      (0,0) --  plot[domain=-0.5922674674800428:1.5707963267948966,variable=\t]({1.*3.*cos(\t r)+0.*3.*sin(\t r)},{0.*3.*cos(\t r)+1.*3.*sin(\t r)}) -- cycle ;
+      \draw [shift={(0.,0.)},line width=0.8pt,fill=xdxdff,fill opacity=0.10000000149011612]
+      (0,0) --  plot[domain=3.9398661967150685:5.6909178396995435,variable=\t]({1.*3.*cos(\t r)+0.*3.*sin(\t r)},{0.*3.*cos(\t r)+1.*3.*sin(\t r)}) -- cycle ;
+      \draw [shift={(0.,0.)},line width=0.8pt,fill=ubqqys,fill opacity=0.10000000149011612]
+      (0,0) --  plot[domain=2.4978236671984426:3.9398661967150685,variable=\t]({1.*3.*cos(\t r)+0.*3.*sin(\t r)},{0.*3.*cos(\t r)+1.*3.*sin(\t r)}) -- cycle ;
+      \draw [shift={(0.,0.)},line width=0.8pt,fill=xdxdff,fill opacity=0.10000000149011612]
+      (0,0) --  plot[domain=1.6737993646175133:2.4978236671984426,variable=\t]({1.*3.*cos(\t r)+0.*3.*sin(\t r)},{0.*3.*cos(\t r)+1.*3.*sin(\t r)}) -- cycle ;
+      \draw [shift={(0.,0.)},line width=0.8pt,fill=qqffff,fill opacity=0.10000000149011612]
+      (0,0) --  plot[domain=1.5707963267948966:1.6737993646175133,variable=\t]({1.*3.*cos(\t r)+0.*3.*sin(\t r)},{0.*3.*cos(\t r)+1.*3.*sin(\t r)}) -- cycle ;
+      \draw (2.4,2.2) node[anchor=north west] {bus};
+      \draw (0.1,-2.9) node[anchor=north west] {fiets};
+      \draw (-4.9,-0.9) node[anchor=north west] {te voet};
+      \draw (-3.,3.2) node[anchor=north west] {auto};
+      \draw (-1.4,3.8) node[anchor=north west] {skateboard};
+      \begin{scriptsize}
+      \draw (1.2,1.5) node[anchor=north west] {34\%};
+      \draw (0.,-1.9) node[anchor=north west] {28\%};
+      \draw (-2.6,-0.1) node[anchor=north west] {23\%};
+      \draw (-1.6,2.2) node[anchor=north west] {13\%};
+      \draw (-0.5,3.1) node[anchor=north west] {\tiny2\%};
+    \end{scriptsize}
     \end{tikzpicture}
   \end{center}
 \end{answer}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 14}
+  We vragen aan een aantal mensen wat hun lievelingskleur is en krijgen volgende antwoorden:
+  {\tiny \dataset[6]{rood, paars, groen, rood, groen, geel, purper, oranje, hemelsblauw, groen, rood, paars, geel, geel, zwart, groen, lichtgroen, oranje, geel, rood, oranje, groen, geel, groen, geel, blauw, rood, groen, oranje, blauw, rood, geel, groen, rood, paars, groen, rood, rood, blauw, geel, rood}}
+  \begin{enumerate}[(a)]
+  \item Terwijl je turft kan je de dataset eigenlijk vereenvoudigen. Welke aannames kan je hier maken?\\
+    \begin{answer}
+      Sommige kleuren zijn geschreven met hun dialectische uitspraak. Daarnaast kan je een aantal kleuren gerust samennemen omdat ze hetzelfde kleur zijn, maar in een iets andere tint.
+    \end{answer}
+  \item Maak de frequentietabel.
+  \item Maak het staafdiagram.
+  \item Maak het taartdiagram.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 15}
+  Ik vraag aan een aantal leerlingen welk vak ze graag doen. De leerlingen antwoorden heel ''eerlijk''. Ik turf de dataset en krijg volgende frequentietabel:
+  \begin{small}
+    \begin{tabular}{r|ccccc}
+      Vak  & Wiskunde & Natuurwetenschappen & Nederlands & Frans & Duits \\
+      \hline
+      Freq & 12       & 3                   & 8          & 4     & 6     \\
+    \end{tabular}
+  \end{small}
+  \begin{enumerate}[(a)]
+  \item Wat is hier de variabele en welk soort variabele is het?\\
+    \begin{answer}
+      Lievelingsvak, kwalitatief nominaal.
+    \end{answer}
+  \item Maak de frequentietabel opnieuw, maar nu zodanig dat er kolommen met berekeningen toegevoegd kunnen worden.
+  \item Welk een figuur past er hier best bij de relatieve frequentie?\\
+    \begin{answer}
+      Cirkeldiagram.
+    \end{answer}
+  \item Welk een kolom moet je toevoegen?\\
+    \begin{answer}
+      Relatieve frequentie ($f_i$) en hoek.
+    \end{answer}
+  \item Maak deze figuur.
+  \end{enumerate}
+\end{frame}
+
 
 \end{document}
 
