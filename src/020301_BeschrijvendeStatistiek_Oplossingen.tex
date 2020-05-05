@@ -14,6 +14,7 @@
 \usepackage{multicol}
 \usepackage{setspace}
 \usepackage{xcolor}
+\usepackage{textpos}
 
 \makeatletter
 \newcommand\dataset[2][5]{{
@@ -186,7 +187,7 @@
 \begin{frame}
   \frametitle{Oefening 8}
   Maak de frequentietabel horende bij de dataset:
-  {\tiny \dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skate board, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}}
+  {\tiny \dataset[7]{fiets, bus, bus, auto, fiets, te voet, auto, te voet, fiets, fiets, auto, te voet, te voet, bus, bus, bus, auto, te voet, te voet, fiets, bus, bus, fiets, auto, te voet, skateboard, te voet, fiets, fiets, bus, auto, bus, bus, bus, fiets, bus, te voet, te voet, fiets, auto, fiets, fiets, bus, te voet, bus, bus, fiets, bus, te voet, auto, te voet, fiets, bus, bus, bus, fiets, te voet, bus, fiets, fiets, bus}}
   \begin{answer}
   \begin{center}
     \begin{tabular}{c|r|r}
@@ -365,10 +366,10 @@
     \begin{tabular}{c|c|c|c}
       $\omega_i$ & $n_i$ & $f_i$& \color{blue}{Hoek}\\
       \hline
-      fiets      & 17    & 0.28 & \color{blue}{$124\degree$}\\
-      bus        & 21    & 0.34 & \color{blue}{$100\degree$}\\
-      auto       &  8    & 0.13 & \color{blue}{$83\degree$}\\
-      te voet    & 14    & 0.23 & \color{blue}{$47\degree$}\\
+      fiets      & 17    & 0.28 & \color{blue}{$100\degree$}\\
+      bus        & 21    & 0.34 & \color{blue}{$124\degree$}\\
+      auto       &  8    & 0.13 & \color{blue}{$47\degree$}\\
+      te voet    & 14    & 0.23 & \color{blue}{$83\degree$}\\
       skate board&  1    & 0.02 & \color{blue}{$6\degree$}\\
     \end{tabular}
   \end{center}
@@ -449,6 +450,89 @@
     \end{answer}
   \item Maak deze figuur.
   \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 16}
+  \begin{minipage}{0.65\linewidth}
+    Voor de 364 jobs die in oktober 2004 bij de 4 grootste faillissementen in Vlaanderen verloren gingen, heeft men een figuur getekend.
+  \end{minipage}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-2.5cm,yshift=-1.25cm] at (current page.north east){
+      \includegraphics[width=4.5cm]{horizontaal_staafdiagram-faillissementen}
+    };
+  \end{tikzpicture}
+  \begin{enumerate}[(a)]
+  \item Welke variabele is er genoteerd bij elke persoon die zijn job is kwijtgeraakt?\\
+    \begin{answer}
+      Bedrijf waar hij voorheen werkte en de stad waar het bedrijf zich bevond.
+    \end{answer}
+  \item Welk soort variabele is dat?\\
+    \begin{answer}
+      Kwalitatief nominaal, met bedrijven of met steden kunnen we niet rekenen.
+    \end{answer}
+  \item Wat zijn haar waarden?\\
+    \begin{answer}
+      Agora, gevelbekleding, vandevelde, music hall.
+    \end{answer}
+  \item Is de figuur goed getekend?\\
+    \begin{answer}
+      Ja, een staafdiagram moet bestaan uit vrijstaande staafjes waarbij de waarden van de variabelen duidelijk zijn en waarbij ook de frequenties staan. Hier is dit allemaal zo, dat die staafjes horizontaal zijn i.p.v. verticaal is maar opmaak.
+    \end{answer}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \begin{minipage}{0.45\linewidth}
+    \frametitle{Oefening 17}
+    Bekijk de tabel over XTC en Speed. Kijk enkel naar de informatie die daarin staat over het jaar 2003.
+  \end{minipage}
+  \begin{minipage}{0.45\linewidth}
+    \vspace*{-1cm}
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{tabel-drugs}
+    \end{center}
+  \end{minipage}
+  \begin{enumerate}[(a)]
+  \item Is “druggebruik” daar behandeld als een kwalitatieve variabele?
+    \begin{answer}
+      Ja, met kwalitatieve variabelen kunnen we niet rekenen. En met soorten drugs kunnen we niet rekenen. We kunnen het gemiddelde van cannabis en xtc niet bepalen.
+    \end{answer}
+  \item Is de tabel correct?
+    \begin{answer}
+      Neen, als we de verschillende relatieve frequenties optellen
+      \begin{align*}
+        \sum_i{f_i} &= 74.3\%+9.6\%+13.0\%+7.2\%+8.6\%\\[-0.4cm]
+                    &= 112.7\%\\
+                    &> 100\%
+      \end{align*}
+      vinden we een getal dat groter is dan het maximum.
+    \end{answer}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 18}
+  \begin{minipage}{0.35\linewidth}
+    Bekijk het taartdiagram over de vrijetijdsbesteding van jongeren.
+  \end{minipage}
+  \begin{minipage}{0.6\linewidth}
+    \vspace*{-1cm}
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{cirkeldiagram-vrijetijdsbesteding}
+    \end{center}
+  \end{minipage}
+  \begin{enumerate}[(a)]
+  \item Is “vrijetijdsbesteding” hier behandeld als een kwalitatieve variabele?\\
+    \begin{answer}
+      Ja, we kunnen niet rekenen met de variabele. Dus deze moet kwalitatief zijn.
+    \end{answer}
+  \item Is het taartdiagram correct getekend?\\
+    \begin{answer}
+      Neen, tel maar eens de eerste paar relatieve frequenties op. Je merkt al snel dat dit niet kan. Hoe is het dan mogelijk dat er überhaupt een diagram kon worden getekend! Dit is de valkuil van automatische tools, deze berekenen eerst de som en gebruiken deze dan om de juiste hoek van een cirkelsector te bepalen.
+    \end{answer}
+  \end{enumerate}
+
 \end{frame}
 
 
