@@ -532,9 +532,104 @@
       Neen, tel maar eens de eerste paar relatieve frequenties op. Je merkt al snel dat dit niet kan. Hoe is het dan mogelijk dat er überhaupt een diagram kon worden getekend! Dit is de valkuil van automatische tools, deze berekenen eerst de som en gebruiken deze dan om de juiste hoek van een cirkelsector te bepalen.
     \end{answer}
   \end{enumerate}
-
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Oefening 19}
+  Stel een frequentietabel voor de volgende dataset. Kies een verstandige klassenbreedte.
+  {\tiny  \dataset[10]{
+      193, 225, 256, 166, 143, 260, 117, 208, 182, 114, 113, 203, 320, 231, 221, 231, 60, 113, 373, 180, 379, 205, 161, 287, 196, 236, 163, 192, 184, 166, 332, 172, 227, 272, 264, 155, 296, 189, 119, 230, 253, 225, 194, 200, 91, 177, 208, 157, 243, 183, 89, 235, 190, 223, 186, 132, 235, 312, 125, 258, 98, 173, 165, 289, 262
+    }}
+  \begin{answer}
+    \begin{center}
+      \small
+      \begin{tabular}{c|c|c|c|c|c}
+        $i$ & klasse     & $n_i$ & $cn_i$ & $f_i$ & $cf_i$ \\
+        \hline
+        1 & $[ 60,  90[$ &   2 & 2 &  0.03 & 0.03\\
+        2 & $[ 90, 120[$ &   7 & 9 &  0.11 & 0.14\\
+        3 & $[120, 150[$ &   3 & 12 &  0.05 & 0.19\\
+        4 & $[150, 180[$ &  10 & 22 & 0.15 & 0.34\\
+        5 & $[180, 210[$ &  16 & 38 & 0.25 & 0.59\\
+        6 & $[210, 240[$ &  11 & 49 & 0.17 & 0.76\\
+        7 & $[240, 270[$ &   7 & 56 & 0.11 & 0.87\\
+        8 & $[270, 300[$ &   4 & 60 & 0.06 & 0.93\\
+        9 & $[300, 330[$ &   2 & 62 & 0.03 & 0.96\\
+        10 & $[330, 360[$ &   1 &63&  0.02 & 0.98\\
+        11 & $[360, 390[$ &   2 & 65 & 0.03 & $\approx 1$ \\
+      \end{tabular}
+    \end{center}
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 20}
+  Op de website van de (National Basketball Association) NBA vinden we volgende dataset.
+  {\tiny \dataset[10]{
+      1.93, 2.22, 2.08, 2.26, 1.98, 2.13, 2.16, 1.94, 1.89, 1.96, 1.92, 2.09, 2.11, 2.09, 2.13, 2, 1.67, 2.08, 2.2, 2.18, 2.18, 2.17, 1.96, 1.95, 2.01, 2.07, 1.74, 1.81, 2.04, 1.99, 1.99, 1.91, 1.74, 2.12, 1.95, 2, 2.25, 2.29, 1.9, 1.98, 2.03, 2.16, 1.82, 2.17, 1.92, 1.99, 1.95, 2, 2, 1.91, 2.26, 2.21, 2.31, 1.91, 2.1, 2.09, 2.17, 1.98, 1.95, 1.96, 2.21, 2.18, 1.96, 1.82, 1.89, 2.21, 2.09, 1.87, 1.83, 2.16, 1.87, 2.18, 2.09, 2.1, 1.7, 2.01, 2.2, 1.67, 1.87, 2.14
+    }}
+  Maak een goede frequentietabel.
+  \begin{answer}
+    \begin{center}
+      \small
+      \begin{tabular}{c|c|c|c|c|c}
+        $i$ & klasse        & $n_i$ & $cn_i$ & $f_i$ & $cf_i$ \\
+        \hline
+        1   & $[ 1.6, 1.7[$ & 2     & 2      & 0.03  & 0.03   \\
+        2   & $[ 1.7, 1.8[$ & 3     & 5      & 0.04  & 0.06   \\
+        3   & $[ 1.8, 1.9[$ & 9     & 14     & 0.11  & 0.18   \\
+        4   & $[ 1.9, 2.0[$ & 22    & 36     & 0.28  & 0.45   \\
+        5   & $[ 2.0, 2.1[$ & 16    & 52     & 0.2   & 0.65   \\
+        6   & $[ 2.1, 2.2[$ & 17    & 69     & 0.21  & 0.86   \\
+        7   & $[ 2.2, 2.3[$ & 10    & 79     & 0.13  & 0.99   \\
+        8   & $[ 2.3, 2.4[$ & 1     & 80     & 0.01  & 1      \\
+      \end{tabular}
+    \end{center}
+  \end{answer}
+  {\tiny Door afrondingsfouten kunnen er in bovenstaande oplossing kleine verschillen zitten.}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 21}
+  In een klas met 24 leerlingen geef ik een onverwachte toets op 10. Volgende resultaten werden behaald en op score geplaatst:
+  \begin{center}
+    \tiny
+    \dataset[8]{
+      7.5, 9, 9, 5.5, 8.5, 7.5, 7, 9, 7.5, 3, 8.5, 6, 8, 8.5, 7.5, 8, 9, 7, 9, 7, 7, 8, 6, 8
+    }
+  \end{center}
+  Is het hier nodig om een frequentietabel te maken met klassen?
+  \begin{answer}
+    Het kan m.b.v. een frequentietabel, punten kunnen we zien als een kwantitatieve discrete dataset. Alternatief kunnen we dit ook opvatten als een kwalitatief ordinale dataset, waarbij punten zoals 3 slecht zijn en punten zoals 8 en 9 zeer goed zijn.
+  \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 22}
+  \begin{minipage}{0.45\linewidth}
+Teken het histogram en het frequentiepolygoon horende bij volgende frequentietabel.\\
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+  \tiny
+\begin{tabular}{c|c|c|c}
+$i$ & klasse     & $n_i$ & $f_i$\\
+\hline
+  1 & $[ 60,  90[$ &   2 &  0.03\\
+  2 & $[ 90, 120[$ &   7 &  0.11\\
+  3 & $[120, 150[$ &   3 &  0.05\\
+  4 & $[150, 180[$ &  10 &  0.15\\
+  5 & $[180, 210[$ &  16 &  0.25\\
+  6 & $[210, 240[$ &  11 &  0.17\\
+  7 & $[240, 270[$ &   7 &  0.11\\
+  8 & $[270, 300[$ &   4 &  0.06\\
+  9 & $[300, 330[$ &   2 &  0.03\\
+ 10 & $[330, 360[$ &   1 &  0.02\\
+ 11 & $[360, 390[$ &   2 &  0.03\\
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{frame}
 \end{document}
 
