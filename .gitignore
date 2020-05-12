@@ -1,3 +1,6 @@
+*.nav
+*.snm
+*.vrb
 *.lnk
 *.zip
 *.exc.tex
@@ -13,6 +16,7 @@
 *~
 *.~*#
 *.func0.gnuplot
+_region_.*
 .hidden
 auto
 *.toc
