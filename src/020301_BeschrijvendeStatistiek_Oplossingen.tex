@@ -16,6 +16,7 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{textpos}
+\usepackage{pdfpages}
 
 \makeatletter
 \newcommand\dataset[2][5]{{
@@ -30,6 +31,8 @@
 \newenvironment{answer}
 {\color{blue}}
 {\color{black}}
+
+\newcommand{\zrm}[1]{\framebox{#1}}
 
 \title{Beschrijvende statistiek}
 \subtitle{Oplossingen van de oefeningen}
@@ -915,6 +918,79 @@
       Max     & = 9
     \end{align*}
   \end{answer}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 33}
+  Door 88 willekeurige 17 jarigen wordt een IQ test afgelegd. De dataset krijgen we niet, maar we krijgen wel volgende frequentietabel met klassenindeling:\\
+  \begin{minipage}{0.6\linewidth}
+    \begin{center}
+      \begin{tabular}{c|c}
+        Interval & Frequentie\\
+        \hline
+        $[50, 60[$ & 2\\
+        $[60, 70[$ & 2\\
+        $[70, 80[$ & 5\\
+        $[80, 90[$ & 25\\
+        $[90, 100[$ & 22\\
+        $[100, 110[$ & 16\\
+        $[110, 120[$ & 11\\
+        $[120, 130[$ & 5
+      \end{tabular}
+    \end{center}
+  Hint: Maak gebruik van het \zrm{ZRM}, leg de optie met frequentie aan en gebruik voor de $x$-waarden telkens het klassenmidden.
+  \end{minipage}
+  % \begin{minipage}{0.55\linewidth}
+  %   \begin{enumerate}[(a)]
+  %   \item Teken het histogram, gebruik een blauwe balpen.
+  %   \item Teken op het histogram het frequentiepolygoon, gebruik een groene balpen.
+  %   \item Wat is het gemiddelde?
+  %   \item Wat is de mediaan?
+  %   \item Wat de modus?
+  %   \end{enumerate}
+  % \end{minipage}
+  \begin{minipage}{0.35\linewidth}
+  \begin{answer}
+    \begin{align*}
+      \bar{x} & \approx 95.45  \\
+      s^2     & \approx 229.68 \\
+      s       & \approx 15.16  \\
+      MOD     & = [80, 90[     \\
+      n       & = 88           \\
+      min     & = 55           \\
+      Q_1     & = 85           \\
+      Med     & = 95           \\
+      Q_3     & = 105          \\
+      Max     & = 125
+    \end{align*}
+  \end{answer}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Oefening 34}
+Een uitzendbureau onderzoekt ... We vinden volgende kengetallen:
+{\small $$MIN=32 \qquad  Q_1=244.5 \qquad Med=271.5 \qquad Q_3=297 \qquad MAX=356$$}
+\vspace{-0.5cm}
+\begin{enumerate}[(a)]
+  \item Hoeveel is $IQR$?
+    \begin{answer}
+      $Q_3 - Q_1 = 297 - 244.5 = 52.5$
+    \end{answer}
+  \item Hoeveel is $Q_1-1.5\cdot IQR$
+    \begin{answer}\small
+      $= 244.5 - 1.5 \cdot 52.5 = 165.75 > MIN$\\
+      Dus het minimum is een outliër, dus deze waarde zullen we niet gebruiken in onze boxplot.
+    \end{answer}
+  \item Hoeveel is $Q_3+1.5\cdot IQR$
+    \begin{answer}\small
+      $= 297 + 1.5 \cdot 52.5 = 375.75 > MAX$\\
+      Dus het maximum zit nog steeds bevat in dit interval, we gaan dus tot aan het maximum in onze boxplot.
+    \end{answer}
+  \item Teken de boxplot.
+    \includegraphics[width=\textwidth]{uitzendbureau-boxplot.pdf}
+  \end{enumerate}
+  Opmerking: Die kruisjes in bovenstaande boxplot zijn de outliërs, als je een boxplot met de hand tekent hoeven deze er niet op te staan.
 \end{frame}
 
 \end{document}
